@@ -1,0 +1,80 @@
+{
+    "id": "vakum-pompa-yedek-giris-contasi-3-boy",
+    "sku": "PT-EC1329",
+    "category_id": "erkek-cinsel-saglik-urunu",
+    "subcategory_id": "penis-pompasi",
+    "sold_out": false,
+    "name": {
+        "tr": "Vakum Pompa Yedek Giriş Contası (3 Boy)",
+        "en": "Vacuum Pump Replacement Inlet Gasket (3 sizes)",
+        "de": "Vakuumpumpen-Ersatzeinlassdichtung (3 Größen)",
+        "ru": "Сменная прокладка впускного отверстия вакуумного насоса (3 размера)"
+    },
+    "overline": {
+        "tr": "ERKEK CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "MALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DES MANNES",
+        "ru": "СРЕДСТВО ДЛЯ СЕКСУАЛЬНОГО ЗДОРОВЬЯ МУЖЧИН"
+    },
+    "description": {
+        "tr": "Ürün, 3 farklı boyuttaki, yedek conta girişleridir. Contaların her biri farklı genişliktedir; küçük boy, orta boy ve büyük boy. Giriş contaları tek başlarına kullanılamaz, ürünler sadece penis pompası ile kullanılabilir. Her boyuttaki conta değişik renklere sahip olduğu için, kullanıcılara kolaylık sağlar.",
+        "en": "The product is replacement gasket inlets in 3 different sizes. Each of the gaskets has a different width; small size, medium size and large size. The inlet gaskets cannot be used alone, the products can only be used with the penis pump. The gaskets of each size have different colors for the convenience of the user.",
+        "de": "Das Produkt ist Ersatz Dichtung Einlässe in 3 verschiedenen Größen. Jede der Dichtungen hat eine andere Breite; kleine Größe, mittlere Größe und große Größe. Die Einlassdichtungen können nicht allein verwendet werden, die Produkte können nur mit der Penispumpe verwendet werden. Die Dichtungen jeder Größe sind in verschiedenen Farben erhältlich, um die Verwendung zu erleichtern.",
+        "ru": "Товар представляет собой сменные прокладки для впускных отверстий 3 разных размеров. Каждая из прокладок имеет разную ширину: маленький размер, средний размер и большой размер. Прокладки для впускных отверстий нельзя использовать отдельно, изделия можно использовать только с помпой для пениса. Прокладки каждого размера доступны в разных цветах для удобства пользователей."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 30,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 30,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 30,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 30,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/vakum-pompa-yedek-giris-contasi-3-boy-1604.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/vakum-pompa-yedek-giris-contasi-3-boy-1605.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/vakum-pompa-yedek-giris-contasi-3-boy-1606.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "7 × 4 × 7 cm",
+                "en": "7 × 4 × 7 cm",
+                "de": "7 × 4 × 7 cm",
+                "ru": "7 × 4 × 7 см"
+            }
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "id": "silky-kiss-long-time-prezervatif-geciktirici-etkili",
+    "sku": "PT-EC1576",
+    "category_id": "erkek-cinsel-saglik-urunu",
+    "subcategory_id": "prezervatif",
+    "sold_out": true,
+    "name": {
+        "tr": "Silky Kiss Long Time Prezervatif Geciktirici Etkili",
+        "en": "Silky Kiss Long Time Condom Delaying Effect",
+        "de": "Silky Kiss Langzeit-Kondom verzögernde Wirkung",
+        "ru": "Silky Kiss Презерватив с замедляющим эффектом на длительное время"
+    },
+    "overline": {
+        "tr": "ERKEK CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "MALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DES MANNES",
+        "ru": "СРЕДСТВО ДЛЯ СЕКСУАЛЬНОГО ЗДОРОВЬЯ МУЖЧИН"
+    },
+    "description": {
+        "tr": "Heyecanınızı dilediğiniz kadar uzatabilirsiniz.Silky Kiss Uzun Geceler prezervatifleri içerdiği özel kayganlaştırıcı sayesinde zevk ve heyecanınızın bitmemesini sağlar. Özel formüllü Silky Kiss medikal\/steril ortamda üretilmektedir. %100 kaliteli latexten üretilmiştir. Hamilelik ve cinsel yolla bulaşan hastalıklara karşı korunma sağlar. Etkin bir doğum kontrol aracıdır.",
+        "en": "You can prolong your excitement as long as you wish. Silky Kiss Long Nights condoms ensure that your pleasure and excitement does not end thanks to the special lubricant it contains. Silky Kiss with special formula is produced in a medical\/sterile environment. It is made of 100% quality latex. Provides protection against pregnancy and sexually transmitted diseases. It is an effective birth control tool.",
+        "de": "Sie können Ihre Erregung so lange verlängern, wie Sie wollen. Silky Kiss Long Nights Kondome sorgen dafür, dass Ihr Vergnügen und Ihre Erregung nicht enden, dank der speziellen Gleitmittel es enthält. Silky Kiss mit spezieller Formel wird in einer medizinischen \/ sterilen Umgebung hergestellt. Es ist aus 100% Qualitätslatex hergestellt. Bietet Schutz vor Schwangerschaft und sexuell übertragbaren Krankheiten. Es ist eine wirksame Geburtenkontrolle Werkzeug.",
+        "ru": "Презервативы Silky Kiss Long Nights гарантируют, что ваше удовольствие и возбуждение не закончатся благодаря специальной смазке, входящей в их состав. Silky Kiss со специальной формулой производятся в медицинской\/стерильной среде. Он изготовлен из 100% качественного латекса. Обеспечивает защиту от беременности и заболеваний, передающихся половым путем. Является эффективным средством контрацепции."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-long-time-prezervatif-geciktirici-etkili-3574.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Silky Kiss",
+                "en": "Silky Kiss",
+                "de": "Silky Kiss",
+                "ru": "Silky Kiss"
+            }
+        }
+    ]
+}

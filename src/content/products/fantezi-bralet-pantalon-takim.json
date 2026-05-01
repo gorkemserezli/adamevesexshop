@@ -1,0 +1,65 @@
+{
+    "id": "fantezi-bralet-pantalon-takim",
+    "sku": "PT-FGMGP6054",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-giyim",
+    "sold_out": false,
+    "name": {
+        "tr": "Fantezi Bralet Pantalon Takım",
+        "en": "Fancy Bralette Pants Set",
+        "de": "Ausgefallenes Bralette-Hosen-Set",
+        "ru": "Модный комплект брюк с браслетом"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "TRANSPARAN SİMLİ YAKALI BRALET TRANPARAN PANTOLON SİMLİ BİLEKLİK TAKIM",
+        "en": "TRANSPARENT SILICONE COLLARED BRALETTE TRANSPARENT PANTS TRANSPARENT PANTS TRANSPARENT BRACELET SET",
+        "de": "TRANSPARENTES SILIKON-BH MIT KRAGEN TRANSPARENTE HOSEN TRANSPARENTE HOSEN TRANSPARENTE ARMBÄNDER SET",
+        "ru": "ПРОЗРАЧНЫЙ СИЛИКОНОВЫЙ БЮСТГАЛЬТЕР С ВОРОТНИКОМ ПРОЗРАЧНЫЕ БРЮКИ ПРОЗРАЧНЫЕ БРЮКИ ПРОЗРАЧНЫЙ БРАСЛЕТ КОМПЛЕКТ"
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 46.7000000000000028421709430404007434844970703125,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 46.7000000000000028421709430404007434844970703125,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 46.7000000000000028421709430404007434844970703125,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 46.7000000000000028421709430404007434844970703125,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-bralet-pantalon-takim-5377.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-bralet-pantalon-takim-5378.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}

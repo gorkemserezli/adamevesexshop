@@ -1,0 +1,78 @@
+{
+    "id": "deri-fantezi-maskesi-siyah",
+    "sku": "PT-FFXG036BL",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-fetis",
+    "sold_out": false,
+    "name": {
+        "tr": "Deri Fantezi Maskesi Siyah",
+        "en": "Leather Fantasy Mask Black",
+        "de": "Leder Fantasy Maske Schwarz",
+        "ru": "Кожаная маска для фэнтези черная"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "Deri Fantezi Maskesi, cinsel deneyimlere heyecan katmak için tasarlanmış bir üründür. Yüksek kaliteli deri malzemesi ve estetik tasarımıyla dikkat çeker. Esnek ve ayarlanabilir kayışları sayesinde her kullanıcıya uyum sağlar. Maskenin gizemli görünümü, cinsel deneyimlerde farklı bir boyut sunar. Özellikler: Yüksek kaliteli deri malzemeEsnek ve ayarlanabilir kayışlarEstetik ve gizemli tasarımRahat ve kullanışlıFantezi deneyimlerine uygunHedef Kitle: Yetişkinler arasında cinsel keşif ve deneyimlere açık olanlarFantezi ürünleri satan perakendeciler ve toptancılarGüvenlik ve Kalite: Ürün, yüksek kaliteli malzemelerden üretilmiş olup güvenli ve dayanıklıdır.",
+        "en": "Leather Fantasy Mask is a product designed to add excitement to sexual experiences. It attracts attention with its high quality leather material and aesthetic design. It adapts to every user thanks to its flexible and adjustable straps. The mysterious appearance of the mask offers a different dimension in sexual experiences. Features: High quality leather materialFlexible and adjustable strapsAesthetic and mysterious designComfortable and convenientSuitable for fantasy experiencesTarget Audience: Adults open to sexual exploration and experiencesRetailers and wholesalers selling fantasy productsSafety and Quality: The product is made of high quality materials and is safe and durable.",
+        "de": "Leather Fantasy Mask ist ein Produkt, das entwickelt wurde, um sexuelle Erfahrungen aufregender zu machen. Sie zieht die Aufmerksamkeit mit ihrem hochwertigen Ledermaterial und ihrem ästhetischen Design auf sich. Dank der flexiblen und verstellbaren Riemen passt sie sich jedem Benutzer an. Das geheimnisvolle Aussehen der Maske bietet eine andere Dimension sexueller Erfahrungen. Eigenschaften: Hochwertiges LedermaterialFlexible und verstellbare RiemenÄsthetisches und mysteriöses DesignKomfortabel und bequemGeeignet für FantasieerlebnisseZielpublikum: Personen, die offen sind für sexuelle Erkundungen und Erfahrungen unter ErwachsenenEinzel- und Großhändler, die Fantasieprodukte verkaufenSicherheit und Qualität: Das Produkt ist aus hochwertigen Materialien hergestellt und ist sicher und langlebig.",
+        "ru": "Кожаная маска-фантазия - это изделие, предназначенное для придания сексуальным переживаниям особой остроты. Она привлекает внимание своим высококачественным кожаным материалом и эстетичным дизайном. Благодаря гибким и регулируемым ремешкам она подстраивается под каждого пользователя. Таинственный вид маски придает сексуальным переживаниям иное измерение. Характеристики: Высококачественный кожаный материалГибкие и регулируемые ремешкиЭстетичный и загадочный дизайнКомфорт и удобствоПодходит для фантазийных опытовЦелевая аудитория: Те, кто открыт для сексуальных исследований и опыта среди взрослыхРитейлеры и оптовики, продающие товары для фантазийБезопасность и качество: Продукт изготовлен из высококачественных материалов, безопасен и долговечен."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 6.61000000000000031974423109204508364200592041015625,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 6.61000000000000031974423109204508364200592041015625,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 6.61000000000000031974423109204508364200592041015625,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 6.61000000000000031974423109204508364200592041015625,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/deri-fantezi-maskesi-siyah-2049.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "19 × 27 × 2 cm",
+                "en": "19 × 27 × 2 cm",
+                "de": "19 × 27 × 2 cm",
+                "ru": "19 × 27 × 2 см"
+            }
+        }
+    ]
+}

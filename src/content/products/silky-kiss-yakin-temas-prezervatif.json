@@ -1,0 +1,80 @@
+{
+    "id": "silky-kiss-yakin-temas-prezervatif",
+    "sku": "PT-EC1572",
+    "category_id": "erkek-cinsel-saglik-urunu",
+    "subcategory_id": "prezervatif",
+    "sold_out": false,
+    "name": {
+        "tr": "Silky Kiss Yakın Temas Prezervatif",
+        "en": "Silky Kiss Close Contact Condom",
+        "de": "Silky Kiss Nahkontakt-Kondom",
+        "ru": "Презерватив для тесного контакта Silky Kiss"
+    },
+    "overline": {
+        "tr": "ERKEK CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "MALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DES MANNES",
+        "ru": "СРЕДСТВО ДЛЯ СЕКСУАЛЬНОГО ЗДОРОВЬЯ МУЖЧИН"
+    },
+    "description": {
+        "tr": "Silky Kiss Ekstra İnce     Daha fazla ten deneyimi.Silky Kiss Love prezervatifleri partnerinize daha yakın hissetmenizi sağlar, özel olarak üretilmiş Silky Kiss Love normal prezervatiflerden 20% daha incedir. %100 kaliteli latexten üretilmiştir. Hamilelik ve cinsel yolla bulaşan enfeksiyonlara karşı korunma sağlar. Etkin bir doğum kontrol aracıdır.        ",
+        "en": "Silky Kiss Extra Thin More skin experience.Silky Kiss Love condoms allow you to feel closer to your partner, specially made Silky Kiss Love is 20% thinner than normal condoms. Made from 100% high quality latex. Provides protection against pregnancy and sexually transmitted infections. It is an effective contraceptive.        ",
+        "de": "Silky Kiss Love Kondome erlauben es Ihnen, sich Ihrem Partner näher zu fühlen. Das speziell hergestellte Silky Kiss Love ist 20% dünner als normale Kondome. Es ist aus 100% Qualitätslatex hergestellt. Es bietet Schutz vor Schwangerschaft und sexuell übertragbaren Infektionen. Es ist ein wirksames Verhütungsmittel.        ",
+        "ru": "Silky Kiss Extra Thin Больше ощущений на коже.Презервативы Silky Kiss Love позволят вам почувствовать себя ближе к партнеру, специально произведенные Silky Kiss Love на 20% тоньше обычных презервативов. Он изготовлен из 100% качественного латекса. Обеспечивают защиту от беременности и инфекций, передающихся половым путем. Является эффективным средством контрацепции.        "
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-yakin-temas-prezervatif-3562.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-yakin-temas-prezervatif-3563.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-yakin-temas-prezervatif-3564.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Silky Kiss",
+                "en": "Silky Kiss",
+                "de": "Silky Kiss",
+                "ru": "Silky Kiss"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "7 × 12 × 3 cm",
+                "en": "7 × 12 × 3 cm",
+                "de": "7 × 12 × 3 cm",
+                "ru": "7 × 12 × 3 см"
+            }
+        }
+    ]
+}

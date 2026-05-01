@@ -1,0 +1,78 @@
+{
+    "id": "cantharis-d9-kadin-uyarici-damla",
+    "sku": "PT-KC5116",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "sprey-ve-damlalar",
+    "sold_out": false,
+    "name": {
+        "tr": "Cantharis D9 Kadın Uyarıcı Damla",
+        "en": "Cantharis D9 Female Stimulant Drops",
+        "de": "Cantharis D9 Stimulanzientropfen für Frauen",
+        "ru": "Кантарис D9 женские стимулирующие капли"
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Kadınların kullanımına özel olarak formüle edilmiş olan Cantharis D9 Damla, stres ve sıkıntı nedeniyle yaşanan cinsel soğukluğu gidermeye yardımcı olur. Arzunun azalması ve isteksizlik ile başlayan, cinsel uzaklaşmanın önüne geçmek için damlanın pratik kullanımı size büyük kolaylık sağlayacak. Alkolsüz tüm içeceklere 5 – 7 damla ekleyerek alabilir ve 30 dakika sonra etkisine şahit olabilirsiniz.",
+        "en": "Cantharis D9 Drops, specially formulated for women, helps to eliminate sexual coldness caused by stress and distress. The practical use of the drop to prevent sexual distancing, which begins with decreased desire and reluctance, will provide you with great convenience. You can add 5 - 7 drops to all non-alcoholic beverages and witness the effect after 30 minutes.",
+        "de": "Cantharis D9 Tropfen, speziell für Frauen formuliert, hilft, sexuelle Kälte zu beseitigen, die durch Stress und Kummer verursacht wird. Die praktische Anwendung der Tropfen zur Vorbeugung von sexueller Distanzierung, die mit vermindertem Verlangen und Widerwillen beginnt, wird Ihnen großen Komfort bieten. Sie können 5 - 7 Tropfen in alle alkoholfreien Getränke geben und die Wirkung nach 30 Minuten erleben.",
+        "ru": "Капли Cantharis D9 Drops, специально разработанные для женщин, помогают устранить сексуальную холодность, вызванную стрессом и переживаниями. Практическое применение капель для профилактики сексуального отдаления, которое начинается со снижения желания и нежелания, обеспечит вам большое удобство. Вы можете принимать его, добавляя 5-7 капель в любые безалкогольные напитки, и наблюдать эффект уже через 30 минут."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/cantharis-d9-damla-662.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Cabs",
+                "en": "Cabs",
+                "de": "Cabs",
+                "ru": "Cabs"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "7 × 10 × 5 cm",
+                "en": "7 × 10 × 5 cm",
+                "de": "7 × 10 × 5 cm",
+                "ru": "7 × 10 × 5 см"
+            }
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+{
+    "id": "musele-kadin-uyarici-damla",
+    "sku": "PT-KC1548",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "sprey-ve-damlalar",
+    "sold_out": false,
+    "name": {
+        "tr": "Musele Kadın Uyarıcı Damla",
+        "en": "Musele Female Stimulant Drops",
+        "de": "Musele Stimulanzientropfen für Frauen",
+        "ru": "Стимулирующие капли для женщин Musele"
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Kadınların daha istekli bir hale getiren Musele Damla uyarıcı etkisiyle tüm kadınları ilişkiye hazır hale getirmektedir.  Aktif ve heyecanlı bir cinsel hayat isteyenler için ilk tercih olabilecek bu ürün herhangi bir içeceğin (süt- süt ürünleri hariç) içerisinde 8-10 damla damlatılmasıyla kullanılır. Kullanımdan yaklaşık 45 dakika içerisinde etki etmeye başlayacaktır. Siz de bu ürüne sahip olmak ve heyecanlı dakikalar geçirmek isterseniz Pembe Tilki üzerinden kolay bir şekilde satın alabilirsiniz.",
+        "en": "Musele Drops, which makes women more eager, makes all women ready for intercourse with its stimulating effect.  This product, which can be the first choice for those who want an active and exciting sexual life, is used by dropping 8-10 drops in any beverage (except milk-dairy products). It will start to take effect in about 45 minutes after use. If you want to have this product and spend exciting minutes, you can easily buy it through Pink Fox.",
+        "de": "Musele Drops, die Frauen eifriger machen, machen alle Frauen bereit für den Geschlechtsverkehr mit seiner stimulierenden Wirkung.  Dieses Produkt, das die erste Wahl für diejenigen sein kann, die ein aktives und aufregendes Sexualleben wollen, wird verwendet, indem man 8-10 Tropfen in ein beliebiges Getränk (außer Milchprodukte) tropft. Die Wirkung setzt etwa 45 Minuten nach der Einnahme ein. Wenn Sie dieses Produkt haben wollen und aufregende Minuten verbringen wollen, können Sie es leicht durch Pink Fox kaufen.",
+        "ru": "Musele Drops, повышающие сексуальное влечение, благодаря своему стимулирующему эффекту делают всех женщин готовыми к половому акту.  Этот продукт, который может стать первым выбором для тех, кто хочет активной и захватывающей сексуальной жизни, используется путем капания 8-10 капель в любой напиток (кроме молочных продуктов). Действие препарата начинается примерно через 45 минут после употребления. Если вы хотите иметь этот продукт и провести волнующие минуты, вы можете легко купить его через Pink Fox."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/musele-kadin-uyarici-damla-6426.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Diğer",
+                "en": "Diğer",
+                "de": "Diğer",
+                "ru": "Diğer"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "5 × 8 × 3 cm",
+                "en": "5 × 8 × 3 cm",
+                "de": "5 × 8 × 3 cm",
+                "ru": "5 × 8 × 3 см"
+            }
+        }
+    ]
+}

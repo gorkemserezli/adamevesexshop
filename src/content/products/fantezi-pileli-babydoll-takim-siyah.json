@@ -1,0 +1,66 @@
+{
+    "id": "fantezi-pileli-babydoll-takim-siyah",
+    "sku": "PT-FGMGP6352",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-giyim",
+    "sold_out": false,
+    "name": {
+        "tr": "Fantezi Pileli Babydoll Takım Siyah",
+        "en": "Fancy Pleated Babydoll Set Black",
+        "de": "Fancy Plissee Babydoll Set Schwarz",
+        "ru": "Модный комплект бэбидолл с плиссировкой черный"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "PİLELİ TRANSPARAN BABYDOLL STRİNG ÇORAP TAKIM",
+        "en": "PLEATED SHEER BABYDOLL STRİNG STOCKINGS SET",
+        "de": "PLISSIERTES DURCHSICHTIGES BABYDOLL STRUMPFHOSEN SET",
+        "ru": "ПЛИССИРОВАННЫЕ ПРОЗРАЧНЫЕ ЧУЛКИ-ШТИБЛЕТЫ BABYDOLL"
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 32,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 32,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 32,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 32,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-pileli-babydoll-takim-siyah-5390.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-pileli-babydoll-takim-siyah-5391.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-pileli-babydoll-takim-siyah-5392.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}

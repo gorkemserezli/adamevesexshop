@@ -1,0 +1,65 @@
+{
+    "id": "fantezi-hizmetci-kiz-kostumu-siyah",
+    "sku": "PT-FGMGP6542",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-giyim",
+    "sold_out": false,
+    "name": {
+        "tr": "Fantezi Hizmetçi Kız Kostümü Siyah",
+        "en": "Fantasy Maid Girl Costume Black",
+        "de": "Fantasy Maid Girl Kostüm Schwarz",
+        "ru": "Костюм девушки-горничной черный"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "ELBİSE ÖNLÜK STRİNG SAÇ BANDI BACAK BANDI BOYUN İÇİN KURDELE",
+        "en": "DRESS APRON STRİNG HAIR BAND LEG BAND RIBBON FOR NECK",
+        "de": "KLEID SCHÜRZE STRİNG HAARBAND BEINBAND BAND FÜR HALS",
+        "ru": "ПЛАТЬЕ ФАРТУК ПОЛОСЫ̇NG ВОЛОС ЛЕНТА ДЛЯ НОГ ЛЕНТА ДЛЯ ШЕИ"
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 50.39999999999999857891452847979962825775146484375,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 50.39999999999999857891452847979962825775146484375,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 50.39999999999999857891452847979962825775146484375,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 50.39999999999999857891452847979962825775146484375,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/-5400.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/-5401.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}

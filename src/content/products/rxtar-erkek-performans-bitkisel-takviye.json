@@ -1,0 +1,64 @@
+{
+    "id": "rxtar-erkek-performans-bitkisel-takviye",
+    "sku": "PT-EC599",
+    "category_id": "erkek-cinsel-saglik-urunu",
+    "subcategory_id": "krem-ve-takviye-edici-gida",
+    "sold_out": true,
+    "name": {
+        "tr": "Rxtar Erkek Performans Bitkisel Takviye",
+        "en": "Rxtar Male Performance Herbal Supplement",
+        "de": "Rxtar Männliche Leistung Pflanzliches Supplement",
+        "ru": "Травяная добавка Rxtar Male Performance"
+    },
+    "overline": {
+        "tr": "ERKEK CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "MALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DES MANNES",
+        "ru": "СРЕДСТВО ДЛЯ СЕКСУАЛЬНОГО ЗДОРОВЬЯ МУЖЧИН"
+    },
+    "description": {
+        "tr": "Rxtar Fort Güçlendirilmiş Formül. Erkeklere özeldir.  MyRxtar Bitkisel Kapsül Ürünün kullanımı ilişkiden yaklaşık 3 saat önce olmalıdır. Kullanırken bol su ile tüketmeniz tavsiye edilir. Alkol ya da asitli içeceklerle kesinlikle kullanmamalıdır. İçindekiler: Çarkıfelek (etken madde), mısır unu (yardımcı dolgu maddesi) ve sığır jelatini. Yetişkinlere yöneliktir. Kutu içerisinde 4 adet kapsül bulunmaktadır. Takviye Edici Gıda Onay Kodu: 004311-31.05.2018",
+        "en": "Rxtar Fort Fortified Formula. Special for men.  The use of MyRxtar Herbal Capsule Product should be approximately 3 hours before intercourse. It is recommended to consume it with plenty of water. It should never be used with alcohol or acidic drinks. Ingredients: Passionflower (active ingredient), corn flour (co-filler) and bovine gelatin. Intended for adults. There are 4 capsules in the box. Supplementary Food Approval Code: 004311-31.05.2018",
+        "de": "Rxtar Fortified Formula. Speziell für Männer.  Die Einnahme von MyRxtar Herbal Capsule Product sollte etwa 3 Stunden vor dem Geschlechtsverkehr erfolgen. Es wird empfohlen, das Produkt mit viel Wasser zu konsumieren. Es sollte niemals zusammen mit Alkohol oder säurehaltigen Getränken eingenommen werden. Zutaten: Passionsblume (Wirkstoff), Maismehl (Co-Füllstoff) und Rindergelatine. Für Erwachsene bestimmt. In der Packung befinden sich 4 Kapseln. Ergänzende Lebensmittelzulassung Code: 004311-31.05.2018",
+        "ru": "Rxtar Fort Укрепленная формула. Специально для мужчин.  Употреблять травяные капсулы MyRxtar следует примерно за 3 часа до полового акта. Во время употребления рекомендуется запивать большим количеством воды. Не следует употреблять с алкоголем или кислыми напитками. Ингредиенты: Пассифлора (активный ингредиент), кукурузная мука (наполнитель) и бычий желатин. Предназначен для взрослых. В коробке 4 капсулы. Код разрешения на применение дополнительных пищевых продуктов: 004311-31.05.2018"
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/rxtar-erkek-performans-bitkisel-takviye-3571.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Diğer",
+                "en": "Diğer",
+                "de": "Diğer",
+                "ru": "Diğer"
+            }
+        }
+    ]
+}

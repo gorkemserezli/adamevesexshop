@@ -1,0 +1,81 @@
+{
+    "id": "bona-tessa-masaj-jeli-250-ml",
+    "sku": "PT-KB3467",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "masaj-yaglari",
+    "sold_out": false,
+    "name": {
+        "tr": "Bona Tessa Masaj Jeli 250 ml",
+        "en": "Bona Tessa Massage Gel 250 ml",
+        "de": "Bona Tessa Massage Gel 250 ml",
+        "ru": "Bona Tessa Массажный гель 250 мл"
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Uzun süreli kayganlaştırma özelliğine sahip, yüksek kaliteli ve ekonomik, pH derecesi optimal, kokusuz su bazlı masaj jeli. Dermatolojik olarak test edilmiştir. Ilık suyla durulanmak suretiyle kolayca temizlenir. Kullanım : Özel kapağını açarak hafifçe sıkınız ve ürünü tüm vücudunuza yayınız.Daha fazla kullanmak istiyorsanız daha fazla sürünüz. İkazlar : Çocukların ulaşamayacağı serin ve kuru yerlerde muhafaza edin. Açıldıktan sonra 6 ay içerisinde tüketilmelidir. Kullanmadığınız zaman ambalajı kapalı tutun. Haricen kullanılır. Son kullanma tarihi ve parti numarası ambalajın üzerindedir.",
+        "en": "High-quality and economical, pH-optimal, odorless water-based massage gel with long-lasting lubrication. Dermatologically tested. Cleans easily by rinsing with warm water. Usage : Open the special cap, squeeze lightly and spread the product all over your body. If you want to use more, apply more. Cautions : Store in a cool and dry place out of the reach of children. It should be consumed within 6 months after opening. Keep the packaging closed when not in use. For external use. Expiration date and batch number are on the package.",
+        "de": "Hochwertiges und sparsames, pH-optimales, geruchsneutrales Massagegel auf Wasserbasis mit lang anhaltender Gleitfähigkeit. Dermatologisch getestet. Leicht zu reinigen durch Abspülen mit warmem Wasser. Anwendung: Öffnen Sie die Spezialkappe, drücken Sie sie leicht zusammen und verteilen Sie das Produkt auf Ihrem ganzen Körper. Wenn Sie mehr verwenden möchten, tragen Sie mehr auf. Vorsichtsmaßnahmen: An einem kühlen und trockenen Ort außerhalb der Reichweite von Kindern aufbewahren. Es sollte innerhalb von 6 Monaten nach dem Öffnen verbraucht werden. Die Verpackung bei Nichtgebrauch geschlossen halten. Für die äußere Anwendung. Das Verfallsdatum und die Chargennummer befinden sich auf der Verpackung.",
+        "ru": "Высококачественный и экономичный, pH-оптимальный массажный гель на водной основе без запаха с длительной смазкой. Дерматологически протестирован. Легко очищается путем ополаскивания теплой водой. Применение : Откройте специальный колпачок, слегка сожмите и распределите средство по всему телу. Если вы хотите использовать больше, нанесите еще. Меры предосторожности : Хранить в сухом и прохладном месте, недоступном для детей. Употреблять в течение 6 месяцев после открытия. Держите упаковку закрытой, когда не используете. Для наружного применения. Срок годности и номер партии указаны на упаковке."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/bona-tessa-masaj-jeli-250-ml-4244.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/bona-tessa-masaj-jeli-250-ml-4245.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/bona-tessa-masaj-jeli-250-ml-4246.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/bona-tessa-masaj-jeli-250-ml-4247.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Cabs",
+                "en": "Cabs",
+                "de": "Cabs",
+                "ru": "Cabs"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "5 × 15 × 5 cm",
+                "en": "5 × 15 × 5 cm",
+                "de": "5 × 15 × 5 cm",
+                "ru": "5 × 15 × 5 см"
+            }
+        }
+    ]
+}

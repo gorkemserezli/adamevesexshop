@@ -1,0 +1,65 @@
+{
+    "id": "alev-desenli-fantezi-kostumu",
+    "sku": "PT-FGMFD8373",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-giyim",
+    "sold_out": false,
+    "name": {
+        "tr": "Alev Desenli Fantezi̇ Kostümü",
+        "en": "Flame Patterned Fantasy Costume",
+        "de": "Fantasy-Kostüm mit Flammenmuster",
+        "ru": "Костюм фантазии с узором пламени"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "Ürün Adı: Alev Desenli Fantezi Kostümü 8373 Kategori: Fantazi Kostümler \/ Erotik Kostümler Marka: Pembe Tilki Ürün Grubu: 2025 Erotik Kostümler Renk \/ Desen: Siyah Beden: S, M, L Kutu Durumu: Kutulu Menşei: Türkiye Yıkama Talimatı :30°C makinede yıkanabilir. Beyazlatıcı kullanımı önerilmez. Kurutucu kullanımı önerilmez, gölgede kurutunuz. Detaylı bakım talimatları için lütfen ürün etiketini kontrol ediniz.",
+        "en": "Item Name: Flame Pattern Fantasy Costume 8373 Category: Fantasy Costumes \/ Erotic Costumes Brand: Pink Fox Product Group: 2025 Erotic Costumes Color \/ Pattern: Black Size: S, M, L Box Condition: Boxed Origin: Turkey Washing Instructions: 30°C machine washable. The use of bleach is not recommended. Dryer use is not recommended, dry in the shade. Please check the product label for detailed care instructions.",
+        "de": "Produktname: Flammenmuster Fantasy Kostüm 8373 Kategorie: Fantasy Kostüme \/ Erotische Kostüme Marke: Pink Fox Produktgruppe: 2025 Erotische Kostüme Farbe \/ Muster: Schwarz Größe: S, M, L Box Zustand: Kartoniert Herkunft: Türkei Waschanleitung: 30°C maschinenwaschbar. Die Verwendung von Bleichmitteln wird nicht empfohlen. Trocknergebrauch wird nicht empfohlen, im Schatten trocknen. Detaillierte Pflegehinweise entnehmen Sie bitte dem Produktetikett.",
+        "ru": "Наименование товара: Костюм фэнтези с узором пламени 8373 Категория: Костюмы фэнтези \/ Эротические костюмы Бренд: Pink Fox Товарная группа: 2025 Эротические костюмы Цвет \/ Узор: Черный Размер: S, M, L Состояние коробки: В коробке Происхождение: Турция Инструкции по стирке: Машинная стирка при 30°C. Не рекомендуется использовать отбеливатель. Не рекомендуется сушить в сушильной машине, сушите в тени. Подробные инструкции по уходу смотрите на этикетке изделия."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 39.7000000000000028421709430404007434844970703125,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 39.7000000000000028421709430404007434844970703125,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 39.7000000000000028421709430404007434844970703125,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 39.7000000000000028421709430404007434844970703125,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/alev-desenli-fantezi-kostumu-5349.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/alev-desenli-fantezi-kostumu-5350.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}

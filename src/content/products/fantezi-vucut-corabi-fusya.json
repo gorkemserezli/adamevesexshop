@@ -1,0 +1,66 @@
+{
+    "id": "fantezi-vucut-corabi-fusya",
+    "sku": "PT-FGMGP6188",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-giyim",
+    "sold_out": false,
+    "name": {
+        "tr": "Fantezi Vücut Çorabı Fuşya",
+        "en": "Fancy Body Socks Fuchsia",
+        "de": "Fancy Body Socken Fuchsia",
+        "ru": "Модные носки для тела фуксия"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "ASKILI TRANSPARAN  VÜCUT ÇORABI STRİNG HEDİYELİ",
+        "en": "SHEER BODY STOCKING WITH STRAPS WITH STRİNG GIFT",
+        "de": "TRANSPARENTE STRÜMPFE MIT TRÄGERN STRİNG GESCHENK",
+        "ru": "ПРОЗРАЧНЫЕ ЧУЛОЧКИ С БРЕТЕЛЬКАМИ В ПОДАРОК"
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 37.7999999999999971578290569595992565155029296875,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 37.7999999999999971578290569595992565155029296875,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 37.7999999999999971578290569595992565155029296875,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 37.7999999999999971578290569595992565155029296875,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-vucut-corabi-fusya-5384.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-vucut-corabi-fusya-5385.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-vucut-corabi-fusya-5386.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}

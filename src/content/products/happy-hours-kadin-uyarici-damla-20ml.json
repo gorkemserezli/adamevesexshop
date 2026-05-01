@@ -1,0 +1,78 @@
+{
+    "id": "happy-hours-kadin-uyarici-damla-20ml",
+    "sku": "PT-KC5073",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "sprey-ve-damlalar",
+    "sold_out": false,
+    "name": {
+        "tr": "Happy Hours Kadın Uyarıcı Damla 20ml.",
+        "en": "Happy Hours Women Stimulating Drops 20ml.",
+        "de": "Happy Hours Female Stimulant Drops 20ml.",
+        "ru": "Happy Hours женские стимулирующие капли 20 мл."
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Kadınlar için özel olarak formüle edilmiş olan Happy Hours Damla, cinsel istek arttırıcı özelliği ile performansınızın da yükselmesini sağlıyor. Cinsel ilişkiden 30 dakika önce alınması tavsiye edilir. Pratik kullanıma sahip olan damlayı; alkol içermeyen herhangi bir sıcak ya da soğuk içecek ile alabilirsiniz. İçeceklere 5 – 7 damla eklemeniz yeterli olacaktır. Tatsız ve kokusuz yapısı nedeniyle içecekler ile alındığında hissedilmeyecektir. Kullanım öncesi çalkalamanız gereken damla tamamen temiz içerikli olup, sağlığa zararlı birleşen içermez.",
+        "en": "Happy Hours Drops, specially formulated for women, increases your performance with its sexual desire enhancer feature. It is recommended to be taken 30 minutes before sexual intercourse. You can take the drop, which has practical use, with any hot or cold drink that does not contain alcohol. It will be enough to add 5 - 7 drops to drinks. Due to its tasteless and odorless structure, it will not be felt when taken with drinks. The drop, which you need to shake before use, is completely clean and does not contain any harmful components.",
+        "de": "Happy Hours Drops, speziell für Frauen formuliert, steigert Ihre Leistungsfähigkeit durch seine luststeigernde Wirkung. Es wird empfohlen, 30 Minuten vor dem Geschlechtsverkehr eingenommen werden. Praktische Anwendung Tropfen; Sie können es mit jedem heißen oder kalten Getränk, das keinen Alkohol enthält, nehmen. Es reicht aus, wenn Sie 5 - 7 Tropfen in die Getränke geben. Aufgrund seiner geschmacks- und geruchsneutralen Struktur wird er bei der Einnahme mit Getränken nicht wahrgenommen. Die Tropfen, die Sie vor der Einnahme schütteln müssen, sind völlig sauber und enthalten keine schädlichen Bestandteile.",
+        "ru": "Капли Happy Hours Drops, специально разработанные для женщин, повышают сексуальное влечение. Рекомендуется принимать за 30 минут до полового акта. Практическое применение капель; Вы можете принимать их с любым горячим или холодным напитком, не содержащим алкоголя. Достаточно добавить 5 - 7 капель в напитки. Благодаря своей безвкусной структуре и отсутствию запаха, он не будет ощущаться при приеме с напитками. Капли, которые необходимо взболтать перед употреблением, абсолютно чистые и не содержат вредных компонентов."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/happy-hours-damla-20ml-96.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Diğer",
+                "en": "Diğer",
+                "de": "Diğer",
+                "ru": "Diğer"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "5 × 8 × 3 cm",
+                "en": "5 × 8 × 3 cm",
+                "de": "5 × 8 × 3 cm",
+                "ru": "5 × 8 × 3 см"
+            }
+        }
+    ]
+}

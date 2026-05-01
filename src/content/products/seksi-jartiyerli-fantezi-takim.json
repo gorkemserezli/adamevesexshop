@@ -1,0 +1,65 @@
+{
+    "id": "seksi-jartiyerli-fantezi-takim",
+    "sku": "PT-FGMFD8250",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-giyim",
+    "sold_out": false,
+    "name": {
+        "tr": "Seksi Jartiyerli Fantezi Takım",
+        "en": "Sexy Garter Fancy Suit",
+        "de": "Sexy Strumpfband Fancy Anzug",
+        "ru": "Сексуальный модный костюм с подвязками"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "Ürün Adı: Seksi Jartiyerli Fantezi Takım Kategori: Fantazi Takımlar \/ Fantazi Jartiyer Takım Marka: Pembe Tilki Ürün Grubu: 2025 Fantazi Jartiyer Takım Renk \/ Desen: Siyah Beden: S, M, L Kutu Durumu: Kutulu Menşei: Türkiye Yıkama Talimatı :30°C makinede yıkanabilir. Beyazlatıcı kullanımı önerilmez. Kurutucu kullanımı önerilmez, gölgede kurutunuz. Detaylı bakım talimatları için lütfen ürün etiketini kontrol ediniz.",
+        "en": "Product Name: Sexy Garter Fancy Suit Category: Fantasy Sets \/ Fantasy Garter Suit Brand: Pink Fox Product Group: 2025 Fantasy Garter Set Color \/ Pattern: Black Size: S, M, L Box Condition: Boxed Origin: Turkey Washing Instructions: 30°C machine washable. The use of bleach is not recommended. Dryer use is not recommended, dry in the shade. Please check the product label for detailed care instructions.",
+        "de": "Produktname: Sexy Strumpfband Fancy Suit Kategorie: Fantasy Sets \/ Fantasy Garter Suit Marke: Pink Fox Produktgruppe: 2025 Fantasy Strumpfband Set Farbe \/ Muster: Schwarz Größe: S, M, L Box Zustand: Kartoniert Herkunft: Türkei Waschanleitung: 30°C maschinenwaschbar. Die Verwendung von Bleichmitteln wird nicht empfohlen. Trocknergebrauch wird nicht empfohlen, im Schatten trocknen. Detaillierte Pflegehinweise entnehmen Sie bitte dem Produktetikett.",
+        "ru": "Наименование товара: Сексуальный костюм с подвязками Категория: Фантазийные наборы \/ Фантазийный костюм с подвязками Бренд: Pink Fox Товарная группа: 2025 Фантазийный набор подвязок Цвет \/ узор: Черный Размер: S, M, L Состояние коробки: В коробке Происхождение: Турция Инструкции по стирке: Машинная стирка при 30°C. Не рекомендуется использовать отбеливатель. Не рекомендуется сушить в сушильной машине, сушите в тени. Подробные инструкции по уходу смотрите на этикетке изделия."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 27.60000000000000142108547152020037174224853515625,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 27.60000000000000142108547152020037174224853515625,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 27.60000000000000142108547152020037174224853515625,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 27.60000000000000142108547152020037174224853515625,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/-5341.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/-5342.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}

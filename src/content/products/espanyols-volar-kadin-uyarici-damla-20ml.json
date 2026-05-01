@@ -1,0 +1,78 @@
+{
+    "id": "espanyols-volar-kadin-uyarici-damla-20ml",
+    "sku": "PT-KC1547",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "sprey-ve-damlalar",
+    "sold_out": false,
+    "name": {
+        "tr": "Espanyols Volar Kadın Uyarıcı Damla 20ml.",
+        "en": "Espanyols Volar Female Stimulant Drops 20ml.",
+        "de": "Espanyols Volar Weibliche Stimulanzien Tropfen 20ml.",
+        "ru": "Эспаньолы Волар женские стимулирующие капли 20 мл."
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Cinsel soğukluk ve isteksizlik sorunlarında, kadınların arzularını arttırmak için hazırlanmış olan Espanyols Volar Damla, pratik ve kolay kullanımı ile kadınlara büyük avantaj sağlıyor. Partneriniz ile yaşayacağınız haz dolu anlar için birliktelik öncesi, alkolsüz içeceklere üründen damlatmanız yeterli olacaktır. Performans arttırıcı özelliği de bulunan ürünü, güneş ışığı görmeyen bir noktada saklamalısınız.",
+        "en": "Espanyols Volar Drops, which is prepared to increase the desire of women in sexual coldness and reluctance problems, provides a great advantage to women with its practical and easy use. For moments full of pleasure with your partner, it will be enough to drop the product into soft drinks before intercourse. You should store the product, which also has performance enhancing properties, in a place out of sunlight.",
+        "de": "Espanyols Volar Drop wurde entwickelt, um die Lust der Frauen bei sexueller Kälte und Unlust zu steigern und bietet Frauen durch seine praktische und einfache Anwendung einen großen Vorteil. Für lustvolle Momente mit Ihrem Partner genügt es, das Produkt vor dem Geschlechtsverkehr in ein Erfrischungsgetränk zu träufeln. Sie sollten das Produkt, das auch eine leistungssteigernde Wirkung hat, an einem Ort aufbewahren, der vor Sonnenlicht geschützt ist.",
+        "ru": "Эспаньолки Volar Drops, приготовленные для усиления желаний женщин при сексуальной холодности и нежелании, дают большое преимущество женщинам благодаря своей практичности и простоте применения. Для того чтобы получить минуты полного удовольствия от общения с партнером, достаточно капнуть средство в безалкогольные напитки перед половым актом. Хранить средство, которое также обладает улучшающим эффективность действием, следует в защищенном от солнечных лучей месте."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/espanyols-volar-kadin-uyarici-damla-20ml-3789.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Cabs",
+                "en": "Cabs",
+                "de": "Cabs",
+                "ru": "Cabs"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "5 × 8 × 3 cm",
+                "en": "5 × 8 × 3 cm",
+                "de": "5 × 8 × 3 cm",
+                "ru": "5 × 8 × 3 см"
+            }
+        }
+    ]
+}

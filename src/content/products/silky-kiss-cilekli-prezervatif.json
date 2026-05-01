@@ -1,0 +1,81 @@
+{
+    "id": "silky-kiss-cilekli-prezervatif",
+    "sku": "PT-EC5131",
+    "category_id": "erkek-cinsel-saglik-urunu",
+    "subcategory_id": "prezervatif",
+    "sold_out": false,
+    "name": {
+        "tr": "Silky Kiss Çilekli Prezervatif",
+        "en": "Silky Kiss Strawberry Condom",
+        "de": "Silky Kiss Erdbeer-Kondom",
+        "ru": "Клубничный презерватив Silky Kiss"
+    },
+    "overline": {
+        "tr": "ERKEK CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "MALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DES MANNES",
+        "ru": "СРЕДСТВО ДЛЯ СЕКСУАЛЬНОГО ЗДОРОВЬЯ МУЖЧИН"
+    },
+    "description": {
+        "tr": "Silky Kiss Çilek Partnerinize ve size özelGecenin en “tatlı” hali…Hayatım heyecan dolu, yeniliklere açığım diyen çiftlere özel…Enerji doluysanız ve eğlenmek sizin için öncelikliyse Silky Kiss Çilek prezervatifleri gecenizi renklendirmeye hazır. Uluslararası kaliteye sahip Silky Kiss prezervatifleri ISO 2074 standartlarına uygun üretilmiştir. %100 kaliteli latexten üretilmiştir. Hamilelik ve cinsel yolla bulaşan hastalıklara karşı korunma sağlar. Etkin bir doğum kontrol aracıdır.  ",
+        "en": "Silky Kiss Strawberry Special for your partner and youThe most \"sweet\" state of the night...Special for couples who say my life is full of excitement and I am open to innovations...If you are full of energy and having fun is a priority for you, Silky Kiss Strawberry condoms are ready to color your night. Silky Kiss condoms with international quality are produced in accordance with ISO 2074 standards. They are made of 100% quality latex. Provides protection against pregnancy and sexually transmitted diseases. It is an effective contraceptive.  ",
+        "de": "Silky Kiss Strawberry Special für Ihren Partner und SieDer \"süßeste\" Zustand der Nacht...Mein Leben ist voller Aufregung, speziell für Paare, die sagen, ich bin offen für Innovationen...Wenn Sie voller Energie sind und Spaß haben ist eine Priorität für Sie, Silky Kiss Strawberry Kondome sind bereit, Ihre Nacht zu färben. Silky Kiss Kondome mit internationaler Qualität werden nach der Norm ISO 2074 hergestellt und bestehen aus 100% Qualitätslatex. Es bietet Schutz vor Schwangerschaft und sexuell übertragbaren Krankheiten. Es ist ein wirksames Verhütungsmittel.  ",
+        "ru": "Silky Kiss Strawberry Special для вашего партнера и васСамое \"сладкое\" состояние ночи... Моя жизнь полна возбуждения, специально для пар, которые говорят, что я открыт для инноваций... Если вы полны энергии и веселье для вас в приоритете, презервативы Silky Kiss Strawberry готовы раскрасить вашу ночь. Презервативы Silky Kiss международного качества производятся в соответствии со стандартами ISO 2074. Они изготовлены из 100% качественного латекса. Обеспечивают защиту от беременности и заболеваний, передающихся половым путем. Является эффективным средством контрацепции.  "
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 10,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-cilekli-prezervatif-3549.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-cilekli-prezervatif-3550.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-cilekli-prezervatif-3551.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-cilekli-prezervatif-3552.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Silky Kiss",
+                "en": "Silky Kiss",
+                "de": "Silky Kiss",
+                "ru": "Silky Kiss"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "7 × 12 × 3 cm",
+                "en": "7 × 12 × 3 cm",
+                "de": "7 × 12 × 3 cm",
+                "ru": "7 × 12 × 3 см"
+            }
+        }
+    ]
+}

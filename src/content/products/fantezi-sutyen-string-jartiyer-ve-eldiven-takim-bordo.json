@@ -1,0 +1,65 @@
+{
+    "id": "fantezi-sutyen-string-jartiyer-ve-eldiven-takim-bordo",
+    "sku": "PT-FGMGP6672",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-giyim",
+    "sold_out": false,
+    "name": {
+        "tr": "Fantezi Sütyen, String, Jartiyer ve Eldiven Takım Bordo",
+        "en": "Fantasy Bra, String, Garter and Glove Set Burgundy",
+        "de": "Fancy BH, String, Strumpfband und Handschuh Set Burgundy",
+        "ru": "Фантазийный комплект из бюстгальтера, стрингов, подвязок и перчаток бордового цвета"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "4 PARÇADAN OLUŞUYOR FİLE DETAYLI BALENLİ  SÜTYEN STRİNG JARTİYER ELDİVEN",
+        "en": "CONSISTS OF 4 PIECES UNDERWIRE BRA WITH MESH DETAIL STRİNG GARTER GLOVE",
+        "de": "BESTEHT AUS 4 STÜCK BÜGEL-BH MIT MESH-DETAILS STRİNG STRUMPFBAND HANDSCHUH",
+        "ru": "СОСТОИТ ИЗ 4 ЧАСТЕЙ: БЮСТГАЛЬТЕР С НИЖНИМ ПОЯСОМ И СЕТЧАТЫМИ ДЕТАЛЯМИ В ВИДЕ ПОЛОСОК И ПОДВЯЗОК"
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 73,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 73,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 73,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 73,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-sutyen-string-jartiyer-ve-eldiven-takim-bordo-5353.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-sutyen-string-jartiyer-ve-eldiven-takim-bordo-5354.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}

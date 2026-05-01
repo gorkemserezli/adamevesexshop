@@ -1,0 +1,65 @@
+{
+    "id": "fantezi-ucgen-sutyen-jartiyer-takim-siyah",
+    "sku": "PT-FGMGP6402",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-giyim",
+    "sold_out": false,
+    "name": {
+        "tr": "Fantezi Üçgen Sütyen Jartiyer Takım Siyah",
+        "en": "Fancy Triangle Bra Garter Set Black",
+        "de": "Fancy Triangle BH Strumpfband Set Schwarz",
+        "ru": "Фантазийный комплект подвязок для бюстгальтера-треугольника черный"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "BALENSİZ KAPSIZ DESTEKSİZ TRANSPARAN ÜÇGEN SÜTYEN TRANSPARAN JARTİYER STRİNG ÇORAP TAKIM",
+        "en": "UNDERWIRE CAPLESS SUPPORTLESS TRANSPARENT TRIANGLE BRA TRANSPARENT GARTER STRİNG STOCKINGS SET",
+        "de": "BÜGELFREIER, TRÄGERLOSER, TRANSPARENTER TRIANGEL-BH TRANSPARENTES STRUMPFBAND STRİNG-SET",
+        "ru": "БЕСШОВНЫЙ ПРОЗРАЧНЫЙ БЮСТГАЛЬТЕР-ТРЕУГОЛЬНИК БЕЗ ПОДКЛАДОК ПРОЗРАЧНЫЙ КОМПЛЕКТ ЧУЛОК НА ПОДВЯЗКАХ"
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 43.96000000000000085265128291212022304534912109375,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 43.96000000000000085265128291212022304534912109375,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 43.96000000000000085265128291212022304534912109375,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 43.96000000000000085265128291212022304534912109375,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-ucgen-sutyen-jartiyer-takim-siyah-5395.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-ucgen-sutyen-jartiyer-takim-siyah-5396.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}

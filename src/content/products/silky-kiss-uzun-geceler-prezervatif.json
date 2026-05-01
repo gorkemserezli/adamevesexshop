@@ -1,0 +1,80 @@
+{
+    "id": "silky-kiss-uzun-geceler-prezervatif",
+    "sku": "PT-EC5100",
+    "category_id": "erkek-cinsel-saglik-urunu",
+    "subcategory_id": "prezervatif",
+    "sold_out": false,
+    "name": {
+        "tr": "Silky Kiss Uzun Geceler Prezervatif",
+        "en": "Silky Kiss Long Nights Condom",
+        "de": "Silky Kiss Long Nights Kondom",
+        "ru": "Презерватив Silky Kiss Long Nights"
+    },
+    "overline": {
+        "tr": "ERKEK CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "MALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DES MANNES",
+        "ru": "СРЕДСТВО ДЛЯ СЕКСУАЛЬНОГО ЗДОРОВЬЯ МУЖЧИН"
+    },
+    "description": {
+        "tr": "Silky Kiss Uzun Geceler   Heyecanınızı dilediğiniz kadar uzatabilirsiniz.Silky Kiss Uzun Geceler prezervatifleri içerdiği özel kayganlaştırıcı sayesinde zevk ve heyecanınızın bitmemesini sağlar. Özel formüllü Silky Kiss Uzun Geceler medikal\/steril ortamda üretilmektedir. %100 kaliteli latexten üretilmiştir. Hamilelik ve cinsel yolla bulaşan hastalıklara karşı korunma sağlar. Etkin bir doğum kontrol aracıdır.        ",
+        "en": "Silky Kiss Long Nights You can extend your excitement as long as you wish. Silky Kiss Long Nights condoms ensure that your pleasure and excitement does not end thanks to the special lubricant it contains. Specially formulated Silky Kiss Long Nights are produced in a medical\/sterile environment. It is made of 100% quality latex. Provides protection against pregnancy and sexually transmitted diseases. It is an effective contraceptive.        ",
+        "de": "Silky Kiss Long Nights Sie können Ihre Erregung so lange verlängern, wie Sie wollen. Silky Kiss Long Nights Kondome sorgen dafür, dass Ihr Vergnügen und Ihre Erregung nicht enden, dank des speziellen Gleitmittels, das es enthält. Die speziell formulierten Silky Kiss Long Nights werden in einer medizinischen\/sterilen Umgebung hergestellt. Es besteht aus 100% Qualitätslatex. Es bietet Schutz vor Schwangerschaft und sexuell übertragbaren Krankheiten. Es ist ein wirksames Verhütungsmittel.        ",
+        "ru": "Silky Kiss Long Nights Вы можете продлить свое возбуждение так долго, как пожелаете. Презервативы Silky Kiss Long Nights гарантируют, что ваше удовольствие и возбуждение не закончатся благодаря специальной смазке, входящей в их состав. Специальная формула Silky Kiss Long Nights производится в медицинской\/стерильной среде. Изготовлены из 100% качественного латекса. Обеспечивает защиту от беременности и заболеваний, передающихся половым путем. Является эффективным контрацептивом.        "
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 10,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-uzun-geceler-prezervatif-3559.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-uzun-geceler-prezervatif-3560.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-uzun-geceler-prezervatif-3561.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Silky Kiss",
+                "en": "Silky Kiss",
+                "de": "Silky Kiss",
+                "ru": "Silky Kiss"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "7 × 12 × 3 cm",
+                "en": "7 × 12 × 3 cm",
+                "de": "7 × 12 × 3 cm",
+                "ru": "7 × 12 × 3 см"
+            }
+        }
+    ]
+}

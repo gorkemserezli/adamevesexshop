@@ -1,0 +1,66 @@
+{
+    "id": "fantezi-transparan-jartiyer-takim-mor",
+    "sku": "PT-FGMGP6632PRP",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-giyim",
+    "sold_out": false,
+    "name": {
+        "tr": "Fantezi Transparan Jartiyer Takım Mor",
+        "en": "Fancy Sheer Garter Set Purple",
+        "de": "Schickes Strumpfband Set Lila",
+        "ru": "Фантазийный комплект подвязок фиолетового цвета"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "4 PARÇADAN OLUŞUYOR BALENLİ KAPSIZ TRANSPARAN  SÜTYEN JARTİYER STRİNG BOYUN  AKSESUARI",
+        "en": "CONSISTS OF 4 PIECES UNDERWIRE CUPLESS TRANSPARENT BRA GARTER STRİNG NECK ACCESSORY",
+        "de": "4-TEILIGER BÜGEL-BH OHNE SCHALE, TRANSPARENT, STRUMPFBAND, HALS-ACCESSOIRE",
+        "ru": "ПРОЗРАЧНЫЙ БЮСТГАЛЬТЕР БЕЗ ЧАШЕЧЕК С 4 ЧАСТЯМИ ПОДВЯЗКИ ДЛЯ ШЕИ"
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 84.5,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 84.5,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 84.5,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 84.5,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-transparan-jartiyer-takim-mor-5294.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-transparan-jartiyer-takim-mor-5295.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-transparan-jartiyer-takim-mor-5296.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+{
+    "id": "viaxi-cilek-aromali-masaj-yagi-177ml",
+    "sku": "PT-KC1012",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "masaj-yaglari",
+    "sold_out": false,
+    "name": {
+        "tr": "Viaxi Çilek Aromalı Masaj Yağı 177ml",
+        "en": "Viaxi Strawberry Flavored Massage Oil 177ml",
+        "de": "Viaxi Massageöl mit Erdbeergeschmack 177ml",
+        "ru": "Viaxi Массажное масло со вкусом клубники 177 мл"
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Viaxi Masaj Yağları, daha parlak, canlı, yumuşak, nemli ve ipeksi bir cilt için mükemmel bir masaj yağından beklediğiniz bütün özelliklere sahiptir. Sertifikalı Masaj Terapistleri ve Spa Merkezleri için mükemmel bir ürün; 100% saf ve doğal, Zengin ve lüks besin maddeleri, Tamamen gerçek meyve özleri, çiçekler, besin ve aroma, Orijinal çilek tadı ve kokusu.",
+        "en": "Viaxi Massage Oils have all the qualities you expect from a perfect massage oil for brighter, vibrant, soft, moisturized and silky skin. The perfect product for Certified Massage Therapists and Spa Centers; 100% pure and natural, Rich and luxurious nutrients, All real fruit extracts, flowers, nutrients and aroma, Original strawberry taste and scent.",
+        "de": "Viaxi-Massageöle haben alle Eigenschaften, die Sie von einem perfekten Massageöl für eine strahlende, lebendige, weiche, mit Feuchtigkeit versorgte und seidige Haut erwarten würden. Das perfekte Produkt für zertifizierte Massagetherapeuten und Spa-Zentren; 100% rein und natürlich, reichhaltige und luxuriöse Nährstoffe, alle echten Fruchtextrakte, Blumen, Nährstoffe und Aroma, Original-Erdbeergeschmack und Geruch.",
+        "ru": "Массажные масла Viaxi обладают всеми свойствами, которые вы ожидаете от идеального массажного масла для сияющей, живой, мягкой, увлажненной и шелковистой кожи. Идеальный продукт для сертифицированных массажистов и спа-центров; 100% чистота и натуральность, богатые и роскошные питательные вещества, все настоящие фруктовые экстракты, цветы, питательные вещества и аромат, оригинальный вкус и запах клубники."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 40,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 40,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 40,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 40,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/viaxi-cilek-aromali-masaj-yagi-177ml-6431.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Viaxi",
+                "en": "Viaxi",
+                "de": "Viaxi",
+                "ru": "Viaxi"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "4 × 15 × 4 cm",
+                "en": "4 × 15 × 4 cm",
+                "de": "4 × 15 × 4 cm",
+                "ru": "4 × 15 × 4 см"
+            }
+        }
+    ]
+}

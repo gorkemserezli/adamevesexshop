@@ -1,0 +1,78 @@
+{
+    "id": "cantharis-d6-kadin-uyarici-damla",
+    "sku": "PT-KC1520",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "sprey-ve-damlalar",
+    "sold_out": false,
+    "name": {
+        "tr": "Cantharis D6 Kadın Uyarıcı Damla",
+        "en": "Cantharis D6 Female Stimulant Drops",
+        "de": "Cantharis D6 Stimulanzientropfen für Frauen",
+        "ru": "Кантарис D6 женские стимулирующие капли"
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Cinsel isteksizlik yaşayan kadınlara özel olarak formüle edilmiş olan Cantharis D6 Damla, arzunuzu arttırmak için pratik bir çözüm sunuyor. Partnerler arasındaki çekimi yeniden alevlendirecek olan damlayı birliktelikten 30 dakika önce almanız tavsiye edilir. Soğukluk duygunuzu bitirecek olan ürünü, alkolsüz tüm içecekler ile beraber alabilirsiniz. Kısa sürede etkisini hissedeceğiniz damla, kafein içermektedir.",
+        "en": "Cantharis D6 Drops, specially formulated for women experiencing sexual reluctance, offers a practical solution to increase your desire. It is recommended to take the drops, which will reignite the attraction between partners, 30 minutes before intercourse. You can take the product, which will end your feeling of coldness, with all non-alcoholic beverages. The drop, which you will feel the effect in a short time, contains caffeine.",
+        "de": "Cantharis D6 Tropfen, speziell für Frauen mit sexueller Unlust formuliert, bietet eine praktische Lösung, um Ihr Verlangen zu erhöhen. Es wird empfohlen, die Tropfen, die die Anziehungskraft zwischen den Partnern neu entfachen werden, 30 Minuten vor dem Geschlechtsverkehr einzunehmen. Sie können das Produkt, das Ihr Gefühl der Kälte beendet, mit allen alkoholfreien Getränken einnehmen. Der Tropfen, dessen Wirkung Sie in kurzer Zeit spüren werden, enthält Koffein.",
+        "ru": "Cantharis D6 Drops, специально разработанный для женщин, испытывающих сексуальное нежелание, предлагает практичное решение для повышения желания. Рекомендуется принимать капли, которые восстановят влечение между партнерами, за 30 минут до полового акта. Препарат, который избавит вас от чувства холода, можно принимать с любыми безалкогольными напитками. Капли, эффект от которых вы почувствуете уже через короткое время, содержат кофеин."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/cantharis-d6-kadin-uyarici-damla-3790.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Cabs",
+                "en": "Cabs",
+                "de": "Cabs",
+                "ru": "Cabs"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "5 × 8 × 3 cm",
+                "en": "5 × 8 × 3 cm",
+                "de": "5 × 8 × 3 cm",
+                "ru": "5 × 8 × 3 см"
+            }
+        }
+    ]
+}

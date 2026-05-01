@@ -1,0 +1,78 @@
+{
+    "id": "cabs-glide-kayganlastirici-jel-120-ml",
+    "sku": "PT-KC1534",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "kayganlastirici",
+    "sold_out": false,
+    "name": {
+        "tr": "Cabs Glide Kayganlaştırıcı Jel 120 ml.",
+        "en": "Cabs Glide Lubricant Gel 120 ml.",
+        "de": "Cabs Glide Gleitmittel Gel 120 ml.",
+        "ru": "Cabs Glide Lubricant Gel 120 мл."
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Ürün Detayları Cabs Glide Su Bazlı Kayganlaştırıcı Jel 120 ML Kolay Kullanım Kayganlaştırma gereksinimi duyulan bölgeye az miktar dökülmesinin ardından ovalanmasıyla birlikte kullanıma hazır hale gelir. Ekstra olarak başka bir uygulamaya gerek kalmadan bölgenin kaygan bir hal alması söz konusu olur. Prezervatiflerle Uyumludur Prezervatifler ile %100 uyumludur. Kişilerin korunmalarından feragat etmelerine gerek kalmadan kayganlık sağlamaları mümkün olmaktadır. Klinik Testlerden Geçmiştir Hacettepe Üniversitesi tarafından uygulanan tüm klinik testlerden başarı elde etmiştir. Kişilerde alerji gibi yan etkilerin gözlenmesi mümkün değildir. Ayrıca toksin madde içermez ve tahriş olması durumunun önüne geçer.",
+        "en": "Product Details Cabs Glide Water Based Lubricant Gel 120 ML Easy to Use After pouring a small amount into the area where lubrication is needed, it becomes ready for use by rubbing it. The area becomes slippery without the need for any extra application. Compatible with Condoms It is 100% compatible with condoms. It is possible for people to provide lubrication without the need to waive their protection. Passed Clinical Tests It has achieved success in all clinical tests applied by Hacettepe University. It is not possible to observe side effects such as allergies in people. It also does not contain toxins and prevents irritation.",
+        "de": "Produktdetails Cabs Glide Water Based Lubricant Gel 120 ML Einfache Anwendung Nach dem Auftragen einer kleinen Menge auf die zu schmierende Stelle wird es durch Reiben gebrauchsfertig. Darüber hinaus wird die Stelle gleitfähig, ohne dass eine weitere Anwendung erforderlich ist. Kompatibel mit Kondomen Es ist 100% kompatibel mit Kondomen. Es ist möglich, die Gleitfähigkeit zu gewährleisten, ohne auf den Schutz verzichten zu müssen. Erfolgreiche klinische Tests Es hat alle klinischen Tests der Hacettepe Universität erfolgreich bestanden. Nebenwirkungen wie Allergien sind bei Menschen nicht zu beobachten. Es enthält auch keine Giftstoffe und verhindert Reizungen.",
+        "ru": "Подробнее о продукте Гель-смазка Cabs Glide на водной основе 120 мл Легко использовать После нанесения небольшого количества на область, где требуется смазка, она становится готовой к использованию путем втирания. Кроме того, область становится скользкой без необходимости нанесения каких-либо других средств. Совместим с презервативами На 100% совместим с презервативами. Люди могут использовать смазку без необходимости отказываться от средств защиты. Прошел клинические испытания Успешно прошел все клинические испытания, проведенные Университетом Хаджеттепе. У людей не наблюдаются побочные эффекты, такие как аллергия. Он также не содержит токсинов и предотвращает раздражение."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 10,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/cabs-glide-kayganlastirici-jel-120-ml-3625.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Cabs",
+                "en": "Cabs",
+                "de": "Cabs",
+                "ru": "Cabs"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "5 × 12 × 5 cm",
+                "en": "5 × 12 × 5 cm",
+                "de": "5 × 12 × 5 cm",
+                "ru": "5 × 12 × 5 см"
+            }
+        }
+    ]
+}

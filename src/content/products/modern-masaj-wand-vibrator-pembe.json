@@ -1,0 +1,81 @@
+{
+    "id": "modern-masaj-wand-vibrator-pembe",
+    "sku": "PT-DVXA450PNK",
+    "category_id": "vibrator",
+    "subcategory_id": "modern-vibrator",
+    "sold_out": false,
+    "name": {
+        "tr": "Modern Masaj Wand Vibratör Pembe",
+        "en": "Modern Massage Wand Vibrator Pink",
+        "de": "Moderner Massagestab Vibrator Rosa",
+        "ru": "Современная массажная палочка-вибратор розового цвета"
+    },
+    "overline": {
+        "tr": "VİBRATÖR",
+        "en": "VIBRATOR",
+        "de": "VIBRATOR",
+        "ru": "ВИБРАТОР"
+    },
+    "description": {
+        "tr": "Modern Masaj Wand Vibratör - Pembe, güçlü ve ayarlanabilir titreşim seçenekleriyle rahatlatıcı ve kişiselleştirilebilir bir deneyim sunar. Ergonomik tasarımı, su geçirmez yapısı ve hızlı şarj özelliği sayesinde hem pratik hem de konforlu kullanım sağlar. Geniş başlığı ve uzun kullanım süresiyle etkili ve kontrollü bir masaj deneyimi sunar.",
+        "en": "Modern Massage Wand Vibrator - Pink offers a relaxing and customizable experience with powerful and adjustable vibration options. It provides both practical and comfortable use thanks to its ergonomic design, waterproof structure and fast charging feature. It offers an effective and controlled massage experience with its wide head and long usage time.",
+        "de": "Der Modern Massage Wand Vibrator - Pink bietet ein entspannendes und individuell anpassbares Erlebnis mit starken und einstellbaren Vibrationsoptionen. Dank seines ergonomischen Designs, der wasserdichten Struktur und der Schnellladefunktion ist er sowohl praktisch als auch bequem zu benutzen. Er bietet ein effektives und kontrolliertes Massageerlebnis mit seinem breiten Kopf und einer langen Nutzungsdauer.",
+        "ru": "Вибратор Modern Massage Wand Vibrator - Pink предлагает расслабляющие и настраиваемые ощущения с мощными и регулируемыми вариантами вибрации. Благодаря эргономичному дизайну, водонепроницаемой конструкции и функции быстрой зарядки он обеспечивает практичное и комфортное использование. Благодаря широкой головке и длительному времени использования он обеспечивает эффективный и контролируемый массаж."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 40,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 40,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 40,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 40,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/modern-masaj-wand-vibrator-pembe-2424.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/modern-masaj-wand-vibrator-pembe-2425.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/modern-masaj-wand-vibrator-pembe-2426.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/modern-masaj-wand-vibrator-pembe-2427.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "5 × 27 × 5 cm",
+                "en": "5 × 27 × 5 cm",
+                "de": "5 × 27 × 5 cm",
+                "ru": "5 × 27 × 5 см"
+            }
+        }
+    ]
+}

@@ -1,0 +1,65 @@
+{
+    "id": "fantezi-pileli-sutyen-jartiyer-takim-siyah",
+    "sku": "PT-FGMGP6372",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-giyim",
+    "sold_out": false,
+    "name": {
+        "tr": "Fantezi Pileli Sütyen Jartiyer Takım Siyah",
+        "en": "Fancy Pleated Bra Garter Set Black",
+        "de": "Fancy Plissee BH Strumpfband Set Schwarz",
+        "ru": "Модный комплект подвязок для бюстгальтера с плиссировкой черный"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "BALENLİ PİLELİ SÜTYEN PİLELİ JARTİYER STRİNG ELDİVEN TAKIM",
+        "en": "UNDERWIRE PLEATED BRA PLEATED GARTER GARTER STRİNG GLOVE SET",
+        "de": "BÜGEL-BH GEFALTETES STRUMPFBAND GEFALTETES STRUMPFBAND HANDSCHUH-SET",
+        "ru": "ПЛИССИРОВАННЫЙ БЮСТГАЛЬТЕР С ЗАНИЖЕННОЙ ТАЛИЕЙ КОМПЛЕКТ ПЕРЧАТОК ДЛЯ ПОДВЯЗКИ"
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 43.60000000000000142108547152020037174224853515625,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 43.60000000000000142108547152020037174224853515625,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 43.60000000000000142108547152020037174224853515625,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 43.60000000000000142108547152020037174224853515625,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-pileli-sutyen-jartiyer-takim-siyah-5393.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-pileli-sutyen-jartiyer-takim-siyah-5394.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}

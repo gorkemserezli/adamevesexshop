@@ -1,0 +1,66 @@
+{
+    "id": "fantezi-sutyenstring-takimi-leopar-desenli",
+    "sku": "PT-FGMGP6192",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-giyim",
+    "sold_out": false,
+    "name": {
+        "tr": "Fantezi Sütyen,String Takımı Leopar Desenli",
+        "en": "Fancy Bra, String Set Leopard Patterned",
+        "de": "Ausgefallener BH, String Set Leopard gemustert",
+        "ru": "Модный бюстгальтер, комплект стрингов с леопардовым рисунком"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "ÜÇGEN SÜTYEN STRİNG KELEPÇE KOLYE TAKIM",
+        "en": "TRIANGLE BRA STRİNG CLAMP NECKLACE SET",
+        "de": "DREIECKS-BH STRİNG KLAMMER HALSKETTE SET",
+        "ru": "ТРЕУГОЛЬНЫЙ БЮСТГАЛЬТЕР STRİNG CLAMP NECKLACE SET"
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 36.5,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 36.5,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 36.5,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 36.5,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-sutyen-string-takimi-leopar-desenli-5387.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-sutyen-string-takimi-leopar-desenli-5388.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-sutyen-string-takimi-leopar-desenli-5389.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}

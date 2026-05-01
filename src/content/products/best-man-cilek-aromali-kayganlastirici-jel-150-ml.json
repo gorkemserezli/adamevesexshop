@@ -1,0 +1,78 @@
+{
+    "id": "best-man-cilek-aromali-kayganlastirici-jel-150-ml",
+    "sku": "PT-KC1537S",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "kayganlastirici",
+    "sold_out": false,
+    "name": {
+        "tr": "Best Man Çilek Aromalı Kayganlaştırıcı Jel 150 ml",
+        "en": "Best Man Strawberry Flavored Lubricant Gel 150 ml",
+        "de": "Best Man Gleitgel mit Erdbeergeschmack 150 ml",
+        "ru": "Гель-смазка Best Man со вкусом клубники 150 мл"
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Klinik testlerden geçen ve her cilt tipinin kullanabileceği Best Man Büyük Boy Çilekli Lubricant Jel, tüm prezervatif çeşitleri ile uyumludur. Tamamen yağsız dokuya sahip olan su bazlı ürün, dermatolojik olarak test edilmiştir. Olağanüstü çilek kokusu ile sizi heyecanlandıracak olan jel, büyük boy olması ile uzun süreli kullanım olanağı sunuyor.",
+        "en": "Best Man Large Size Strawberry Lubricant Gel, which has passed clinical tests and can be used by all skin types, is compatible with all condom types. The water-based product, which has a completely non-greasy texture, has been dermatologically tested. The gel, which will excite you with its extraordinary strawberry scent, offers long-term use with its large size.",
+        "de": "Das Best Man Large Size Strawberry Lubricant Gel, das klinische Tests bestanden hat und von allen Hauttypen verwendet werden kann, ist mit allen Kondomtypen kompatibel. Das Produkt auf Wasserbasis mit einer völlig ölfreien Textur ist dermatologisch getestet. Das Gel, das Sie mit seinem außergewöhnlichen Erdbeerduft begeistern wird, bietet mit seiner großen Größe eine langfristige Anwendung.",
+        "ru": "Гель-смазка Best Man Large Size Strawberry, прошедший клинические испытания и подходящий для всех типов кожи, совместим со всеми типами презервативов. Средство на водной основе с абсолютно безмасляной текстурой прошло дерматологические испытания. Гель, который возбудит вас своим необыкновенным клубничным ароматом, предлагает длительное использование благодаря своему большому размеру."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/best-man-cilek-aromali-kayganlastirici-jel-150-ml-2026.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Best Man",
+                "en": "Best Man",
+                "de": "Best Man",
+                "ru": "Best Man"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "4 × 15 × 4 cm",
+                "en": "4 × 15 × 4 cm",
+                "de": "4 × 15 × 4 cm",
+                "ru": "4 × 15 × 4 см"
+            }
+        }
+    ]
+}

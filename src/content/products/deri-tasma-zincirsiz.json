@@ -1,0 +1,78 @@
+{
+    "id": "deri-tasma-zincirsiz",
+    "sku": "PT-FFXG942",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-fetis",
+    "sold_out": false,
+    "name": {
+        "tr": "Deri Tasma Zincirsiz",
+        "en": "Leather Leash Without Chain",
+        "de": "Lederleine ohne Kette",
+        "ru": "Кожаный поводок без цепочки"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "Bu ürün, fantezi tutkunlarının beklentilerini karşılamak üzere özenle tasarlanmıştır. Yüksek kaliteli deri malzemesinden üretilmiş olan boyun tasması, her birinde demir halkalar bulundurur ve bu halkalar, istenildiğinde zincirlerle veya iplerle bağlanabilir. Ayarlanabilir kayışlarla donatılmış her parça, farklı beden ölçülerine mükemmel uyum sağlar. Sadece estetik açıdan değil, aynı zamanda işlevsellik açısından da dikkat çeker. Kullanıcıların rahatlıkla kullanabileceği şekilde tasarlanmıştır ve uzun süreli kullanım için idealdir. Fantezi deneyimini zenginleştirmek ve tarzını ifade etmek isteyenler için bu set, özel bir seçenek sunar.",
+        "en": "This product has been carefully designed to meet the expectations of fantasy lovers. Made of high quality leather, the collar features iron rings on each of the collars, which can be connected with chains or ropes if desired. Equipped with adjustable straps, each piece fits perfectly to different body sizes. It is not only aesthetically appealing, but also functional. Designed to be comfortable for the wearer and ideal for long-term wear. For those who want to enrich their fantasy experience and express their style, this set offers a special option.",
+        "de": "Dieses Produkt wurde sorgfältig entwickelt, um die Erwartungen von Fantasy-Liebhabern zu erfüllen. Das Halsband ist aus hochwertigem Ledermaterial gefertigt und verfügt über Eisenringe an jedem der Kragen, die auf Wunsch mit Ketten oder Seilen verbunden werden können. Ausgestattet mit verstellbaren Riemen, passt sich jedes Stück perfekt an verschiedene Körpergrößen an. Es fällt nicht nur durch seine Ästhetik auf, sondern auch durch seine Funktionalität. Es ist so konzipiert, dass es bequem für die Trägerin ist und sich ideal für den langfristigen Gebrauch eignet. Für diejenigen, die ihre Fantasie bereichern und ihren Stil zum Ausdruck bringen wollen, bietet dieses Set eine besondere Option.",
+        "ru": "Этот продукт был тщательно разработан, чтобы оправдать ожидания любителей фантастики. Изготовленный из высококачественного кожаного материала, шейный ошейник имеет железные кольца на каждом из ошейников, которые при желании можно соединить цепями или веревками. Оснащенный регулируемыми ремешками, каждый экземпляр идеально подходит для разных размеров тела. Он привлекает внимание не только эстетикой, но и функциональностью. Создано для того, чтобы быть удобным для владельца и идеально подходит для длительного использования. Для тех, кто хочет обогатить свои фантазии и выразить свой стиль, этот набор предлагает особый вариант."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 8.53999999999999914734871708787977695465087890625,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 8.53999999999999914734871708787977695465087890625,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 8.53999999999999914734871708787977695465087890625,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 8.53999999999999914734871708787977695465087890625,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/deri-tasma-zincirsiz-2248.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "14 × 20 × 2 cm",
+                "en": "14 × 20 × 2 cm",
+                "de": "14 × 20 × 2 cm",
+                "ru": "14 × 20 × 2 см"
+            }
+        }
+    ]
+}

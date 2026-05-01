@@ -1,0 +1,78 @@
+{
+    "id": "viaxi-masaj-yagi-vanilya-aromali-177ml",
+    "sku": "PT-KB1583",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "masaj-yaglari",
+    "sold_out": false,
+    "name": {
+        "tr": "Viaxi Masaj Yağı Vanilya Aromalı 177ml",
+        "en": "Viaxi Massage Oil Vanilla Flavored 177ml",
+        "de": "Viaxi Massageöl mit Vanillegeschmack 177ml",
+        "ru": "Viaxi Массажное масло с ароматом ванили 177 мл"
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "%100 saf ve doğal içeriğe sahip olan Viaxi Masaj Yağı Vanilya Aromalı, keyifli masaj seanslarınızda doğal vanilya kokusu ile başınızı döndürecek. Sağlıklı bir bedenin ihtiyaçlarından olan masaj, kullanılan yağlar ile etkisini arttırmaktadır. Daha sağlıklı, nemli, canlı, pürüzsüz ve ipeksi bir cilt için vanilya kokulu masaj yağı size harika bir deneyim sunacak. Tüm bedeninizin uyarıldığı masaj anında, yaşadığınız stres ve gerginlik masaj yağının içeriği ile yok olacak. Hızlı ve kolay emilimi sayesinde yağlı his bırakmaz ve cildinizi tahriş etmez.",
+        "en": "Viaxi Massage Oil Vanilla Flavored, which has 100% pure and natural ingredients, will make you dizzy with its natural vanilla scent during your pleasant massage sessions. Massage, one of the needs of a healthy body, increases its effect with the oils used. For a healthier, moisturized, vibrant, smooth and silky skin, vanilla scented massage oil will offer you a wonderful experience. At the moment of massage when your whole body is stimulated, the stress and tension you experience will disappear with the content of the massage oil. Thanks to its fast and easy absorption, it does not leave a greasy feeling and does not irritate your skin.",
+        "de": "Viaxi Massage Oil Vanilla Flavoured mit 100% reinem und natürlichem Inhalt wird Sie mit seinem natürlichen Vanilleduft während Ihrer angenehmen Massage schwindelig machen. Die Massage, die zu den Bedürfnissen eines gesunden Körpers gehört, steigert ihre Wirkung mit den verwendeten Ölen. Für eine gesündere, mit Feuchtigkeit versorgte, lebendige, glatte und seidige Haut wird Ihnen das Massageöl mit Vanilleduft ein wunderbares Erlebnis bieten. Im Moment der Massage, wenn Ihr ganzer Körper stimuliert wird, werden der Stress und die Anspannung, die Sie empfinden, durch den Inhalt des Massageöls verschwinden. Dank seines schnellen und leichten Einziehens hinterlässt es kein fettiges Gefühl und reizt Ihre Haut nicht.",
+        "ru": "Массажное масло Viaxi Massage Oil Vanilla Flavoured, имеющее 100% чистое и натуральное содержание, вызовет головокружение от натурального ванильного аромата во время приятных сеансов массажа. Массаж, который является одной из потребностей здорового тела, усиливает свой эффект благодаря используемым маслам. Чтобы кожа была более здоровой, увлажненной, живой, гладкой и шелковистой, массажное масло с ароматом ванили подарит вам прекрасные ощущения. В момент массажа, когда все тело стимулируется, стресс и напряжение, которые вы испытываете, исчезнут благодаря содержанию массажного масла. Благодаря быстрому и легкому впитыванию, оно не оставляет ощущения жирности и не раздражает кожу."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/viaxi-masaj-yagi-vanilya-aromali-177ml-73.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Viaxi",
+                "en": "Viaxi",
+                "de": "Viaxi",
+                "ru": "Viaxi"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "4 × 15 × 4 cm",
+                "en": "4 × 15 × 4 cm",
+                "de": "4 × 15 × 4 cm",
+                "ru": "4 × 15 × 4 см"
+            }
+        }
+    ]
+}

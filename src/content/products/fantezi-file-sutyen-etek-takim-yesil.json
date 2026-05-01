@@ -1,0 +1,65 @@
+{
+    "id": "fantezi-file-sutyen-etek-takim-yesil",
+    "sku": "PT-FGMGP6466",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-giyim",
+    "sold_out": false,
+    "name": {
+        "tr": "Fantezi File Sütyen Etek Takım Yeşil",
+        "en": "Fancy Mesh Bra Skirt Set Green",
+        "de": "Schickes Mesh-BH-Rock-Set Grün",
+        "ru": "Модный сетчатый комплект бюстгальтер-юбка зеленый"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "FİLE ÜÇGEN SÜTYEN ETEK SAÇ BANDI BACAK BANDI ELDİVEN TAKIM",
+        "en": "ELEPHANT TRIANGLE BRA SKIRT HAIR BAND LEG BAND LEG BAND GLOVE SET",
+        "de": "NETZ DREIECK BH ROCK ROCK HAARBAND BEINBAND BEINBAND HANDSCHUH SET",
+        "ru": "СЕТКА ТРЕУГОЛЬНИК БЮСТГАЛЬТЕР ЮБКА ЛЕНТА ДЛЯ ВОЛОС ЛЕНТА ДЛЯ НОГ ЛЕНТА ДЛЯ НОГ ПЕРЧАТКИ НАБОР"
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 35,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 35,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 35,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 35,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-file-sutyen-etek-takim-yesil-5370.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-file-sutyen-etek-takim-yesil-5371.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}
