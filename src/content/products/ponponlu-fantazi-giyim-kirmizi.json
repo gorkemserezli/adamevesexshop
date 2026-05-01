@@ -1,0 +1,67 @@
+{
+    "id": "ponponlu-fantazi-giyim-kirmizi",
+    "sku": "PT-FGMGP2024",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-giyim",
+    "sold_out": false,
+    "name": {
+        "tr": "Ponponlu Fantazi Giyim Kırmızı",
+        "en": "Fancy Dress Red with Pompom",
+        "de": "Bommelmütze Fancy Wear Rot",
+        "ru": "Модная одежда с помпоном Красный"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "ÜRÜNÜMÜZ YILBAŞI İÇİN ÖZEL ÜRETİLMİŞTİR. PONPONLU SÜTYEN ARKA FİYONKLU STRİNG KEMER JARTİYER ÇORAP  PONPON BOYUNLUK",
+        "en": "OUR PRODUCT IS SPECIALLY PRODUCED FOR CHRISTMAS. POM-POM BRA BACK PADDED STRİNG BELT GARTER SOCKS POM-POM NECK COLLAR",
+        "de": "UNSER PRODUKT IST SPEZIELL FÜR DAS NEUE JAHR HERGESTELLT. BOMMEL-BH RÜCKENSCHLEIFE STRİNG GÜRTEL STRUMPFHALTER SOCKEN BOMMEL HALSKRAGEN",
+        "ru": "НАШ ПРОДУКТ СПЕЦИАЛЬНО ПРОИЗВЕДЕН ДЛЯ НОВОГО ГОДА. БЮСТГАЛЬТЕР С ПОМПОНАМИ СЗАДИ ГАЛСТУК-БАБОЧКА ПОЛОСКА̇НГ ПОЯС ПОДВЯЗКИ НОСКИ С ПОМПОНАМИ ГОРЛОВИНА ВОРОТНИК"
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 40.2000000000000028421709430404007434844970703125,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 40.2000000000000028421709430404007434844970703125,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 40.2000000000000028421709430404007434844970703125,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 40.2000000000000028421709430404007434844970703125,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/ponponlu-fantazi-giyim-kirmizi-5373.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/ponponlu-fantazi-giyim-kirmizi-5374.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/ponponlu-fantazi-giyim-kirmizi-5375.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/ponponlu-fantazi-giyim-kirmizi-5376.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}

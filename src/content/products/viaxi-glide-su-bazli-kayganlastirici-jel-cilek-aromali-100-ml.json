@@ -1,0 +1,78 @@
+{
+    "id": "viaxi-glide-su-bazli-kayganlastirici-jel-cilek-aromali-100-ml",
+    "sku": "PT-KC509",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "kayganlastirici",
+    "sold_out": false,
+    "name": {
+        "tr": "Viaxi Glide Su Bazlı Kayganlaştırıcı Jel Çilek Aromalı 100 ml",
+        "en": "Viaxi Glide Water Based Lubricant Gel Strawberry Flavor 100 ml",
+        "de": "Viaxi Glide Gleitgel auf Wasserbasis mit Erdbeergeschmack 100 ml",
+        "ru": "Viaxi Glide Гель-смазка на водной основе со вкусом клубники 100 мл"
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Viaxi Glide Çilek Aromalı Kayganlaştırıcı Jel, su bazlı ve renksizdir. Çilek aromalı ve çilek kokuludur. Uzun süre kurumayan kayganlaştırıcı özelliği ve rahatlatıcı etkisiyle vajinal kuruluğu azaltmaya yardımcı olur. Dermatolojik ve klinik testleri yapılmıştır. Prezervatifle %100 uyumludur ve pH dengelidir. Fantezi oyuncaklarla birlikte kullanıma uygundur. Yağsızdır ve suda kolayca çözülebilir. Oda sıcaklığında ve çocukların ulaşamayacağı yerde saklanmalıdır. Daha sağlıklı ve keyifli bir cinsel yaşam için Viaxi Glide Kayganlaştırıcı Jel'i güvenle kullanabilirsiniz.",
+        "en": "Viaxi Glide Strawberry Flavored Lubricant Gel is water-based and colorless. It is strawberry flavored and strawberry scented. It helps to reduce vaginal dryness with its long-lasting lubricant and relaxing effect. Dermatologically and clinically tested. It is 100% compatible with condoms and pH balanced. Suitable for use with fantasy toys. Non-greasy and easily soluble in water. Should be stored at room temperature and out of the reach of children. You can safely use Viaxi Glide Lubricant Gel for a healthier and more enjoyable sex life.",
+        "de": "Viaxi Glide Strawberry Flavoured Lubricant Gel ist auf Wasserbasis und farblos. Es ist mit Erdbeergeschmack und Erdbeerduft versehen. Es hilft, vaginale Trockenheit durch seine lang anhaltende Gleitfähigkeit und entspannende Wirkung zu reduzieren. Es wurden dermatologische und klinische Tests durchgeführt. Es ist zu 100% kompatibel mit Kondomen und hat einen ausgeglichenen pH-Wert. Geeignet für die Verwendung mit Fantasy Toys. Es ist nicht fettend und leicht in Wasser löslich. Es sollte bei Raumtemperatur und außerhalb der Reichweite von Kindern gelagert werden. Sie können Viaxi Glide Lubricant Gel sicher für ein gesünderes und angenehmeres Sexualleben verwenden.",
+        "ru": "Гель-смазка Viaxi Glide Strawberry Flavoured Lubricant Gel на водной основе, бесцветный. Имеет клубничный вкус и клубничный аромат. Он помогает уменьшить сухость влагалища, оказывая длительное смазывающее и расслабляющее действие. Проведены дерматологические и клинические испытания. На 100% совместим с презервативами и сбалансирован по pH. Подходит для использования с фантазийными игрушками. Нежирная и легко растворимая в воде. Хранить при комнатной температуре и в недоступном для детей месте. Вы можете смело использовать гель-смазку Viaxi Glide Lubricant Gel для более здоровой и приятной сексуальной жизни."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/viaxi-glide-su-bazli-kayganlastirici-jel-cilek-aromali-100-ml-3621.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Viaxi",
+                "en": "Viaxi",
+                "de": "Viaxi",
+                "ru": "Viaxi"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "4 × 14 × 4 cm",
+                "en": "4 × 14 × 4 cm",
+                "de": "4 × 14 × 4 cm",
+                "ru": "4 × 14 × 4 см"
+            }
+        }
+    ]
+}

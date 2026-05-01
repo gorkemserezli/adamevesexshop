@@ -1,0 +1,66 @@
+{
+    "id": "silky-kiss-maximum-tirtikli-ve-benekli-prezervatif",
+    "sku": "PT-EC1573",
+    "category_id": "erkek-cinsel-saglik-urunu",
+    "subcategory_id": "prezervatif",
+    "sold_out": true,
+    "name": {
+        "tr": "Silky Kiss Maximum Tırtıklı ve Benekli Prezervatif",
+        "en": "Silky Kiss Maximum Serrated and Speckled Condom",
+        "de": "Silky Kiss Maximum Gezacktes und gesprenkeltes Kondom",
+        "ru": "Презерватив Silky Kiss Maximum с зазубринами и крапинками"
+    },
+    "overline": {
+        "tr": "ERKEK CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "MALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DES MANNES",
+        "ru": "СРЕДСТВО ДЛЯ СЕКСУАЛЬНОГО ЗДОРОВЬЯ МУЖЧИН"
+    },
+    "description": {
+        "tr": "Silky Kiss Maximum     Daha fazla zevk ve heyecan.Silky Kiss Maximum prezervatifleri hem tırtıklı, hemde benekli yüzeyi sayesinde partneriniz ile zevkin ve heyecanın doruklarında hissetmenizi sağlar. %100 kaliteli latexten üretilmiştir. Hamilelik ve cinsel yolla bulaşan enfeksiyonlara karşı korunma sağlar. Etkin bir doğum kontrol aracıdır.        ",
+        "en": "Silky Kiss Maximum More pleasure and excitement.Silky Kiss Maximum condoms allow you to feel at the peaks of pleasure and excitement with your partner thanks to its serrated and speckled surface. Made of 100% quality latex. Provides protection against pregnancy and sexually transmitted infections. It is an effective contraceptive.        ",
+        "de": "Silky Kiss Maximum Mehr Vergnügen und Erregung.Silky Kiss Maximum Kondome ermöglichen es Ihnen, auf dem Höhepunkt der Freude und Erregung mit Ihrem Partner dank seiner geriffelten und gesprenkelten Oberfläche zu fühlen. Es ist aus 100% Qualitätslatex hergestellt. Bietet Schutz vor Schwangerschaft und sexuell übertragbaren Infektionen. Es ist ein wirksames Verhütungsmittel.        ",
+        "ru": "Silky Kiss Maximum Больше удовольствия и возбуждения.Презервативы Silky Kiss Maximum позволят вам почувствовать себя на пике удовольствия и возбуждения с вашим партнером благодаря зубчатой и крапчатой поверхности.Изготовлены из 100% качественного латекса. Обеспечивают защиту от беременности и инфекций, передающихся половым путем. Является эффективным контрацептивом.        "
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-maximum-tirtikli-ve-benekli-prezervatif-3556.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-maximum-tirtikli-ve-benekli-prezervatif-3557.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-maximum-tirtikli-ve-benekli-prezervatif-3558.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Silky Kiss",
+                "en": "Silky Kiss",
+                "de": "Silky Kiss",
+                "ru": "Silky Kiss"
+            }
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Adam & Eve Hotels Belek",
+    "marketing_url": "https:\/\/www.adameve.com.tr",
+    "site_url": "https:\/\/adam-eve-katalog.pages.dev",
+    "whatsapp_number": "+905434806150",
+    "boutique_location": {
+        "tr": "Lobi katı",
+        "en": "Lobby level",
+        "de": "Lobby-Ebene",
+        "ru": "Уровень лобби"
+    },
+    "hours": {
+        "open": "09:00",
+        "close": "23:00"
+    }
+}

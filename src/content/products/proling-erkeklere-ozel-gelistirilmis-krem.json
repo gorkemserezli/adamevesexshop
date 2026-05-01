@@ -1,0 +1,64 @@
+{
+    "id": "proling-erkeklere-ozel-gelistirilmis-krem",
+    "sku": "PT-EC1527",
+    "category_id": "erkek-cinsel-saglik-urunu",
+    "subcategory_id": "krem-ve-takviye-edici-gida",
+    "sold_out": false,
+    "name": {
+        "tr": "Proling Erkeklere Özel Geliştirilmiş Krem",
+        "en": "Proling Specialized Cream for Men",
+        "de": "Proling Spezialcreme für Männer",
+        "ru": "Специализированный крем для мужчин Proling"
+    },
+    "overline": {
+        "tr": "ERKEK CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "MALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DES MANNES",
+        "ru": "СРЕДСТВО ДЛЯ СЕКСУАЛЬНОГО ЗДОРОВЬЯ МУЖЧИН"
+    },
+    "description": {
+        "tr": "Yetişkin erkeklerin kullanımına özel formüle edilen Proloonging Kremi, cinsel ilişkiden 15 dakika önce kullanmanız tavsiye edilir. Kremi, sürdükten kısa süre sonra emilir ve etkisini 15 dakika sonunda göstermeye başlar. Prezervatif ile birlikte kullanıma uygundur. Krem; herhangi bir koku, tat ve renge sahip olmadığı için partneriniz tarafından fark edilmeyecektir. Cilde zarar vermeyen içeriğe sahiptir. Proloonging krem; ABD’den ithal edilmektedir ve CE belgesine, ürün sertifikasına ve ISO 9001, 2000 belgelerine sahiptir.",
+        "en": "Proloonging Cream, specially formulated for adult men, is recommended to be used 15 minutes before sexual intercourse. The cream is absorbed shortly after application and starts to show its effect after 15 minutes. It is suitable for use with a condom. Cream; It will not be noticed by your partner because it does not have any smell, taste and color. It has ingredients that do not harm the skin. Proloonging cream; It is imported from the USA and has CE certificate, product certificate and ISO 9001, 2000 certificates.",
+        "de": "Die Proloonging Cream wurde speziell für erwachsene Männer entwickelt und wird 15 Minuten vor dem Geschlechtsverkehr empfohlen. Die Creme wird kurz nach der Anwendung absorbiert und beginnt, seine Wirkung nach 15 Minuten zu zeigen. Geeignet für die Verwendung mit Kondom. Die Creme wird von Ihrem Partner nicht wahrgenommen, da sie weder Geruch noch Geschmack noch Farbe hat. Ihre Inhaltsstoffe schaden der Haut nicht. Proloonging-Creme; Sie wird aus den USA importiert und verfügt über ein CE-Zertifikat, ein Produktzertifikat und ISO 9001, 2000 Zertifikate.",
+        "ru": "Крем Proloonging Cream, специально разработанный для взрослых мужчин, рекомендуется использовать за 15 минут до полового акта. Крем впитывается сразу после нанесения и начинает проявлять свой эффект через 15 минут. Подходит для использования с презервативом. Крем; Его не заметит ваша партнерша, так как он не имеет запаха, вкуса и цвета. В его составе есть вещества, которые не вредят коже. Крем Proloonging; Импортируется из США, имеет сертификат CE, сертификат на продукцию и сертификат ISO 9001, 2000."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 30,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 30,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 30,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 30,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/proling-erkeklere-ozel-gelistirilmis-krem-3572.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Diğer",
+                "en": "Diğer",
+                "de": "Diğer",
+                "ru": "Diğer"
+            }
+        }
+    ]
+}

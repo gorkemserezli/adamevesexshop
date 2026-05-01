@@ -1,0 +1,65 @@
+{
+    "id": "fantazi-altin-varakli-dansoz-kostumu-beyaz",
+    "sku": "PT-FGMGP6680",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-giyim",
+    "sold_out": false,
+    "name": {
+        "tr": "Fantazi Altın Varaklı Dansöz Kostümü Beyaz",
+        "en": "Fancy Gold Foil Dancer Costume White",
+        "de": "Fancy Goldfolie Tänzerin Kostüm Weiß",
+        "ru": "Костюм танцовщицы из золотой фольги белый"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "4 PARÇADAN OLUŞUYOR BALENLİ BADİ TOZLUK BİLEKLİK  BANDANA ",
+        "en": "CONSISTS OF 4 PIECES UNDERWIRE UNDERWIRE LEGGINGS LEGGINGS BRACELET BANDANA",
+        "de": "BESTEHT AUS 4 STÜCK BÜGEL-BÜGEL-LEGGINGS LEGGINGS ARMBAND HALSTUCH",
+        "ru": "СОСТОИТ ИЗ 4 ШТУК ЛЕГГИНСЫ С НИЖНИМ БЕЛЬЕМ ЛЕГГИНСЫ БРАСЛЕТ БАНДАНА"
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 60.39999999999999857891452847979962825775146484375,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 60.39999999999999857891452847979962825775146484375,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 60.39999999999999857891452847979962825775146484375,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 60.39999999999999857891452847979962825775146484375,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/-5410.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/-5411.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+{
+    "id": "modern-hareketli-rabbit-vibrator",
+    "sku": "PT-DVXA023",
+    "category_id": "vibrator",
+    "subcategory_id": "rabbit-vibrator",
+    "sold_out": false,
+    "name": {
+        "tr": "Modern Hareketli Rabbit Vibratör",
+        "en": "Modern Moving Rabbit Vibrator",
+        "de": "Moderner beweglicher Rabbit-Vibrator",
+        "ru": "Современный подвижный вибратор-кролик"
+    },
+    "overline": {
+        "tr": "VİBRATÖR",
+        "en": "VIBRATOR",
+        "de": "VIBRATOR",
+        "ru": "ВИБРАТОР"
+    },
+    "description": {
+        "tr": "&lt;P&gt;&amp;nbsp;&lt;\/P&gt;",
+        "en": "&lt;P&gt;&amp;nbsp;&lt;\/P&gt;",
+        "de": "&lt;P&gt;&amp;nbsp;&lt;\/P&gt;",
+        "ru": "&lt;P&gt;&amp;nbsp;&lt;\/P&gt;"
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 14,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 14,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 14,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 14,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/modern-hareketli-rabbit-vibrator-2325.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/modern-hareketli-rabbit-vibrator-2326.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/modern-hareketli-rabbit-vibrator-2327.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}

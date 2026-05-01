@@ -1,0 +1,78 @@
+{
+    "id": "safex-lube-kayganlastirici-jel-cilek-85-ml",
+    "sku": "PT-KC6721",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "kayganlastirici",
+    "sold_out": false,
+    "name": {
+        "tr": "Safex Lube Kayganlaştırıcı Jel Çilek 85 ml.",
+        "en": "Safex Lube Lubricant Gel Strawberry 85 ml.",
+        "de": "Safex Lube Gleitmittel Gel Erdbeere 85 ml.",
+        "ru": "Safex Lube Гель-смазка Клубника 85 мл."
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Safex Lube kayganlaştırıcı jel cinsel ilişki sırasında yaşanılan genital kuruluk semptomlarının giderilmesine yardımcı olur. Kondomla kullanılarak daha yumuşak ve nazik kayganlaştırma sağlar. Su Bazlıdır. Kullanım Şekli: Gerekli miktar jel, kondom üzerine ve\/veya genital bölgeye uygulanır. İçerik \/ Ingredients: Hydroxy Ethyl Cellulose, Glycerin, Mono Propylene Glycol, Citric Acid, Strawberry Flavour, Sodium Saccharin, Methyl Hydroxybenzoate, Deionized Water",
+        "en": "Safex Lube lubricant gel helps relieve the symptoms of genital dryness during sexual intercourse. It provides softer and gentler lubrication when used with a condom. Water Based. Usage: Apply the required amount of gel on the condom and\/or genital area. Content \/ Ingredients: Hydroxy Ethyl Cellulose, Glycerin, Mono Propylene Glycol, Citric Acid, Strawberry Flavor, Sodium Saccharin, Methyl Hydroxybenzoate, Deionized Water",
+        "de": "Safex Lube Gleitgel hilft, die Symptome der Trockenheit im Genitalbereich beim Geschlechtsverkehr zu lindern. Es bietet eine weichere und sanftere Schmierung bei der Verwendung mit einem Kondom. Auf Wasserbasis. Wie zu verwenden: Die erforderliche Menge des Gels wird auf das Kondom und \/ oder den Genitalbereich aufgetragen. Inhalt \/ Zutaten: Hydroxyethylcellulose, Glycerin, Mono-Propylenglykol, Zitronensäure, Erdbeeraroma, Natriumsaccharin, Methylhydroxybenzoat, entionisiertes Wasser",
+        "ru": "Гель-смазка Safex Lube помогает облегчить симптомы сухости половых органов, возникающие во время полового акта. Он обеспечивает более мягкую и нежную смазку при использовании с презервативом. На водной основе. Способ применения: Необходимое количество геля наносится на презерватив и\/или область гениталий. Состав \/ Ингредиенты: Гидроксиэтилцеллюлоза, глицерин, монопропиленгликоль, лимонная кислота, клубничный ароматизатор, сахарин натрия, метилгидроксибензоат, деионизированная вода"
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/safex-lube-kayganlastirici-jel-cilek-85-ml-3570.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Safex",
+                "en": "Safex",
+                "de": "Safex",
+                "ru": "Safex"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "4 × 15 × 4 cm",
+                "en": "4 × 15 × 4 cm",
+                "de": "4 × 15 × 4 cm",
+                "ru": "4 × 15 × 4 см"
+            }
+        }
+    ]
+}

@@ -1,0 +1,79 @@
+{
+    "id": "mini-oyuncak-gogus",
+    "sku": "PT-FFDK021B",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "erotik-oyunlar",
+    "sold_out": false,
+    "name": {
+        "tr": "Mini Oyuncak Göğüs",
+        "en": "Mini Toy Chest",
+        "de": "Mini-Spielzeugkiste",
+        "ru": "Мини-сундук для игрушек"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "Bu eğlenceli ve rahatlatıcı mini oyuncak göğüs, stresinizi azaltmak ve gününüzü keyifli hale getirmek için tasarlanmıştır. Yumuşak dokusu sayesinde avuç içine mükemmel şekilde oturur ve sıkıldığında rahatlatıcı bir his sunar. Boyut: Avuç içine kolayca sığacak şekilde kompakt ve taşınabilir. Malzeme: Yüksek kaliteli, yumuşak ve dayanıklı TPR malzeme, uzun süreli kullanım için ideal. Amaç: Günlük stres ve gerginliği azaltmak için mükemmel bir seçimdir. Eğlenceli ve Kompakt: Masa başında veya evde kullanıma uygun eğlenceli bir tasarım. Bu ürün hem hediyelik hem de kişisel kullanım için mükemmel bir seçimdir. Eğlenceli ve rahatlatıcı bir deneyim sunar!",
+        "en": "This fun and relaxing mini toy breast is designed to reduce your stress and make your day enjoyable. Thanks to its soft texture, it fits perfectly in the palm of the hand and offers a soothing sensation when squeezed. Size: Compact and portable to fit easily in the palm of the hand. Material: High quality, soft and durable TPR material, ideal for long-term use. Purpose: Perfect choice for relieving daily stress and tension. Fun and Compact: A fun design suitable for use at the desk or at home. This product is a great choice for both gift and personal use. It offers a fun and relaxing experience!",
+        "de": "Diese lustige und entspannende Mini-Spielzeugtruhe wurde entwickelt, um den Stress zu reduzieren und den Tag angenehm zu gestalten. Dank ihrer weichen Textur passt sie perfekt in die Handfläche und bietet ein entspannendes Gefühl, wenn man sie drückt. Größe: Kompakt und tragbar, passt leicht in die Handfläche. Material: Hochwertiges, weiches und langlebiges TPR-Material, ideal für den langfristigen Gebrauch. Zweck: Es ist eine ausgezeichnete Wahl für die Entlastung der täglichen Stress und Spannung. Lustig und kompakt: Ein lustiges Design, geeignet für den Einsatz am Schreibtisch oder zu Hause. Dieses Produkt ist eine gute Wahl für Geschenk und persönlichen Gebrauch. Es bietet eine lustige und entspannende Erfahrung!",
+        "ru": "Этот забавный и расслабляющий мини-сундучок с игрушками создан для того, чтобы снять стресс и сделать ваш день приятным. Благодаря своей мягкой текстуре он идеально ложится в ладонь и дарит расслабляющие ощущения при сжатии. Размер: Компактный и портативный, легко помещается в ладони. Материал: Высококачественный, мягкий и прочный материал TPR, идеально подходящий для длительного использования. Назначение: Это отличный выбор для снятия ежедневного стресса и напряжения. Веселый и компактный: Забавный дизайн подходит для использования на рабочем столе или дома. Этот продукт - отличный выбор как для подарка, так и для личного использования. Он предлагает веселый и расслабляющий опыт!"
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 0.460000000000000019984014443252817727625370025634765625,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 0.460000000000000019984014443252817727625370025634765625,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 0.460000000000000019984014443252817727625370025634765625,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 0.460000000000000019984014443252817727625370025634765625,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/mini-gogus-3543.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/mini-gogus-3544.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "8 × 11 × 2 cm",
+                "en": "8 × 11 × 2 cm",
+                "de": "8 × 11 × 2 cm",
+                "ru": "8 × 11 × 2 см"
+            }
+        }
+    ]
+}

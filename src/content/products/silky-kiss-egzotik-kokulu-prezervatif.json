@@ -1,0 +1,65 @@
+{
+    "id": "silky-kiss-egzotik-kokulu-prezervatif",
+    "sku": "PT-EC1571",
+    "category_id": "erkek-cinsel-saglik-urunu",
+    "subcategory_id": "prezervatif",
+    "sold_out": true,
+    "name": {
+        "tr": "Silky Kiss Egzotik Kokulu Prezervatif",
+        "en": "Silky Kiss Exotic Scented Condom",
+        "de": "Silky Kiss Exotisch duftendes Kondom",
+        "ru": "Презерватив с экзотическим ароматом Silky Kiss"
+    },
+    "overline": {
+        "tr": "ERKEK CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "MALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DES MANNES",
+        "ru": "СРЕДСТВО ДЛЯ СЕКСУАЛЬНОГО ЗДОРОВЬЯ МУЖЧИН"
+    },
+    "description": {
+        "tr": "Silky Kiss Exotic   Partnerinize ve size özelSilky Kiss Exotic prezervatifleri size özel farklı kokuları sayesinde, zevk ve eğlencenizi zenginleştirir. Her pakette 3 farklı kokulu prezervatiften 4’er adet bulunmaktadır. Çilek, Çikolata ve Muz kokuları sayesinde zevkin doruklarına doğru. Uluslararası kaliteye sahip Silky Kiss prezervatifleri ISO 2074 standartlarına uygun üretilmiştir. %100 kaliteli latexten üretilmiştir. Hamilelik ve cinsel yolla bulaşan enfeksiyonlara karşı korunma sağlar. Etkin bir doğum kontrol aracıdır.      ",
+        "en": "Silky Kiss Exotic Special for you and your partnerSilky Kiss Exotic condoms enrich your pleasure and fun with different scents special for you. Each package contains 4 each of 3 different scented condoms. Strawberry, Chocolate and Banana scents bring you to the peak of pleasure. Silky Kiss condoms with international quality are produced in accordance with ISO 2074 standards. Made of 100% quality latex. Provides protection against pregnancy and sexually transmitted infections. It is an effective contraceptive.      ",
+        "de": "Silky Kiss Exotic Special für Sie und Ihren PartnerSilky Kiss Exotic Kondome bereichern Ihr Vergnügen und Spaß dank ihrer verschiedenen Düfte speziell für Sie. Jede Packung enthält 4 Stück von 3 verschiedenen duftenden Kondomen. Dank Erdbeer-, Schokoladen- und Bananenduft, auf dem Weg zum Gipfel der Lust. Silky Kiss Kondome mit internationaler Qualität werden nach den ISO 2074 Standards hergestellt. 100% aus Qualitätslatex. Es bietet Schutz vor Schwangerschaft und sexuell übertragbaren Infektionen. Es ist ein wirksames Verhütungsmittel.      ",
+        "ru": "Silky Kiss Exotic Специально для вас и вашего партнераПрезервативы Silky Kiss Exotic обогатят ваше удовольствие и наслаждение благодаря различным ароматам, предназначенным специально для вас. Каждая упаковка содержит 4 штуки презервативов с тремя разными ароматами. Благодаря ароматам клубники, шоколада и банана вы достигнете вершин наслаждения. Презервативы Silky Kiss международного качества изготовлены в соответствии со стандартами ISO 2074. 100% изготовлены из качественного латекса. Обеспечивают защиту от беременности и инфекций, передающихся половым путем. Является эффективным средством контрацепции.      "
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-egzotik-kokulu-prezervatif-481.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-egzotik-kokulu-prezervatif-482.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Silky Kiss",
+                "en": "Silky Kiss",
+                "de": "Silky Kiss",
+                "ru": "Silky Kiss"
+            }
+        }
+    ]
+}

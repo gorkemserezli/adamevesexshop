@@ -1,0 +1,78 @@
+{
+    "id": "best-man-kayganlastirici-jel-55-ml",
+    "sku": "PT-AN1537",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "kayganlastirici",
+    "sold_out": false,
+    "name": {
+        "tr": "Best Man Kayganlaştırıcı Jel 55 ml",
+        "en": "Best Man Lubricant Gel 55 ml",
+        "de": "Best Man Gleitmittel Gel 55 ml",
+        "ru": "Гель-смазка Best Man 55 мл"
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Tamamen su bazlı olan Best Man Anal Kayganlaştırıcı Jel, medikal onaylı olup; dermatolojik olarak da test edilmiştir. Hassas ciltlere de uygun olan yapısı ile klinik testlerden, cilt dostu olarak onaylanmıştır. Sorunsuz ve kaydırma özelliği uzun süren ürün, tüm prezervatifler ile uyumludur. Ürün; yağ içermez, tatsız ve kokusuzdur. Serin ve kuru saklamalısınız.",
+        "en": "Best Man Anal Lubricant Gel, which is completely water-based, is medically approved and dermatologically tested. With its structure suitable for sensitive skin, it has been approved as skin-friendly in clinical tests. The product, which has a smooth and long-lasting lubrication feature, is compatible with all condoms. The product is oil-free, tasteless and odorless. You should store it cool and dry.",
+        "de": "Das Best Man Anal Lubricant Gel ist ein medizinisch zugelassenes und dermatologisch getestetes Gleitgel auf Wasserbasis. Es wurde in klinischen Tests als hautfreundlich eingestuft und ist aufgrund seiner Struktur auch für empfindliche Haut geeignet. Das Produkt, das eine geschmeidige und lang anhaltende Gleitfähigkeit aufweist, ist mit allen Kondomen kompatibel. Das Produkt ist ölfrei, geschmacksneutral und geruchsneutral. Sie sollten es kühl und trocken lagern.",
+        "ru": "Анальный гель-смазка Best Man на водной основе одобрен медициной и дерматологически протестирован. В ходе клинических испытаний он был признан безопасным для кожи, а его структура подходит для чувствительной кожи. Средство, обладающее гладкой и длительной смазкой, совместимо со всеми презервативами. Продукт не содержит масел, не имеет вкуса и запаха. Хранить в сухом и прохладном месте."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 50,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 50,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 50,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 50,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/best-man-kayganlastirici-jel-55-ml-3846.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Cabs",
+                "en": "Cabs",
+                "de": "Cabs",
+                "ru": "Cabs"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "4 × 9 × 4 cm",
+                "en": "4 × 9 × 4 cm",
+                "de": "4 × 9 × 4 cm",
+                "ru": "4 × 9 × 4 см"
+            }
+        }
+    ]
+}

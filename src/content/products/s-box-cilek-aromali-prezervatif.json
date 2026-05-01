@@ -1,0 +1,64 @@
+{
+    "id": "s-box-cilek-aromali-prezervatif",
+    "sku": "PT-EC5209",
+    "category_id": "erkek-cinsel-saglik-urunu",
+    "subcategory_id": "prezervatif",
+    "sold_out": false,
+    "name": {
+        "tr": "S-Box Çilek Aromalı Prezervatif",
+        "en": "S-Box Strawberry Flavored Condom",
+        "de": "S-Box Kondom mit Erdbeergeschmack",
+        "ru": "Презерватив S-Box со вкусом клубники"
+    },
+    "overline": {
+        "tr": "ERKEK CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "MALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DES MANNES",
+        "ru": "СРЕДСТВО ДЛЯ СЕКСУАЛЬНОГО ЗДОРОВЬЯ МУЖЧИН"
+    },
+    "description": {
+        "tr": "S-BOX Çilek Gecenin en “tanıdık” yüzü. Bildiği ve sevdiği heyecandan vazgeçemeyenlere özel. Keyfin güvenle buluştuğu anlarda hep yanınızda… %100 kaliteli latexten üretilmiştir. Hamilelik ve cinsel yolla bulaşan enfeksiyonlara karşı korunma sağlar. Etkin bir doğum kontrol aracıdır.",
+        "en": "S-BOX Strawberry The most \"familiar\" face of the night. Special for those who cannot give up the excitement they know and love. Always with you in moments when pleasure meets safety... Made of 100% quality latex. Provides protection against pregnancy and sexually transmitted infections. It is an effective birth control tool.",
+        "de": "S-BOX Strawberry ist das \"bekannteste\" Gesicht des Abends. Speziell für diejenigen, die nicht auf die Erregung, die sie kennen und lieben, verzichten können. Immer mit Ihnen in Momenten, wenn Vergnügen trifft Vertrauen... Hergestellt aus 100% Qualität Latex. Bietet Schutz vor Schwangerschaft und sexuell übertragbaren Infektionen. Es ist ein wirksames Mittel zur Geburtenkontrolle.",
+        "ru": "S-BOX Strawberry - самое \"знакомое\" лицо этой ночи. Специально для тех, кто не может отказаться от возбуждения, которое они знают и любят. Всегда с вами в моменты, когда удовольствие встречается с уверенностью... Изготовлен из 100% качественного латекса. Обеспечивает защиту от беременности и инфекций, передающихся половым путем. Является эффективным средством контроля рождаемости."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 10,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/s-box-cilek-aromali-prezervatif-4264.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "S-BOX",
+                "en": "S-BOX",
+                "de": "S-BOX",
+                "ru": "S-BOX"
+            }
+        }
+    ]
+}

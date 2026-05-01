@@ -1,0 +1,66 @@
+{
+    "id": "fantezi-ogretmen-kostumu",
+    "sku": "PT-FGMGP6506",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-giyim",
+    "sold_out": false,
+    "name": {
+        "tr": "Fantezi Öğretmen Kostümü",
+        "en": "Fancy Teacher Costume",
+        "de": "Fancy Lehrer Kostüm",
+        "ru": "Модный костюм учителя"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "GÖMLEK KRAVAT DEKOLTELİ DERİ ETEK ÇORAP TAKIM",
+        "en": "SHIRT TIE LOW-CUT LEATHER SKIRT SOCKS SET",
+        "de": "HEMD KRAWATTE TIEF AUSGESCHNITTENER LEDERROCK SOCKEN ANZUG",
+        "ru": "РУБАШКА ГАЛСТУК НИЗКИЙ ПОКРОЙ КОЖАНАЯ ЮБКА НОСКИ КОСТЮМ"
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 52,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 52,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 52,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 52,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-ogretmen-kostumu-5407.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-ogretmen-kostumu-5408.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-ogretmen-kostumu-5409.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}

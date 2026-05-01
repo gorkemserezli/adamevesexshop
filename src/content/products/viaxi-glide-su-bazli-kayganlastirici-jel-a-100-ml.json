@@ -1,0 +1,78 @@
+{
+    "id": "viaxi-glide-su-bazli-kayganlastirici-jel-a-100-ml",
+    "sku": "PT-KC510",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "kayganlastirici",
+    "sold_out": false,
+    "name": {
+        "tr": "Viaxi Glide Su Bazlı Kayganlaştırıcı Jel A+ 100 ml",
+        "en": "Viaxi Glide Water Based Lubricant Gel A+ 100 ml",
+        "de": "Viaxi Glide Gleitmittel auf Wasserbasis Gel A+ 100 ml",
+        "ru": "Viaxi Glide Гель-смазка на водной основе A+ 100 мл"
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Viaxi Glide A+ Kayganlaştırıcı Jel 100 ml Viaxi Glide Anal Kayganlaştırıcı Jel, su bazlı, renksiz ve kokusuzdur. Uzun süre kurumayan kayganlaştırıcı özelliği ve rahatlatıcı etkisiyle anal ve vajinal kuruluğu azaltmaya yardımcı olur. Dermatolojik ve klinik testleri yapılmıştır. Prezervatifle %100 uyumludur ve pH dengelidir.",
+        "en": "Viaxi Glide A+ Lubricating Gel 100 ml Viaxi Glide Anal Lubricating Gel is water-based, colorless and odorless. It helps to reduce anal and vaginal dryness with its long-lasting lubricant and relaxing effect. Dermatologically and clinically tested. It is 100% compatible with condoms and pH balanced.",
+        "de": "Viaxi Glide A+ Gleitgel 100 ml Viaxi Glide Anal-Gleitgel ist auf Wasserbasis, farb- und geruchlos. Es hilft, anale und vaginale Trockenheit durch seine lang anhaltende Gleitfähigkeit und entspannende Wirkung zu reduzieren. Es wurden dermatologische und klinische Tests durchgeführt. Es ist 100% kompatibel mit Kondomen und hat einen ausgeglichenen pH-Wert.",
+        "ru": "Гель-смазка Viaxi Glide A+ Lubricant Gel 100 мл Гель-смазка Viaxi Glide Anal Lubricant Gel на водной основе, бесцветный и без запаха. Он помогает уменьшить сухость анального отверстия и влагалища, оказывая длительное смазывающее и расслабляющее действие. Проведены дерматологические и клинические испытания. Он на 100% совместим с презервативами и сбалансирован по уровню pH."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/viaxi-glide-su-bazli-kayganlastirici-jel-a-100-ml-3620.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Viaxi",
+                "en": "Viaxi",
+                "de": "Viaxi",
+                "ru": "Viaxi"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "4 × 14 × 4 cm",
+                "en": "4 × 14 × 4 cm",
+                "de": "4 × 14 × 4 cm",
+                "ru": "4 × 14 × 4 см"
+            }
+        }
+    ]
+}

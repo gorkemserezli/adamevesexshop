@@ -1,0 +1,64 @@
+{
+    "id": "s-box-red-haz-kabartma-yuzeyli-prezervatif",
+    "sku": "PT-EC5162",
+    "category_id": "erkek-cinsel-saglik-urunu",
+    "subcategory_id": "prezervatif",
+    "sold_out": false,
+    "name": {
+        "tr": "S-Box Red Haz Kabartma Yüzeyli Prezervatif",
+        "en": "S-Box Red Haz Embossed Condom",
+        "de": "S-Box Red Haz Geprägtes Kondom",
+        "ru": "Презерватив S-Box Red Haz с тиснением"
+    },
+    "overline": {
+        "tr": "ERKEK CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "MALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DES MANNES",
+        "ru": "СРЕДСТВО ДЛЯ СЕКСУАЛЬНОГО ЗДОРОВЬЯ МУЖЧИН"
+    },
+    "description": {
+        "tr": "S-BOX Red Özel Kabartmalı Yüzeyiyle daha hissedilir ve haz dolu bir geceyi yaşamak için geç kalmayın. S-Box Red ile geceyi daha hissedilir yaşayın. %100 kaliteli latexten üretilmiştir. Hamilelik ve cinsel yolla bulaşan enfeksiyonlara karşı korunma sağlar. Etkin bir doğum kontrol aracıdır.",
+        "en": "Don't be late to experience a more sensuous and pleasurable night with S-BOX Red Special Embossed Surface. Experience a more sensual night with S-Box Red. Made of 100% quality latex. Provides protection against pregnancy and sexually transmitted infections. It is an effective birth control tool.",
+        "de": "Seien Sie nicht zu spät, um eine vernünftige und angenehme Nacht mit S-BOX Red Special Embossed Surface zu erleben. Erleben Sie die Nacht mehr sinnvoll mit S-Box Red. Es ist aus 100% Qualitätslatex hergestellt. Bietet Schutz vor Schwangerschaft und sexuell übertragbaren Infektionen. Es ist eine wirksame Geburtenkontrolle Werkzeug.",
+        "ru": "Не опаздывайте, чтобы пережить более разумную и приятную ночь с S-BOX Red Special Embossed Surface. Проведите ночь более разумно с S-Box Red. Он изготовлен из 100% качественного латекса. Обеспечивает защиту от беременности и инфекций, передающихся половым путем. Является эффективным средством контроля рождаемости."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 10,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/s-box-red-haz-kabartma-yuzeyli-prezervatif-4263.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "S-BOX",
+                "en": "S-BOX",
+                "de": "S-BOX",
+                "ru": "S-BOX"
+            }
+        }
+    ]
+}

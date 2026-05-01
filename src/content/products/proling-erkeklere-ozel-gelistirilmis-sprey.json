@@ -1,0 +1,78 @@
+{
+    "id": "proling-erkeklere-ozel-gelistirilmis-sprey",
+    "sku": "PT-EC1528",
+    "category_id": "erkek-cinsel-saglik-urunu",
+    "subcategory_id": "penis-spreyi",
+    "sold_out": false,
+    "name": {
+        "tr": "Proling Erkeklere Özel Geliştirilmiş Sprey",
+        "en": "Proling Specialized Spray for Men",
+        "de": "Speziell für Männer entwickeltes Proling-Spray",
+        "ru": "Спрей Proling, специально разработанный для мужчин"
+    },
+    "overline": {
+        "tr": "ERKEK CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "MALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DES MANNES",
+        "ru": "СРЕДСТВО ДЛЯ СЕКСУАЛЬНОГО ЗДОРОВЬЯ МУЖЧИН"
+    },
+    "description": {
+        "tr": "Cinsel birleşmeden 15 dakika önce penise, 3 kez sıkılan Proling Erkeklere Özel Geliştirilmiş Sprey, 15 dakika sonunda etkisini gösterir. Sprey, kondom ile uyumlu olduğu için kondom ile birlikte kullanabilirsiniz. Yerli üretim Proling sprey, temiz içeriği nedeniyle cilde zarar vermez. Ürünün; tadı, kokusu veya rengi bulunmadığı için partneriniz tarafından fark edilmez. Sprey formu sayesinde uzun bir kullanım ömrüne sahiptir. Proling sprey; CE belgesine, ürün sertifikasına ve ISO 9001, 2000 belgelerine sahiptir.",
+        "en": "Proling Men Specially Developed Spray, which is sprayed 3 times on the penis 15 minutes before sexual intercourse, shows its effect after 15 minutes. Since the spray is compatible with condoms, you can use it with condoms. Domestic production Proling spray does not harm the skin due to its clean content. The product is not noticed by your partner as it has no taste, smell or color. Thanks to its spray form, it has a long service life. Proling spray has CE certificate, product certificate and ISO 9001, 2000 certificates.",
+        "de": "Proling Men Specially Developed Spray, das 15 Minuten vor dem Geschlechtsverkehr 3-mal auf den Penis gesprüht wird, zeigt seine Wirkung nach 15 Minuten. Da das Spray mit Kondomen kompatibel ist, können Sie es mit Kondomen verwenden. Das Proling-Spray aus heimischer Produktion schadet der Haut aufgrund seines reinen Inhalts nicht. Das Produkt wird von Ihrem Partner nicht wahrgenommen, da es weder Geschmack noch Geruch oder Farbe hat. Dank seiner Sprayform hat es eine lange Lebensdauer. Das Proling-Spray besitzt das CE-Zertifikat, das Produktzertifikat und das ISO 9001, 2000-Zertifikat.",
+        "ru": "Специально разработанный спрей Proling Men, который распыляется 3 раза на половой член за 15 минут до полового акта, начинает действовать уже через 15 минут. Поскольку спрей совместим с презервативами, вы можете использовать его с презервативами. Спрей Proling отечественного производства не вредит коже благодаря чистому составу. Средство незаметно для партнера, так как не имеет вкуса, запаха и цвета. Благодаря форме спрея он имеет длительный срок службы. Спрей Proling; Имеет сертификат CE, сертификат на продукцию и сертификаты ISO 9001, 2000."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 30,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 30,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 30,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 30,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/proling-erkeklere-ozel-gelistirilmis-sprey-3573.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Viaxi",
+                "en": "Viaxi",
+                "de": "Viaxi",
+                "ru": "Viaxi"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "4 × 13 × 4 cm",
+                "en": "4 × 13 × 4 cm",
+                "de": "4 × 13 × 4 cm",
+                "ru": "4 × 13 × 4 см"
+            }
+        }
+    ]
+}

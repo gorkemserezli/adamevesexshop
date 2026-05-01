@@ -1,0 +1,66 @@
+{
+    "id": "viaxi-glide-kayganlastirici-jel-100x5ml",
+    "sku": "PT-KCKY0320",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "kayganlastirici",
+    "sold_out": false,
+    "name": {
+        "tr": "Viaxi Glide Kayganlaştırıcı Jel 100x5ml",
+        "en": "Viaxi Glide Lubricant Gel 100x5ml",
+        "de": "Viaxi Glide Gleitmittel Gel 100x5ml",
+        "ru": "Гель-смазка Viaxi Glide 100x5 мл"
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Viaxi Glide Kayganlaştırıcı Jel, su bazlı, renksiz ve kokusuzdur.Uzun süre kurumayan kayganlaştırıcı özelliği ve rahatlatıcı etkisiyle vajinal kuruluğu azaltmaya yardımcı olur.Dermotolojik ve klinik testleri yapılmıştır. Prezervatifle %100 uyumludur pH dengelidir.Tüm fantezi oyuncaklarla birlikte kullanıma uygundur.Yağsızdır ve suda kolayca çözülmektedir.Oda sıcaklığında ve çocukların ulaşamayacağı yerde saklanmalıdır.Daha sağlıklı ve keyifli bir cinsel yaşam için Viaxi Glide Kayganlaştırıcı Jel’i güvenle kullanabilirsiniz.",
+        "en": "Viaxi Glide Lubricant Gel is water-based, colorless and odorless.It helps to reduce vaginal dryness with its long-lasting lubricant and relaxing effect.Dermatological and clinical tests have been performed. It is 100% compatible with condoms, pH balanced, suitable for use with all fancy toys, non-greasy and easily dissolves in water, should be stored at room temperature and out of the reach of children, you can safely use Viaxi Glide Lubricant Gel for a healthier and more enjoyable sex life.",
+        "de": "Viaxi Glide Lubricant Gel ist auf Wasserbasis, farb- und geruchlos und hilft mit seiner langanhaltenden Gleitfähigkeit und entspannenden Wirkung, Scheidentrockenheit zu reduzieren. Es ist 100% kompatibel mit Kondomen, pH-Wert ausgeglichen, geeignet für den Einsatz mit allen ausgefallenen Spielzeug, nicht fettig und löst sich leicht in Wasser, sollte bei Raumtemperatur und außerhalb der Reichweite von Kindern gelagert werden, können Sie sicher Viaxi Glide Lubricant Gel für ein gesünderes und angenehmeres Sexualleben verwenden.",
+        "ru": "Гель-смазка Viaxi Glide на водной основе, без цвета и запаха, помогает уменьшить сухость влагалища, оказывая длительное смазывающее и расслабляющее действие. Он на 100% совместим с презервативами, pH-сбалансирован, подходит для использования со всеми модными игрушками, нежирный и легко растворяется в воде, должен храниться при комнатной температуре и в недоступном для детей месте. Вы можете смело использовать Viaxi Glide Lubricant Gel для более здоровой и приятной сексуальной жизни."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 50,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 50,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 50,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 50,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/viaxi-glide-kayganlastirici-jel-100x5ml-3820.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/viaxi-glide-kayganlastirici-jel-100x5ml-3821.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/viaxi-glide-kayganlastirici-jel-100x5ml-3822.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Viaxi",
+                "en": "Viaxi",
+                "de": "Viaxi",
+                "ru": "Viaxi"
+            }
+        }
+    ]
+}

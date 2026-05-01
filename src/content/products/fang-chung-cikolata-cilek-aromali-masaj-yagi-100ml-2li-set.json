@@ -1,0 +1,65 @@
+{
+    "id": "fang-chung-cikolata-cilek-aromali-masaj-yagi-100ml-2li-set",
+    "sku": "PT-EK13",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "masaj-yaglari",
+    "sold_out": false,
+    "name": {
+        "tr": "Fang Chung Çikolata + Çilek Aromalı Masaj Yağı - 100ml. 2'li Set",
+        "en": "Fang Chung Chocolate + Strawberry Flavored Massage Oil - 100ml. Set of 2",
+        "de": "Fang Chung Massageöl mit Schokoladen- und Erdbeergeschmack - 100ml. Satz von 2",
+        "ru": "Массажное масло Fang Chung Chocolate + Strawberry Flavoured Massage Oil - 100 мл. Набор из 2"
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "",
+        "en": "",
+        "de": "",
+        "ru": ""
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 14.46000000000000085265128291212022304534912109375,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 14.46000000000000085265128291212022304534912109375,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 14.46000000000000085265128291212022304534912109375,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 14.46000000000000085265128291212022304534912109375,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fang-chung-cikolata-cilek-aromali-masaj-yagi-100ml-2-li-set-1740.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fang-chung-cikolata-cilek-aromali-masaj-yagi-100ml-2-li-set-1741.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Cabs",
+                "en": "Cabs",
+                "de": "Cabs",
+                "ru": "Cabs"
+            }
+        }
+    ]
+}

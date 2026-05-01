@@ -1,0 +1,78 @@
+{
+    "id": "potioon-damla-bayanlara-ozel-takviye",
+    "sku": "PT-KC1545",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "sprey-ve-damlalar",
+    "sold_out": false,
+    "name": {
+        "tr": "Potioon Damla Bayanlara Özel Takviye",
+        "en": "Potioon Drops Special Supplement for Women",
+        "de": "Potioon Drops Spezielle Ergänzung für Frauen",
+        "ru": "Капли Potioon Специальная добавка для женщин"
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "CABS - Potioon Içerik: Su, seker, L-askorbik asit, L-arjinin, Meyan kökü özütü, Kafein (150mg\/L), Potasyum sorbat, Sodyum benzoat.",
+        "en": "CABS - Potioon Content: Water, sugar, L-ascorbic acid, L-arginine, Licorice extract, Caffeine (150mg\/L), Potassium sorbate, Sodium benzoate.",
+        "de": "CABS - Potioon Inhalt: Wasser, Zucker, L-Ascorbinsäure, L-Arginin, Süßholzextrakt, Koffein (150mg\/L), Kaliumsorbat, Natriumbenzoat.",
+        "ru": "CABS - Potioon Содержание: Вода, сахар, L-аскорбиновая кислота, L-аргинин, экстракт лакрицы, кофеин (150 мг\/л), сорбат калия, бензоат натрия."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/potioon-damla-bayanlara-ozel-takviye-3788.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "5 × 8 × 3 cm",
+                "en": "5 × 8 × 3 cm",
+                "de": "5 × 8 × 3 cm",
+                "ru": "5 × 8 × 3 см"
+            }
+        }
+    ]
+}

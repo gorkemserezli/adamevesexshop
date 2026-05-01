@@ -1,0 +1,64 @@
+{
+    "id": "s-box-geceler-ozel-kayganlastiricili-prezervatif",
+    "sku": "PT-EC5186",
+    "category_id": "erkek-cinsel-saglik-urunu",
+    "subcategory_id": "prezervatif",
+    "sold_out": true,
+    "name": {
+        "tr": "S-Box Geceler Özel Kayganlaştırıcılı Prezervatif",
+        "en": "S-Box Nights Special Lubricant Condom",
+        "de": "S-Box Nights Spezial-Gleitmittel-Kondom",
+        "ru": "Специальный презерватив со смазкой S-Box Nights"
+    },
+    "overline": {
+        "tr": "ERKEK CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "MALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DES MANNES",
+        "ru": "СРЕДСТВО ДЛЯ СЕКСУАЛЬНОГО ЗДОРОВЬЯ МУЖЧИН"
+    },
+    "description": {
+        "tr": "S-BOX Geceler Partnerinizle daha uzun geceleri yeniden yaşayın. Yakın dokunuşlar ve hissedişlerle birlikte geceleri daha uzun yaşayın. %100 kaliteli latexten üretilmiştir. Hamilelik ve cinsel yolla bulaşan enfeksiyonlara karşı korunma sağlar. Etkin bir doğum kontrol aracıdır.",
+        "en": "S-BOX Nights Relive longer nights with your partner. Experience longer nights together with intimate touches and sensations. Made of 100% quality latex. Provides protection against pregnancy and sexually transmitted infections. It is an effective contraceptive.",
+        "de": "S-BOX Nights Erleben Sie längere Nächte mit Ihrem Partner. Erleben Sie längere Nächte mit intimen Berührungen und Empfindungen. Hergestellt aus 100% Qualitätslatex. Bietet Schutz vor Schwangerschaft und sexuell übertragbaren Infektionen. Es ist ein wirksames Verhütungsmittel.",
+        "ru": "S-BOX Nights Переживите долгие ночи с вашим партнером. Переживите долгие ночи с интимными прикосновениями и ощущениями. Изготовлен из 100% качественного латекса. Обеспечивает защиту от беременности и инфекций, передающихся половым путем. Является эффективным средством контрацепции."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/s-box-geceler-ozel-kayganlastiricili-prezervatif-4262.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "S-BOX",
+                "en": "S-BOX",
+                "de": "S-BOX",
+                "ru": "S-BOX"
+            }
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+{
+    "id": "satisfyer-penguin-klitoral-vibrator",
+    "sku": "PT-DVSW10003",
+    "category_id": "vibrator",
+    "subcategory_id": "modern-vibrator",
+    "sold_out": true,
+    "name": {
+        "tr": "Satisfyer Penguin Klitoral Vibratör",
+        "en": "Satisfyer Penguin Clitoral Vibrator",
+        "de": "Satisfyer Pinguin Klitoris-Vibrator",
+        "ru": "Клиторальный вибратор Satisfyer Penguin"
+    },
+    "overline": {
+        "tr": "VİBRATÖR",
+        "en": "VIBRATOR",
+        "de": "VIBRATOR",
+        "ru": "ВИБРАТОР"
+    },
+    "description": {
+        "tr": "Air-Pulse teknolojisiyle temassız basınç dalgaları sunan Satisfyer Penguin, 11 farklı yoğunluk seviyesiyle kişisel deneyimi kolayca ayarlamanızı sağlar. Ergonomik ve kompakt tasarımı sayesinde hem yeni başlayanlar hem de seyahat için ideal bir seçenektir. Su geçirmez, sessiz ve manyetik USB şarjlı yapısıyla konforlu ve pratik kullanım sunar.",
+        "en": "Offering non-contact pressure waves with Air-Pulse technology, Satisfyer Penguin allows you to easily adjust the personal experience with 11 different intensity levels. Its ergonomic and compact design makes it ideal for beginners and travelers alike. Waterproof, silent and magnetic USB-charged, it offers comfortable and practical use.",
+        "de": "Der Satisfyer Penguin bietet berührungslose Druckwellen mit Air-Pulse-Technologie und ermöglicht es Ihnen, Ihr persönliches Erlebnis mit 11 verschiedenen Intensitätsstufen einfach einzustellen. Dank seines ergonomischen und kompakten Designs ist es eine ideale Option für Anfänger und Reisende. Mit seiner wasserdichten, geräuschlosen und magnetischen USB-Ladestruktur bietet er einen komfortablen und praktischen Gebrauch.",
+        "ru": "Бесконтактные волны давления с технологией Air-Pulse, Satisfyer Penguin позволяет легко настроить индивидуальные ощущения с помощью 11 различных уровней интенсивности. Благодаря эргономичному и компактному дизайну это идеальный вариант как для новичков, так и для путешественников. Он удобен и практичен в использовании благодаря водонепроницаемости, бесшумности и магнитной USB-зарядке."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 80,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 80,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 80,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 80,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/-4817.png",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/-4818.png",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/-4819.png",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/-4820.png"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Satisfyer",
+                "en": "Satisfyer",
+                "de": "Satisfyer",
+                "ru": "Satisfyer"
+            }
+        }
+    ]
+}

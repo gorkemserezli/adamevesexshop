@@ -1,0 +1,78 @@
+{
+    "id": "viaxi-glide-kayganlastirici-jel-5x5ml",
+    "sku": "PT-KC576",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "kayganlastirici",
+    "sold_out": false,
+    "name": {
+        "tr": "Viaxi Glide Kayganlaştırıcı Jel 5x5ml",
+        "en": "Viaxi Glide Lubricant Gel 5x5ml",
+        "de": "Viaxi Glide Gleitmittel Gel 5x5ml",
+        "ru": "Гель-смазка Viaxi Glide 5x5 мл"
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Renksiz bir dokuya sahip olan Viaxi Glide Kayganlaştırıcı Jel 5 x 5 ml, aynı zamanda kokusuz olması ile de kolay bir kullanım sunar. Yağsız yapısı ve su bazlı oluşu sayesinde ciltten kolayca temizlenen jel, uzun süreli ıslaklık ve kayganlık sağlar. Prezervatifler ile de kullanılabilen ürün, Ph dengelidir.",
+        "en": "Viaxi Glide Lubricant Gel 5 x 5 ml, which has a colorless texture, is also odorless and offers easy use. Thanks to its non-greasy and water-based structure, the gel is easily cleaned from the skin and provides long-lasting wetness and lubrication. The product, which can also be used with condoms, is Ph balanced.",
+        "de": "Viaxi Glide Lubricant Gel 5 x 5 ml, das eine farblose Textur hat, ist ebenfalls geruchsneutral und bietet eine einfache Anwendung. Dank seiner nicht fettenden und wasserbasierten Struktur sorgt das Gel, das sich leicht von der Haut abwaschen lässt, für eine lang anhaltende Befeuchtung und Schmierung. Das Produkt, das auch mit Kondomen verwendet werden kann, ist Ph-neutral.",
+        "ru": "Гель-смазка Viaxi Glide Lubricant Gel 5 x 5 мл, имеющий бесцветную текстуру, не имеет запаха и обеспечивает простоту использования. Благодаря нежирной структуре и водной основе гель, который легко очищается с кожи, обеспечивает длительное увлажнение и смазку. Средство, которое также можно использовать с презервативами, сбалансировано по Ph."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 10,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/viaxi-glide-kayganlastirici-jel-5x5ml-71.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Viaxi",
+                "en": "Viaxi",
+                "de": "Viaxi",
+                "ru": "Viaxi"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "5 × 8 × 2 cm",
+                "en": "5 × 8 × 2 cm",
+                "de": "5 × 8 × 2 cm",
+                "ru": "5 × 8 × 2 см"
+            }
+        }
+    ]
+}

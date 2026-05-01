@@ -1,0 +1,78 @@
+{
+    "id": "viaxi-glide-su-bazli-kayganlastirici-jel-sade-200-ml",
+    "sku": "PT-KC518",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "kayganlastirici",
+    "sold_out": false,
+    "name": {
+        "tr": "Viaxi Glide Su Bazlı Kayganlaştırıcı Jel Sade 200 ml",
+        "en": "Viaxi Glide Water Based Lubricant Gel Plain 200 ml",
+        "de": "Viaxi Glide Gleitmittel auf Wasserbasis Gel Plain 200 ml",
+        "ru": "Viaxi Glide Гель-смазка на водной основе простой 200 мл"
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Viaxi Glide Kayganlaştırıcı Jel 200 ml.Viaxi Glide Kayganlaştırıcı Jel, su bazlı, renksiz ve kokusuzdur.Uzun süre kurumayan kayganlaştırıcı özelliği ve rahatlatıcı etkisiyle vajinal kuruluğu azaltmaya yardımcı olur.Dermotolojik ve klinik testleri yapılmıştır. Prezervatifle %100 uyumludur pH dengelidir.Tüm fantezi oyuncaklarla birlikte kullanıma uygundur.Yağsızdır ve suda kolayca çözülmektedir.Oda sıcaklığında ve çocukların ulaşamayacağı yerde saklanmalıdır.Daha sağlıklı ve keyifli bir cinsel yaşam için Viaxi Glide Kayganlaştırıcı Jel’i güvenle kullanabilirsiniz.",
+        "en": "Viaxi Glide Lubricating Gel 200 ml.Viaxi Glide Lubricating Gel is water-based, colorless and odorless.It helps to reduce vaginal dryness with its long-lasting lubricant and relaxing effect.Dermatological and clinical tests have been performed. It is 100% compatible with condoms, pH balanced, suitable for use with all fancy toys, non-greasy and easily dissolves in water, should be stored at room temperature and out of the reach of children, you can safely use Viaxi Glide Lubricant Gel for a healthier and more enjoyable sex life.",
+        "de": "Viaxi Glide Lubricant Gel 200 ml.Viaxi Glide Lubricant Gel ist auf Wasserbasis, farblos und geruchlos.es hilft, vaginale Trockenheit mit seiner lang anhaltenden Gleitmittel und entspannende Wirkung zu reduzieren.dermatologische und klinische Tests wurden durchgeführt. Es ist 100% kompatibel mit Kondomen, pH-Wert ausgeglichen, geeignet für den Einsatz mit allen ausgefallenen Spielzeug, nicht fettig und löst sich leicht in Wasser, sollte bei Raumtemperatur und außerhalb der Reichweite von Kindern gelagert werden, können Sie sicher verwenden Viaxi Glide Lubricant Gel für ein gesünderes und angenehmeres Sexualleben.",
+        "ru": "Гель-смазка Viaxi Glide Lubricant Gel 200 мл.Гель-смазка Viaxi Glide Lubricant Gel на водной основе, без цвета и запаха.Помогает уменьшить сухость влагалища, оказывая длительное смазывающее и расслабляющее действие.Проведены дерматологические и клинические испытания. 100% совместим с презервативами, pH-сбалансирован, подходит для использования со всеми модными игрушками, нежирный и легко растворяется в воде, должен храниться при комнатной температуре и в недоступном для детей месте. Вы можете безопасно использовать гель-смазку Viaxi Glide для более здоровой и приятной сексуальной жизни."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/viaxi-glide-su-bazli-kayganlastirici-jel-sade-200-ml-2298.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Viaxi",
+                "en": "Viaxi",
+                "de": "Viaxi",
+                "ru": "Viaxi"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "6 × 18 × 3 cm",
+                "en": "6 × 18 × 3 cm",
+                "de": "6 × 18 × 3 cm",
+                "ru": "6 × 18 × 3 см"
+            }
+        }
+    ]
+}

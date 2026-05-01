@@ -1,0 +1,81 @@
+{
+    "id": "silky-kiss-aloe-vera-ozlu-prezervatif",
+    "sku": "PT-EC5110",
+    "category_id": "erkek-cinsel-saglik-urunu",
+    "subcategory_id": "prezervatif",
+    "sold_out": false,
+    "name": {
+        "tr": "Silky Kiss Aloe Vera Özlü Prezervatif",
+        "en": "Silky Kiss Aloe Vera Extract Condom",
+        "de": "Silky Kiss Aloe Vera Extrakt Kondom",
+        "ru": "Презерватив Silky Kiss с экстрактом алоэ вера"
+    },
+    "overline": {
+        "tr": "ERKEK CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "MALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DES MANNES",
+        "ru": "СРЕДСТВО ДЛЯ СЕКСУАЛЬНОГО ЗДОРОВЬЯ МУЖЧИН"
+    },
+    "description": {
+        "tr": "Silky Kiss Aloa Vera     Aloe Vera özlerinden hazırlanan kremi ile cildinize dost bu ürün ile geceleriniz çok daha heyecanlı, güzel ve uzun geçecek. Silky Kiss prezervatifleri sizin ve partnerinizin zevkini artıran ipeksi bir dokunuşa sahip özel bir kayganlaştırıcı içerir. Uluslararası kaliteye sahip Silky Kiss prezervatifleri ISO 2074 standartlarına uygun üretilmiştir. %100 kaliteli latexten üretilmiştir. Hamilelik ve cinsel yolla bulaşan hastalıklara karşı korunma sağlar. Etkin bir doğum kontrol aracıdır.          ",
+        "en": "Silky Kiss Aloa Vera Your nights will be much more exciting, beautiful and long with this skin-friendly product with its cream prepared from Aloe Vera extracts. Silky Kiss condoms contain a special lubricant with a silky touch that enhances the pleasure of you and your partner. Silky Kiss condoms of international quality are manufactured in accordance with ISO 2074 standards. They are made of 100% quality latex. Provides protection against pregnancy and sexually transmitted diseases. It is an effective contraceptive.          ",
+        "de": "Silky Kiss Aloa Vera Mit seiner Creme aus Aloe-Vera-Extrakten werden Ihre Nächte mit diesem hautfreundlichen Produkt viel aufregender, schöner und länger sein. Silky Kiss Kondome enthalten ein spezielles Gleitmittel mit einem seidigen Touch, der das Vergnügen von Ihnen und Ihrem Partner steigert. Silky Kiss Kondome mit internationaler Qualität werden nach ISO 2074 hergestellt und bestehen aus 100% Qualitätslatex. Sie bieten Schutz vor Schwangerschaft und sexuell übertragbaren Krankheiten. Es ist ein wirksames Verhütungsmittel.          ",
+        "ru": "Silky Kiss Aloa Vera с кремом, приготовленным из экстрактов алоэ вера, - с этим безопасным для кожи продуктом ваши ночи станут намного более волнующими, красивыми и долгими. Презервативы Silky Kiss содержат специальную смазку с шелковистым прикосновением, которая усиливает удовольствие вас и вашего партнера. Презервативы Silky Kiss международного качества изготовлены в соответствии со стандартами ISO 2074 из 100% качественного латекса. Обеспечивают защиту от беременности и заболеваний, передающихся половым путем. Являются эффективным средством контрацепции.          "
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 10,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 10,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-aloe-vera-ozlu-prezervatif-3545.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-aloe-vera-ozlu-prezervatif-3546.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-aloe-vera-ozlu-prezervatif-3547.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-aloe-vera-ozlu-prezervatif-3548.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Silky Kiss",
+                "en": "Silky Kiss",
+                "de": "Silky Kiss",
+                "ru": "Silky Kiss"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "7 × 12 × 3 cm",
+                "en": "7 × 12 × 3 cm",
+                "de": "7 × 12 × 3 cm",
+                "ru": "7 × 12 × 3 см"
+            }
+        }
+    ]
+}

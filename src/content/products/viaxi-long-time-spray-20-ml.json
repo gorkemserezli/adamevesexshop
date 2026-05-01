@@ -1,0 +1,78 @@
+{
+    "id": "viaxi-long-time-spray-20-ml",
+    "sku": "PT-EC0030",
+    "category_id": "erkek-cinsel-saglik-urunu",
+    "subcategory_id": "penis-spreyi",
+    "sold_out": false,
+    "name": {
+        "tr": "Viaxi Long Time Spray 20 ml",
+        "en": "Viaxi Long Time Spray 20 ml",
+        "de": "Viaxi Langzeit-Spray 20 ml",
+        "ru": "Viaxi Long Time Spray 20 мл"
+    },
+    "overline": {
+        "tr": "ERKEK CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "MALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DES MANNES",
+        "ru": "СРЕДСТВО ДЛЯ СЕКСУАЛЬНОГО ЗДОРОВЬЯ МУЖЧИН"
+    },
+    "description": {
+        "tr": "Viaxi long time sprey for men 20 ml soğutucu ve hissiyat azaltıcı özelliğiyle birlikteliklerin daha uzun sürmesine yardımcı olabilir. Tatsız, renksiz ve kokusuzdur. 50 ml. Olup ortalama 60 defa kullanılabilmektedir. Kullanım: Aktiviteden 15-20 dk. Önce avuç içine az miktarda sıkılarak organ yüzeyine masajla uygulanmalıdır. Uyarı: Tahriş olmuş cilt, sivilce ve açık yaralara kullanmayınız. Bitmiş tüpleri ateşe atmayınız. Çocuklardan uzak tutunuz. Oda sıcaklığında saklayınız.",
+        "en": "Viaxi long time spray for men 20 ml can help make partnerships last longer with its cooling and sensation-reducing feature. Tasteless, colorless and odorless. 50 ml. It can be used an average of 60 times. Usage: 15-20 minutes before the activity, a small amount should be squeezed into the palm of the hand and massaged on the organ surface. Warning: Do not use on irritated skin, acne and open wounds. Do not throw the finished tubes into fire. Keep away from children. Store at room temperature.",
+        "de": "Viaxi long time spray for men 20 ml kann durch seine kühlende und gefühlsreduzierende Wirkung dazu beitragen, dass Partnerschaften länger halten. Geschmacksneutral, farblos und geruchsneutral. 50 ml. Es kann durchschnittlich 60 Mal verwendet werden. Anwendung: 15-20 Minuten vor der Aktivität eine kleine Menge in die Handfläche geben und auf die Oberfläche des Organs massieren. Achtung! Nicht auf gereizter Haut, Akne und offenen Wunden anwenden. Werfen Sie die fertigen Tuben nicht ins Feuer. Von Kindern fernhalten. Bei Raumtemperatur lagern.",
+        "ru": "Спрей Viaxi long time spray for men 20 ml поможет партнерским отношениям длиться дольше благодаря охлаждающему и снижающему ощущения свойству. Без вкуса, цвета и запаха. 50 мл. Можно использовать в среднем 60 раз. Применение: За 15-20 минут до начала занятий выдавить небольшое количество средства на ладонь и массирующими движениями нанести на поверхность органа. Внимание: Не использовать на раздраженной коже, при угревой сыпи и открытых ранах. Не бросайте готовые тюбики в огонь. Хранить вдали от детей. Хранить при комнатной температуре."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 40,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 40,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 40,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 40,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/viaxi-long-time-spray-20-ml-3626.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Viaxi",
+                "en": "Viaxi",
+                "de": "Viaxi",
+                "ru": "Viaxi"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "3 × 11 × 3 cm",
+                "en": "3 × 11 × 3 cm",
+                "de": "3 × 11 × 3 cm",
+                "ru": "3 × 11 × 3 см"
+            }
+        }
+    ]
+}

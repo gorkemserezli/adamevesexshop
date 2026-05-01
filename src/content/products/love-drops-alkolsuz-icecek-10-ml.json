@@ -1,0 +1,78 @@
+{
+    "id": "love-drops-alkolsuz-icecek-10-ml",
+    "sku": "PT-KC3092",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "sprey-ve-damlalar",
+    "sold_out": false,
+    "name": {
+        "tr": "Love Drops Alkolsüz İçecek 10 ml",
+        "en": "Love Drops Soft Drink 10 ml",
+        "de": "Liebesdrops Erfrischungsgetränk 10 ml",
+        "ru": "Безалкогольный напиток Love Drops 10 мл"
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Love Drops Kadınlara Özel Damla, tek başına veya tadı hoşunuza gitmezse soğuk veya sıcak herhangi bir içeceğe 5-7 damla damlatarak tüketebilirsiniz. Kullanımdan önce iyice sallayın. Serin ve kuru yerde muhafaza ediniz.",
+        "en": "Love Drops Special Drops for Women can be consumed alone or by dropping 5-7 drops into any cold or hot beverage if you do not like the taste. Shake well before use. Store in a cool and dry place.",
+        "de": "Love Drops Special Drops for Women können alleine eingenommen werden oder, wenn Sie den Geschmack nicht mögen, 5-7 Tropfen in ein kaltes oder heißes Getränk einträufeln. Vor Gebrauch gut schütteln. An einem kühlen und trockenen Ort aufbewahren.",
+        "ru": "Love Drops Special Drops для женщин можно употреблять самостоятельно или капнуть 5-7 капель в любой холодный или горячий напиток, если вам не нравится вкус. Перед употреблением хорошо взболтайте. Храните в сухом и прохладном месте."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/love-drops-alkolsuz-icecek-10-ml-3791.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Cabs",
+                "en": "Cabs",
+                "de": "Cabs",
+                "ru": "Cabs"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "3 × 7 × 2 cm",
+                "en": "3 × 7 × 2 cm",
+                "de": "3 × 7 × 2 cm",
+                "ru": "3 × 7 × 2 см"
+            }
+        }
+    ]
+}

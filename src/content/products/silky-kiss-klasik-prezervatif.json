@@ -1,0 +1,80 @@
+{
+    "id": "silky-kiss-klasik-prezervatif",
+    "sku": "PT-EC1575",
+    "category_id": "erkek-cinsel-saglik-urunu",
+    "subcategory_id": "prezervatif",
+    "sold_out": false,
+    "name": {
+        "tr": "Silky Kiss Klasik Prezervatif",
+        "en": "Silky Kiss Classic Condom",
+        "de": "Silky Kiss Klassisches Kondom",
+        "ru": "Презерватив Silky Kiss Classic"
+    },
+    "overline": {
+        "tr": "ERKEK CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "MALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DES MANNES",
+        "ru": "СРЕДСТВО ДЛЯ СЕКСУАЛЬНОГО ЗДОРОВЬЯ МУЖЧИН"
+    },
+    "description": {
+        "tr": "Silky Kiss Classic   İpeksi dokunuşSilky Kiss Classic prezervatifleri sizin ve partnerinizin zevkini artıran ipeksi bir dokunuşa sahip özel bir kayganlaştırıcı içerir. Uluslararası kaliteye sahip Silky Kiss prezervatifleri ISO 2074 standartlarına uygun üretilmiştir. %100 kaliteli latexten üretilmiştir. Hamilelik ve cinsel yolla bulaşan enfeksiyonlara karşı korunma sağlar. Etkin bir doğum kontrol aracıdır.      ",
+        "en": "Silky Kiss Classic Silky touchSilky Kiss Classic condoms contain a special lubricant with a silky touch that enhances the pleasure for you and your partner. The international quality Silky Kiss condoms are manufactured according to ISO 2074 standards and are made of 100% high quality latex. Provides protection against pregnancy and sexually transmitted infections. It is an effective contraceptive.      ",
+        "de": "Silky Kiss Classic Silky touchSilky Kiss Classic Kondome enthalten ein spezielles Gleitmittel mit einem seidigen Touch, der das Vergnügen von Ihnen und Ihrem Partner steigert. Silky Kiss Kondome mit internationaler Qualität werden nach ISO 2074 hergestellt und bestehen aus 100% Qualitätslatex. Sie bieten Schutz vor Schwangerschaft und sexuell übertragbaren Infektionen. Es ist ein wirksames Verhütungsmittel.      ",
+        "ru": "Silky Kiss Classic Silky touchПрезервативы Silky Kiss Classic содержат специальную смазку с шелковистым прикосновением, которая усиливает удовольствие вас и вашего партнера. Презервативы Silky Kiss международного качества изготовлены в соответствии со стандартами ISO 2074 из 100% качественного латекса. Обеспечивают защиту от беременности и инфекций, передающихся половым путем. Являются эффективным средством контрацепции.      "
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-klasik-prezervatif-3553.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-klasik-prezervatif-3554.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/silky-kiss-klasik-prezervatif-3555.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Silky Kiss",
+                "en": "Silky Kiss",
+                "de": "Silky Kiss",
+                "ru": "Silky Kiss"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "7 × 12 × 3 cm",
+                "en": "7 × 12 × 3 cm",
+                "de": "7 × 12 × 3 cm",
+                "ru": "7 × 12 × 3 см"
+            }
+        }
+    ]
+}

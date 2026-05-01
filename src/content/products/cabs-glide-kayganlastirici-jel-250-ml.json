@@ -1,0 +1,78 @@
+{
+    "id": "cabs-glide-kayganlastirici-jel-250-ml",
+    "sku": "PT-KC1535",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "kayganlastirici",
+    "sold_out": false,
+    "name": {
+        "tr": "Cabs Glide Kayganlaştırıcı Jel 250 ml.",
+        "en": "Cabs Glide Lubricant Gel 250 ml.",
+        "de": "Cabs Glide Gleitmittel Gel 250 ml.",
+        "ru": "Cabs Glide Lubricant Gel 250 мл."
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Dermatolojik olarak test edilen ve tüm cilt tiplerinde kullanıma uygun olduğu onaylanan Cabs Glide Kayganlaştırıcı Jel, uzun süreli kayganlık sağlar. Klinik testlerden geçen ürün, kondom çeşitleri ile birlikte kullanmaya uyumludur. Tamamen su bazlı olan ürünün formülünde yağ yoktur. Çocukların ulaşamayacağı, serin ve kuru bir yerde saklayınız.",
+        "en": "Dermatologically tested and approved for use on all skin types, Cabs Glide Lubricating Gel provides long-lasting lubrication. The product, which has passed clinical tests, is compatible for use with condom types. The formula of the product, which is completely water-based, does not contain oil. Store in a cool and dry place out of the reach of children.",
+        "de": "Das dermatologisch getestete und für alle Hauttypen zugelassene Cabs Glide Lubricant Gel sorgt für eine lang anhaltende Gleitfähigkeit. Das Produkt, das klinische Tests bestanden hat, ist für die Verwendung mit Kondomtypen kompatibel. Die Formel des Produkts enthält kein Öl und ist vollständig auf Wasserbasis. An einem kühlen und trockenen Ort außerhalb der Reichweite von Kindern aufbewahren.",
+        "ru": "Гель-смазка Cabs Glide, дерматологически протестированный и одобренный для использования на всех типах кожи, обеспечивает длительную смазку. Продукт, прошедший клинические испытания, совместим для использования с презервативами. В формуле средства нет масла, оно полностью на водной основе. Хранить в сухом и прохладном месте, недоступном для детей."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/cabs-glide-kayganlastirici-jel-250-ml-3845.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Cabs",
+                "en": "Cabs",
+                "de": "Cabs",
+                "ru": "Cabs"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "6 × 15 × 6 cm",
+                "en": "6 × 15 × 6 cm",
+                "de": "6 × 15 × 6 cm",
+                "ru": "6 × 15 × 6 см"
+            }
+        }
+    ]
+}

@@ -1,0 +1,65 @@
+{
+    "id": "fantezi-tavsan-kiz-kostumu",
+    "sku": "PT-FGMGP6498",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-giyim",
+    "sold_out": false,
+    "name": {
+        "tr": "Fantezi Tavşan Kız Kostümü",
+        "en": "Fancy Bunny Girl Costume",
+        "de": "Fancy Bunny Girl Kostüm",
+        "ru": "Модный костюм зайчика для девочки"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "Ürün Adı: Fantezi Pudra Tavşan Kız Kostümü Kategori: Fantazi Kostümler \/ Erotik Kostümler Marka: Pembe Tilki Ürün Grubu: 2025 Erotik Kostümler Renk \/ Desen: Pudra Beden: S, M, L Kutu Durumu: Kutulu Yıkama Talimatı 30°C makinede yıkanabilir. Beyazlatıcı kullanımı önerilmez. Kurutucu kullanımı önerilmez, gölgede kurutunuz. Detaylı bakım talimatları için lütfen ürün etiketini kontrol ediniz.",
+        "en": "Product Name: Fantasy Powder Bunny Girl Costume Category: Fantasy Costumes \/ Erotic Costumes Brand: Pink Fox Product Group: 2025 Erotic Costumes Color \/ Pattern: Powder Size: S, M, L Box Condition: Boxed Washing Instructions 30°C machine washable. The use of bleach is not recommended. Dryer is not recommended, dry in the shade. Please check the product label for detailed care instructions.",
+        "de": "Produktname: Fantasy Powder Bunny Girl Kostüm Kategorie: Fantasy Kostüme \/ Erotische Kostüme Marke: Pink Fox Produktgruppe: 2025 Erotische Kostüme Farbe \/ Muster: Puder Größe: S, M, L Karton Zustand: Boxed Waschanleitung 30°C maschinenwaschbar. Die Verwendung von Bleichmittel wird nicht empfohlen. Trockner wird nicht empfohlen, im Schatten trocknen. Detaillierte Pflegehinweise entnehmen Sie bitte dem Produktetikett.",
+        "ru": "Наименование товара: Костюм девушки-зайчика из пудры Категория: Фантазийные костюмы \/ Эротические костюмы Бренд: Pink Fox Товарная группа: 2025 Эротические костюмы Цвет \/ узор: Пудра Размер: S, M, L Состояние коробки: В коробке Инструкции по стирке Машинная стирка при 30°C. Не рекомендуется использовать отбеливатели. Сушить в сушильной машине не рекомендуется, сушите в тени. Подробные инструкции по уходу смотрите на этикетке изделия."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 49.5,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 49.5,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 49.5,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 49.5,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/-5405.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/-5406.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+{
+    "id": "viaxi-whitening-beyazlatici-krem",
+    "sku": "PT-KC578",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "beyazlatici-krem",
+    "sold_out": false,
+    "name": {
+        "tr": "Viaxi Whitening Beyazlatıcı Krem",
+        "en": "Viaxi Whitening Whitening Cream",
+        "de": "Viaxi Whitening Aufhellungscreme",
+        "ru": "Отбеливающий крем Viaxi Whitening"
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "TR : Viaxi Whitening Cream özellikle hassas cilt bölgelerinde (bikini , genital , kol altı, diz, dirsek gibi) renk değişimisorunlarına yardımcı olmak için doğal bitki özlerinden oluşan bir formülle geliştirilmiştir.Düzenli  kullanımda cilt rengini açmaya yardımcı olur.KULLANIM:Temiz cilt üzerine uygulanır.Viaxi Whitening Cream, sürelecek bölgeye dairesel  hareketlerle masaj yapılarak kullanılır.Daha etkili sonuç almanız için düzenli olarak sabah akşam olmak üzere, en az  3-4 hafta kullanılması tavsiye edilir.UYARI : Yalnız yetişkinler içindir, çocuklardan uzak tutunuz.",
+        "en": "TR : Viaxi Whitening Cream has been developed with a formula consisting of natural plant extracts to help with discoloration problems, especially in sensitive skin areas (such as bikini, genitals, under arms, knees, elbows).It helps to lighten the skin color with regular use.USAGE: It is applied on clean skin.Viaxi Whitening Cream is used by massaging the area to be applied with circular movements.For more effective results, it is recommended to use it regularly, morning and evening, for at least 3-4 weeks.WARNING : For adults only, keep away from children.",
+        "de": "TR : Viaxi Whitening Cream wurde mit einer Formel entwickelt, die aus natürlichen Pflanzenextrakten besteht, um bei Verfärbungsproblemen zu helfen, vor allem in empfindlichen Hautbereichen (wie Bikini, Genitalien, Achselhöhlen, Knie, Ellenbogen).Es hilft, die Hautfarbe bei regelmäßiger Anwendung aufzuhellen.ANWENDUNG:Es wird auf die saubere Haut aufgetragen.Viaxi Whitening Cream wird verwendet, indem man den aufzutragenden Bereich mit kreisenden Bewegungen massiert.Es wird empfohlen, es regelmäßig morgens und abends für mindestens 3-4 Wochen zu verwenden, um effektivere Ergebnisse zu erzielen.WARNUNG : Nur für Erwachsene, von Kindern fernhalten.",
+        "ru": "TR : Отбеливающий крем Viaxi разработан на основе натуральных растительных экстрактов для решения проблем обесцвечивания кожи, особенно в чувствительных зонах (бикини, гениталии, подмышки, колени, локти). При регулярном применении он помогает осветлить цвет кожи. ИСПОЛЬЗОВАНИЕ: Наносится на чистую кожу. Отбеливающий крем Viaxi используется путем массажа круговыми движениями. Рекомендуется использовать регулярно утром и вечером не менее 3-4 недель для достижения более эффективного результата: Только для взрослых, хранить вдали от детей."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 40,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 40,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 40,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 40,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/viaxi-whitening-beyazlatici-krem-3622.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Viaxi",
+                "en": "Viaxi",
+                "de": "Viaxi",
+                "ru": "Viaxi"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "6 × 12 × 4 cm",
+                "en": "6 × 12 × 4 cm",
+                "de": "6 × 12 × 4 cm",
+                "ru": "6 × 12 × 4 см"
+            }
+        }
+    ]
+}

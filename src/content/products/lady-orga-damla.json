@@ -1,0 +1,78 @@
+{
+    "id": "lady-orga-damla",
+    "sku": "PT-KC5115",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "sprey-ve-damlalar",
+    "sold_out": false,
+    "name": {
+        "tr": "Lady Orga Damla",
+        "en": "Lady Orga Damla",
+        "de": "Orga-Dame Drip",
+        "ru": "Леди Орга Дрип"
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Cinsel çekimin azaldığı, isteksizliğin arttığı durumlarda Lady Orga Damla, soğukluğun giderilmesinde yardımcı olur. Kullanım sonrası, yaşadığınız stres ve arzu kaybından sizi kurtarıp, performansınızı en yukarılara çıkaracak. Kadınlara özel olan damla, içecekler ile alınabilir. İlişkiden 30 dakika önce sıcak veya soğuk içeceklere 5 – 7 damla eklemeniz yeterli olacaktır.",
+        "en": "In cases where sexual attraction decreases and reluctance increases, Lady Orga Drops helps to eliminate coldness. After use, it will save you from the stress and loss of desire you experience and will maximize your performance. The drops, which are special for women, can be taken with drinks. It will be enough to add 5 - 7 drops to hot or cold drinks 30 minutes before intercourse.",
+        "de": "In Fällen, in denen die sexuelle Anziehungskraft nachlässt und die Abneigung zunimmt, helfen Lady Orga Drops, die Kälte zu beseitigen. Nach der Einnahme werden Sie vor Stress und Lustverlust bewahrt und Ihre Leistungsfähigkeit wird maximiert. Die Tropfen, die speziell für Frauen entwickelt wurden, können mit Getränken eingenommen werden. Es reicht aus, wenn Sie 30 Minuten vor dem Geschlechtsverkehr 5 - 7 Tropfen in heiße oder kalte Getränke geben.",
+        "ru": "В случаях, когда сексуальное влечение снижается и усиливается нежелание, Lady Orga Drops поможет устранить холодность. После применения он избавит вас от стресса и потери желания и максимально повысит работоспособность. Капли, предназначенные специально для женщин, можно принимать с напитками. Достаточно добавить 5 - 7 капель в горячий или холодный напиток за 30 минут до полового акта."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/lady-orga-damla-658.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Cabs",
+                "en": "Cabs",
+                "de": "Cabs",
+                "ru": "Cabs"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "7 × 10 × 5 cm",
+                "en": "7 × 10 × 5 cm",
+                "de": "7 × 10 × 5 cm",
+                "ru": "7 × 10 × 5 см"
+            }
+        }
+    ]
+}

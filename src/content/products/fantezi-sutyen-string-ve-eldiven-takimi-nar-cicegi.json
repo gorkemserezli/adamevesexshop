@@ -1,0 +1,65 @@
+{
+    "id": "fantezi-sutyen-string-ve-eldiven-takimi-nar-cicegi",
+    "sku": "PT-FGMGP6662",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-giyim",
+    "sold_out": false,
+    "name": {
+        "tr": "Fantezi Sütyen, String ve Eldiven Takımı Nar Çiçeği",
+        "en": "Fancy Bra, String and Glove Set Pomegranate Blossom",
+        "de": "Fancy BH, String und Handschuh Set Granatapfelblüte",
+        "ru": "Модный комплект из бюстгальтера, стрингов и перчаток \"Цветущий гранат"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "3 PARÇADAN OLUŞUYOR BALENLİ SÜTYEN STRİNG ELDİVEN",
+        "en": "CONSISTS OF 3 PIECES UNDERWIRE BRA STRİNG GLOVE",
+        "de": "BESTEHT AUS 3 STÜCK BÜGEL BH STRYNG HANDSCHUH",
+        "ru": "СОСТОИТ ИЗ 3 ЧАСТЕЙ БЮСТГАЛЬТЕР С ПОДКЛАДОЧНЫМ ШВОМ ПЕРЧАТКИ"
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 53.39999999999999857891452847979962825775146484375,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 53.39999999999999857891452847979962825775146484375,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 53.39999999999999857891452847979962825775146484375,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 53.39999999999999857891452847979962825775146484375,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-sutyen-string-ve-eldiven-takimi-nar-cicegi-5382.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-sutyen-string-ve-eldiven-takimi-nar-cicegi-5383.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}

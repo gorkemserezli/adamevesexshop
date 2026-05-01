@@ -1,0 +1,64 @@
+{
+    "id": "gold-fly-kadin-uyarici-damla-20ml",
+    "sku": "PT-KC5072",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "sprey-ve-damlalar",
+    "sold_out": false,
+    "name": {
+        "tr": "Gold Fly Kadın Uyarıcı Damla 20ml.",
+        "en": "Gold Fly Female Stimulant Drops 20ml.",
+        "de": "Gold Fly Female Stimulant Drops 20ml.",
+        "ru": "Gold Fly женские стимулирующие капли 20 мл."
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Kadınların yaşadığı cinsel isteksizlik durumlarında kullanılan Gold Fly Damla, birliktelikten 30 dakika önce kullanıldığında cinsel arzunun artmasını sağlar. Alkolsüz ve asitsiz içeceklere 5 – 7 damla eklemeniz halinde; kokusuz, renksiz ve tatsız yapısı ile hissedilmeyecektir. Cinsel dürtüleri harekete geçirecek olan damla ile partneriniz ile keyif dolu anlar yaşayabilirsiniz.",
+        "en": "Gold Fly Drops, used in cases of sexual reluctance experienced by women, increases sexual desire when used 30 minutes before intercourse. If you add 5 - 7 drops to non-alcoholic and acid-free drinks; It will not be felt with its odorless, colorless and tasteless structure. You can experience pleasant moments with your partner with drops that will stimulate sexual impulses.",
+        "de": "Gold Fly Drops wird bei sexueller Unlust von Frauen eingesetzt und steigert das sexuelle Verlangen, wenn es 30 Minuten vor dem Geschlechtsverkehr eingenommen wird. Wenn Sie 5 - 7 Tropfen in alkoholfreie und säurefreie Getränke geben, werden Sie die geruchlose, farblose und geschmacksneutrale Struktur nicht spüren. Mit Tropfen, die die sexuellen Impulse stimulieren, können Sie angenehme Momente mit Ihrem Partner erleben.",
+        "ru": "Капли Gold Fly Drops, применяемые в случаях сексуального нежелания у женщин, усиливают сексуальное желание при употреблении за 30 минут до полового акта. Если добавить 5 - 7 капель в безалкогольные и бескислотные напитки, он не будет ощущаться благодаря своему составу без запаха, цвета и вкуса. Вы сможете пережить приятные моменты с партнером, используя капли, стимулирующие сексуальные импульсы."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/gold-fly-kadin-uyarici-damla-20ml-6425.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Diğer",
+                "en": "Diğer",
+                "de": "Diğer",
+                "ru": "Diğer"
+            }
+        }
+    ]
+}

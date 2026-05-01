@@ -1,0 +1,78 @@
+{
+    "id": "yeson-kadin-uyarici-damla-15ml",
+    "sku": "PT-KC0092",
+    "category_id": "kadin-cinsel-saglik-urunu",
+    "subcategory_id": "sprey-ve-damlalar",
+    "sold_out": false,
+    "name": {
+        "tr": "Yeson Kadın Uyarıcı Damla 15ml.",
+        "en": "Yeson Female Stimulant Drops 15ml.",
+        "de": "Yeson Female Stimulant Drops 15ml.",
+        "ru": "Yeson Женские стимулирующие капли 15 мл."
+    },
+    "overline": {
+        "tr": "KADIN CİNSEL SAĞLIK ÜRÜNÜ",
+        "en": "FEMALE SEXUAL HEALTH PRODUCT",
+        "de": "PRODUKT FÜR DIE SEXUELLE GESUNDHEIT DER FRAU",
+        "ru": "СРЕДСТВО ДЛЯ ЖЕНСКОГО СЕКСУАЛЬНОГО ЗДОРОВЬЯ"
+    },
+    "description": {
+        "tr": "Yeson Magic Drops For Women 15 ml 18 yaş ve üzeri yetişkin kadınlarda günde 1 defa 20 damla alınması tavsiye edilir.Kullanmadan önce çalkalayın.Bir bardak meyve suyu veya herhangi bir içeceğe eklenecektir.",
+        "en": "Yeson Magic Drops For Women 15 ml It is recommended to take 20 drops 1 time per day in adult women aged 18 years and over.shake before use.to be added to a glass of juice or any beverage.",
+        "de": "Yeson Magic Drops For Women 15 ml Es wird empfohlen, 1 Tropfen 20 mal täglich bei erwachsenen Frauen ab 18 Jahren einzunehmen. Vor Gebrauch schütteln. Es wird in ein Glas Saft oder ein beliebiges Getränk gegeben.",
+        "ru": "Yeson Magic Drops For Women 15 мл Рекомендуется принимать по 1 капле 20 раз в день взрослым женщинам в возрасте от 18 лет и старше. Перед употреблением взболтать. Добавляется в стакан сока или любого напитка."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 20,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 20,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/yeson-kadin-uyarici-damla-15ml-3623.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Viaxi",
+                "en": "Viaxi",
+                "de": "Viaxi",
+                "ru": "Viaxi"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "6 × 9 × 3 cm",
+                "en": "6 × 9 × 3 cm",
+                "de": "6 × 9 × 3 cm",
+                "ru": "6 × 9 × 3 см"
+            }
+        }
+    ]
+}

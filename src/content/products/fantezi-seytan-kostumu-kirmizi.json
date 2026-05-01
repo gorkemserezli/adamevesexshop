@@ -1,0 +1,65 @@
+{
+    "id": "fantezi-seytan-kostumu-kirmizi",
+    "sku": "PT-FGMGP6608",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-giyim",
+    "sold_out": false,
+    "name": {
+        "tr": "Fantezi Şeytan Kostümü Kırmızı",
+        "en": "Fantasy Devil Costume Red",
+        "de": "Fantasy Teufelin Kostüm Rot",
+        "ru": "Костюм дьявола фэнтези красный"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "BABYDOLL STRİNG ŞEYTAN TACI ELDİVEN TAKIM",
+        "en": "BABYDOLL STRİNG DEVIL CROWN GLOVE SET",
+        "de": "BABYDOLL STRİNG TEUFELSKRONE HANDSCHUH-SET",
+        "ru": "НАБОР ПЕРЧАТОК BABYDOLL STRİNG DEVIL CROWN"
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 49.60000000000000142108547152020037174224853515625,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 49.60000000000000142108547152020037174224853515625,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 49.60000000000000142108547152020037174224853515625,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 49.60000000000000142108547152020037174224853515625,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-seytan-kostumu-kirmizi-5402.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/fantezi-seytan-kostumu-kirmizi-5403.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}

@@ -1,0 +1,82 @@
+{
+    "id": "deri-firfirli-choker-harness-kolye-siyah",
+    "sku": "PT-VMXG930BL",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-fetis",
+    "sold_out": false,
+    "name": {
+        "tr": "Deri Fırfırlı Choker Harness Kolye Siyah",
+        "en": "Leather Ruffle Choker Harness Necklace Black",
+        "de": "Leder Rüschen Choker Harness Halskette Schwarz",
+        "ru": "Кожаное ожерелье Frill Choker Harness черного цвета"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "Şıklığı ve cesareti bir araya getiren bu deri choker harness kolye, zarif fırfır detayları ve metal halkalarla tasarlanmıştır. Boyun çevresine rahatça oturan ayarlanabilir kayışı sayesinde kişisel konfor sunar. Çıkarılabilir püskül aksesuarı, isteğe bağlı olarak farklı stillerle kombinlenebilir. Malzeme: Yüksek kaliteli suni deri ve paslanmaz metal Renk: Siyah Özellikler: Ayarlanabilir kayış, çıkarılabilir fırfır detayı Kullanım Alanı: Günlük giyim, festival kostümleri veya özel geceler için ideal Bu choker, şıklığınıza çarpıcı bir dokunuş katarken cesur tarzınızı yansıtmanın mükemmel bir yoludur.",
+        "en": "Combining elegance and boldness, this leather choker harness necklace is designed with elegant ruffle details and metal rings. It offers personalized comfort thanks to the adjustable strap that fits comfortably around the neck. The detachable tassel accessory can optionally be combined with different styles. Material: High quality faux leather and stainless metal Color: Black Features: Adjustable strap, removable frill detail Usage: Ideal for everyday wear, festival costumes or special nights out, this choker is the perfect way to show off your bold style while adding a striking touch to your outfit.",
+        "de": "Dieses Halsband aus Leder, das Eleganz und Kühnheit miteinander verbindet, ist mit eleganten Rüschendetails und Metallringen versehen. Es bietet individuellen Komfort dank des verstellbaren Riemens, der sich bequem um den Hals legt. Die abnehmbare Quaste kann beliebig mit verschiedenen Styles kombiniert werden. Material: Hochwertiges Lederimitat und rostfreies Metall Farbe: Schwarz Merkmale: Verstellbarer Riemen, abnehmbares Rüschendetail Einsatzbereich: Ideal für den Alltag, Festival-Kostüme oder besondere Abende. Dieses Kropfband ist die perfekte Möglichkeit, Ihren mutigen Stil zu unterstreichen und Ihrem schicken Ensemble einen auffälligen Touch zu verleihen.",
+        "ru": "Сочетая в себе элегантность и смелость, это кожаное ожерелье-чокер с элегантными оборками и металлическими кольцами. Оно обеспечивает индивидуальный комфорт благодаря регулируемому ремешку, который удобно сидит на шее. Съемный аксессуар с кисточкой можно комбинировать с разными стилями. Материал: Высококачественная искусственная кожа и нержавеющий металл Цвет: Черный Особенности: Регулируемый ремешок, съемная деталь с оборкой Область применения: Идеально подходит для повседневной носки, фестивальных костюмов или особых выходов в свет. Этот чокер - идеальный способ отразить ваш смелый стиль и добавить яркий штрих к вашему шикарному ансамблю."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 5.839999999999999857891452847979962825775146484375,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 5.839999999999999857891452847979962825775146484375,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 5.839999999999999857891452847979962825775146484375,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 5.839999999999999857891452847979962825775146484375,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/esaret-tasmasi-siyah-3069.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/esaret-tasmasi-siyah-3070.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/esaret-tasmasi-siyah-3071.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/esaret-tasmasi-siyah-3072.jpg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/esaret-tasmasi-siyah-3073.jpg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        },
+        {
+            "label": {
+                "tr": "Boyut",
+                "en": "Size",
+                "de": "Größe",
+                "ru": "Размер"
+            },
+            "value": {
+                "tr": "15 × 20 × 2 cm",
+                "en": "15 × 20 × 2 cm",
+                "de": "15 × 20 × 2 cm",
+                "ru": "15 × 20 × 2 см"
+            }
+        }
+    ]
+}

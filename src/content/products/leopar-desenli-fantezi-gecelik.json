@@ -1,0 +1,65 @@
+{
+    "id": "leopar-desenli-fantezi-gecelik",
+    "sku": "PT-FGMFD8370",
+    "category_id": "fantezi-fetis-urunu",
+    "subcategory_id": "fantezi-giyim",
+    "sold_out": false,
+    "name": {
+        "tr": "Leopar Desenli Fantezi Gecelik",
+        "en": "Leopard Print Fantasy Nightgown",
+        "de": "Fantasie-Nachthemd mit Leopardenmuster",
+        "ru": "Ночная рубашка с леопардовым принтом"
+    },
+    "overline": {
+        "tr": "FANTEZİ & FETİŞ ÜRÜNÜ",
+        "en": "FANTASY & FETISH PRODUCT",
+        "de": "FANTASIE- UND FETISCHPRODUKTE",
+        "ru": "ФЭНТЕЗИ И ФЕТИШ"
+    },
+    "description": {
+        "tr": "Ürün Adı: Fantezi İç Çamaşırı Takımı 8370 Kategori: Fantazi Takımlar \/ Fantazi Büstiyer Takım Marka: Pembe Tilki Ürün Grubu: 2025 Fantazi Büstiyer Takım Renk \/ Desen: Leopar Beden: S, M, L Kutu Durumu: Kutulu Menşei: Türkiye Yıkama Talimatı :30°C makinede yıkanabilir. Beyazlatıcı kullanımı önerilmez. Kurutucu kullanımı önerilmez, gölgede kurutunuz. Detaylı bakım talimatları için lütfen ürün etiketini kontrol ediniz.",
+        "en": "Product Name: Fantasy Lingerie Set 8370 Category: Fantasy Sets \/ Fantasy Bustier Set Brand: Pink Fox Product Group: 2025 Fantasy Bustier Set Color \/ Pattern: Leopard Size: S, M, L Box Condition: Boxed Origin: Turkey Washing Instructions: 30°C machine washable. The use of bleach is not recommended. Dryer use is not recommended, dry in the shade. Please check the product label for detailed care instructions.",
+        "de": "Produktname: Fancy Lingerie Set 8370 Kategorie: Fancy Sets \/ Fancy Bustier Set Marke: Pink Fox Produktgruppe: 2025 Fantasy Bustier Set Farbe \/ Muster: Leopard Größe: S, M, L Box Zustand: Kartoniert Herkunft: Türkei Waschanleitung: 30°C maschinenwaschbar. Die Verwendung von Bleichmitteln wird nicht empfohlen. Trockner wird nicht empfohlen, im Schatten trocknen. Detaillierte Pflegehinweise entnehmen Sie bitte dem Produktetikett.",
+        "ru": "Наименование товара: Модный комплект нижнего белья 8370 Категория: Модные комплекты \/ Модный комплект бюстье Бренд: Pink Fox Товарная группа: 2025 Фантазийный комплект бюстье Цвет \/ Узор: Леопард Размер: S, M, L Состояние коробки: В коробке Происхождение: Турция Инструкции по стирке: Машинная стирка при 30°C. Не рекомендуется использовать отбеливатели. Не рекомендуется сушить в сушильной машине, сушите в тени. Подробные инструкции по уходу смотрите на этикетке изделия."
+    },
+    "curator_note": null,
+    "price": {
+        "tr": {
+            "value": 26,
+            "currency": "EUR"
+        },
+        "en": {
+            "value": 26,
+            "currency": "EUR"
+        },
+        "de": {
+            "value": 26,
+            "currency": "EUR"
+        },
+        "ru": {
+            "value": 26,
+            "currency": "EUR"
+        }
+    },
+    "images": [
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/-5347.jpeg",
+        "https:\/\/cdn1.xmlbankasi.com\/p1\/sxzbwszkqehn\/image\/data\/resimler\/-5348.jpeg"
+    ],
+    "variants": [],
+    "specs": [
+        {
+            "label": {
+                "tr": "Marka",
+                "en": "Brand",
+                "de": "Marke",
+                "ru": "Бренд"
+            },
+            "value": {
+                "tr": "Pembe Tilki",
+                "en": "Pembe Tilki",
+                "de": "Pembe Tilki",
+                "ru": "Pembe Tilki"
+            }
+        }
+    ]
+}
