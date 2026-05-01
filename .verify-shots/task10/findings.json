@@ -22,14 +22,14 @@
   },
   {
     "name": "03-apply",
-    "url": "http://localhost:4321/en/search/?type=wellness",
+    "url": "http://localhost:4321/en/search/?type=kadin-cinsel-saglik-urunu",
     "sheetState": "closed",
-    "visibleCount": 3,
-    "countText": "3 results"
+    "visibleCount": 2,
+    "countText": "2 results"
   },
   {
     "name": "04-deeplink",
-    "visibleCount": 1,
+    "visibleCount": 3,
     "chipPressed": "true"
   },
   {
@@ -41,8 +41,8 @@
   {
     "name": "06-q-clear",
     "beforeCount": 1,
-    "afterCount": 3,
-    "url": "http://localhost:4321/en/search/?type=wellness"
+    "afterCount": 2,
+    "url": "http://localhost:4321/en/search/?type=kadin-cinsel-saglik-urunu"
   },
   {
     "name": "07-clean-url",
@@ -50,7 +50,7 @@
   },
   {
     "name": "08-instock",
-    "wellnessAll": 3,
-    "wellnessInStock": 2
+    "kadinAll": 2,
+    "kadinInStock": 2
   }
 ]

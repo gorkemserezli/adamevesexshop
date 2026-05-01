@@ -69,7 +69,16 @@ const productSchema = z
     category_id: slug,
     subcategory_id: slug.nullable().default(null),
     sort_order: z.number().int().nonnegative(),
-    images: z.array(z.string().startsWith("/products/")).min(1),
+    images: z
+      .array(
+        z
+          .string()
+          .refine(
+            (s) => s.startsWith("/") || s.startsWith("https://"),
+            "image must be a local path starting with '/' or an absolute https:// URL",
+          ),
+      )
+      .min(1),
     overline: localizedOverline,
     name: localizedShortText,
     description: localizedDescription,

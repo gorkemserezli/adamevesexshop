@@ -1,28 +1,28 @@
 [
   {
     "name": "01-tr-index",
-    "rowCount": 6
+    "rowCount": 8
   },
   {
     "name": "01-en-index",
-    "rowCount": 6
+    "rowCount": 8
   },
   {
     "name": "01-de-index",
-    "rowCount": 6
+    "rowCount": 8
   },
   {
     "name": "01-ru-index",
-    "rowCount": 6
+    "rowCount": 8
   },
   {
-    "name": "02-wellness",
-    "breadcrumbText": "Categories \n›\nWellness",
+    "name": "02-kadin-cinsel-saglik-urunu",
+    "breadcrumbText": "Categories \n›\nKadın Cinsel Sağlık Ürünü",
+    "productCount": 2
+  },
+  {
+    "name": "03-fantezi-fetis-urunu",
     "productCount": 3
-  },
-  {
-    "name": "03-lingerie",
-    "productCount": 1
   },
   {
     "name": "04-no-type-chips",
@@ -31,14 +31,14 @@
   },
   {
     "name": "05-instock",
-    "before": 3,
+    "before": 2,
     "after": 2
   },
   {
     "name": "06-routing",
     "bottomNavCatHref": "/en/categories/",
     "homeCtaHref": "/en/categories/",
-    "wellnessRowHref": "/en/categories/wellness/",
+    "categoryRowHref": "/en/categories/kadin-cinsel-saglik-urunu/",
     "favEmptyCtaHref": "/en/categories/"
   },
   {
