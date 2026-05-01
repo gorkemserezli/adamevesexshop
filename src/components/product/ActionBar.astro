@@ -1,0 +1,96 @@
+---
+import type { Locale } from "~/i18n/ui";
+import type { Product } from "~/content/config";
+import { ui } from "~/i18n/ui";
+import { buildWhatsAppHref } from "~/i18n/whatsapp";
+
+interface Props {
+  product: Product;
+  lang: Locale;
+}
+
+const { product, lang } = Astro.props;
+const t = ui[lang];
+const waHref = buildWhatsAppHref(product, lang);
+---
+
+<section class="ae-action-bar px-ae-6 pb-ae-6" data-sku={product.sku}>
+  <button
+    type="button"
+    class="ae-fav-btn block w-full h-14 rounded-md font-medium text-ui-label"
+    style="background-color: var(--ae-wine-500); color: var(--ae-canvas);"
+    data-sku={product.sku}
+    data-label-add={t.cta.addToFavorites}
+    data-label-remove={t.cta.removeFromFavorites}
+    data-label-favorited={t.pdp.favorited}
+    data-toast-added={t.toast.addedToFavorites}
+    data-toast-removed={t.toast.removedFromFavorites}
+    aria-pressed="false"
+  >
+    <span class="ae-fav-content flex items-center justify-center gap-2">
+      <svg
+        class="ae-fav-heart"
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        aria-hidden="true"
+      >
+        <path
+          d="M9 15.5 3.2 9.8a3.4 3.4 0 0 1 4.8-4.8L9 6l1-1a3.4 3.4 0 0 1 4.8 4.8z"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+      <span class="ae-fav-label">{t.cta.addToFavorites}</span>
+    </span>
+  </button>
+
+  <a
+    href={waHref}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="ae-ask-btn block w-full h-12 mt-3 rounded-md border font-medium text-ui-label no-underline"
+    style="background-color: transparent; border-color: var(--ae-hairline); color: var(--ae-wine-500);"
+  >
+    <span class="flex items-center justify-center gap-2">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path
+          d="M8 1.5C4.4 1.5 1.5 4.4 1.5 8c0 1.2.3 2.3.9 3.3L1.5 14.5l3.3-.9c1 .5 2 .8 3.2.8 3.6 0 6.5-2.9 6.5-6.5S11.6 1.5 8 1.5zm3.7 9.1c-.2.5-.9 1-1.4 1.1-.4.1-.8.1-1.4-.1-.4-.1-.9-.3-1.5-.6-2.6-1.1-4.3-3.7-4.4-3.9-.1-.2-1-1.4-1-2.7s.7-1.9.9-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.5.1.3.7 1.1 1.4 1.7.9.8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.6-.7c.1-.2.3-.1.5-.1l1.7.8c.2.1.4.2.4.3.1.1.1.5-.1 1z"
+        ></path>
+      </svg>
+      <span>{t.cta.askAtBoutique}</span>
+    </span>
+  </a>
+</section>
+
+<script>
+  import { isFavorite, toggleFavorite, subscribeToFavorites } from "~/lib/favorites";
+  import { showToast } from "~/lib/toast";
+
+  document.querySelectorAll<HTMLButtonElement>(".ae-fav-btn").forEach((btn) => {
+    const sku = btn.dataset.sku!;
+    const labelEl = btn.querySelector<HTMLElement>(".ae-fav-label")!;
+    const heartEl = btn.querySelector<SVGElement>(".ae-fav-heart")!;
+    const labelAdd = btn.dataset.labelAdd!;
+    const labelFavorited = btn.dataset.labelFavorited!;
+    const toastAdded = btn.dataset.toastAdded ?? "";
+    const toastRemoved = btn.dataset.toastRemoved ?? "";
+
+    function paint(active: boolean): void {
+      btn.setAttribute("aria-pressed", active ? "true" : "false");
+      labelEl.textContent = active ? labelFavorited : labelAdd;
+      heartEl.setAttribute("fill", active ? "currentColor" : "none");
+    }
+    paint(isFavorite(sku));
+
+    btn.addEventListener("click", () => {
+      const next = toggleFavorite(sku);
+      paint(next);
+      showToast(next ? toastAdded : toastRemoved);
+    });
+
+    subscribeToFavorites((favs) => paint(favs.includes(sku)));
+  });
+</script>

@@ -1,0 +1,71 @@
+[
+  {
+    "name": "01-idle",
+    "idleHintVisible": true,
+    "resultsCount": 0
+  },
+  {
+    "name": "02-oil",
+    "resultsCount": 1,
+    "firstName": "Warming Massage Oil"
+  },
+  {
+    "name": "03-fuzzy",
+    "names": [
+      "Warming Massage Oil",
+      "Ginger Warming Balm"
+    ]
+  },
+  {
+    "name": "04-ru",
+    "names": [
+      "Согревающее массажное масло"
+    ]
+  },
+  {
+    "name": "05-no-results",
+    "noResultsVisible": true,
+    "ctaPresent": false
+  },
+  {
+    "name": "06-locale-isolation",
+    "indexHits": {
+      "tr": 0,
+      "en": 0,
+      "de": 0,
+      "ru": 1
+    }
+  },
+  {
+    "name": "07-deeplink",
+    "inputValue": "robe",
+    "resultsCount": 1
+  },
+  {
+    "name": "08-url-sync",
+    "url": "http://localhost:4321/en/search/?q=lace"
+  },
+  {
+    "name": "09-header-route",
+    "magHref": "/en/search/"
+  },
+  {
+    "name": "10-bottomnav",
+    "navHrefs": [
+      "/en/",
+      "/en/categories/",
+      "/en/search/",
+      "/en/favorites/"
+    ],
+    "activeKey": "/en/search/"
+  },
+  {
+    "name": "11b-skeleton",
+    "skeletonCount": 4,
+    "releasedAt": 0
+  },
+  {
+    "name": "11-privacy",
+    "blurredCount": 1
+  }
+]

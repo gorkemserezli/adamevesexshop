@@ -1,0 +1,41 @@
+---
+import type { Locale } from "~/i18n/ui";
+import { ui } from "~/i18n/ui";
+
+interface Props {
+  images: readonly string[];
+  productName: string;
+  lang: Locale;
+}
+
+const { images, productName, lang } = Astro.props;
+const t = ui[lang];
+const total = images.length;
+const single = total <= 1;
+---
+
+<div class="relative">
+  <div class="aspect-square bg-sunken overflow-hidden">
+    <img
+      src={images[0]}
+      alt={productName}
+      class="ae-product-image w-full h-full object-cover"
+      loading="eager"
+      decoding="async"
+      width="1024"
+      height="1024"
+    />
+  </div>
+
+  {!single && (
+    <div class="absolute bottom-4 right-6 flex gap-1.5" aria-label={t.pdp.imageOf(1, total)}>
+      {images.map((_, i) => (
+        <span
+          class="block w-1.5 h-1.5 rounded-pill"
+          style={`background-color: ${i === 0 ? "var(--ae-bronze-500)" : "var(--ae-bronze-200)"};`}
+          aria-hidden="true"
+        />
+      ))}
+    </div>
+  )}
+</div>

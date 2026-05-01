@@ -1,0 +1,43 @@
+---
+/**
+ * Reused by:
+ *   - homepage editorial moment (src/pages/[lang]/index.astro)
+ *   - per-category page editorial moment (src/pages/[lang]/categories/[slug].astro)
+ *
+ * Anatomy is shared by spec — see §3.6 (homepage editorial moment) and the
+ * implicit category-page version. If the two surfaces diverge in future spec,
+ * split this component.
+ *
+ * Anatomy: overline (small-caps bronze) + serif heading + optional body-lg ink-2
+ * description. Description omitted entirely when not provided.
+ */
+
+interface Props {
+  overline: string;
+  heading: string;
+  description?: string;
+  /** Optional secondary line beneath description (e.g., scan hint on homepage). */
+  secondaryBody?: string;
+}
+
+const { overline, heading, description, secondaryBody } = Astro.props;
+---
+
+<section class="px-ae-6 pt-ae-10 pb-ae-2">
+  <p class="text-overline uppercase" style="color: var(--ae-bronze-600);">
+    {overline}
+  </p>
+  <p class="font-serif text-[21px] leading-[1.35] text-ink-2 mt-ae-4">
+    {heading}
+  </p>
+  {description && (
+    <p class="text-body-lg text-ink-2 leading-[1.55] mt-ae-4" style="hyphens: auto;">
+      {description}
+    </p>
+  )}
+  {secondaryBody && (
+    <p class="text-body-sm text-ink-3 leading-[1.6] mt-ae-5">
+      {secondaryBody}
+    </p>
+  )}
+</section>

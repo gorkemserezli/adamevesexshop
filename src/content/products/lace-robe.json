@@ -1,0 +1,94 @@
+{
+  "id": "lace-robe",
+  "sku": "AE-LR-001",
+  "category_id": "lingerie",
+  "sort_order": 10,
+  "images": ["/products/placeholder.jpg"],
+  "overline": {
+    "tr": "İç Giyim · Sabahlık",
+    "en": "Lingerie · Robe",
+    "de": "Dessous · Robe",
+    "ru": "Бельё · Халат"
+  },
+  "name": {
+    "tr": "Dantel Sabahlık",
+    "en": "Lace Robe",
+    "de": "Spitzen-Robe",
+    "ru": "Кружевной халат"
+  },
+  "description": {
+    "tr": "Yarı şeffaf siyah dantel. Bel bağlamalı, cep yok. Yıkanırken file çantada el yıkaması.",
+    "en": "Sheer black lace. Tie-waist, no pockets. Hand-wash in a mesh bag.",
+    "de": "Halbtransparente schwarze Spitze. Bindegürtel, keine Taschen. Handwäsche im Wäschenetz.",
+    "ru": "Полупрозрачное чёрное кружево. Завязывается на талии, без карманов. Ручная стирка в мешочке."
+  },
+  "curator_note": {
+    "tr": "Sabah kahvesi için.",
+    "en": "For morning coffee.",
+    "de": "Für den Morgenkaffee.",
+    "ru": "Для утреннего кофе."
+  },
+  "price": {
+    "tr": { "display": "₺ 1.890,00", "value": 1890, "currency": "TRY" },
+    "en": { "display": "$ 95.00", "value": 95, "currency": "USD" },
+    "de": { "display": "85,00 €", "value": 85, "currency": "EUR" },
+    "ru": { "display": "8 700 ₽", "value": 8700, "currency": "RUB" }
+  },
+  "variants": [
+    {
+      "id": "size",
+      "label": { "tr": "Beden", "en": "Size", "de": "Größe", "ru": "Размер" },
+      "options": [
+        {
+          "id": "s",
+          "label": { "tr": "S", "en": "S", "de": "S", "ru": "S" },
+          "available": true
+        },
+        {
+          "id": "m",
+          "label": { "tr": "M", "en": "M", "de": "M", "ru": "M" },
+          "available": true
+        },
+        {
+          "id": "l",
+          "label": { "tr": "L", "en": "L", "de": "L", "ru": "L" },
+          "available": true
+        },
+        {
+          "id": "xl",
+          "label": { "tr": "XL", "en": "XL", "de": "XL", "ru": "XL" },
+          "available": true
+        }
+      ]
+    }
+  ],
+  "specs": [
+    {
+      "key": "material",
+      "label": { "tr": "Malzeme", "en": "Material", "de": "Material", "ru": "Материал" },
+      "value": {
+        "tr": "%92 naylon, %8 elastan",
+        "en": "92% nylon, 8% elastane",
+        "de": "92% Polyamid, 8% Elasthan",
+        "ru": "92% полиамид, 8% эластан"
+      }
+    },
+    {
+      "key": "made-in",
+      "label": { "tr": "Üretim", "en": "Made in", "de": "Hergestellt in", "ru": "Произведено в" },
+      "value": { "tr": "Türkiye", "en": "Turkey", "de": "Türkei", "ru": "Турция" }
+    },
+    {
+      "key": "care",
+      "label": { "tr": "Bakım", "en": "Care", "de": "Pflege", "ru": "Уход" },
+      "value": {
+        "tr": "El yıkama, file çanta",
+        "en": "Hand-wash, mesh bag",
+        "de": "Handwäsche, Wäschenetz",
+        "ru": "Ручная стирка в мешочке"
+      }
+    }
+  ],
+  "made_in": "TR",
+  "sold_out": false
+}

@@ -1,0 +1,307 @@
+/* ============================================================
+   Adam & Eve Sex Shop — design tokens
+   Light mode is the default. Dark mode is activated by
+   [data-theme="dark"] on <html> or any ancestor.
+   No prefers-color-scheme auto-switch — explicit toggle only.
+   ============================================================ */
+
+:root {
+  /* ---------- Color · Wine ramp (primary) ---------- */
+  --ae-wine-50:  #FBF3F2;
+  --ae-wine-100: #F2E0DC;
+  --ae-wine-200: #E2BBB2;
+  --ae-wine-300: #C58A7E;
+  --ae-wine-400: #A05B4E;
+  --ae-wine-500: #6B2E26;
+  --ae-wine-600: #5A2620;
+  --ae-wine-700: #4A1E1A;
+  --ae-wine-900: #2A100E;
+
+  /* ---------- Color · Bronze ramp (secondary) ---------- */
+  --ae-bronze-50:  #F8F1E5;
+  --ae-bronze-100: #ECDCBA;
+  --ae-bronze-200: #DCC18B;
+  --ae-bronze-300: #C4A165;
+  --ae-bronze-400: #A88546;
+  --ae-bronze-500: #8C6D40;
+  --ae-bronze-600: #71562F;
+  --ae-bronze-700: #564220;
+  --ae-bronze-800: #3C2E15;
+
+  /* ---------- Color · Neutrals ---------- */
+  --ae-canvas:         #F9F4EC;
+  --ae-surface:        #F2EBDD;
+  --ae-surface-sunken: #EFE4D0;
+  --ae-ink:            #2A1E16;
+  --ae-ink-2:          #4A3829;
+  --ae-ink-3:          #6B5642;
+
+  /* ---------- Color · Hairlines ---------- */
+  --ae-hairline:      rgba(168, 133, 70, 0.30);
+  --ae-hairline-soft: rgba(168, 133, 70, 0.15);
+
+  /* ---------- Color · Semantic ---------- */
+  --ae-success-bg:   #E5E8D9;
+  --ae-success-ink:  #3F4933;
+  --ae-success-mark: #5C6B4A;
+
+  --ae-warning-bg:   #F2E2BD;
+  --ae-warning-ink:  #6B4A1E;
+  --ae-warning-mark: #A87830;
+
+  --ae-danger-bg:    #ECCFC4;
+  --ae-danger-ink:   #7A3525;
+  --ae-danger-mark:  #B4533A;
+
+  --ae-info-bg:      #ECDCBA;
+  --ae-info-ink:     #564220;
+  --ae-info-mark:    #71562F;
+
+  /* ---------- Color · Aliases (semantic, theme-agnostic) ---------- */
+  --ae-bg:             var(--ae-canvas);
+  --ae-bg-elevated:    var(--ae-surface);
+  --ae-bg-sunken:      var(--ae-surface-sunken);
+  --ae-text:           var(--ae-ink);
+  --ae-text-muted:     var(--ae-ink-2);
+  --ae-text-subtle:    var(--ae-ink-3);
+  --ae-text-on-wine:   var(--ae-canvas);
+  --ae-text-on-bronze: var(--ae-canvas);
+  --ae-accent:         var(--ae-wine-500);
+  --ae-accent-press:   var(--ae-wine-600);
+  --ae-accent-soft:    var(--ae-wine-100);
+  --ae-decor:          var(--ae-bronze-400);
+  --ae-decor-ink:      var(--ae-bronze-600);
+  --ae-overlay:        rgba(42, 30, 22, 0.50);
+
+  /* ---------- Typography · Families ---------- */
+  --ae-font-serif: "Cormorant Garamond", "AE Serif Italic", Georgia, serif;
+  --ae-font-sans:  "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* AE Serif Italic is the unicode-range-scoped face that swaps
+     Lora Italic for Cyrillic codepoints; see component-inventory §0.2 */
+
+  /* ---------- Typography · Sizes (px, mobile-first) ---------- */
+  --ae-fs-display-lg: 40px;
+  --ae-fs-display:    32px;
+  --ae-fs-h1:         28px;
+  --ae-fs-h2:         22px;
+  --ae-fs-h3:         18px;
+  --ae-fs-h4:         16px;
+  --ae-fs-body-lg:    17px;
+  --ae-fs-body:       15px;
+  --ae-fs-body-sm:    13px;
+  --ae-fs-caption:    12px;
+  --ae-fs-overline:   11px;
+  --ae-fs-ui-label:   13px;
+  --ae-fs-nav-label:  11px;
+  --ae-fs-price:      22px;
+  --ae-fs-curator:    14px;
+
+  /* ---------- Typography · Line heights ---------- */
+  --ae-lh-display-lg: 1.08;
+  --ae-lh-display:    1.15;
+  --ae-lh-h1:         1.20;
+  --ae-lh-h2:         1.25;
+  --ae-lh-h3:         1.30;
+  --ae-lh-h4:         1.40;
+  --ae-lh-body-lg:    1.55;
+  --ae-lh-body:       1.55;
+  --ae-lh-body-sm:    1.50;
+  --ae-lh-caption:    1.40;
+  --ae-lh-overline:   1.30;
+  --ae-lh-ui-label:   1.20;
+  --ae-lh-price:      1.20;
+  --ae-lh-curator:    1.50;
+
+  /* ---------- Typography · Weights ---------- */
+  --ae-fw-regular: 400;
+  --ae-fw-medium:  500;
+  --ae-fw-bold:    600;
+
+  /* ---------- Typography · Tracking ---------- */
+  --ae-tr-display: -0.01em;
+  --ae-tr-h1:      -0.005em;
+  --ae-tr-tight:   -0.005em;
+  --ae-tr-normal:  0;
+  --ae-tr-ui:      0.02em;
+  --ae-tr-caption: 0.01em;
+  --ae-tr-overline: 0.20em;
+  --ae-tr-nav:     0.01em;
+
+  /* ---------- Spacing scale (4px base) ---------- */
+  --ae-s-1:  4px;
+  --ae-s-2:  8px;
+  --ae-s-3:  12px;
+  --ae-s-4:  16px;
+  --ae-s-5:  20px;
+  --ae-s-6:  24px;
+  --ae-s-7:  32px;
+  --ae-s-8:  40px;
+  --ae-s-10: 48px;
+  --ae-s-12: 64px;
+  --ae-s-16: 80px;
+  --ae-s-20: 96px;
+  --ae-s-24: 128px;
+
+  --ae-gutter-mobile:       24px;
+  --ae-gutter-mobile-hero:  32px;
+  --ae-gutter-tablet:       32px;
+  --ae-gutter-desktop:      64px;
+
+  /* ---------- Radius ---------- */
+  --ae-r-sm:   6px;
+  --ae-r-md:   10px;
+  --ae-r-lg:   14px;
+  --ae-r-xl:   20px;
+  --ae-r-pill: 999px;
+
+  /* ---------- Shadow ---------- */
+  --ae-shadow-none:  none;
+  --ae-shadow-sheet: 0 12px 40px rgba(42, 30, 22, 0.12);
+
+  /* ---------- Motion ---------- */
+  --ae-dur-fast:        180ms;
+  --ae-dur-base:        280ms;
+  --ae-dur-slow:        400ms;
+  --ae-ease-standard:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ae-ease-emphasis:   cubic-bezier(0.16, 1, 0.30, 1);
+
+  /* ---------- Layout ---------- */
+  --ae-vp-min:        320px;
+  --ae-vp-mobile-max: 430px;
+  --ae-vp-tablet:     768px;
+  --ae-vp-desktop:    1024px;
+  --ae-vp-wide:       1280px;
+
+  --ae-content-max-text:    720px;
+  --ae-content-max-catalog: 960px;
+  --ae-content-max-pdp:     1120px;
+
+  /* ---------- Z-index ---------- */
+  --ae-z-base:    0;
+  --ae-z-sticky:  30;
+  --ae-z-dropdown: 40;
+  --ae-z-sheet:   50;
+  --ae-z-toast:   60;
+  --ae-z-modal:   70;
+}
+
+/* ============================================================
+   Dark mode — explicit opt-in via [data-theme="dark"]
+   Cocoa surfaces, wine lifted, bronze carries identity
+   ============================================================ */
+
+[data-theme="dark"] {
+  /* ---------- Color · Wine (lifted) ---------- */
+  --ae-wine-50:  #2A100E; /* effectively swaps; soft wash bg */
+  --ae-wine-100: #3A1814;
+  --ae-wine-200: #4A1E1A;
+  --ae-wine-300: #6B2E26;
+  --ae-wine-400: #A55B4D;
+  --ae-wine-500: #BC685A;  /* primary, lifted */
+  --ae-wine-600: #C77264;  /* emphasis */
+  --ae-wine-700: #D08474;
+  --ae-wine-900: #E5A89B;
+
+  /* ---------- Color · Bronze (carrier of identity) ---------- */
+  --ae-bronze-50:  #2C2316;
+  --ae-bronze-100: #3C2E15;
+  --ae-bronze-200: #564220;
+  --ae-bronze-300: #71562F;
+  --ae-bronze-400: #B59A6E; /* hairline at low light */
+  --ae-bronze-500: #C9A98A;
+  --ae-bronze-600: #D8B886; /* primary bronze accent */
+  --ae-bronze-700: #E8CBA0; /* emphasis */
+  --ae-bronze-800: #F4DFBA;
+
+  /* ---------- Color · Neutrals (cocoa) ---------- */
+  --ae-canvas:         #1A140F;
+  --ae-surface:        #261D14;
+  --ae-surface-sunken: #120D09;
+  --ae-ink:            #F0E6D5;
+  --ae-ink-2:          #C9B89F;
+  --ae-ink-3:          #8F7E66;
+
+  /* ---------- Color · Hairlines ---------- */
+  --ae-hairline:      rgba(216, 184, 134, 0.20);
+  --ae-hairline-soft: rgba(216, 184, 134, 0.10);
+
+  /* ---------- Color · Semantic ---------- */
+  --ae-success-bg:   #2A3320;
+  --ae-success-ink:  #B7C29C;
+  --ae-success-mark: #8FA070;
+
+  --ae-warning-bg:   #3D2D14;
+  --ae-warning-ink:  #E5C589;
+  --ae-warning-mark: #D9A656;
+
+  --ae-danger-bg:    #3D1F16;
+  --ae-danger-ink:   #E8AE9B;
+  --ae-danger-mark:  #D67560;
+
+  --ae-info-bg:      #2C2316;
+  --ae-info-ink:     #D8B886;
+  --ae-info-mark:    #D8B886;
+
+  /* ---------- Aliases (recomputed for dark) ---------- */
+  --ae-text-on-wine:   #1A140F;   /* dark text on lifted wine */
+  --ae-text-on-bronze: #1A140F;   /* dark text on bright bronze */
+  --ae-accent-soft:    #3A1814;
+  --ae-overlay:        rgba(0, 0, 0, 0.65);
+
+  /* ---------- Shadow (deeper in dark) ---------- */
+  --ae-shadow-sheet: 0 12px 40px rgba(0, 0, 0, 0.50);
+}
+
+/* ============================================================
+   Reduced motion — collapse durations, keep opacity transitions
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ae-dur-fast: 1ms;
+    --ae-dur-base: 1ms;
+    --ae-dur-slow: 1ms;
+  }
+}
+
+/* ============================================================
+   Cyrillic italic fallback — see component-inventory §0.2
+   Loaded once; used by --ae-font-serif via "AE Serif Italic"
+   alias. Latin codepoints fall through to Cormorant Garamond;
+   Cyrillic codepoints render via Lora.
+   ============================================================ */
+
+@font-face {
+  font-family: "AE Serif Italic";
+  src: local("Cormorant Garamond Italic"),
+       url("/fonts/cormorant-garamond-italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range:
+    U+0000-024F, /* Latin + Latin Extended-A */
+    U+1E00-1EFF; /* Latin Extended Additional */
+}
+
+@font-face {
+  font-family: "AE Serif Italic";
+  src: url("/fonts/lora-italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range:
+    U+0400-04FF, /* Cyrillic */
+    U+0500-052F; /* Cyrillic Supplement */
+}
+
+/* Optical compensation — Lora reads ~1pt larger than Cormorant
+   at the same font-size; normalize x-height for curator notes. */
+.curator-note {
+  font-family: var(--ae-font-serif);
+  font-style: italic;
+  font-size: var(--ae-fs-curator);
+  line-height: var(--ae-lh-curator);
+  color: var(--ae-bronze-600);
+  font-size-adjust: 0.48;
+}

@@ -1,0 +1,51 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import EditorialHero from "~/components/EditorialHero.astro";
+import type { Locale } from "~/i18n/ui";
+import { LOCALES, ui } from "~/i18n/ui";
+import { categoriesIndexHref } from "~/lib/routes";
+import {
+  HOTEL_BOUTIQUE_LOCATION,
+  HOTEL_HOURS_OPEN,
+  HOTEL_HOURS_CLOSE,
+} from "~/lib/env";
+
+export async function getStaticPaths() {
+  return LOCALES.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Locale };
+const t = ui[lang];
+
+const title = `Adam & Eve · ${t.homepage.boutiqueOverline}`;
+---
+
+<BaseLayout title={title} lang={lang} activeNav="home">
+  <EditorialHero
+    overline={t.homepage.boutiqueOverline}
+    heading={t.homepage.intro}
+    secondaryBody={t.homepage.scanHint}
+  />
+
+  <section class="px-ae-6 pt-ae-7">
+    <a
+      href={categoriesIndexHref(lang)}
+      class="ae-home-cta block w-full rounded-md font-medium text-ui-label no-underline text-center"
+      style="height: 56px; line-height: 56px; background-color: var(--ae-wine-500); color: var(--ae-canvas);"
+    >
+      {t.categories.viewAllCta}
+    </a>
+  </section>
+
+  <div class="px-ae-6 mt-ae-8"><div class="border-t border-hairline"></div></div>
+
+  <section class="px-ae-6 pt-ae-7 pb-ae-8">
+    <p class="text-overline text-ink-3 uppercase">{t.homepage.boutiqueFooterOverline}</p>
+    <p class="text-body text-ink-2 leading-[1.55] mt-ae-3">
+      {HOTEL_BOUTIQUE_LOCATION[lang]}
+    </p>
+    <p class="text-body-sm text-ink-3 mt-ae-1">
+      {t.homepage.hoursLine(HOTEL_HOURS_OPEN, HOTEL_HOURS_CLOSE)}
+    </p>
+  </section>
+</BaseLayout>

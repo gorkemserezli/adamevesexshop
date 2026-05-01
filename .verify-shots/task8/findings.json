@@ -1,0 +1,70 @@
+[
+  {
+    "name": "01-tr-agegate",
+    "overlayVisible": true
+  },
+  {
+    "name": "01-en-agegate",
+    "overlayVisible": true
+  },
+  {
+    "name": "01-de-agegate",
+    "overlayVisible": true
+  },
+  {
+    "name": "01-ru-agegate",
+    "overlayVisible": true
+  },
+  {
+    "name": "02-confirmed",
+    "overlayInDom": false
+  },
+  {
+    "name": "03-tr-settings",
+    "sheetState": "open"
+  },
+  {
+    "name": "03-en-settings",
+    "sheetState": "open"
+  },
+  {
+    "name": "03-de-settings",
+    "sheetState": "open"
+  },
+  {
+    "name": "03-ru-settings",
+    "sheetState": "open"
+  },
+  {
+    "name": "04-privacy-pdp",
+    "blurAttr": "on",
+    "filterApplied": true
+  },
+  {
+    "name": "05-revealed",
+    "revealed": true,
+    "filterCleared": true
+  },
+  {
+    "name": "06-fav-populated",
+    "visibleCount": 3
+  },
+  {
+    "name": "07-fav-empty",
+    "emptyVisible": true,
+    "ctaHref": "/en/categories/"
+  },
+  {
+    "name": "08-fav-privacy",
+    "blurredCount": 2
+  },
+  {
+    "name": "09-toast",
+    "toastState": "visible",
+    "toastText": "Added to favorites"
+  },
+  {
+    "name": "10-version",
+    "version": "0.1.0"
+  }
+]

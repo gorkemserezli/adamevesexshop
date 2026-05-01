@@ -1,0 +1,200 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Breadcrumb from "~/components/ui/Breadcrumb.astro";
+import EditorialHero from "~/components/EditorialHero.astro";
+import ProductCard from "~/components/product/ProductCard.astro";
+import FilterSheet from "~/components/search/FilterSheet.astro";
+import type { Locale } from "~/i18n/ui";
+import { LOCALES, ui } from "~/i18n/ui";
+import type { Category, Product } from "~/content/config";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const categories = await getCollection("categories");
+  const paths = [];
+  for (const lang of LOCALES) {
+    for (const c of categories) {
+      paths.push({ params: { lang, slug: c.data.id }, props: { category: c.data } });
+    }
+  }
+  return paths;
+}
+
+type Props = { category: Category };
+
+const { lang, slug } = Astro.params as { lang: Locale; slug: string };
+const { category } = Astro.props as Props;
+const t = ui[lang];
+
+const productEntries = await getCollection("products");
+const products: Product[] = productEntries
+  .map((e: CollectionEntry<"products">) => e.data)
+  .filter((p: Product) => p.category_id === slug)
+  .sort((a: Product, b: Product) => a.sort_order - b.sort_order);
+
+const description = category.description?.[lang];
+const categoryName = category.name[lang];
+const isEmpty = products.length === 0;
+
+const breadcrumbCrumbs = [{ label: categoryName }];
+
+const title = `Adam & Eve · ${categoryName}`;
+---
+
+<BaseLayout title={title} lang={lang} activeNav="categories">
+  <Breadcrumb lang={lang} crumbs={breadcrumbCrumbs} />
+
+  {description && (
+    <EditorialHero
+      overline={t.categories.indexOverline}
+      heading={categoryName}
+      description={description}
+    />
+  )}
+
+  {!description && (
+    <section class="px-ae-6 pt-ae-7 pb-ae-2">
+      <p class="text-overline text-ink-3 uppercase">{t.categories.indexOverline}</p>
+      <h1 class="font-serif text-h1 text-ink mt-ae-2 tracking-tight">{categoryName}</h1>
+    </section>
+  )}
+
+  {isEmpty && (
+    <div
+      class="px-ae-6 pt-ae-8 pb-ae-8 text-center"
+      style="max-width: 280px; margin: 0 auto;"
+    >
+      <p class="font-serif text-h3" style="color: var(--ae-ink-2);">
+        {t.categories.emptyHeadline}
+      </p>
+      <p class="text-body-sm mt-ae-2" style="color: var(--ae-ink-3);">
+        {t.categories.emptyBody}
+      </p>
+    </div>
+  )}
+
+  {!isEmpty && (
+    <section class="px-ae-6 pt-ae-3 pb-ae-2 flex items-center justify-between">
+      <p class="text-body-sm" style="color: var(--ae-ink-3);" id="ae-cat-results-count" aria-live="polite">
+        {t.filter.resultsCount(products.length)}
+      </p>
+      <button
+        id="ae-cat-filter-btn"
+        type="button"
+        class="ae-cat-filter-btn relative w-11 h-11 inline-flex items-center justify-center rounded-md border"
+        aria-label={t.filter.openAria}
+        aria-haspopup="dialog"
+        aria-controls="ae-filter-sheet"
+        style="border-color: var(--ae-hairline); color: var(--ae-ink); background-color: var(--ae-canvas);"
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <line x1="3" y1="6" x2="14" y2="6" stroke-linecap="round"></line>
+          <line x1="3" y1="14" x2="11" y2="14" stroke-linecap="round"></line>
+          <circle cx="14" cy="6" r="2.5" fill="currentColor"></circle>
+          <circle cx="11" cy="14" r="2.5" fill="currentColor"></circle>
+        </svg>
+        <span
+          id="ae-cat-filter-active-dot"
+          class="absolute -top-1 -right-1 block w-2 h-2 rounded-pill"
+          style="background-color: var(--ae-wine-500); display: none;"
+          aria-hidden="true"
+        ></span>
+      </button>
+    </section>
+  )}
+
+  {!isEmpty && (
+    <ul
+      id="ae-cat-product-list"
+      class="px-ae-6 pt-ae-4 pb-ae-8 list-none m-0 grid grid-cols-2 gap-ae-4"
+    >
+      {products.map((p: Product) => (
+        <ProductCard
+          lang={lang}
+          slug={p.id}
+          name={p.name[lang]}
+          priceDisplay={p.price[lang].display}
+          image={p.images[0] ?? ""}
+          extraClass="ae-cat-product"
+          outerAttrs={{
+            "data-category-id": p.category_id,
+            "data-price-value": String(p.price[lang].value),
+            "data-sold-out": String(Boolean(p.sold_out)),
+          }}
+        />
+      ))}
+    </ul>
+  )}
+
+  {!isEmpty && <FilterSheet lang={lang} showTypeFilter={false} />}
+</BaseLayout>
+
+<script>
+  import {
+    EMPTY_FILTER,
+    parseFilterFromQuery,
+    filterToQuery,
+    applyFilter,
+    isFilterActive,
+    type FilterState,
+    type FilterableRecord,
+  } from "~/lib/filter";
+  import { ui, type Locale } from "~/i18n/ui";
+
+  const lang = (document.documentElement.lang || "en") as Locale;
+  const t = ui[lang];
+
+  const list = document.getElementById("ae-cat-product-list");
+  const countEl = document.getElementById("ae-cat-results-count");
+  const filterBtn = document.getElementById("ae-cat-filter-btn") as HTMLButtonElement | null;
+  const filterDot = document.getElementById("ae-cat-filter-active-dot");
+
+  if (list && countEl && filterBtn && filterDot) {
+    const allCards = Array.from(list.querySelectorAll<HTMLLIElement>(".ae-cat-product"));
+    const records: (FilterableRecord & { el: HTMLLIElement })[] = allCards.map((el) => ({
+      el,
+      category_id: el.dataset.categoryId ?? "",
+      price_value: Number(el.dataset.priceValue ?? "0"),
+      sold_out: el.dataset.soldOut === "true",
+    }));
+
+    function paintFilterIndicator(state: FilterState): void {
+      filterDot!.style.display = isFilterActive(state) ? "" : "none";
+    }
+
+    function applyToGrid(state: FilterState): void {
+      const matched = applyFilter(records, state);
+      const matchedSet = new Set(matched.map((r) => r.el));
+      records.forEach(({ el }) => {
+        el.style.display = matchedSet.has(el) ? "" : "none";
+      });
+      countEl!.textContent = t.filter.resultsCount(matched.length);
+    }
+
+    filterBtn.addEventListener("click", () => {
+      (window as unknown as { aeSheet?: { open: (id: string) => void } }).aeSheet?.open("ae-filter-sheet");
+      document.dispatchEvent(new CustomEvent("ae:filter-sheet-opened"));
+    });
+
+    window.addEventListener("ae:filter-apply", () => {
+      const next = parseFilterFromQuery(new URLSearchParams(window.location.search));
+      paintFilterIndicator(next);
+      applyToGrid(next);
+    });
+
+    // Live count for filter sheet preview.
+    (window as unknown as { aeFilterPreview?: (s: FilterState) => number }).aeFilterPreview = (s) =>
+      applyFilter(records, s).length;
+
+    // On load, hydrate from URL (deep-link case).
+    const initial = parseFilterFromQuery(new URLSearchParams(window.location.search));
+    paintFilterIndicator(initial);
+    if (isFilterActive(initial)) applyToGrid(initial);
+
+    // Suppress unused — reserved for "Reset filters" CTA path (not rendered on
+    // category page since the no-results branch is for the empty-category case,
+    // not filter-misses; if a future task adds a "filtered to zero" CTA, wire here).
+    void filterToQuery;
+    void EMPTY_FILTER;
+  }
+</script>

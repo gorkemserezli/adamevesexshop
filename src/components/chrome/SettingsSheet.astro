@@ -1,0 +1,124 @@
+---
+import type { Locale } from "~/i18n/ui";
+import { ui } from "~/i18n/ui";
+import BottomSheet from "~/components/ui/BottomSheet.astro";
+import Toggle from "~/components/ui/Toggle.astro";
+import {
+  HOTEL_NAME,
+  HOTEL_BOUTIQUE_LOCATION,
+  HOTEL_HOURS_OPEN,
+  HOTEL_HOURS_CLOSE,
+} from "~/lib/env";
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+const hours = t.homepage.hoursLine(HOTEL_HOURS_OPEN, HOTEL_HOURS_CLOSE);
+---
+
+<BottomSheet id="ae-settings-sheet" ariaLabelledBy="ae-settings-title">
+  <div class="px-ae-6 py-ae-4">
+    <div class="flex items-center justify-between pb-ae-3">
+      <h2 id="ae-settings-title" class="font-serif text-h3" style="color: var(--ae-ink);">
+        {t.settings.title}
+      </h2>
+      <button
+        type="button"
+        class="ae-sheet-close p-2"
+        data-sheet-dismiss
+        aria-label={t.cta.close}
+        style="color: var(--ae-ink-2);"
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <line x1="5" y1="5" x2="15" y2="15" stroke-linecap="round"></line>
+          <line x1="15" y1="5" x2="5" y2="15" stroke-linecap="round"></line>
+        </svg>
+      </button>
+    </div>
+
+    {/* Row 1 — Privacy */}
+    <div class="flex items-center justify-between py-ae-3 border-t" style="border-color: var(--ae-hairline-soft);">
+      <div class="flex flex-col">
+        <span class="text-body font-medium" style="color: var(--ae-ink);">{t.settings.privacyLabel}</span>
+        <span class="text-body-sm mt-1" style="color: var(--ae-ink-3);">{t.settings.privacyDesc}</span>
+      </div>
+      <Toggle id="ae-gizli-toggle" label={t.settings.privacyLabel} pressed={false} />
+    </div>
+
+    {/* Row 2 — About (details/summary inline expand) */}
+    <details class="ae-about-row py-ae-3 border-t" style="border-color: var(--ae-hairline-soft);">
+      <summary class="flex items-center justify-between cursor-pointer list-none" style="color: var(--ae-ink);">
+        <span class="text-body font-medium">{t.settings.about}</span>
+        <svg class="ae-about-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="color: var(--ae-bronze-400); transition: transform var(--ae-dur-fast) var(--ae-ease-standard);">
+          <polyline points="6 4 11 8 6 12" stroke-linecap="round" stroke-linejoin="round"></polyline>
+        </svg>
+      </summary>
+      <div class="pt-ae-3 text-body-sm" style="color: var(--ae-ink-2);">
+        <p>{HOTEL_NAME}</p>
+        <p class="mt-ae-1">{HOTEL_BOUTIQUE_LOCATION[lang]}</p>
+        <p class="mt-ae-1" style="color: var(--ae-ink-3);">{hours}</p>
+      </div>
+    </details>
+
+    {/* Row 3 — Language mirror */}
+    <button
+      id="ae-settings-language-mirror"
+      type="button"
+      class="ae-language-mirror w-full flex items-center justify-between py-ae-3 border-t"
+      style="border-color: var(--ae-hairline-soft); color: var(--ae-ink);"
+    >
+      <span class="text-body font-medium">{t.settings.language}</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="color: var(--ae-bronze-400);">
+        <polyline points="6 4 11 8 6 12" stroke-linecap="round" stroke-linejoin="round"></polyline>
+      </svg>
+    </button>
+  </div>
+</BottomSheet>
+
+<style is:global>
+  .ae-about-row[open] .ae-about-chevron {
+    transform: rotate(90deg);
+  }
+  .ae-about-row > summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
+
+<script>
+  import { getGizli, setGizli } from "~/lib/gizli";
+
+  // Privacy toggle
+  const toggle = document.getElementById("ae-gizli-toggle");
+  if (toggle) {
+    function paint(state: "on" | "off"): void {
+      toggle!.setAttribute("aria-checked", state === "on" ? "true" : "false");
+      const thumb = toggle!.querySelector<HTMLSpanElement>(".ae-toggle-thumb");
+      if (state === "on") {
+        toggle!.style.backgroundColor = "var(--ae-wine-500)";
+        if (thumb) thumb.style.transform = "translateX(20px)";
+      } else {
+        toggle!.style.backgroundColor = "color-mix(in srgb, var(--ae-ink-3) 30%, transparent)";
+        if (thumb) thumb.style.transform = "translateX(0)";
+      }
+    }
+    paint(getGizli());
+    toggle.addEventListener("click", () => {
+      const next = getGizli() === "on" ? "off" : "on";
+      setGizli(next);
+      paint(next);
+    });
+  }
+
+  // Language mirror — close settings, open language switcher panel
+  const langMirror = document.getElementById("ae-settings-language-mirror");
+  if (langMirror) {
+    langMirror.addEventListener("click", () => {
+      (window as unknown as { aeSheet: { close: (id: string) => void } }).aeSheet.close("ae-settings-sheet");
+      const langTrigger = document.querySelector<HTMLButtonElement>(".ae-lang-trigger");
+      langTrigger?.click();
+    });
+  }
+</script>

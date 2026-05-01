@@ -1,0 +1,64 @@
+---
+import type { Locale } from "~/i18n/ui";
+import { ui } from "~/i18n/ui";
+import { searchHref, homeHref } from "~/lib/routes";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+---
+
+<header
+  class="ae-header sticky top-0 z-sticky bg-canvas/90 backdrop-blur-md border-b border-hairline-soft"
+>
+  <div class="flex items-center justify-between h-14 px-ae-4 lg:h-[72px] lg:px-ae-6">
+    <a
+      href={homeHref(lang)}
+      class="flex flex-col leading-none -mt-px text-ink no-underline"
+      aria-label="Adam & Eve"
+    >
+      <span class="font-serif text-[18px] tracking-tight">Adam &amp; Eve</span>
+      <span class="text-overline text-ink-3 uppercase mt-[2px]">{t.brand.overline}</span>
+    </a>
+
+    <div class="flex items-center gap-ae-2">
+      <LanguageSwitcher lang={lang} />
+
+      <a
+        href={searchHref(lang)}
+        class="ae-icon-btn w-9 h-9 inline-flex items-center justify-center text-ink transition-colors duration-fast ease-standard hover:text-bronze-400 no-underline"
+        aria-label={t.aria.search}
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="9" cy="9" r="5.5"></circle>
+          <path d="m13 13 3.5 3.5" stroke-linecap="round"></path>
+        </svg>
+      </a>
+
+      <button
+        id="ae-header-overflow"
+        type="button"
+        class="ae-icon-btn w-9 h-9 inline-flex items-center justify-center text-ink transition-colors duration-fast ease-standard hover:text-bronze-400"
+        aria-label={t.aria.more}
+        aria-haspopup="dialog"
+        aria-controls="ae-settings-sheet"
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <circle cx="4" cy="10" r="1.5"></circle>
+          <circle cx="10" cy="10" r="1.5"></circle>
+          <circle cx="16" cy="10" r="1.5"></circle>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  document.getElementById("ae-header-overflow")?.addEventListener("click", () => {
+    (window as unknown as { aeSheet: { open: (id: string) => void } }).aeSheet?.open("ae-settings-sheet");
+  });
+</script>

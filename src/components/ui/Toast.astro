@@ -1,0 +1,43 @@
+---
+import type { Locale } from "~/i18n/ui";
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+void lang;
+---
+
+<div
+  id="ae-toast"
+  class="ae-toast fixed left-1/2 z-[120] -translate-x-1/2"
+  data-toast-state="hidden"
+  role="status"
+  aria-live="polite"
+  aria-atomic="true"
+  style="bottom: calc(env(safe-area-inset-bottom, 0px) + 80px);"
+>
+  <div
+    class="px-4 h-10 rounded-pill inline-flex items-center text-ui-label font-medium"
+    style="background-color: var(--ae-ink); color: var(--ae-canvas); box-shadow: var(--ae-shadow-sheet);"
+  >
+    <span class="ae-toast-label"></span>
+  </div>
+</div>
+
+<style is:global>
+  .ae-toast {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--ae-dur-base) var(--ae-ease-standard), transform var(--ae-dur-base) var(--ae-ease-standard);
+  }
+  .ae-toast[data-toast-state="visible"] {
+    opacity: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ae-toast {
+      transition: none;
+    }
+  }
+</style>

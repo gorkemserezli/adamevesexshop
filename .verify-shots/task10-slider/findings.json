@@ -1,0 +1,50 @@
+[
+  {
+    "name": "01-initial",
+    "minV": "20",
+    "maxV": "80",
+    "minVT": "20 dollars",
+    "maxVT": "80 dollars",
+    "groupLabel": "Price range, 20 dollars to 80 dollars"
+  },
+  {
+    "name": "02-arrow",
+    "minV": "21",
+    "minV2": "20"
+  },
+  {
+    "name": "03-home-end",
+    "minV": "0",
+    "maxV": "100"
+  },
+  {
+    "name": "04-page",
+    "minV": "30",
+    "minV2": "20"
+  },
+  {
+    "name": "05-sr-sim",
+    "inputV": "40",
+    "thumbLeft": "40%"
+  },
+  {
+    "name": "06-collision",
+    "minV": "85",
+    "maxV": "86"
+  },
+  {
+    "name": "07-touch-target",
+    "minRect": {
+      "w": 44,
+      "h": 44
+    },
+    "maxRect": {
+      "w": 44,
+      "h": 44
+    }
+  },
+  {
+    "name": "08-dynamic-label",
+    "groupLabel": "Price range, 30 dollars to 70 dollars"
+  }
+]

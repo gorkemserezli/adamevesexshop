@@ -1,0 +1,107 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Breadcrumb from "~/components/ui/Breadcrumb.astro";
+import ProductHero from "~/components/product/ProductHero.astro";
+import StockBadge from "~/components/product/StockBadge.astro";
+import StockHydrator from "~/components/product/StockHydrator.astro";
+import CuratorNote from "~/components/product/CuratorNote.astro";
+import VariantSelector from "~/components/product/VariantSelector.astro";
+import SpecList from "~/components/product/SpecList.astro";
+import ActionBar from "~/components/product/ActionBar.astro";
+import type { Locale } from "~/i18n/ui";
+import { LOCALES } from "~/i18n/ui";
+import { getCollection, type CollectionEntry } from "astro:content";
+import { categoryHref } from "~/lib/routes";
+
+export async function getStaticPaths() {
+  const products = await getCollection("products");
+  const paths = [];
+  for (const lang of LOCALES) {
+    for (const p of products) {
+      paths.push({ params: { lang, slug: p.data.id }, props: { product: p.data } });
+    }
+  }
+  return paths;
+}
+
+type Props = { product: import("~/content/config").Product };
+
+const { lang } = Astro.params as { lang: Locale };
+const { product } = Astro.props as Props;
+
+const categoryEntries = await getCollection("categories");
+const category = categoryEntries.find(
+  (c: CollectionEntry<"categories">) => c.data.id === product.category_id,
+)?.data;
+
+const breadcrumbCrumbs = [
+  ...(category ? [{ label: category.name[lang], href: categoryHref(lang, category.id) }] : []),
+  { label: product.name[lang] },
+];
+
+const stockVariant: "sold_out" | "loading" = product.sold_out ? "sold_out" : "loading";
+
+const title = `Adam & Eve · ${product.name[lang]}`;
+---
+
+<BaseLayout title={title} lang={lang}>
+  <Breadcrumb lang={lang} crumbs={breadcrumbCrumbs} />
+
+  <div class="mt-3">
+    <ProductHero images={product.images} productName={product.name[lang]} lang={lang} />
+  </div>
+
+  <section class="px-ae-6 pt-ae-7">
+    <div class="text-overline text-ink-3 uppercase">{product.overline[lang]}</div>
+    <h1
+      class="font-serif text-h1 text-ink mt-2 tracking-tight"
+      style="hyphens: manual;"
+    >
+      {product.name[lang]}
+    </h1>
+    <div class="font-serif text-price text-ink mt-3 tnum">{product.price[lang].display}</div>
+
+    <div class="mt-4">
+      <StockBadge lang={lang} variant={stockVariant} />
+    </div>
+
+    <div class="mt-4">
+      <CuratorNote text={product.curator_note[lang]} clamp={2} />
+    </div>
+  </section>
+
+  {
+    product.variants.length > 0 && (
+      <>
+        <div class="px-ae-6 mt-7">
+          <div class="border-t border-hairline" />
+        </div>
+        <section class="px-ae-6 pt-ae-6">
+          <VariantSelector axes={product.variants} lang={lang} />
+        </section>
+      </>
+    )
+  }
+
+  <div class="px-ae-6 mt-7"><div class="border-t border-hairline"></div></div>
+
+  <section class="px-ae-6 pt-ae-7">
+    <p class="text-body-lg text-ink-2" style="hyphens: auto;">
+      {product.description[lang]}
+    </p>
+  </section>
+
+  {
+    product.specs.length > 0 && (
+      <section class="px-ae-6 pt-ae-6">
+        <SpecList specs={product.specs} lang={lang} />
+      </section>
+    )
+  }
+
+  <div class="px-ae-6 mt-2 mb-6"><div class="border-t border-hairline"></div></div>
+
+  <ActionBar product={product} lang={lang} />
+
+  {!product.sold_out && <StockHydrator product={product} />}
+</BaseLayout>

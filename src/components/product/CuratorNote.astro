@@ -1,0 +1,11 @@
+---
+interface Props {
+  text: string;
+  clamp?: 1 | 2;
+}
+
+const { text, clamp = 2 } = Astro.props;
+const clampStyle = `display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:${clamp};overflow:hidden;`;
+---
+
+<p class="curator-note" style={clampStyle}>{text}</p>

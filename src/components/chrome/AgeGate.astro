@@ -1,0 +1,79 @@
+---
+import type { Locale } from "~/i18n/ui";
+import { ui } from "~/i18n/ui";
+import { HOTEL_MARKETING_URL } from "~/lib/env";
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+---
+
+<div
+  id="ae-age-gate"
+  class="ae-age-gate fixed inset-0 z-[100] flex items-center justify-center"
+  style="background-color: var(--ae-canvas);"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="ae-age-gate-title"
+  aria-describedby="ae-age-gate-body"
+>
+  <div class="mx-auto px-ae-6 max-w-[320px] text-center">
+    <p
+      id="ae-age-gate-title"
+      class="font-serif text-display-lg leading-tight"
+      style="color: var(--ae-ink);"
+    >
+      Adam &amp; Eve
+    </p>
+    <p class="text-overline tracking-[0.2em] mt-ae-1" style="color: var(--ae-ink-3);">
+      {t.brand.overline}
+    </p>
+    <div
+      class="mx-auto my-ae-6"
+      style="width: 48px; height: 1px; background-color: var(--ae-bronze-400);"
+      aria-hidden="true"
+    ></div>
+    <p id="ae-age-gate-body" class="text-body" style="color: var(--ae-ink-2);">
+      {t.ageGate.body}
+    </p>
+    <button
+      id="ae-age-gate-confirm"
+      type="button"
+      class="ae-age-gate-cta block w-full h-14 mt-ae-7 rounded-md font-medium text-ui-label"
+      style="background-color: var(--ae-wine-500); color: var(--ae-canvas);"
+    >
+      {t.ageGate.cta}
+    </button>
+    <a
+      href={HOTEL_MARKETING_URL}
+      class="ae-age-gate-leave inline-block mt-ae-4 text-body-sm no-underline"
+      style="color: var(--ae-ink-3);"
+      rel="noopener"
+    >
+      {t.ageGate.leave}
+    </a>
+  </div>
+</div>
+
+<script>
+  import { confirmAge } from "~/lib/age-gate";
+
+  const overlay = document.getElementById("ae-age-gate");
+  const confirmBtn = document.getElementById("ae-age-gate-confirm");
+  if (overlay && confirmBtn) {
+    confirmBtn.addEventListener("click", () => {
+      confirmAge();
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduceMotion) {
+        overlay.remove();
+        return;
+      }
+      overlay.style.transition = "opacity 280ms ease-out";
+      overlay.style.opacity = "0";
+      setTimeout(() => overlay.remove(), 320);
+    });
+  }
+</script>

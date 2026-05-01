@@ -1,0 +1,29 @@
+@import "./fonts.css";
+@import "./tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: var(--ae-font-sans);
+    background-color: var(--ae-canvas);
+    color: var(--ae-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--ae-canvas);
+    color: var(--ae-ink);
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--ae-wine-500);
+    outline-offset: 2px;
+  }
+}

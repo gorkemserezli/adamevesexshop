@@ -1,0 +1,25 @@
+---
+import type { Locale } from "~/i18n/ui";
+import { productCardHTML } from "~/lib/product-card-html";
+
+interface Props {
+  lang: Locale;
+  slug: string;
+  name: string;
+  priceDisplay: string;
+  image: string;
+  /** Optional extra classes appended to "ae-product-card". */
+  extraClass?: string;
+  /** Optional extra attributes (data-*, style, etc.) for the outer <li>. */
+  outerAttrs?: Record<string, string>;
+}
+
+const { lang, slug, name, priceDisplay, image, extraClass, outerAttrs } = Astro.props;
+const html = productCardHTML(
+  { slug, name, priceDisplay, image },
+  lang,
+  { extraClass, outerAttrs },
+);
+---
+
+<Fragment set:html={html} />

@@ -1,0 +1,100 @@
+{
+  "id": "silk-tie-set",
+  "sku": "AE-STS-PR",
+  "category_id": "couples",
+  "sort_order": 10,
+  "images": ["/products/placeholder.jpg"],
+  "overline": {
+    "tr": "Çiftler · Set",
+    "en": "For Couples · Set",
+    "de": "Für Paare · Set",
+    "ru": "Для пар · Набор"
+  },
+  "name": {
+    "tr": "İpek Bağ Seti",
+    "en": "Silk Tie Set",
+    "de": "Sei­den­band-Set",
+    "ru": "Шёлко­вые ленты — набор"
+  },
+  "description": {
+    "tr": "İki adet 100% ipek bağ, kıvırcıksız iplikten. Yıkanabilir, leke bırakmaz.",
+    "en": "A pair of 100% silk ties, charmeuse weave. Washable, does not stain.",
+    "de": "Zwei Bänder aus 100% Seide, Charmeuse-Bindung. Waschbar, hinterlässt keine Flecken.",
+    "ru": "Две ленты из 100% шёлка, плетение шармёз. Стирается, не оставляет следов."
+  },
+  "curator_note": {
+    "tr": "Yumuşak, kontrolde.",
+    "en": "Soft, in control.",
+    "de": "Sanft, kontrolliert.",
+    "ru": "Мягко, под контролем."
+  },
+  "price": {
+    "tr": { "display": "₺ 1.450,00", "value": 1450, "currency": "TRY" },
+    "en": { "display": "$ 72.00", "value": 72, "currency": "USD" },
+    "de": { "display": "65,00 €", "value": 65, "currency": "EUR" },
+    "ru": { "display": "6 600 ₽", "value": 6600, "currency": "RUB" }
+  },
+  "variants": [
+    {
+      "id": "color",
+      "label": { "tr": "Renk", "en": "Color", "de": "Farbe", "ru": "Цвет" },
+      "options": [
+        {
+          "id": "wine",
+          "label": { "tr": "Şarap", "en": "Wine", "de": "Weinrot", "ru": "Винный" },
+          "available": true
+        },
+        {
+          "id": "cream",
+          "label": { "tr": "Krem", "en": "Cream", "de": "Creme", "ru": "Кремовый" },
+          "available": true
+        },
+        {
+          "id": "black",
+          "label": { "tr": "Siyah", "en": "Black", "de": "Schwarz", "ru": "Чёрный" },
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "length",
+      "label": { "tr": "Uzunluk", "en": "Length", "de": "Länge", "ru": "Длина" },
+      "options": [
+        {
+          "id": "90cm",
+          "label": { "tr": "90 cm", "en": "90 cm", "de": "90 cm", "ru": "90 см" },
+          "available": true
+        },
+        {
+          "id": "120cm",
+          "label": { "tr": "120 cm", "en": "120 cm", "de": "120 cm", "ru": "120 см" },
+          "available": true
+        }
+      ]
+    }
+  ],
+  "specs": [
+    {
+      "key": "material",
+      "label": { "tr": "Malzeme", "en": "Material", "de": "Material", "ru": "Материал" },
+      "value": {
+        "tr": "%100 ipek (charmeuse)",
+        "en": "100% silk (charmeuse)",
+        "de": "100% Seide (Charmeuse)",
+        "ru": "100% шёлк (шармёз)"
+      }
+    },
+    {
+      "key": "made-in",
+      "label": { "tr": "Üretim", "en": "Made in", "de": "Hergestellt in", "ru": "Произведено в" },
+      "value": { "tr": "Fransa", "en": "France", "de": "Frankreich", "ru": "Франция" }
+    },
+    {
+      "key": "set-of",
+      "label": { "tr": "Set", "en": "Set of", "de": "Set", "ru": "Набор" },
+      "value": { "tr": "2 adet", "en": "2 pieces", "de": "2 Stück", "ru": "2 шт." }
+    }
+  ],
+  "made_in": "FR",
+  "sold_out": false
+}

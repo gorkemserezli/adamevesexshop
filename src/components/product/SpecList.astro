@@ -1,0 +1,27 @@
+---
+import type { Locale } from "~/i18n/ui";
+import type { ProductSpec } from "~/content/config";
+
+interface Props {
+  specs: ProductSpec[];
+  lang: Locale;
+}
+
+const { specs, lang } = Astro.props;
+---
+
+{
+  specs.length > 0 && (
+    <dl class="text-body-sm">
+      {specs.map((s, i) => {
+        const isLast = i === specs.length - 1;
+        return (
+          <div class:list={["flex justify-between py-3", !isLast && "border-b border-hairline-soft"]}>
+            <dt class="text-ink-3">{s.label[lang]}</dt>
+            <dd class="text-ink-2">{s.value[lang]}</dd>
+          </div>
+        );
+      })}
+    </dl>
+  )
+}

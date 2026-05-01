@@ -1,0 +1,54 @@
+---
+import type { Locale } from "~/i18n/ui";
+import { ui } from "~/i18n/ui";
+import { categoriesIndexHref } from "~/lib/routes";
+
+interface Crumb {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  lang: Locale;
+  crumbs: Crumb[];
+}
+
+const { lang, crumbs } = Astro.props;
+const t = ui[lang];
+
+// Auto-prepend Categories root (resolves to /{lang}/categories/ post-Task-11).
+// Callers pass everything below that root: per-category passes [categoryName],
+// PDP passes [categoryName→href, productName]. If the first user-supplied crumb
+// already points at the categories index, skip the auto-prepend so we don't
+// emit Categories › Categories › ... duplicates.
+const userPointsToCategoriesIndex =
+  crumbs.length > 0 && crumbs[0]?.href === categoriesIndexHref(lang);
+
+const all: Crumb[] = userPointsToCategoriesIndex
+  ? crumbs
+  : [{ label: t.breadcrumb.categories, href: categoriesIndexHref(lang) }, ...crumbs];
+---
+
+<nav class="px-ae-6 pt-ae-4 pb-1 text-body-sm text-ink-3" aria-label={t.aria.breadcrumb}>
+  {
+    all.map((c, i) => {
+      const isLast = i === all.length - 1;
+      return (
+        <Fragment>
+          {c.href && !isLast ? (
+            <a href={c.href} class="text-ink-3 no-underline hover:text-bronze-400 transition-colors duration-fast ease-standard">
+              {c.label}
+            </a>
+          ) : (
+            <span class={isLast ? "text-ink-2" : "text-ink-3"}>{c.label}</span>
+          )}
+          {!isLast && (
+            <span class="mx-2" style="color: var(--ae-bronze-400);" aria-hidden="true">
+              ›
+            </span>
+          )}
+        </Fragment>
+      );
+    })
+  }
+</nav>

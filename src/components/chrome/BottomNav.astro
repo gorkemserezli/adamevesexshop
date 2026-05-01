@@ -1,0 +1,89 @@
+---
+import type { Locale } from "~/i18n/ui";
+import { ui } from "~/i18n/ui";
+import { homeHref, favoritesHref, searchHref, categoriesIndexHref } from "~/lib/routes";
+
+type NavKey = "home" | "categories" | "search" | "favorites";
+
+interface Props {
+  lang: Locale;
+  active?: NavKey;
+}
+
+const { lang, active } = Astro.props;
+const t = ui[lang];
+
+const items: { key: NavKey; href: string; label: string }[] = [
+  { key: "home", href: homeHref(lang), label: t.nav.home },
+  { key: "categories", href: categoriesIndexHref(lang), label: t.nav.categories },
+  { key: "search", href: searchHref(lang), label: t.nav.search },
+  { key: "favorites", href: favoritesHref(lang), label: t.nav.favorites },
+];
+---
+
+<nav
+  class="ae-bottom-nav fixed left-0 right-0 bottom-0 z-sticky bg-canvas/95 backdrop-blur-md border-t border-hairline-soft"
+  style="padding-bottom: env(safe-area-inset-bottom);"
+  aria-label={t.aria.primaryNav}
+>
+  <ul class="grid grid-cols-4 list-none m-0 p-0">
+    {
+      items.map((item) => {
+        const isActive = item.key === active;
+        return (
+          <li class="contents">
+            <a
+              href={item.href}
+              class:list={[
+                "ae-nav-cell relative flex flex-col items-center justify-center gap-1 h-16 no-underline transition-colors duration-fast ease-standard",
+                isActive ? "text-wine-500" : "text-ink-3",
+              ]}
+              aria-current={isActive ? "page" : undefined}
+            >
+              {isActive && (
+                <span
+                  class="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-[2px] rounded-pill"
+                  style="background-color: var(--ae-bronze-400);"
+                  aria-hidden="true"
+                />
+              )}
+
+              {item.key === "home" && (
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M3 10.5 11 4l8 6.5V18a1 1 0 0 1-1 1h-4v-5h-6v5H4a1 1 0 0 1-1-1z" stroke-linejoin="round" />
+                </svg>
+              )}
+              {item.key === "categories" && (
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <line x1="4" y1="6" x2="18" y2="6" stroke-linecap="round" />
+                  <line x1="4" y1="11" x2="18" y2="11" stroke-linecap="round" />
+                  <line x1="4" y1="16" x2="18" y2="16" stroke-linecap="round" />
+                </svg>
+              )}
+              {item.key === "search" && (
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <circle cx="10" cy="10" r="6" />
+                  <path d="m14.5 14.5 4 4" stroke-linecap="round" />
+                </svg>
+              )}
+              {item.key === "favorites" && (
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M11 18.5 4 11.4a3.7 3.7 0 0 1 5.2-5.2L11 7.8l1.7-1.6a3.7 3.7 0 0 1 5.2 5.2z" stroke-linejoin="round" />
+                </svg>
+              )}
+
+              <span
+                class:list={[
+                  "text-nav-label leading-none whitespace-nowrap max-w-[80px]",
+                  isActive ? "font-medium" : "",
+                ]}
+              >
+                {item.label}
+              </span>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</nav>

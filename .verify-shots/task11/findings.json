@@ -1,0 +1,51 @@
+[
+  {
+    "name": "01-tr-index",
+    "rowCount": 6
+  },
+  {
+    "name": "01-en-index",
+    "rowCount": 6
+  },
+  {
+    "name": "01-de-index",
+    "rowCount": 6
+  },
+  {
+    "name": "01-ru-index",
+    "rowCount": 6
+  },
+  {
+    "name": "02-wellness",
+    "breadcrumbText": "Categories \n›\nWellness",
+    "productCount": 3
+  },
+  {
+    "name": "03-lingerie",
+    "productCount": 1
+  },
+  {
+    "name": "04-no-type-chips",
+    "sheetState": "open",
+    "typeChips": 0
+  },
+  {
+    "name": "05-instock",
+    "before": 3,
+    "after": 2
+  },
+  {
+    "name": "06-routing",
+    "bottomNavCatHref": "/en/categories/",
+    "homeCtaHref": "/en/categories/",
+    "wellnessRowHref": "/en/categories/wellness/",
+    "favEmptyCtaHref": "/en/categories/"
+  },
+  {
+    "name": "07-locale-ru"
+  },
+  {
+    "name": "08-homepage-no-cats",
+    "catRows": 0
+  }
+]

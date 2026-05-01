@@ -1,0 +1,62 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import CategoryRow from "~/components/product/CategoryRow.astro";
+import type { Locale } from "~/i18n/ui";
+import { LOCALES, ui } from "~/i18n/ui";
+import type { Category } from "~/content/config";
+import { getCollection, type CollectionEntry } from "astro:content";
+import { categoryHref } from "~/lib/routes";
+
+export async function getStaticPaths() {
+  return LOCALES.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Locale };
+const t = ui[lang];
+
+const categoryEntries = await getCollection("categories");
+const productEntries = await getCollection("products");
+
+const categories: Category[] = categoryEntries
+  .map((e: CollectionEntry<"categories">) => e.data)
+  .sort((a: Category, b: Category) => a.sort_order - b.sort_order);
+
+const productsByCategory = new Map<string, CollectionEntry<"products">[]>();
+for (const p of productEntries) {
+  const list = productsByCategory.get(p.data.category_id) ?? [];
+  list.push(p);
+  productsByCategory.set(p.data.category_id, list);
+}
+
+const rows = categories.map((cat: Category) => {
+  const products = productsByCategory.get(cat.id) ?? [];
+  const total = products.length;
+  const inStock = products.filter((p: CollectionEntry<"products">) => !p.data.sold_out).length;
+  return { cat, total, inStock };
+});
+
+const title = `Adam & Eve · ${t.categories.indexOverline}`;
+---
+
+<BaseLayout title={title} lang={lang} activeNav="categories">
+  <section class="px-ae-6 pt-ae-7 pb-ae-2">
+    <p class="text-overline text-ink-3 uppercase">{t.categories.indexOverline}</p>
+  </section>
+
+  <section class="px-ae-6 pt-ae-3 pb-ae-8">
+    <div>
+      {
+        rows.map(({ cat, total, inStock }: { cat: Category; total: number; inStock: number }, i: number) => (
+          <CategoryRow
+            href={categoryHref(lang, cat.id)}
+            name={cat.name[lang]}
+            total={total}
+            inStock={inStock}
+            locale={lang}
+            isLast={i === rows.length - 1}
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

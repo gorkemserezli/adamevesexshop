@@ -1,0 +1,57 @@
+{
+  "id": "leather-blindfold",
+  "sku": "AE-LB-001",
+  "category_id": "accessories",
+  "sort_order": 10,
+  "images": ["/products/placeholder.jpg"],
+  "overline": {
+    "tr": "Aksesuar · Göz Bandı",
+    "en": "Accessory · Blindfold",
+    "de": "Zubehör · Augenbinde",
+    "ru": "Аксессуар · Маска"
+  },
+  "name": {
+    "tr": "Deri Göz Bandı",
+    "en": "Leather Blindfold",
+    "de": "Leder-Augenbinde",
+    "ru": "Кожаная маска"
+  },
+  "description": {
+    "tr": "Yumuşak iç astarlı dana derisi. Esnek elastik bant, ayarlanabilir. Tek beden, çoğu yüze uyar.",
+    "en": "Calfskin with a soft suede inner. Stretch elastic, adjustable. One size, fits most.",
+    "de": "Kalbsleder mit weichem Velours-Innenfutter. Elastisches Band, verstellbar. Eine Größe, passt den meisten.",
+    "ru": "Телячья кожа с мягкой замшевой подкладкой. Эластичная регулируемая лента. Один размер, подходит большинству."
+  },
+  "curator_note": {
+    "tr": "Yavaş bir geceye doğru.",
+    "en": "Toward a slower night.",
+    "de": "Für eine ruhigere Nacht.",
+    "ru": "Для более медленной ночи."
+  },
+  "price": {
+    "tr": { "display": "₺ 980,00", "value": 980, "currency": "TRY" },
+    "en": { "display": "$ 49.00", "value": 49, "currency": "USD" },
+    "de": { "display": "44,00 €", "value": 44, "currency": "EUR" },
+    "ru": { "display": "4 500 ₽", "value": 4500, "currency": "RUB" }
+  },
+  "variants": [],
+  "specs": [
+    {
+      "key": "material",
+      "label": { "tr": "Malzeme", "en": "Material", "de": "Material", "ru": "Материал" },
+      "value": {
+        "tr": "Dana derisi, süet astar",
+        "en": "Calfskin, suede lining",
+        "de": "Kalbsleder, Velours-Futter",
+        "ru": "Телячья кожа, замшевая подкладка"
+      }
+    },
+    {
+      "key": "made-in",
+      "label": { "tr": "Üretim", "en": "Made in", "de": "Hergestellt in", "ru": "Произведено в" },
+      "value": { "tr": "İtalya", "en": "Italy", "de": "Italien", "ru": "Италия" }
+    }
+  ],
+  "made_in": "IT",
+  "sold_out": false
+}

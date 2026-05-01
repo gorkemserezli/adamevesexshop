@@ -1,0 +1,151 @@
+---
+interface Props {
+  id: string;
+  ariaLabelledBy?: string;
+  ariaLabel?: string;
+}
+
+const { id, ariaLabelledBy, ariaLabel } = Astro.props;
+---
+
+<div
+  id={id}
+  class="ae-sheet fixed inset-0 z-[90]"
+  data-sheet-state="closed"
+  role="dialog"
+  aria-modal="true"
+  aria-hidden="true"
+  aria-labelledby={ariaLabelledBy}
+  aria-label={ariaLabel}
+>
+  <div
+    class="ae-sheet-backdrop absolute inset-0"
+    style="background-color: rgba(42, 30, 22, 0.5);"
+    data-sheet-dismiss
+    aria-hidden="true"
+  ></div>
+  <div
+    class="ae-sheet-panel absolute left-0 right-0 bottom-0 max-h-[90vh] overflow-y-auto rounded-t-xl"
+    style="background-color: var(--ae-surface); box-shadow: var(--ae-shadow-sheet); border-top: 1px solid var(--ae-hairline-soft); padding-bottom: env(safe-area-inset-bottom);"
+  >
+    <div class="flex justify-center pt-3 pb-1">
+      <span
+        class="block rounded-pill"
+        style="width: 40px; height: 4px; background-color: var(--ae-bronze-400);"
+        aria-hidden="true"
+      ></span>
+    </div>
+    <slot />
+  </div>
+</div>
+
+<style is:global>
+  .ae-sheet[data-sheet-state="closed"] {
+    display: none;
+  }
+  .ae-sheet[data-sheet-state="open"] {
+    display: block;
+  }
+  .ae-sheet-panel {
+    transform: translateY(100%);
+    transition: transform var(--ae-dur-base) var(--ae-ease-emphasis);
+  }
+  .ae-sheet[data-sheet-state="open"] .ae-sheet-panel {
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ae-sheet-panel {
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  type SheetState = "open" | "closed";
+
+  // Reference-counted body scroll lock — multiple sheets can request the lock,
+  // but only the last close releases it. Stores the prior overflow value once
+  // so we restore the page's original state, not "" (which can clobber a
+  // page-level overflow rule).
+  let openCount = 0;
+  let priorOverflow: string | null = null;
+
+  function lockBodyScroll(): void {
+    if (openCount === 0) {
+      priorOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+    }
+    openCount += 1;
+  }
+
+  function unlockBodyScroll(): void {
+    openCount = Math.max(0, openCount - 1);
+    if (openCount === 0 && priorOverflow !== null) {
+      document.body.style.overflow = priorOverflow;
+      priorOverflow = null;
+    }
+  }
+
+  function setState(sheet: HTMLElement, state: SheetState): void {
+    const prevState = sheet.dataset.sheetState;
+    sheet.dataset.sheetState = state;
+    sheet.setAttribute("aria-hidden", state === "open" ? "false" : "true");
+    if (state === "open" && prevState !== "open") {
+      lockBodyScroll();
+      const focusables = sheet.querySelectorAll<HTMLElement>(
+        "button:not([disabled]), [href], input:not([disabled]), select, textarea, [tabindex]:not([tabindex='-1'])",
+      );
+      focusables[0]?.focus();
+    } else if (state === "closed" && prevState === "open") {
+      unlockBodyScroll();
+    }
+  }
+
+  function trapFocus(sheet: HTMLElement, e: KeyboardEvent): void {
+    if (e.key !== "Tab") return;
+    const focusables = Array.from(
+      sheet.querySelectorAll<HTMLElement>(
+        "button:not([disabled]), [href], input:not([disabled]), select, textarea, [tabindex]:not([tabindex='-1'])",
+      ),
+    );
+    if (focusables.length === 0) return;
+    const first = focusables[0]!;
+    const last = focusables[focusables.length - 1]!;
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
+
+  document.querySelectorAll<HTMLElement>(".ae-sheet").forEach((sheet) => {
+    sheet.addEventListener("click", (e) => {
+      const target = e.target as HTMLElement;
+      if (target.closest("[data-sheet-dismiss]")) {
+        setState(sheet, "closed");
+      }
+    });
+    sheet.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        setState(sheet, "closed");
+        return;
+      }
+      trapFocus(sheet, e);
+    });
+  });
+
+  // Public API on window for triggers to call.
+  (window as unknown as { aeSheet: { open: (id: string) => void; close: (id: string) => void } }).aeSheet = {
+    open(id: string) {
+      const el = document.getElementById(id);
+      if (el) setState(el, "open");
+    },
+    close(id: string) {
+      const el = document.getElementById(id);
+      if (el) setState(el, "closed");
+    },
+  };
+</script>

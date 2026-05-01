@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Adam &amp; Eve · Warming Massage Oil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          wine:   { 50:'#FBF3F2', 100:'#F2E0DC', 200:'#E2BBB2', 300:'#C58A7E', 400:'#A05B4E', 500:'#6B2E26', 600:'#5A2620', 700:'#4A1E1A', 900:'#2A100E' },
+          bronze: { 50:'#F8F1E5', 100:'#ECDCBA', 200:'#DCC18B', 300:'#C4A165', 400:'#A88546', 500:'#8C6D40', 600:'#71562F', 700:'#564220', 800:'#3C2E15' },
+          canvas: '#F9F4EC',
+          surface:'#F2EBDD',
+          sunken: '#EFE4D0',
+          ink:    { DEFAULT:'#2A1E16', 2:'#4A3829', 3:'#6B5642' },
+          success:{ bg:'#E5E8D9', ink:'#3F4933', mark:'#5C6B4A' },
+          warning:{ bg:'#F2E2BD', ink:'#6B4A1E', mark:'#A87830' },
+          danger: { bg:'#ECCFC4', ink:'#7A3525', mark:'#B4533A' }
+        },
+        fontFamily: {
+          serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+          sans:  ['Inter', 'system-ui', 'sans-serif']
+        },
+        borderRadius: { sm:'6px', md:'10px', lg:'14px', xl:'20px', pill:'999px' },
+        boxShadow: { sheet: '0 12px 40px rgba(42, 30, 22, 0.12)' }
+      }
+    }
+  }
+</script>
+<style>
+  body{font-family:Inter,system-ui,sans-serif;background:#E8DFCF;margin:0;padding:24px 0}
+  .frame{width:375px;margin:0 auto;background:#F9F4EC;min-height:812px;position:relative;overflow:hidden;color:#2A1E16}
+  .ink{color:#2A1E16}.ink-2{color:#4A3829}.ink-3{color:#6B5642}
+  .hairline{border-color:rgba(168,133,70,0.30)}
+  .hairline-soft{border-color:rgba(168,133,70,0.15)}
+  .overline{font-size:10px;letter-spacing:0.2em;font-weight:500;text-transform:uppercase}
+  .nav-label{font-size:11px;letter-spacing:0.01em;font-weight:500}
+  .price-text{font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.2;font-variant-numeric:tabular-nums lining-nums}
+  .curator-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;line-height:1.5;color:#71562F}
+  .strike-diag{background-image:linear-gradient(135deg,transparent 47%,#6B5642 47%,#6B5642 53%,transparent 53%);background-size:100% 100%;background-repeat:no-repeat}
+  .nav-active{position:relative}
+  .nav-active::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:24px;height:2px;background:#A88546;border-radius:999px}
+  .crumb-sep{color:#A88546}
+</style>
+</head>
+<body>
+  <div class="frame pb-[100px]">
+
+    <!-- ============ STICKY HEADER ============ -->
+    <header class="sticky top-0 z-30 bg-canvas/90 backdrop-blur border-b hairline-soft border-b">
+      <div class="flex items-center justify-between px-4 h-14">
+        <div class="flex flex-col leading-none">
+          <span class="font-serif text-[18px] tracking-tight ink">Adam &amp; Eve</span>
+          <span class="overline ink-3 mt-[2px]">Sex Shop</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <!-- language switcher trigger -->
+          <button class="flex items-center gap-1.5 h-9 px-3 rounded-pill border hairline" aria-label="Language">
+            <span class="font-medium text-[13px] tracking-[0.02em] ink">EN</span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#6B5642" stroke-width="1.5">
+              <path d="M3 5l3 3 3-3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="w-9 h-9 flex items-center justify-center" aria-label="Search">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#2A1E16" stroke-width="1.5">
+              <circle cx="9" cy="9" r="5.5"/>
+              <path d="m13 13 3.5 3.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <button class="w-9 h-9 flex items-center justify-center" aria-label="More">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="#2A1E16">
+              <circle cx="4" cy="10" r="1.5"/>
+              <circle cx="10" cy="10" r="1.5"/>
+              <circle cx="16" cy="10" r="1.5"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ BREADCRUMB ============ -->
+    <nav class="px-6 pt-4 pb-1 text-[13px] ink-3">
+      <span>Categories</span>
+      <span class="crumb-sep mx-2">›</span>
+      <span>Wellness</span>
+      <span class="crumb-sep mx-2">›</span>
+      <span class="ink-2">Massage Oil</span>
+    </nav>
+
+    <!-- ============ HERO IMAGE 1:1 ============ -->
+    <div class="relative mt-3">
+      <div class="aspect-square bg-sunken flex items-center justify-center">
+        <svg width="170" height="250" viewBox="0 0 170 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="85" cy="232" rx="50" ry="6" fill="#A88546" opacity="0.18"/>
+          <path d="M58 56 L58 78 Q58 88 53 96 L44 110 Q34 126 34 148 L34 208 Q34 220 46 220 L124 220 Q136 220 136 208 L136 148 Q136 126 126 110 L117 96 Q112 88 112 78 L112 56 Z" fill="#6B2E26"/>
+          <path d="M50 122 Q44 144 44 172 L44 204" stroke="#A05B4E" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.55"/>
+          <rect x="58" y="38" width="54" height="22" rx="3" fill="#564220"/>
+          <rect x="58" y="38" width="54" height="6" fill="#71562F"/>
+          <rect x="46" y="138" width="78" height="52" fill="#F9F4EC"/>
+          <text x="85" y="161" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="15" fill="#2A1E16" letter-spacing="0.06em">A &amp; E</text>
+          <line x1="58" y1="168" x2="112" y2="168" stroke="#A88546" stroke-width="0.5"/>
+          <text x="85" y="180" text-anchor="middle" font-family="Inter, sans-serif" font-size="6" font-weight="500" fill="#6B5642" letter-spacing="0.20em">WARMING OIL</text>
+          <text x="85" y="188" text-anchor="middle" font-family="Inter, sans-serif" font-size="5" fill="#8F7E66" letter-spacing="0.10em">100 ml</text>
+        </svg>
+      </div>
+      <!-- pagination dots -->
+      <div class="absolute bottom-4 right-6 flex gap-1.5">
+        <span class="block w-1.5 h-1.5 rounded-full bg-bronze-500"></span>
+        <span class="block w-1.5 h-1.5 rounded-full bg-bronze-200"></span>
+        <span class="block w-1.5 h-1.5 rounded-full bg-bronze-200"></span>
+      </div>
+    </div>
+
+    <!-- ============ PRODUCT HEADER ============ -->
+    <section class="px-6 pt-7">
+      <div class="overline ink-3">Wellness · Oil</div>
+      <h1 class="font-serif text-[28px] leading-[1.18] ink mt-2 tracking-tight">Warming Massage Oil</h1>
+      <div class="price-text ink mt-3">$ 24.00</div>
+
+      <div class="mt-4 inline-flex items-center gap-2 h-6 px-2.5 rounded-pill bg-success-bg">
+        <span class="block w-1.5 h-1.5 rounded-full bg-success-mark"></span>
+        <span class="text-[12px] font-medium text-success-ink">In Stock</span>
+      </div>
+
+      <p class="curator-note mt-4">For candlelight — slow, warm, deliberate.</p>
+    </section>
+
+    <!-- hairline -->
+    <div class="px-6 mt-7"><div class="border-t hairline"></div></div>
+
+    <!-- ============ VARIANT: SCENT ============ -->
+    <section class="px-6 pt-6">
+      <div class="flex items-baseline justify-between">
+        <span class="font-medium text-[13px] tracking-[0.02em] ink-2">Scent</span>
+        <span class="text-[13px] ink-3">Amber Rose</span>
+      </div>
+      <div class="flex flex-wrap gap-2 mt-3">
+        <button class="h-10 px-4 rounded-pill border hairline text-[13px] font-medium tracking-[0.02em] ink">Unscented</button>
+        <button class="h-10 px-4 rounded-pill border text-[13px] font-medium tracking-[0.02em]" style="background:#F2E0DC;border-color:#6B2E26;color:#6B2E26">Amber Rose</button>
+        <button class="h-10 px-4 rounded-pill border hairline text-[13px] font-medium tracking-[0.02em] ink">Sandalwood</button>
+        <button class="h-10 px-4 rounded-pill border hairline-soft text-[13px] ink-3 strike-diag">Vetiver</button>
+      </div>
+    </section>
+
+    <!-- ============ VARIANT: VOLUME ============ -->
+    <section class="px-6 pt-6">
+      <div class="flex items-baseline justify-between">
+        <span class="font-medium text-[13px] tracking-[0.02em] ink-2">Volume</span>
+        <span class="text-[13px] ink-3">100 ml</span>
+      </div>
+      <div class="flex flex-wrap gap-2 mt-3">
+        <button class="h-10 px-4 rounded-pill border hairline text-[13px] font-medium tracking-[0.02em] ink">50 ml</button>
+        <button class="h-10 px-4 rounded-pill border text-[13px] font-medium tracking-[0.02em]" style="background:#F2E0DC;border-color:#6B2E26;color:#6B2E26">100 ml</button>
+        <button class="h-10 px-4 rounded-pill border hairline text-[13px] font-medium tracking-[0.02em] ink">250 ml</button>
+      </div>
+    </section>
+
+    <!-- hairline -->
+    <div class="px-6 mt-7"><div class="border-t hairline"></div></div>
+
+    <!-- ============ DESCRIPTION ============ -->
+    <section class="px-6 pt-7">
+      <p class="text-[15px] leading-[1.55] ink-2">An oil to slow you down — to map your body and your partner's at a softer tempo. Warms gently with skin contact; will not stain bedding.</p>
+    </section>
+
+    <!-- ============ SPECS ============ -->
+    <section class="px-6 pt-6">
+      <dl class="text-[13px]">
+        <div class="flex justify-between py-3 border-b hairline-soft">
+          <dt class="ink-3">Volume</dt><dd class="ink-2">100 ml</dd>
+        </div>
+        <div class="flex justify-between py-3 border-b hairline-soft">
+          <dt class="ink-3">Made in</dt><dd class="ink-2">France</dd>
+        </div>
+        <div class="flex justify-between py-3 border-b hairline-soft">
+          <dt class="ink-3">Base</dt><dd class="ink-2">Sweet almond, jojoba</dd>
+        </div>
+        <div class="flex justify-between py-3">
+          <dt class="ink-3">Vegan</dt><dd class="ink-2">Yes</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- hairline -->
+    <div class="px-6 mt-2 mb-6"><div class="border-t hairline"></div></div>
+
+    <!-- ============ ACTION BAR ============ -->
+    <section class="px-6 pb-8">
+      <button class="block w-full h-14 rounded-md font-medium text-[13px] tracking-[0.02em]" style="background:#6B2E26;color:#F9F4EC">
+        <span class="flex items-center justify-center gap-2">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#F9F4EC" stroke-width="1.5">
+            <path d="M9 15.5 3.2 9.8a3.4 3.4 0 0 1 4.8-4.8L9 6l1-1a3.4 3.4 0 0 1 4.8 4.8z" stroke-linejoin="round"/>
+          </svg>
+          <span>Add to Favorites</span>
+        </span>
+      </button>
+      <button class="block w-full h-12 rounded-md border hairline mt-3 font-medium text-[13px] tracking-[0.02em]" style="color:#6B2E26;background:transparent">
+        <span class="flex items-center justify-center gap-2">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="#6B2E26">
+            <path d="M8 1.5C4.4 1.5 1.5 4.4 1.5 8c0 1.2.3 2.3.9 3.3L1.5 14.5l3.3-.9c1 .5 2 .8 3.2.8 3.6 0 6.5-2.9 6.5-6.5S11.6 1.5 8 1.5zm3.7 9.1c-.2.5-.9 1-1.4 1.1-.4.1-.8.1-1.4-.1-.4-.1-.9-.3-1.5-.6-2.6-1.1-4.3-3.7-4.4-3.9-.1-.2-1-1.4-1-2.7s.7-1.9.9-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.5.1.3.7 1.1 1.4 1.7.9.8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.6-.7c.1-.2.3-.1.5-.1l1.7.8c.2.1.4.2.4.3.1.1.1.5-.1 1z"/>
+          </svg>
+          <span>Ask at Boutique</span>
+        </span>
+      </button>
+    </section>
+
+    <!-- ============ BOTTOM NAV ============ -->
+    <nav class="absolute left-0 right-0 bottom-0 bg-canvas/95 backdrop-blur border-t hairline-soft grid grid-cols-4">
+      <button class="flex flex-col items-center pt-3 pb-4 gap-1.5">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#6B5642" stroke-width="1.5">
+          <path d="M3 10.5 11 4l8 6.5V18a1 1 0 0 1-1 1h-4v-5h-6v5H4a1 1 0 0 1-1-1z" stroke-linejoin="round"/>
+        </svg>
+        <span class="nav-label ink-3">Home</span>
+      </button>
+      <button class="flex flex-col items-center pt-3 pb-4 gap-1.5 nav-active">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#6B2E26" stroke-width="1.5">
+          <line x1="4" y1="6" x2="18" y2="6" stroke-linecap="round"/>
+          <line x1="4" y1="11" x2="18" y2="11" stroke-linecap="round"/>
+          <line x1="4" y1="16" x2="18" y2="16" stroke-linecap="round"/>
+        </svg>
+        <span class="nav-label" style="color:#6B2E26">Categories</span>
+      </button>
+      <button class="flex flex-col items-center pt-3 pb-4 gap-1.5">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#6B5642" stroke-width="1.5">
+          <circle cx="10" cy="10" r="6"/>
+          <path d="m14.5 14.5 4 4" stroke-linecap="round"/>
+        </svg>
+        <span class="nav-label ink-3">Search</span>
+      </button>
+      <button class="flex flex-col items-center pt-3 pb-4 gap-1.5">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#6B5642" stroke-width="1.5">
+          <path d="M11 18.5 4 11.4a3.7 3.7 0 0 1 5.2-5.2L11 7.8l1.7-1.6a3.7 3.7 0 0 1 5.2 5.2z" stroke-linejoin="round"/>
+        </svg>
+        <span class="nav-label ink-3">Favorites</span>
+      </button>
+    </nav>
+
+  </div>
+</body>
+</html>

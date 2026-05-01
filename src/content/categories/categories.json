@@ -1,0 +1,32 @@
+[
+  {
+    "id": "wellness",
+    "sort_order": 10,
+    "name": { "tr": "Wellness", "en": "Wellness", "de": "Wellness", "ru": "Велнес" }
+  },
+  {
+    "id": "lingerie",
+    "sort_order": 20,
+    "name": { "tr": "İç Giyim", "en": "Lingerie", "de": "Dessous", "ru": "Бельё" }
+  },
+  {
+    "id": "toys",
+    "sort_order": 30,
+    "name": { "tr": "Oyuncaklar", "en": "Toys", "de": "Spielzeug", "ru": "Игрушки" }
+  },
+  {
+    "id": "accessories",
+    "sort_order": 40,
+    "name": { "tr": "Aksesuarlar", "en": "Accessories", "de": "Zubehör", "ru": "Аксессуары" }
+  },
+  {
+    "id": "couples",
+    "sort_order": 50,
+    "name": { "tr": "Çiftler İçin", "en": "For Couples", "de": "Für Paare", "ru": "Для пар" }
+  },
+  {
+    "id": "gifts",
+    "sort_order": 60,
+    "name": { "tr": "Hediyeler", "en": "Gifts", "de": "Geschenke", "ru": "Подарки" }
+  }
+]

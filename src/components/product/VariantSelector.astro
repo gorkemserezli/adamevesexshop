@@ -1,0 +1,167 @@
+---
+import type { Locale } from "~/i18n/ui";
+import type { VariantAxis } from "~/content/config";
+
+interface Props {
+  axes: VariantAxis[];
+  lang: Locale;
+}
+
+const { axes, lang } = Astro.props;
+
+if (axes.length === 0) {
+  // No-variant product — render nothing.
+}
+
+function defaultOption(axis: VariantAxis) {
+  const firstAvail = axis.options.find((o) => o.available);
+  return firstAvail ?? axis.options[0];
+}
+---
+
+{
+  axes.length > 0 && (
+    <div class="ae-variants flex flex-col gap-ae-6">
+      {axes.map((axis, idx) => {
+        const initial = defaultOption(axis);
+        return (
+          <fieldset class="ae-axis flex flex-col gap-ae-3" data-axis-id={axis.id}>
+            <legend class="contents">
+              <div class="flex items-baseline justify-between">
+                <span class="text-ui-label text-ink-2 font-medium">{axis.label[lang]}</span>
+                <span class="ae-axis-current text-body-sm text-ink-3" data-axis-id={axis.id}>
+                  {initial.label[lang]}
+                </span>
+              </div>
+            </legend>
+            <div class="flex flex-wrap gap-ae-2" role="radiogroup" aria-label={axis.label[lang]}>
+              {axis.options.map((opt, i) => {
+                const isInitial = opt.id === initial.id;
+                const unavailable = !opt.available;
+                return (
+                  <button
+                    type="button"
+                    role="radio"
+                    aria-checked={isInitial ? "true" : "false"}
+                    aria-disabled={unavailable ? "true" : "false"}
+                    tabindex={isInitial ? "0" : i === 0 ? "0" : "-1"}
+                    data-option-id={opt.id}
+                    data-option-label={opt.label[lang]}
+                    data-axis-idx={idx}
+                    data-axis-id={axis.id}
+                    data-available={unavailable ? "false" : "true"}
+                    class:list={[
+                      "ae-chip h-10 px-4 rounded-pill border text-ui-label font-medium transition-colors duration-fast ease-standard",
+                      unavailable
+                        ? "border-hairline-soft text-ink-3 bg-transparent"
+                        : isInitial
+                          ? "ae-chip-selected"
+                          : "border-hairline text-ink bg-transparent hover:border-bronze-400 hover:bg-bronze-50",
+                    ]}
+                    style={
+                      !unavailable && isInitial
+                        ? "background-color: var(--ae-wine-100); border-color: var(--ae-wine-500); color: var(--ae-wine-500);"
+                        : undefined
+                    }
+                  >
+                    {opt.label[lang]}
+                  </button>
+                );
+              })}
+            </div>
+          </fieldset>
+        );
+      })}
+    </div>
+  )
+}
+
+<style is:global>
+  .ae-chip[data-available="false"] {
+    background-image: linear-gradient(
+      135deg,
+      transparent 47%,
+      var(--ae-ink-3) 47%,
+      var(--ae-ink-3) 53%,
+      transparent 53%
+    );
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-color: var(--ae-hairline-soft);
+    color: var(--ae-ink-3);
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>(".ae-axis").forEach((axisEl) => {
+    const axisId = axisEl.dataset.axisId ?? "";
+    const summary = axisEl.querySelector<HTMLElement>(`.ae-axis-current[data-axis-id="${axisId}"]`);
+    const buttons = Array.from(axisEl.querySelectorAll<HTMLButtonElement>(".ae-chip"));
+
+    function select(target: HTMLButtonElement): void {
+      buttons.forEach((b) => {
+        const isTarget = b === target;
+        b.setAttribute("aria-checked", isTarget ? "true" : "false");
+        b.setAttribute("tabindex", isTarget ? "0" : "-1");
+        const isUnavailable = b.getAttribute("data-available") === "false";
+        if (isUnavailable) {
+          b.style.backgroundColor = "";
+          return;
+        }
+        if (isTarget) {
+          b.style.backgroundColor = "var(--ae-wine-100)";
+          b.style.borderColor = "var(--ae-wine-500)";
+          b.style.color = "var(--ae-wine-500)";
+        } else {
+          b.style.backgroundColor = "";
+          b.style.borderColor = "";
+          b.style.color = "";
+        }
+      });
+      if (summary) {
+        const lbl = target.dataset.optionLabel ?? "";
+        summary.textContent = lbl;
+      }
+    }
+
+    buttons.forEach((b) => {
+      b.addEventListener("click", () => {
+        if (b.getAttribute("data-available") === "false") return;
+        select(b);
+      });
+      b.addEventListener("ae:availability-change", () => {
+        if (b.getAttribute("data-available") === "false") {
+          b.setAttribute("aria-disabled", "true");
+          if (b.getAttribute("aria-checked") === "true") {
+            const next = buttons.find(
+              (cand) => cand !== b && cand.getAttribute("data-available") !== "false",
+            );
+            if (next) select(next);
+          }
+        } else {
+          b.setAttribute("aria-disabled", "false");
+        }
+      });
+      b.addEventListener("keydown", (e) => {
+        const idx = buttons.indexOf(b);
+        if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+          e.preventDefault();
+          let n = (idx + 1) % buttons.length;
+          while (buttons[n]?.getAttribute("aria-disabled") === "true" && n !== idx) {
+            n = (n + 1) % buttons.length;
+          }
+          buttons[n]?.focus();
+          if (buttons[n]?.getAttribute("aria-disabled") !== "true") select(buttons[n]!);
+        } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+          e.preventDefault();
+          let n = (idx - 1 + buttons.length) % buttons.length;
+          while (buttons[n]?.getAttribute("aria-disabled") === "true" && n !== idx) {
+            n = (n - 1 + buttons.length) % buttons.length;
+          }
+          buttons[n]?.focus();
+          if (buttons[n]?.getAttribute("aria-disabled") !== "true") select(buttons[n]!);
+        }
+      });
+    });
+  });
+</script>

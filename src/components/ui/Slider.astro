@@ -1,0 +1,260 @@
+---
+import type { Locale } from "~/i18n/ui";
+import { ui } from "~/i18n/ui";
+
+interface Props {
+  id: string;
+  lang: Locale;
+  min: number;
+  max: number;
+  step: number;
+  initialMin: number;
+  initialMax: number;
+}
+
+const { id, lang, min, max, step, initialMin, initialMax } = Astro.props;
+const t = ui[lang];
+---
+
+<div
+  id={id}
+  class="ae-slider"
+  role="group"
+  aria-label={t.filter.priceRange}
+  data-min={String(min)}
+  data-max={String(max)}
+  data-step={String(step)}
+  data-locale={lang}
+  data-current-min={String(initialMin)}
+  data-current-max={String(initialMax)}
+>
+  <div class="ae-slider-track-area" data-slider-track-area>
+    <div class="ae-slider-track" aria-hidden="true"></div>
+    <div class="ae-slider-range" aria-hidden="true"></div>
+    <div class="ae-slider-thumb ae-slider-thumb-min" aria-hidden="true"></div>
+    <div class="ae-slider-thumb ae-slider-thumb-max" aria-hidden="true"></div>
+    <input
+      type="range"
+      class="ae-slider-input ae-slider-input-min"
+      min={String(min)}
+      max={String(max)}
+      step={String(step)}
+      value={String(initialMin)}
+      aria-label={t.filter.priceMinAria}
+    />
+    <input
+      type="range"
+      class="ae-slider-input ae-slider-input-max"
+      min={String(min)}
+      max={String(max)}
+      step={String(step)}
+      value={String(initialMax)}
+      aria-label={t.filter.priceMaxAria}
+    />
+  </div>
+</div>
+
+<style is:global>
+  .ae-slider {
+    position: relative;
+    padding: 22px 12px; /* leave 22px above/below the 4px track for 44x44 touch zone */
+  }
+  .ae-slider-track-area {
+    position: relative;
+    height: 4px;
+  }
+  .ae-slider-track {
+    position: absolute;
+    inset: 0;
+    background-color: var(--ae-bronze-400);
+    border-radius: 9999px;
+  }
+  .ae-slider-range {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: var(--ae-wine-500);
+    border-radius: 9999px;
+  }
+  .ae-slider-thumb {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    border-radius: 50%;
+    background-color: var(--ae-wine-500);
+    border: 2px solid var(--ae-canvas);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: transform var(--ae-dur-fast) var(--ae-ease-standard);
+  }
+  /* Native inputs sit on top of the visual thumbs at 44x44 hit size, transparent. */
+  .ae-slider-input {
+    position: absolute;
+    top: 50%;
+    width: 44px;
+    height: 44px;
+    margin: -22px 0 0 -22px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    /* Visually hide while staying interactive and screen-readable. */
+    opacity: 0;
+    /* Native track styling reset so the box never blocks touches outside the 44x44. */
+    pointer-events: auto;
+    /* The input itself is positioned to overlap a single thumb. JS keeps left in sync. */
+  }
+  .ae-slider-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+  }
+  .ae-slider-input::-moz-range-thumb {
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 0;
+  }
+  .ae-slider-input:focus-visible + .ae-slider-thumb,
+  .ae-slider-input:focus-visible {
+    outline: none;
+  }
+  /* Focus ring shows on the visual thumb when its native input is focused. */
+  .ae-slider-input.ae-slider-input-min:focus-visible ~ .ae-slider-thumb-min,
+  .ae-slider-input.ae-slider-input-max:focus-visible ~ .ae-slider-thumb-max {
+    outline: 2px solid var(--ae-wine-500);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ae-slider-thumb { transition: none !important; }
+  }
+</style>
+
+<script>
+  import { formatPriceForScreenReader } from "~/i18n/format";
+  import type { Locale } from "~/i18n/ui";
+  import { ui } from "~/i18n/ui";
+
+  function init(slider: HTMLElement): void {
+    const min = Number(slider.dataset.min);
+    const max = Number(slider.dataset.max);
+    const step = Number(slider.dataset.step);
+    const lang = (slider.dataset.locale ?? "en") as Locale;
+    const t = ui[lang];
+
+    const trackArea = slider.querySelector<HTMLElement>("[data-slider-track-area]");
+    const range = slider.querySelector<HTMLElement>(".ae-slider-range");
+    const thumbMin = slider.querySelector<HTMLElement>(".ae-slider-thumb-min");
+    const thumbMax = slider.querySelector<HTMLElement>(".ae-slider-thumb-max");
+    const inputMin = slider.querySelector<HTMLInputElement>(".ae-slider-input-min");
+    const inputMax = slider.querySelector<HTMLInputElement>(".ae-slider-input-max");
+
+    if (!trackArea || !range || !thumbMin || !thumbMax || !inputMin || !inputMax) return;
+
+    function clamp(v: number): number {
+      return Math.max(min, Math.min(max, v));
+    }
+
+    function snap(v: number): number {
+      return Math.round(v / step) * step;
+    }
+
+    function pctOf(v: number): number {
+      if (max === min) return 0;
+      return ((v - min) / (max - min)) * 100;
+    }
+
+    /**
+     * Unified collision setter. Handles all entry points (Arrow, Page, Home,
+     * End, drag, tap-snap) by routing through the same logic. If the new value
+     * would invert the pair, push the other thumb by step in the appropriate
+     * direction.
+     */
+    function setValue(which: "min" | "max", raw: number): void {
+      const v = clamp(snap(raw));
+      const minV = Number(inputMin!.value);
+      const maxV = Number(inputMax!.value);
+      if (which === "min") {
+        if (v >= maxV) {
+          inputMin!.value = String(v);
+          inputMax!.value = String(clamp(v + step));
+        } else {
+          inputMin!.value = String(v);
+        }
+      } else {
+        if (v <= minV) {
+          inputMax!.value = String(v);
+          inputMin!.value = String(clamp(v - step));
+        } else {
+          inputMax!.value = String(v);
+        }
+      }
+      paint();
+      // Notify listeners — single bubble event from the slider container.
+      slider.dispatchEvent(new CustomEvent("ae:slider-change", {
+        bubbles: true,
+        detail: {
+          min: Number(inputMin!.value),
+          max: Number(inputMax!.value),
+        },
+      }));
+    }
+
+    function paint(): void {
+      const minV = Number(inputMin!.value);
+      const maxV = Number(inputMax!.value);
+      const minPct = pctOf(minV);
+      const maxPct = pctOf(maxV);
+      thumbMin!.style.left = `${minPct}%`;
+      thumbMax!.style.left = `${maxPct}%`;
+      range!.style.left = `${minPct}%`;
+      range!.style.width = `${maxPct - minPct}%`;
+      // Position native inputs over their respective visual thumbs.
+      inputMin!.style.left = `${minPct}%`;
+      inputMax!.style.left = `${maxPct}%`;
+      // Update accessibility text on each input + dynamic group label.
+      inputMin!.setAttribute("aria-valuetext", formatPriceForScreenReader(minV, lang));
+      inputMax!.setAttribute("aria-valuetext", formatPriceForScreenReader(maxV, lang));
+      slider.setAttribute(
+        "aria-label",
+        t.filter.priceRangeWithBounds(
+          formatPriceForScreenReader(minV, lang),
+          formatPriceForScreenReader(maxV, lang),
+        ),
+      );
+      slider.dataset.currentMin = String(minV);
+      slider.dataset.currentMax = String(maxV);
+    }
+
+    // Direction B: native input change (keyboard, VO swipe, TalkBack swipe) → visual.
+    inputMin!.addEventListener("input", () => setValue("min", Number(inputMin!.value)));
+    inputMax!.addEventListener("input", () => setValue("max", Number(inputMax!.value)));
+
+    // Direction A: pointer on track → choose closer thumb → write its native input value.
+    trackArea!.addEventListener("pointerdown", (e) => {
+      // Skip if the pointer landed on a native input directly (browser handles drag).
+      if ((e.target as HTMLElement).classList.contains("ae-slider-input")) return;
+      const rect = trackArea!.getBoundingClientRect();
+      const px = e.clientX - rect.left;
+      const pct = Math.max(0, Math.min(1, px / rect.width));
+      const v = clamp(snap(min + pct * (max - min)));
+      const minV = Number(inputMin!.value);
+      const maxV = Number(inputMax!.value);
+      const which = Math.abs(v - minV) <= Math.abs(v - maxV) ? "min" : "max";
+      setValue(which, v);
+      // Focus the corresponding input so subsequent keyboard interactions go there.
+      (which === "min" ? inputMin! : inputMax!).focus();
+    });
+
+    paint();
+  }
+
+  document.querySelectorAll<HTMLElement>(".ae-slider").forEach(init);
+</script>

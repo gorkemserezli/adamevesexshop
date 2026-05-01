@@ -1,0 +1,91 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import ProductCard from "~/components/product/ProductCard.astro";
+import type { Locale } from "~/i18n/ui";
+import { LOCALES, ui } from "~/i18n/ui";
+import { getCollection, type CollectionEntry } from "astro:content";
+import type { Product } from "~/content/config";
+import { favoritesEmptyCtaHref } from "~/lib/routes";
+
+// FUTURE: beyond ~50 products, refactor to a per-locale favorites-manifest.json
+// fetched on mount, with incremental render of only matching SKU cards. The
+// current SSR-all + client-hide pattern is correct for the 6-SKU sample and
+// acceptable through ~50 entries; past that the unused-card cost dominates.
+
+export async function getStaticPaths() {
+  return LOCALES.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Locale };
+const t = ui[lang];
+
+const productEntries = await getCollection("products");
+const products: Product[] = productEntries
+  .map((e: CollectionEntry<"products">) => e.data)
+  .sort((a: Product, b: Product) => a.sort_order - b.sort_order);
+
+const title = `Adam & Eve · ${t.nav.favorites}`;
+const emptyHref = favoritesEmptyCtaHref(lang);
+---
+
+<BaseLayout title={title} lang={lang} activeNav="favorites">
+  <section class="px-ae-6 pt-ae-7">
+    <p class="text-overline text-ink-3 uppercase">{t.nav.favorites}</p>
+  </section>
+
+  <ul id="ae-fav-list" class="px-ae-6 pt-ae-4 pb-ae-8 list-none m-0 grid grid-cols-2 gap-ae-4">
+    {products.map((p: Product) => (
+      <ProductCard
+        lang={lang}
+        slug={p.id}
+        name={p.name[lang]}
+        priceDisplay={p.price[lang].display}
+        image={p.images[0] ?? ""}
+        extraClass="ae-fav-card"
+        outerAttrs={{ "data-fav-sku": p.sku, style: "display: none;" }}
+      />
+    ))}
+  </ul>
+
+  <div
+    id="ae-fav-empty"
+    class="px-ae-6 pt-ae-8 pb-ae-8 text-center"
+    style="display: none;"
+  >
+    <p class="font-serif text-h3" style="color: var(--ae-ink);">
+      {t.emptyStates.favorites.headline}
+    </p>
+    <p class="text-body mt-ae-3" style="color: var(--ae-ink-2);">
+      {t.emptyStates.favorites.body}
+    </p>
+    <a
+      href={emptyHref}
+      class="ae-empty-cta inline-block mt-ae-6 px-6 h-12 leading-[3rem] rounded-md no-underline text-ui-label font-medium"
+      style="background-color: var(--ae-wine-500); color: var(--ae-canvas);"
+    >
+      {t.emptyStates.favorites.cta}
+    </a>
+  </div>
+</BaseLayout>
+
+<script>
+  import { getFavorites, subscribeToFavorites } from "~/lib/favorites";
+
+  const list = document.getElementById("ae-fav-list");
+  const empty = document.getElementById("ae-fav-empty");
+  if (list && empty) {
+    function paint(favs: string[]): void {
+      let visibleCount = 0;
+      list!.querySelectorAll<HTMLElement>(".ae-fav-card").forEach((card) => {
+        const sku = card.dataset.favSku ?? "";
+        const include = favs.includes(sku);
+        card.style.display = include ? "" : "none";
+        if (include) visibleCount += 1;
+      });
+      list!.style.display = visibleCount > 0 ? "" : "none";
+      empty!.style.display = visibleCount > 0 ? "none" : "";
+    }
+    paint(getFavorites());
+    subscribeToFavorites((favs) => paint(favs));
+  }
+</script>

@@ -1,0 +1,37 @@
+---
+interface Props {
+  id: string;
+  label: string;
+  pressed?: boolean;
+}
+
+const { id, label, pressed = false } = Astro.props;
+---
+
+<button
+  id={id}
+  type="button"
+  role="switch"
+  aria-checked={pressed ? "true" : "false"}
+  aria-label={label}
+  class="ae-toggle relative inline-block"
+  style={`width: 44px; height: 24px; border-radius: 9999px; padding: 2px; background-color: ${pressed ? "var(--ae-wine-500)" : "color-mix(in srgb, var(--ae-ink-3) 30%, transparent)"}; transition: background-color var(--ae-dur-fast) var(--ae-ease-standard);`}
+>
+  <span
+    class="ae-toggle-thumb block"
+    style={`width: 20px; height: 20px; border-radius: 9999px; background-color: var(--ae-canvas); transform: translateX(${pressed ? "20px" : "0"}); transition: transform var(--ae-dur-fast) var(--ae-ease-standard);`}
+  ></span>
+</button>
+
+<style is:global>
+  .ae-toggle:focus-visible {
+    outline: 2px solid var(--ae-wine-500);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ae-toggle,
+    .ae-toggle-thumb {
+      transition: none !important;
+    }
+  }
+</style>

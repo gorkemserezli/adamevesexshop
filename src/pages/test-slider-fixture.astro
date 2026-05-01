@@ -1,0 +1,16 @@
+---
+/**
+ * Test fixture for the Slider primitive. Not user-facing; the underscore prefix
+ * means Astro emits this only with the build (it's reachable at /_slider-fixture/
+ * during preview but never linked from anywhere). Used by Task 10's slider a11y
+ * harness so the slider can be exercised in isolation before FilterSheet ships.
+ */
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Slider from "~/components/ui/Slider.astro";
+---
+
+<BaseLayout title="Slider fixture" lang="en" showChrome={false}>
+  <div style="padding: 64px 24px;">
+    <Slider id="ae-fixture-slider" lang="en" min={0} max={100} step={1} initialMin={20} initialMax={80} />
+  </div>
+</BaseLayout>

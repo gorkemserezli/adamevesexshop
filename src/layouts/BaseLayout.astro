@@ -1,0 +1,140 @@
+---
+import "~/styles/globals.css";
+import type { Locale } from "~/i18n/ui";
+import Header from "~/components/chrome/Header.astro";
+import BottomNav from "~/components/chrome/BottomNav.astro";
+import AgeGate from "~/components/chrome/AgeGate.astro";
+import SettingsSheet from "~/components/chrome/SettingsSheet.astro";
+import Toast from "~/components/ui/Toast.astro";
+import pkg from "../../package.json";
+
+type NavKey = "home" | "categories" | "search" | "favorites";
+
+interface Props {
+  title: string;
+  description?: string;
+  lang: Locale;
+  activeNav?: NavKey;
+  showChrome?: boolean;
+}
+
+const { title, description, lang, activeNav, showChrome = true } = Astro.props;
+const buildVersion = (pkg as { version: string }).version;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content={description ?? title} />
+    <meta name="theme-color" content="#F9F4EC" />
+    <meta name="ae:version" content={buildVersion} />
+    <link
+      rel="preload"
+      href="/fonts/cormorant-garamond-400-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/inter-400-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen bg-canvas text-ink antialiased">
+    <script is:inline>
+      // Render-blocking. Runs before any DOM after this point is parsed.
+      //
+      // Age gate: if sessionStorage["ae:age-confirmed"] === "1", remove the
+      // overlay node entirely once it lands in the DOM. Using .remove() over
+      // display:none / hidden so the dialog is fully out of the a11y tree —
+      // no cross-browser SR inconsistency, no focus-order surprise. The
+      // overlay never re-shows in a confirmed session (sessionStorage clears
+      // on tab close, at which point the SSR markup is fresh again).
+      //
+      // Privacy mode: toggle html[data-blur] from localStorage before first
+      // paint to prevent a blur-flash on PDPs.
+      (function () {
+        try {
+          if (window.sessionStorage.getItem("ae:age-confirmed") === "1") {
+            // Use a MutationObserver to catch the overlay as soon as it parses.
+            // The observer is cheap and self-disconnects after one hit.
+            const obs = new MutationObserver(function (muts, o) {
+              const node = document.getElementById("ae-age-gate");
+              if (node) {
+                node.remove();
+                o.disconnect();
+              }
+            });
+            obs.observe(document.documentElement, { childList: true, subtree: true });
+            // Stop watching after DOMContentLoaded; the overlay either landed or never will.
+            document.addEventListener("DOMContentLoaded", function () {
+              obs.disconnect();
+              document.getElementById("ae-age-gate")?.remove();
+            });
+          }
+        } catch (e) {}
+        try {
+          if (window.localStorage.getItem("ae:gizli-mode") === "on") {
+            document.documentElement.setAttribute("data-blur", "on");
+          }
+        } catch (e) {}
+      })();
+    </script>
+    {showChrome && <AgeGate lang={lang} />}
+    {showChrome && <Header lang={lang} />}
+    <main class:list={["mx-auto w-full max-w-[var(--ae-vp-mobile-max)]", showChrome ? "pb-24" : ""]}>
+      <slot />
+    </main>
+    {showChrome && <BottomNav lang={lang} active={activeNav} />}
+    {showChrome && <SettingsSheet lang={lang} />}
+    {showChrome && <Toast lang={lang} />}
+    <script>
+      import { attachRevealHandlers } from "~/lib/gizli";
+      attachRevealHandlers();
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  html[data-blur="on"] img.ae-product-image:not(.revealed) {
+    filter: blur(20px) saturate(0.8);
+    transition: filter var(--ae-dur-base) var(--ae-ease-standard);
+  }
+  html[data-blur="on"] img.ae-product-image.revealed {
+    filter: none;
+    transition: filter var(--ae-dur-base) var(--ae-ease-standard);
+  }
+  /* Generic shimmer for skeleton placeholders (search results, etc.). Same
+     keyframes as the stock badge skeleton; named separately so the two stay
+     decoupled. */
+  .ae-skeleton-shimmer {
+    background-image: linear-gradient(
+      90deg,
+      var(--ae-bg-2) 0%,
+      var(--ae-bg-1) 50%,
+      var(--ae-bg-2) 100%
+    );
+    background-size: 200% 100%;
+    animation: ae-skeleton-shimmer 1.2s linear infinite;
+  }
+  @keyframes ae-skeleton-shimmer {
+    from { background-position: 200% 0; }
+    to { background-position: -200% 0; }
+  }
+  .ae-skeleton-line {
+    color: transparent;
+    border-radius: 4px;
+  }
+  .ae-skeleton-line-short {
+    width: 40%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ae-skeleton-shimmer { animation: none; }
+  }
+</style>

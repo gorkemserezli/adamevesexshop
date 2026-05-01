@@ -1,0 +1,289 @@
+---
+import type { Locale } from "~/i18n/ui";
+import { ui } from "~/i18n/ui";
+import BottomSheet from "~/components/ui/BottomSheet.astro";
+import Toggle from "~/components/ui/Toggle.astro";
+import Slider from "~/components/ui/Slider.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import type { Category } from "~/content/config";
+
+interface Props {
+  lang: Locale;
+  /**
+   * When false, the Type chip group is suppressed. Used by per-category pages
+   * where the URL pins the category — offering a multi-select that includes
+   * the user's own category is redundant. Default true; search page omits the
+   * prop and gets the full filter.
+   */
+  showTypeFilter?: boolean;
+}
+
+const { lang, showTypeFilter = true } = Astro.props;
+const t = ui[lang];
+
+// SSR-resolve category list and price bounds so the sheet renders with the
+// correct chip labels and slider scale on first paint. Bounds get refreshed
+// at runtime once the search index loads, but using the build-time bounds
+// avoids a layout shift.
+const categories: Category[] = (await getCollection("categories"))
+  .map((c: CollectionEntry<"categories">) => c.data)
+  .sort((a: Category, b: Category) => a.sort_order - b.sort_order);
+
+const products = await getCollection("products");
+const priceValues = products.map((p: CollectionEntry<"products">) => p.data.price[lang].value);
+const rawMin = priceValues.length > 0 ? Math.min(...priceValues) : 0;
+const rawMax = priceValues.length > 0 ? Math.max(...priceValues) : 0;
+const step = lang === "tr" || lang === "ru" ? 10 : 1;
+
+function niceUp(v: number): number {
+  if (v === 0) return 0;
+  const M = Math.pow(10, Math.floor(Math.log10(Math.abs(v))));
+  const cands = [1 * M, 2 * M, 5 * M, 10 * M];
+  const c = cands.find((x) => x >= v) ?? cands[cands.length - 1];
+  return Math.ceil(c / step) * step;
+}
+function niceDown(v: number): number {
+  if (v === 0) return 0;
+  const M = Math.pow(10, Math.floor(Math.log10(Math.abs(v))));
+  const cands = [1 * M, 2 * M, 5 * M, 10 * M];
+  let pick = cands[0];
+  for (const c of cands) if (c <= v) pick = c;
+  return Math.floor(pick / step) * step;
+}
+
+const priceMin = niceDown(rawMin);
+const priceMax = niceUp(rawMax);
+---
+
+<BottomSheet id="ae-filter-sheet" ariaLabelledBy="ae-filter-title">
+  <div class="px-ae-6 py-ae-4" data-filter-root data-bound-min={String(priceMin)} data-bound-max={String(priceMax)} data-step={String(step)}>
+    <div class="flex items-center justify-between pb-ae-3">
+      <h2 id="ae-filter-title" class="font-serif text-h3" style="color: var(--ae-ink);">
+        {t.filter.title}
+      </h2>
+      <button
+        type="button"
+        class="ae-sheet-close p-2"
+        data-sheet-dismiss
+        aria-label={t.cta.close}
+        style="color: var(--ae-ink-2);"
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <line x1="5" y1="5" x2="15" y2="15" stroke-linecap="round"></line>
+          <line x1="15" y1="5" x2="5" y2="15" stroke-linecap="round"></line>
+        </svg>
+      </button>
+    </div>
+
+    {/* Group 1 — Type chips. Suppressed on per-category pages (showTypeFilter=false). */}
+    {showTypeFilter && (
+      <fieldset class="border-0 p-0 m-0 pb-ae-4 border-t" style="border-color: var(--ae-hairline-soft);">
+        <legend class="text-ui-label font-medium pt-ae-3 pb-ae-2" style="color: var(--ae-ink-2);">
+          {t.filter.type}
+        </legend>
+        <div class="flex flex-wrap gap-ae-2">
+          {categories.map((c: Category) => (
+            <button
+              type="button"
+              class="ae-filter-chip h-10 px-4 rounded-pill border text-ui-label font-medium transition-colors duration-fast ease-standard"
+              data-type-id={c.id}
+              data-selected="false"
+              aria-pressed="false"
+              style="border-color: var(--ae-hairline); color: var(--ae-ink); background-color: transparent;"
+            >
+              {c.name[lang]}
+            </button>
+          ))}
+        </div>
+      </fieldset>
+    )}
+
+    {/* Group 2 — Price slider */}
+    <fieldset class="border-0 p-0 m-0 pb-ae-4 border-t" style="border-color: var(--ae-hairline-soft);">
+      <legend class="text-ui-label font-medium pt-ae-3 pb-ae-2" style="color: var(--ae-ink-2);">
+        {t.filter.priceRange}
+      </legend>
+      <Slider
+        id="ae-filter-price-slider"
+        lang={lang}
+        min={priceMin}
+        max={priceMax}
+        step={step}
+        initialMin={priceMin}
+        initialMax={priceMax}
+      />
+    </fieldset>
+
+    {/* Group 3 — In-stock toggle */}
+    <div class="flex items-center justify-between py-ae-3 border-t" style="border-color: var(--ae-hairline-soft);">
+      <span class="text-ui-label font-medium" style="color: var(--ae-ink);">{t.filter.inStockOnly}</span>
+      <Toggle id="ae-filter-instock" label={t.filter.inStockOnly} pressed={false} />
+    </div>
+
+    {/* Footer — Reset + Show N */}
+    <div class="flex gap-ae-3 pt-ae-4 border-t" style="border-color: var(--ae-hairline-soft);">
+      <button
+        type="button"
+        id="ae-filter-reset"
+        class="ae-filter-reset h-12 px-4 rounded-md border text-ui-label font-medium"
+        style="border-color: var(--ae-hairline); color: var(--ae-ink-2); background-color: transparent;"
+      >
+        {t.cta.reset}
+      </button>
+      <button
+        type="button"
+        id="ae-filter-apply"
+        class="ae-filter-apply flex-1 h-12 rounded-md font-medium text-ui-label"
+        style="background-color: var(--ae-wine-500); color: var(--ae-canvas);"
+        aria-label={t.cta.apply}
+      >
+        <span data-filter-apply-label></span>
+      </button>
+    </div>
+  </div>
+</BottomSheet>
+
+<script>
+  import {
+    EMPTY_FILTER,
+    type FilterState,
+    parseFilterFromQuery,
+    filterToQuery,
+  } from "~/lib/filter";
+  import { ui, type Locale } from "~/i18n/ui";
+
+  const lang = (document.documentElement.lang || "en") as Locale;
+  const t = ui[lang];
+
+  const root = document.querySelector<HTMLElement>("[data-filter-root]");
+  if (root) {
+    const chips = Array.from(root.querySelectorAll<HTMLButtonElement>(".ae-filter-chip"));
+    const slider = root.querySelector<HTMLElement>("#ae-filter-price-slider");
+    const inStockToggle = root.querySelector<HTMLButtonElement>("#ae-filter-instock");
+    const resetBtn = root.querySelector<HTMLButtonElement>("#ae-filter-reset");
+    const applyBtn = root.querySelector<HTMLButtonElement>("#ae-filter-apply");
+    const applyLabel = root.querySelector<HTMLElement>("[data-filter-apply-label]");
+    const boundMin = Number(root.dataset.boundMin);
+    const boundMax = Number(root.dataset.boundMax);
+
+    // Preview state — applied to URL/grid only on Apply tap.
+    let preview: FilterState = { ...EMPTY_FILTER, types: [] };
+
+    function paintFromState(): void {
+      chips.forEach((chip) => {
+        const id = chip.dataset.typeId ?? "";
+        const selected = preview.types.includes(id);
+        chip.dataset.selected = String(selected);
+        chip.setAttribute("aria-pressed", selected ? "true" : "false");
+        if (selected) {
+          chip.style.backgroundColor = "var(--ae-wine-100)";
+          chip.style.borderColor = "var(--ae-wine-500)";
+          chip.style.color = "var(--ae-wine-500)";
+        } else {
+          chip.style.backgroundColor = "transparent";
+          chip.style.borderColor = "var(--ae-hairline)";
+          chip.style.color = "var(--ae-ink)";
+        }
+      });
+      if (inStockToggle) {
+        const on = preview.inStockOnly;
+        inStockToggle.setAttribute("aria-checked", on ? "true" : "false");
+        const thumb = inStockToggle.querySelector<HTMLElement>(".ae-toggle-thumb");
+        inStockToggle.style.backgroundColor = on
+          ? "var(--ae-wine-500)"
+          : "color-mix(in srgb, var(--ae-ink-3) 30%, transparent)";
+        if (thumb) thumb.style.transform = on ? "translateX(20px)" : "translateX(0)";
+      }
+      if (slider) {
+        const inMin = slider.querySelector<HTMLInputElement>(".ae-slider-input-min");
+        const inMax = slider.querySelector<HTMLInputElement>(".ae-slider-input-max");
+        const sMin = preview.priceMin ?? boundMin;
+        const sMax = preview.priceMax ?? boundMax;
+        if (inMin && inMax) {
+          inMin.value = String(sMin);
+          inMax.value = String(sMax);
+          inMin.dispatchEvent(new Event("input", { bubbles: true }));
+          inMax.dispatchEvent(new Event("input", { bubbles: true }));
+        }
+      }
+      updateApplyLabel();
+    }
+
+    function updateApplyLabel(): void {
+      // Compute live count by asking the host page (search) for it.
+      const liveCount = (window as unknown as { aeFilterPreview?: (s: FilterState) => number }).aeFilterPreview?.(
+        preview,
+      ) ?? 0;
+      if (applyLabel) {
+        applyLabel.textContent = t.filter.showCount(liveCount);
+      }
+    }
+
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        const id = chip.dataset.typeId ?? "";
+        const isSelected = preview.types.includes(id);
+        preview = {
+          ...preview,
+          types: isSelected
+            ? preview.types.filter((x) => x !== id)
+            : [...preview.types, id],
+        };
+        paintFromState();
+      });
+    });
+
+    if (inStockToggle) {
+      inStockToggle.addEventListener("click", () => {
+        preview = { ...preview, inStockOnly: !preview.inStockOnly };
+        paintFromState();
+      });
+    }
+
+    if (slider) {
+      slider.addEventListener("ae:slider-change", (e) => {
+        const detail = (e as CustomEvent<{ min: number; max: number }>).detail;
+        const isFullRange = detail.min === boundMin && detail.max === boundMax;
+        preview = {
+          ...preview,
+          priceMin: isFullRange ? null : detail.min,
+          priceMax: isFullRange ? null : detail.max,
+        };
+        updateApplyLabel();
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener("click", () => {
+        preview = { ...EMPTY_FILTER, types: [] };
+        paintFromState();
+      });
+    }
+
+    if (applyBtn) {
+      applyBtn.addEventListener("click", () => {
+        // Commit URL and grid IMMEDIATELY (before sheet close animation).
+        const base = new URLSearchParams(window.location.search);
+        const next = filterToQuery(preview, base);
+        const url = new URL(window.location.href);
+        url.search = next.toString();
+        window.history.replaceState({}, "", url.toString());
+        // Tell the host page to re-run search/filter.
+        window.dispatchEvent(new CustomEvent<FilterState>("ae:filter-apply", { detail: preview }));
+        // Close the sheet (animates on top).
+        (window as unknown as { aeSheet?: { close: (id: string) => void } }).aeSheet?.close(
+          "ae-filter-sheet",
+        );
+      });
+    }
+
+    // On open, hydrate preview from current URL state.
+    document.addEventListener("ae:filter-sheet-opened", () => {
+      preview = parseFilterFromQuery(new URLSearchParams(window.location.search));
+      paintFromState();
+    });
+
+    // Initial label paint (count = 0 until host page registers).
+    paintFromState();
+  }
+</script>

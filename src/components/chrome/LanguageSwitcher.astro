@@ -1,0 +1,209 @@
+---
+import type { Locale } from "~/i18n/ui";
+import { LOCALES, NATIVE_NAMES, ui } from "~/i18n/ui";
+
+interface Props {
+  lang: Locale;
+  embedded?: boolean;
+}
+
+const { lang, embedded = false } = Astro.props;
+const code = lang.toUpperCase();
+const t = ui[lang];
+
+const triggerId = embedded ? "ae-lang-trigger-embedded" : "ae-lang-trigger";
+const panelId = embedded ? "ae-lang-panel-embedded" : "ae-lang-panel";
+---
+
+<div class="ae-lang-switcher relative" data-lang-current={lang} data-embedded={embedded ? "1" : "0"}>
+  {!embedded && (
+    <button
+      type="button"
+      id={triggerId}
+      class="ae-lang-trigger inline-flex items-center gap-2 h-9 px-3 rounded-pill border border-hairline bg-transparent transition-colors duration-fast ease-standard hover:border-bronze-400"
+      aria-label={t.aria.languageSwitcher}
+      aria-haspopup="listbox"
+      aria-expanded="false"
+      aria-controls={panelId}
+    >
+      <span class="font-sans text-ui-label text-ink leading-none">{code}</span>
+      <svg
+        class="ae-lang-chevron transition-transform duration-fast ease-standard"
+        width="12"
+        height="12"
+        viewBox="0 0 12 12"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        aria-hidden="true"
+        style="color: var(--ae-ink-3)"
+      >
+        <path d="M3 5l3 3 3-3" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </button>
+  )}
+
+  <div
+    id={panelId}
+    role="listbox"
+    aria-label={t.aria.languagePanel}
+    class:list={[
+      "ae-lang-panel",
+      embedded
+        ? "relative w-full bg-surface rounded-lg p-2"
+        : "absolute right-0 top-full mt-2 z-dropdown w-[200px] bg-surface rounded-lg p-2 shadow-sheet",
+    ]}
+    hidden={!embedded}
+  >
+    {LOCALES.map((loc) => {
+      const isActive = loc === lang;
+      return (
+        <button
+          type="button"
+          role="option"
+          class:list={[
+            "ae-lang-option flex items-center w-full h-11 px-3 rounded-md text-left",
+            isActive
+              ? "bg-accent-soft border-l-2 border-bronze-400 rounded-l-none"
+              : "hover:bg-bronze-50",
+          ]}
+          aria-selected={isActive ? "true" : "false"}
+          aria-current={isActive ? "true" : undefined}
+          data-locale={loc}
+          tabindex={isActive ? "0" : "-1"}
+          style={isActive ? "" : ""}
+        >
+          <span
+            class:list={[
+              "font-sans text-ui-label leading-none",
+              isActive ? "text-wine-500" : "text-ink",
+            ]}
+            style="width: 32px;"
+          >
+            {loc.toUpperCase()}
+          </span>
+          <span
+            class:list={[
+              "font-sans text-body-sm leading-none ml-1",
+              isActive ? "text-wine-500" : "text-ink-2",
+            ]}
+          >
+            {NATIVE_NAMES[loc]}
+          </span>
+        </button>
+      );
+    })}
+  </div>
+</div>
+
+<script>
+  import { LOCALES } from "~/i18n/ui";
+  import { getLocalizedPath } from "~/i18n/route";
+
+  type Locale = (typeof LOCALES)[number];
+
+  function isLocale(v: string | null): v is Locale {
+    return !!v && (LOCALES as readonly string[]).includes(v);
+  }
+
+  function navigateToLocale(toLocale: Locale): void {
+    const path = window.location.pathname;
+    const next = getLocalizedPath(path, toLocale);
+    if (next !== path) {
+      window.location.assign(next + window.location.search + window.location.hash);
+    }
+  }
+
+  function setupSwitcher(root: HTMLElement): void {
+    const embedded = root.dataset.embedded === "1";
+    const trigger = root.querySelector<HTMLButtonElement>(".ae-lang-trigger");
+    const panel = root.querySelector<HTMLElement>(".ae-lang-panel");
+    const chevron = root.querySelector<SVGElement>(".ae-lang-chevron");
+    const options = Array.from(root.querySelectorAll<HTMLButtonElement>(".ae-lang-option"));
+    if (!panel) return;
+
+    let isOpen = embedded;
+
+    function setOpen(open: boolean): void {
+      if (embedded) return;
+      isOpen = open;
+      if (!trigger) return;
+      trigger.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) {
+        panel?.removeAttribute("hidden");
+        if (chevron) chevron.style.transform = "rotate(180deg)";
+        const active = options.find((o) => o.getAttribute("aria-selected") === "true") ?? options[0];
+        active?.focus();
+      } else {
+        panel?.setAttribute("hidden", "");
+        if (chevron) chevron.style.transform = "";
+      }
+    }
+
+    trigger?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      setOpen(!isOpen);
+    });
+
+    options.forEach((opt) => {
+      opt.addEventListener("click", () => {
+        const target = opt.dataset.locale ?? null;
+        if (!isLocale(target)) return;
+        const current = root.dataset.langCurrent;
+        if (target === current) {
+          setOpen(false);
+          trigger?.focus();
+          return;
+        }
+        navigateToLocale(target);
+      });
+    });
+
+    function handleKeydown(e: KeyboardEvent): void {
+      if (!isOpen && !embedded) return;
+      const focusedIndex = options.findIndex((o) => o === document.activeElement);
+      if (e.key === "Escape" && !embedded) {
+        e.preventDefault();
+        setOpen(false);
+        trigger?.focus();
+      } else if (e.key === "ArrowDown") {
+        e.preventDefault();
+        const next = options[(focusedIndex + 1) % options.length];
+        next?.focus();
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        const prev = options[(focusedIndex - 1 + options.length) % options.length];
+        prev?.focus();
+      } else if (e.key === "Home") {
+        e.preventDefault();
+        options[0]?.focus();
+      } else if (e.key === "End") {
+        e.preventDefault();
+        options[options.length - 1]?.focus();
+      } else if (e.key === "Tab" && !embedded) {
+        e.preventDefault();
+        const dir = e.shiftKey ? -1 : 1;
+        const next = options[(focusedIndex + dir + options.length) % options.length];
+        next?.focus();
+      } else if (e.key === "Enter" || e.key === " ") {
+        if (focusedIndex >= 0) {
+          e.preventDefault();
+          options[focusedIndex]?.click();
+        }
+      }
+    }
+
+    panel.addEventListener("keydown", handleKeydown);
+
+    if (!embedded) {
+      document.addEventListener("click", (e) => {
+        if (!isOpen) return;
+        const target = e.target as Node | null;
+        if (target && root.contains(target)) return;
+        setOpen(false);
+      });
+    }
+  }
+
+  document.querySelectorAll<HTMLElement>(".ae-lang-switcher").forEach(setupSwitcher);
+</script>
