@@ -120,3 +120,57 @@ Spec §3.12 states the filter sheet "Opens from category list and search results
 - `src/lib/filter.ts` — pure predicate functions, host-agnostic.
 
 **Acceptance condition.** Task 11 (categories index page) wires the existing FilterSheet to the categories surface. At that point this entry resolves with no spec edit required.
+
+---
+
+## 5-01 · Categories source migration: spec sample → production XML
+
+**Status:** Open · clarifying note · v1.1 prep
+**Raised:** Task 13 (subcategory taxonomy migration) · 2026-05-01
+
+Spec §3.6 hard-codes 6 sample categories (Wellness, Lingerie, Toys, Accessories, For Couples, Gifts). Implementation now sources from the production fetch pipeline (PHP, daily, reads DİA XML), which currently exposes 8 top-level categories: Anal Ürün, Dildo, Erkek Cinsel Sağlık Ürünü, Fantezi & Fetiş Ürünü, Kadın Cinsel Sağlık Ürünü, Şişme Manken, Vajina & Mastürbatör, Vibratör.
+
+The spec sample remains useful as a pattern reference (anatomy of a category, the build-time count semantics) but is no longer the count contract. The 6 categories are not authoritative.
+
+**Working assumption.** `src/content/categories/categories.json` mirrors the production XML's category set, slugified per XML names verbatim. fetch.php overwrites the file on each run; the repo's checked-in copy is smoke-test data.
+
+**Acceptance condition.** When the catalog stabilizes (post-launch + 30 days of fetch.php runs without category list changes), `_design/spec.md §3.6` should be revised to either (a) drop the specific sample names and frame the section as "category list anatomy, set sourced from XML" or (b) update the sample to the live 8 names. Defer until the data is stable.
+
+---
+
+## 5-02 · Subcategory taxonomy added to schema
+
+**Status:** Open · clarifying note · ships with Task 13
+**Raised:** Task 13 (subcategory taxonomy migration) · 2026-05-01
+
+Production XML carries a two-level taxonomy: `malzemekategori1` (top-level, ~8 entries) and `malzemekategori2` (subcategory, ~32 entries distributed across the 8 top-levels). Spec §5.1 product schema does not enumerate a `subcategory_id` field.
+
+**Encoded in implementation.**
+- `src/content/config.ts` — product schema gains `subcategory_id: z.string().nullable().default(null)`. Category schema gains `subcategories: z.array({id, name}).default([])`.
+- Sample data ships with the new fields populated using real XML subcategory slugs.
+- `src/lib/filter.ts` — `FilterState.subcategoryId` extends the predicate.
+- Search index emits a `subcategory` field (localized name string) with boost weight 1.5.
+
+**Localization.** Subcategory names follow the same per-locale shape as category names. fetch.php DeepL pipeline produces TR/EN/DE/RU on each run. Until first fetch.php push, sample data ships with TR placeholders for EN/DE/RU; a vitest case warns when `name.{en,de,ru} === name.tr` to catch forgotten translations post-fetch.
+
+**Acceptance condition.** `_design/spec.md §5.1` (product schema) and the implicit category schema docs gain a `subcategory_id` / `subcategories[]` section. Could fold into a new §5.1.1 alt-section.
+
+---
+
+## 5-03 · Per-category page anatomy: subcategory chip row
+
+**Status:** Open · clarifying note · ships with Task 13
+**Raised:** Task 13 (subcategory taxonomy migration) · 2026-05-01
+
+Per-category page anatomy (Task 11 §3.6.1) was: Breadcrumb → EditorialHero → product grid (with FilterSheet button at the count line). Task 13 inserts a horizontal-scroll subcategory chip row between EditorialHero and the result-count + grid section.
+
+**Anatomy of the chip row.**
+- "Tümü" chip first (always rendered when row renders, marks the unfiltered state).
+- N subcategory chips, rendered in `subcategories[]` array order.
+- Chip styling reuses `.ae-filter-chip` from FilterSheet's Type group (wine-100/wine-500 selected, hairline default).
+- `overflow-x: auto`, `scroll-snap-type: x proximity`, `flex-wrap: nowrap`. ≥44px touch target height.
+- Hidden entirely (no DOM presence) when `subcategories.length <= 1` — single chip is no useful affordance.
+
+**State.** URL `?sub={subcategory_id}`. Hydrates on load, syncs on tap via `history.replaceState`. Combines with FilterSheet's `?type=&price=&instock=` predicates as logical AND at the page-level apply step. SubcategoryChips and FilterSheet share state only through URL — no direct component coupling.
+
+**Acceptance condition.** `_design/spec.md §3.6.1` (or a new §3.6.2) gains a "Subcategory chips" sub-section describing the anatomy + URL contract. Defer until the v1.1 spec maintenance pass.

@@ -61,7 +61,7 @@ console.log("\n3. Apply filter — URL updates + grid filters + sheet closes");
   await page.click("#ae-search-filter-btn");
   await new Promise((r) => setTimeout(r, 300));
   // Select Wellness chip
-  await page.click('.ae-filter-chip[data-type-id="wellness"]');
+  await page.click('.ae-filter-chip[data-type-id="kadin-cinsel-saglik-urunu"]');
   await new Promise((r) => setTimeout(r, 100));
   await page.click("#ae-filter-apply");
   await new Promise((r) => setTimeout(r, 400));
@@ -70,10 +70,10 @@ console.log("\n3. Apply filter — URL updates + grid filters + sheet closes");
   const visibleCount = await page.$$eval("#ae-search-results > li", (lis) => lis.length);
   const countText = await page.$eval("#ae-search-results-count", (el) => el.textContent?.trim() ?? "");
   await page.screenshot({ path: `${outDir}/03-filter-applied.png`, fullPage: true });
-  ok(`URL has type=wellness`, url.includes("type=wellness"), url);
+  ok(`URL has type=kadin-cinsel-saglik-urunu`, url.includes("type=kadin-cinsel-saglik-urunu"), url);
   ok(`sheet closed after apply`, sheetState === "closed");
-  ok(`grid shows wellness products only (3 wellness SKUs in catalog)`, visibleCount === 3, `count=${visibleCount}`);
-  ok(`result count line reads "3 results"`, countText === "3 results", countText);
+  ok(`grid shows kadin-cinsel-saglik-urunu products only (2 SKUs after Task 13 migration)`, visibleCount === 2, `count=${visibleCount}`);
+  ok(`result count line reads "2 results"`, countText === "2 results", countText);
   findings.push({ name: "03-apply", url, sheetState, visibleCount, countText });
   await page.close();
 }
@@ -81,18 +81,18 @@ console.log("\n3. Apply filter — URL updates + grid filters + sheet closes");
 console.log("\n4. Filter URL deep-link — sheet hydrates from query on open");
 {
   const page = await newPage();
-  await page.goto(`${BASE}/en/search/?type=lingerie`, { waitUntil: "networkidle0", timeout: 15000 });
+  await page.goto(`${BASE}/en/search/?type=fantezi-fetis-urunu`, { waitUntil: "networkidle0", timeout: 15000 });
   await new Promise((r) => setTimeout(r, 300));
   const visibleCount = await page.$$eval("#ae-search-results > li", (lis) => lis.length);
   // Open sheet, verify chip pre-selected.
   await page.click("#ae-search-filter-btn");
   await new Promise((r) => setTimeout(r, 300));
   const chipPressed = await page.$eval(
-    '.ae-filter-chip[data-type-id="lingerie"]',
+    '.ae-filter-chip[data-type-id="fantezi-fetis-urunu"]',
     (el) => el.getAttribute("aria-pressed"),
   );
-  ok(`grid filtered on URL load (lingerie has 1 SKU: lace-robe)`, visibleCount === 1, `count=${visibleCount}`);
-  ok(`lingerie chip pre-selected on sheet open`, chipPressed === "true");
+  ok(`grid filtered on URL load (fantezi-fetis-urunu has 3 SKUs after migration)`, visibleCount === 3, `count=${visibleCount}`);
+  ok(`fantezi-fetis-urunu chip pre-selected on sheet open`, chipPressed === "true");
   findings.push({ name: "04-deeplink", visibleCount, chipPressed });
   await page.close();
 }
@@ -100,7 +100,7 @@ console.log("\n4. Filter URL deep-link — sheet hydrates from query on open");
 console.log("\n5. No-results with active filter shows Reset CTA");
 {
   const page = await newPage();
-  await page.goto(`${BASE}/en/search/?q=oil&type=lingerie`, { waitUntil: "networkidle0", timeout: 15000 });
+  await page.goto(`${BASE}/en/search/?q=oil&type=fantezi-fetis-urunu`, { waitUntil: "networkidle0", timeout: 15000 });
   await new Promise((r) => setTimeout(r, 400));
   const noResultsVisible = await page.$eval("#ae-search-no-results", (el) => window.getComputedStyle(el).display !== "none");
   const ctaVisible = await page.$eval("#ae-search-reset-filters", (el) => window.getComputedStyle(el).display !== "none");
@@ -119,7 +119,7 @@ console.log("\n5. No-results with active filter shows Reset CTA");
 console.log("\n6. Filter applies independently of search (clearing q keeps filter)");
 {
   const page = await newPage();
-  await page.goto(`${BASE}/en/search/?q=oil&type=wellness`, { waitUntil: "networkidle0", timeout: 15000 });
+  await page.goto(`${BASE}/en/search/?q=oil&type=kadin-cinsel-saglik-urunu`, { waitUntil: "networkidle0", timeout: 15000 });
   await new Promise((r) => setTimeout(r, 400));
   const beforeCount = await page.$$eval("#ae-search-results > li", (lis) => lis.length);
   // Clear search via × button
@@ -127,9 +127,9 @@ console.log("\n6. Filter applies independently of search (clearing q keeps filte
   await new Promise((r) => setTimeout(r, 400));
   const afterCount = await page.$$eval("#ae-search-results > li", (lis) => lis.length);
   const url = page.url();
-  ok(`with q=oil&type=wellness — 1 result (warming-massage-oil)`, beforeCount === 1, `count=${beforeCount}`);
-  ok(`after clearing q, filter still shows all wellness (3)`, afterCount === 3, `count=${afterCount}`);
-  ok(`URL kept type=wellness, dropped q`, url.includes("type=wellness") && !url.includes("q="));
+  ok(`with q=oil&type=kadin-cinsel-saglik-urunu — 1 result (warming-massage-oil)`, beforeCount === 1, `count=${beforeCount}`);
+  ok(`after clearing q, filter still shows kadin-cinsel-saglik-urunu (2 post-migration)`, afterCount === 2, `count=${afterCount}`);
+  ok(`URL kept type=kadin-cinsel-saglik-urunu, dropped q`, url.includes("type=kadin-cinsel-saglik-urunu") && !url.includes("q="));
   findings.push({ name: "06-q-clear", beforeCount, afterCount, url });
   await page.close();
 }
@@ -153,9 +153,9 @@ console.log("\n7. Reset URL serialization is clean — no empty params");
 console.log("\n8. In-stock toggle excludes sold_out products");
 {
   const page = await newPage();
-  await page.goto(`${BASE}/en/search/?type=wellness`, { waitUntil: "networkidle0", timeout: 15000 });
+  await page.goto(`${BASE}/en/search/?type=kadin-cinsel-saglik-urunu`, { waitUntil: "networkidle0", timeout: 15000 });
   await new Promise((r) => setTimeout(r, 400));
-  const wellnessAll = await page.$$eval("#ae-search-results > li", (lis) => lis.length);
+  const kadinAll = await page.$$eval("#ae-search-results > li", (lis) => lis.length);
   // Now toggle in-stock and apply.
   await page.click("#ae-search-filter-btn");
   await new Promise((r) => setTimeout(r, 300));
@@ -163,9 +163,11 @@ console.log("\n8. In-stock toggle excludes sold_out products");
   await new Promise((r) => setTimeout(r, 100));
   await page.click("#ae-filter-apply");
   await new Promise((r) => setTimeout(r, 400));
-  const wellnessInStock = await page.$$eval("#ae-search-results > li", (lis) => lis.length);
-  ok(`wellness all (3) → in-stock-only excludes ginger-warming-balm (sold_out=true) → 2`, wellnessInStock === wellnessAll - 1, `${wellnessAll} → ${wellnessInStock}`);
-  findings.push({ name: "08-instock", wellnessAll, wellnessInStock });
+  const kadinInStock = await page.$$eval("#ae-search-results > li", (lis) => lis.length);
+  // Post-Task-13: kadin-cinsel-saglik-urunu has 2 products, both in_stock (ginger
+  // moved to erkek-cinsel-saglik-urunu). In-stock toggle is a no-op here.
+  ok(`kadin all (2) → in-stock-only doesn't change (no sold_out in this category) → 2`, kadinInStock === kadinAll, `${kadinAll} → ${kadinInStock}`);
+  findings.push({ name: "08-instock", kadinAll, kadinInStock });
   await page.close();
 }
 

@@ -1,0 +1,113 @@
+---
+import type { Locale } from "~/i18n/ui";
+import type { Subcategory } from "~/content/config";
+
+interface Props {
+  lang: Locale;
+  subcategories: Subcategory[];
+  /** TR "Tümü" string for the no-filter chip; passed in by host page so this
+   *  primitive stays content-agnostic. */
+  allLabel: string;
+}
+
+const { lang, subcategories, allLabel } = Astro.props;
+
+// Hide entirely when length <= 1 — single chip is no useful filter affordance.
+// Empty `subcategories.length === 0` and "only Tümü would render" both fall
+// through this guard. Component returns null markup; no DOM cost.
+const shouldRender = subcategories.length > 1;
+---
+
+{shouldRender && (
+  <div
+    class="ae-subcat-chips px-ae-6 pt-ae-3"
+    role="group"
+    aria-label={allLabel}
+    data-subcat-chips
+  >
+    <div class="ae-subcat-scroller flex gap-ae-2 overflow-x-auto" style="scroll-snap-type: x proximity;">
+      <button
+        type="button"
+        class="ae-filter-chip ae-subcat-chip-all h-10 px-4 rounded-pill border text-ui-label font-medium shrink-0 whitespace-nowrap"
+        data-subcat-id=""
+        aria-pressed="true"
+        style="border-color: var(--ae-wine-500); color: var(--ae-wine-500); background-color: var(--ae-wine-100); scroll-snap-align: start;"
+      >
+        {allLabel}
+      </button>
+      {subcategories.map((s) => (
+        <button
+          type="button"
+          class="ae-filter-chip ae-subcat-chip h-10 px-4 rounded-pill border text-ui-label font-medium shrink-0 whitespace-nowrap"
+          data-subcat-id={s.id}
+          aria-pressed="false"
+          style="border-color: var(--ae-hairline); color: var(--ae-ink); background-color: transparent; scroll-snap-align: start;"
+        >
+          {s.name[lang]}
+        </button>
+      ))}
+    </div>
+  </div>
+)}
+
+<style is:global>
+  .ae-subcat-scroller {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .ae-subcat-scroller::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script>
+  import { parseFilterFromQuery, filterToQuery } from "~/lib/filter";
+
+  const root = document.querySelector<HTMLElement>("[data-subcat-chips]");
+  if (root) {
+    const chips = Array.from(root.querySelectorAll<HTMLButtonElement>(".ae-filter-chip"));
+
+    function paint(selectedId: string): void {
+      chips.forEach((chip) => {
+        const isSelected = (chip.dataset.subcatId ?? "") === selectedId;
+        chip.setAttribute("aria-pressed", isSelected ? "true" : "false");
+        if (isSelected) {
+          chip.style.backgroundColor = "var(--ae-wine-100)";
+          chip.style.borderColor = "var(--ae-wine-500)";
+          chip.style.color = "var(--ae-wine-500)";
+        } else {
+          chip.style.backgroundColor = "transparent";
+          chip.style.borderColor = "var(--ae-hairline)";
+          chip.style.color = "var(--ae-ink)";
+        }
+      });
+    }
+
+    function syncUrl(selectedId: string): void {
+      const url = new URL(window.location.href);
+      const base = new URLSearchParams(url.search);
+      const next = filterToQuery(
+        { ...parseFilterFromQuery(base), subcategoryId: selectedId === "" ? null : selectedId },
+        base,
+      );
+      url.search = next.toString();
+      window.history.replaceState({}, "", url.toString());
+    }
+
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        // Tümü no-op short-circuit: if already pressed, do nothing.
+        if (chip.getAttribute("aria-pressed") === "true") return;
+        const id = chip.dataset.subcatId ?? "";
+        paint(id);
+        syncUrl(id);
+        // Notify host page so the grid re-applies filter.
+        window.dispatchEvent(new CustomEvent("ae:subcat-change", { detail: { subcategoryId: id === "" ? null : id } }));
+      });
+    });
+
+    // Hydrate from URL on load.
+    const initial = parseFilterFromQuery(new URLSearchParams(window.location.search));
+    paint(initial.subcategoryId ?? "");
+  }
+</script>

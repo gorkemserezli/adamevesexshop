@@ -1,7 +1,8 @@
 {
   "id": "ginger-warming-balm",
   "sku": "AE-GWB-50",
-  "category_id": "wellness",
+  "category_id": "erkek-cinsel-saglik-urunu",
+  "subcategory_id": "krem-ve-takviye-edici-gida",
   "sort_order": 30,
   "images": ["/products/placeholder.jpg"],
   "overline": {

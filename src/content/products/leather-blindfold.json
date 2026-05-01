@@ -1,7 +1,8 @@
 {
   "id": "leather-blindfold",
   "sku": "AE-LB-001",
-  "category_id": "accessories",
+  "category_id": "fantezi-fetis-urunu",
+  "subcategory_id": "giyilebilir-urun",
   "sort_order": 10,
   "images": ["/products/placeholder.jpg"],
   "overline": {

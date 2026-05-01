@@ -1,32 +1,119 @@
 [
   {
-    "id": "wellness",
+    "id": "anal-urunu",
+    "name": {
+      "tr": "Anal Ürünü",
+      "en": "Anal Ürünü",
+      "de": "Anal Ürünü",
+      "ru": "Anal Ürünü"
+    },
     "sort_order": 10,
-    "name": { "tr": "Wellness", "en": "Wellness", "de": "Wellness", "ru": "Велнес" }
+    "subcategories": [
+      { "id": "anal-tikac", "name": { "tr": "Anal Tıkaç", "en": "Anal Tıkaç", "de": "Anal Tıkaç", "ru": "Anal Tıkaç" } },
+      { "id": "anal-boncuk", "name": { "tr": "Anal Boncuk", "en": "Anal Boncuk", "de": "Anal Boncuk", "ru": "Anal Boncuk" } },
+      { "id": "prostat-uyarici", "name": { "tr": "Prostat Uyarıcı", "en": "Prostat Uyarıcı", "de": "Prostat Uyarıcı", "ru": "Prostat Uyarıcı" } }
+    ]
   },
   {
-    "id": "lingerie",
+    "id": "dildo-urunu",
+    "name": {
+      "tr": "Dildo Ürünü",
+      "en": "Dildo Ürünü",
+      "de": "Dildo Ürünü",
+      "ru": "Dildo Ürünü"
+    },
     "sort_order": 20,
-    "name": { "tr": "İç Giyim", "en": "Lingerie", "de": "Dessous", "ru": "Бельё" }
+    "subcategories": [
+      { "id": "gercekci-dildo", "name": { "tr": "Gerçekçi Dildo", "en": "Gerçekçi Dildo", "de": "Gerçekçi Dildo", "ru": "Gerçekçi Dildo" } },
+      { "id": "vantuzlu-dildo", "name": { "tr": "Vantuzlu Dildo", "en": "Vantuzlu Dildo", "de": "Vantuzlu Dildo", "ru": "Vantuzlu Dildo" } },
+      { "id": "kemerli-dildo", "name": { "tr": "Kemerli Dildo", "en": "Kemerli Dildo", "de": "Kemerli Dildo", "ru": "Kemerli Dildo" } }
+    ]
   },
   {
-    "id": "toys",
+    "id": "erkek-cinsel-saglik-urunu",
+    "name": {
+      "tr": "Erkek Cinsel Sağlık Ürünü",
+      "en": "Erkek Cinsel Sağlık Ürünü",
+      "de": "Erkek Cinsel Sağlık Ürünü",
+      "ru": "Erkek Cinsel Sağlık Ürünü"
+    },
     "sort_order": 30,
-    "name": { "tr": "Oyuncaklar", "en": "Toys", "de": "Spielzeug", "ru": "Игрушки" }
+    "subcategories": [
+      { "id": "krem-ve-takviye-edici-gida", "name": { "tr": "Krem ve Takviye Edici Gıda", "en": "Krem ve Takviye Edici Gıda", "de": "Krem ve Takviye Edici Gıda", "ru": "Krem ve Takviye Edici Gıda" } },
+      { "id": "penis-pompasi", "name": { "tr": "Penis Pompası", "en": "Penis Pompası", "de": "Penis Pompası", "ru": "Penis Pompası" } },
+      { "id": "penis-halkasi", "name": { "tr": "Penis Halkası", "en": "Penis Halkası", "de": "Penis Halkası", "ru": "Penis Halkası" } },
+      { "id": "geciktirici", "name": { "tr": "Geciktirici", "en": "Geciktirici", "de": "Geciktirici", "ru": "Geciktirici" } }
+    ]
   },
   {
-    "id": "accessories",
+    "id": "fantezi-fetis-urunu",
+    "name": {
+      "tr": "Fantezi & Fetiş Ürünü",
+      "en": "Fantezi & Fetiş Ürünü",
+      "de": "Fantezi & Fetiş Ürünü",
+      "ru": "Fantezi & Fetiş Ürünü"
+    },
     "sort_order": 40,
-    "name": { "tr": "Aksesuarlar", "en": "Accessories", "de": "Zubehör", "ru": "Аксессуары" }
+    "subcategories": [
+      { "id": "fantezi-giyim", "name": { "tr": "Fantezi Giyim", "en": "Fantezi Giyim", "de": "Fantezi Giyim", "ru": "Fantezi Giyim" } },
+      { "id": "giyilebilir-urun", "name": { "tr": "Giyilebilir Ürün", "en": "Giyilebilir Ürün", "de": "Giyilebilir Ürün", "ru": "Giyilebilir Ürün" } },
+      { "id": "kelepce-ve-kemerler", "name": { "tr": "Kelepçe ve Kemerler", "en": "Kelepçe ve Kemerler", "de": "Kelepçe ve Kemerler", "ru": "Kelepçe ve Kemerler" } },
+      { "id": "rol-yapma", "name": { "tr": "Rol Yapma", "en": "Rol Yapma", "de": "Rol Yapma", "ru": "Rol Yapma" } }
+    ]
   },
   {
-    "id": "couples",
+    "id": "kadin-cinsel-saglik-urunu",
+    "name": {
+      "tr": "Kadın Cinsel Sağlık Ürünü",
+      "en": "Kadın Cinsel Sağlık Ürünü",
+      "de": "Kadın Cinsel Sağlık Ürünü",
+      "ru": "Kadın Cinsel Sağlık Ürünü"
+    },
     "sort_order": 50,
-    "name": { "tr": "Çiftler İçin", "en": "For Couples", "de": "Für Paare", "ru": "Для пар" }
+    "subcategories": [
+      { "id": "masaj-yaglari", "name": { "tr": "Masaj Yağları", "en": "Masaj Yağları", "de": "Masaj Yağları", "ru": "Masaj Yağları" } },
+      { "id": "vajina-bakim-urunleri", "name": { "tr": "Vajina Bakım Ürünleri", "en": "Vajina Bakım Ürünleri", "de": "Vajina Bakım Ürünleri", "ru": "Vajina Bakım Ürünleri" } },
+      { "id": "kayganlastirici", "name": { "tr": "Kayganlaştırıcı", "en": "Kayganlaştırıcı", "de": "Kayganlaştırıcı", "ru": "Kayganlaştırıcı" } }
+    ]
   },
   {
-    "id": "gifts",
+    "id": "sisme-manken-urunu",
+    "name": {
+      "tr": "Şişme Manken Ürünü",
+      "en": "Şişme Manken Ürünü",
+      "de": "Şişme Manken Ürünü",
+      "ru": "Şişme Manken Ürünü"
+    },
     "sort_order": 60,
-    "name": { "tr": "Hediyeler", "en": "Gifts", "de": "Geschenke", "ru": "Подарки" }
+    "subcategories": []
+  },
+  {
+    "id": "vajina-masturbator-urunu",
+    "name": {
+      "tr": "Vajina & Mastürbatör Ürünü",
+      "en": "Vajina & Mastürbatör Ürünü",
+      "de": "Vajina & Mastürbatör Ürünü",
+      "ru": "Vajina & Mastürbatör Ürünü"
+    },
+    "sort_order": 70,
+    "subcategories": [
+      { "id": "gercekci-vajina", "name": { "tr": "Gerçekçi Vajina", "en": "Gerçekçi Vajina", "de": "Gerçekçi Vajina", "ru": "Gerçekçi Vajina" } },
+      { "id": "el-tipi-masturbator", "name": { "tr": "El Tipi Mastürbatör", "en": "El Tipi Mastürbatör", "de": "El Tipi Mastürbatör", "ru": "El Tipi Mastürbatör" } }
+    ]
+  },
+  {
+    "id": "vibrator-urunu",
+    "name": {
+      "tr": "Vibratör Ürünü",
+      "en": "Vibratör Ürünü",
+      "de": "Vibratör Ürünü",
+      "ru": "Vibratör Ürünü"
+    },
+    "sort_order": 80,
+    "subcategories": [
+      { "id": "klitoris-vibratoru", "name": { "tr": "Klitoris Vibratörü", "en": "Klitoris Vibratörü", "de": "Klitoris Vibratörü", "ru": "Klitoris Vibratörü" } },
+      { "id": "g-noktasi-vibratoru", "name": { "tr": "G-Noktası Vibratörü", "en": "G-Noktası Vibratörü", "de": "G-Noktası Vibratörü", "ru": "G-Noktası Vibratörü" } },
+      { "id": "tavsan-vibratoru", "name": { "tr": "Tavşan Vibratörü", "en": "Tavşan Vibratörü", "de": "Tavşan Vibratörü", "ru": "Tavşan Vibratörü" } }
+    ]
   }
 ]

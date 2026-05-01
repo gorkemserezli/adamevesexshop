@@ -1,7 +1,8 @@
 {
   "id": "warming-massage-oil",
   "sku": "AE-WMO-100",
-  "category_id": "wellness",
+  "category_id": "kadin-cinsel-saglik-urunu",
+  "subcategory_id": "masaj-yaglari",
   "sort_order": 10,
   "images": ["/products/placeholder.jpg"],
   "overline": {

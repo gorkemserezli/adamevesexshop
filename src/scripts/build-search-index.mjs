@@ -30,12 +30,20 @@ const stripSoft = (s) => (typeof s === "string" ? s.replaceAll("­", "") : s);
 
 async function loadCategories() {
   const raw = await readFile(CATEGORIES_FILE, "utf8");
-  /** @type {Array<{id: string, name: Record<string,string>}>} */
+  /** @type {Array<{id: string, name: Record<string,string>, subcategories?: Array<{id: string, name: Record<string,string>}>}>} */
   const cats = JSON.parse(raw);
   /** @type {Record<string, Record<string,string>>} */
   const byId = {};
-  for (const c of cats) byId[c.id] = c.name;
-  return byId;
+  /** Subcategory id → localized names. */
+  /** @type {Record<string, Record<string,string>>} */
+  const subById = {};
+  for (const c of cats) {
+    byId[c.id] = c.name;
+    for (const sc of c.subcategories ?? []) {
+      subById[sc.id] = sc.name;
+    }
+  }
+  return { byId, subById };
 }
 
 async function loadProducts() {
@@ -58,13 +66,14 @@ function specsJoined(specs, lang) {
 
 async function main() {
   console.log("build-search-index: building per-locale search indexes…");
-  const categories = await loadCategories();
+  const { byId: categoriesById, subById: subcategoriesById } = await loadCategories();
   const products = await loadProducts();
   await mkdir(OUT_DIR, { recursive: true });
 
   for (const lang of LOCALES) {
     const records = products.map((p) => {
-      const catName = categories[p.category_id]?.[lang] ?? "";
+      const catName = categoriesById[p.category_id]?.[lang] ?? "";
+      const subName = p.subcategory_id ? subcategoriesById[p.subcategory_id]?.[lang] ?? "" : "";
       return {
         id: p.id,
         slug: p.id,
@@ -72,6 +81,8 @@ async function main() {
         name: stripSoft(p.name?.[lang] ?? ""),
         category: catName,
         category_id: p.category_id,
+        subcategory: subName,
+        subcategory_id: p.subcategory_id ?? null,
         overline: p.overline?.[lang] ?? "",
         description: p.description?.[lang] ?? "",
         curator_note: p.curator_note?.[lang] ?? "",

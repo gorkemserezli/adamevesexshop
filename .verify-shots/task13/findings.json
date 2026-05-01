@@ -1,0 +1,48 @@
+[
+  {
+    "name": "01-chips",
+    "chipCount": 5,
+    "allChipPressed": "true"
+  },
+  {
+    "name": "02-click",
+    "beforeCount": 3,
+    "afterCount": 2,
+    "url": "http://localhost:4321/en/categories/fantezi-fetis-urunu/?sub=giyilebilir-urun"
+  },
+  {
+    "name": "03-tumu",
+    "restoredCount": 3,
+    "url": "http://localhost:4321/en/categories/fantezi-fetis-urunu/"
+  },
+  {
+    "name": "04-no-op",
+    "urlBefore": "http://localhost:4321/en/categories/fantezi-fetis-urunu/",
+    "urlAfter": "http://localhost:4321/en/categories/fantezi-fetis-urunu/",
+    "eventCount": 0
+  },
+  {
+    "name": "05-deeplink",
+    "targetPressed": "true",
+    "allPressed": "false",
+    "visibleCount": 2
+  },
+  {
+    "name": "06-combined",
+    "visibleCount": 0
+  },
+  {
+    "name": "07-empty",
+    "chipsExist": false
+  },
+  {
+    "name": "08-scroll",
+    "scrollerWidth": 602,
+    "containerWidth": 272
+  },
+  {
+    "name": "09-index",
+    "hasSubcategory": true,
+    "massageOilSub": "Masaj Yağları"
+  }
+]

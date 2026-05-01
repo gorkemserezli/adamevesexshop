@@ -67,6 +67,7 @@ const productSchema = z
       .min(1)
       .regex(/^[A-Z0-9-]+$/, "SKU must be uppercase ASCII / digits / hyphens"),
     category_id: slug,
+    subcategory_id: slug.nullable().default(null),
     sort_order: z.number().int().nonnegative(),
     images: z.array(z.string().startsWith("/products/")).min(1),
     overline: localizedOverline,
@@ -88,12 +89,20 @@ const productSchema = z
   })
   .strict();
 
+const subcategorySchema = z
+  .object({
+    id: slug,
+    name: localizedShortText,
+  })
+  .strict();
+
 const categorySchema = z
   .object({
     id: slug,
     name: localizedShortText,
     sort_order: z.number().int().nonnegative(),
     description: localizedDescription.optional(),
+    subcategories: z.array(subcategorySchema).default([]),
   })
   .strict();
 
@@ -110,6 +119,7 @@ export const collections = {
 
 export type Product = z.infer<typeof productSchema>;
 export type Category = z.infer<typeof categorySchema>;
+export type Subcategory = z.infer<typeof subcategorySchema>;
 export type VariantAxis = z.infer<typeof variantAxis>;
 export type VariantOption = z.infer<typeof variantOption>;
 export type ProductSpec = z.infer<typeof productSpec>;

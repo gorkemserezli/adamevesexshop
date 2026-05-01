@@ -29,7 +29,7 @@ const VIEWPORTS = [
 const TEMPLATES = [
   { name: "home", path: "/" },
   { name: "categories", path: "/categories/" },
-  { name: "category", path: "/categories/wellness/" },
+  { name: "category", path: "/categories/kadin-cinsel-saglik-urunu/" },
   { name: "pdp", path: "/product/warming-massage-oil/" },
   { name: "favorites", path: "/favorites/" },
   { name: "search", path: "/search/" },
@@ -109,7 +109,7 @@ const darkSamples = [
   { name: "home", path: "/" },
   { name: "pdp", path: "/product/warming-massage-oil/" },
   { name: "search", path: "/search/" },
-  { name: "category", path: "/categories/wellness/" },
+  { name: "category", path: "/categories/kadin-cinsel-saglik-urunu/" },
 ];
 let darkOk = 0;
 for (const s of darkSamples) {

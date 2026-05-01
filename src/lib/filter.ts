@@ -2,6 +2,7 @@ import type { Locale } from "~/i18n/ui";
 
 export interface FilterState {
   types: string[]; // category ids selected, OR'd
+  subcategoryId: string | null; // single subcategory filter (per-category page)
   priceMin: number | null;
   priceMax: number | null;
   inStockOnly: boolean;
@@ -9,6 +10,7 @@ export interface FilterState {
 
 export const EMPTY_FILTER: FilterState = {
   types: [],
+  subcategoryId: null,
   priceMin: null,
   priceMax: null,
   inStockOnly: false,
@@ -102,6 +104,11 @@ export function parseFilterFromQuery(params: URLSearchParams): FilterState {
     state.inStockOnly = true;
   }
 
+  const subRaw = params.get("sub");
+  if (subRaw && /^[a-z0-9-]+$/.test(subRaw)) {
+    state.subcategoryId = subRaw;
+  }
+
   return state;
 }
 
@@ -114,6 +121,7 @@ export function filterToQuery(state: FilterState, base: URLSearchParams): URLSea
   out.delete("type");
   out.delete("price");
   out.delete("instock");
+  out.delete("sub");
 
   if (state.types.length > 0) {
     out.set("type", state.types.join(","));
@@ -124,11 +132,15 @@ export function filterToQuery(state: FilterState, base: URLSearchParams): URLSea
   if (state.inStockOnly) {
     out.set("instock", "1");
   }
+  if (state.subcategoryId !== null) {
+    out.set("sub", state.subcategoryId);
+  }
   return out;
 }
 
 export interface FilterableRecord {
   category_id: string;
+  subcategory_id?: string | null;
   price_value: number;
   sold_out?: boolean;
 }
@@ -139,6 +151,7 @@ export interface FilterableRecord {
 export function applyFilter<T extends FilterableRecord>(records: T[], state: FilterState): T[] {
   return records.filter((r) => {
     if (state.types.length > 0 && !state.types.includes(r.category_id)) return false;
+    if (state.subcategoryId !== null && r.subcategory_id !== state.subcategoryId) return false;
     if (state.priceMin !== null && r.price_value < state.priceMin) return false;
     if (state.priceMax !== null && r.price_value > state.priceMax) return false;
     if (state.inStockOnly && r.sold_out === true) return false;
@@ -149,6 +162,7 @@ export function applyFilter<T extends FilterableRecord>(records: T[], state: Fil
 export function isFilterActive(state: FilterState): boolean {
   return (
     state.types.length > 0 ||
+    state.subcategoryId !== null ||
     state.priceMin !== null ||
     state.priceMax !== null ||
     state.inStockOnly

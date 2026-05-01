@@ -1,7 +1,8 @@
 {
   "id": "lace-robe",
   "sku": "AE-LR-001",
-  "category_id": "lingerie",
+  "category_id": "fantezi-fetis-urunu",
+  "subcategory_id": "fantezi-giyim",
   "sort_order": 10,
   "images": ["/products/placeholder.jpg"],
   "overline": {

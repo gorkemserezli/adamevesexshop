@@ -2,6 +2,7 @@
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import Breadcrumb from "~/components/ui/Breadcrumb.astro";
 import EditorialHero from "~/components/EditorialHero.astro";
+import SubcategoryChips from "~/components/category/SubcategoryChips.astro";
 import ProductCard from "~/components/product/ProductCard.astro";
 import FilterSheet from "~/components/search/FilterSheet.astro";
 import type { Locale } from "~/i18n/ui";
@@ -57,6 +58,14 @@ const title = `Adam & Eve · ${categoryName}`;
       <p class="text-overline text-ink-3 uppercase">{t.categories.indexOverline}</p>
       <h1 class="font-serif text-h1 text-ink mt-ae-2 tracking-tight">{categoryName}</h1>
     </section>
+  )}
+
+  {!isEmpty && (
+    <SubcategoryChips
+      lang={lang}
+      subcategories={category.subcategories}
+      allLabel={t.categories.allFilterLabel}
+    />
   )}
 
   {isEmpty && (
@@ -118,6 +127,7 @@ const title = `Adam & Eve · ${categoryName}`;
           extraClass="ae-cat-product"
           outerAttrs={{
             "data-category-id": p.category_id,
+            "data-subcategory-id": p.subcategory_id ?? "",
             "data-price-value": String(p.price[lang].value),
             "data-sold-out": String(Boolean(p.sold_out)),
           }}
@@ -154,6 +164,7 @@ const title = `Adam & Eve · ${categoryName}`;
     const records: (FilterableRecord & { el: HTMLLIElement })[] = allCards.map((el) => ({
       el,
       category_id: el.dataset.categoryId ?? "",
+      subcategory_id: (el.dataset.subcategoryId || "") || null,
       price_value: Number(el.dataset.priceValue ?? "0"),
       sold_out: el.dataset.soldOut === "true",
     }));
@@ -177,6 +188,14 @@ const title = `Adam & Eve · ${categoryName}`;
     });
 
     window.addEventListener("ae:filter-apply", () => {
+      const next = parseFilterFromQuery(new URLSearchParams(window.location.search));
+      paintFilterIndicator(next);
+      applyToGrid(next);
+    });
+
+    // SubcategoryChips notifies via this event; the URL has already been
+    // updated by the chip component.
+    window.addEventListener("ae:subcat-change", () => {
       const next = parseFilterFromQuery(new URLSearchParams(window.location.search));
       paintFilterIndicator(next);
       applyToGrid(next);

@@ -1,7 +1,8 @@
 {
   "id": "silk-body-lotion",
   "sku": "AE-SBL-250",
-  "category_id": "wellness",
+  "category_id": "kadin-cinsel-saglik-urunu",
+  "subcategory_id": "vajina-bakim-urunleri",
   "sort_order": 20,
   "images": ["/products/placeholder.jpg"],
   "overline": {

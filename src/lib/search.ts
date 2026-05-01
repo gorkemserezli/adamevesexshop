@@ -8,6 +8,8 @@ export interface SearchRecord {
   name: string;
   category: string;
   category_id: string;
+  subcategory: string;
+  subcategory_id: string | null;
   overline: string;
   description: string;
   curator_note: string;
@@ -62,7 +64,7 @@ export function normalizeForLocale(text: string, locale: Locale): string {
 function buildMiniSearch(records: SearchRecord[], locale: Locale): MiniSearch<SearchRecord> {
   const ms = new MiniSearch<SearchRecord>({
     idField: "id",
-    fields: ["name", "category", "overline", "description", "specs", "curator_note"],
+    fields: ["name", "category", "subcategory", "overline", "description", "specs", "curator_note"],
     storeFields: [
       "id",
       "slug",
@@ -70,6 +72,8 @@ function buildMiniSearch(records: SearchRecord[], locale: Locale): MiniSearch<Se
       "name",
       "category",
       "category_id",
+      "subcategory",
+      "subcategory_id",
       "overline",
       "description",
       "curator_note",
@@ -85,6 +89,7 @@ function buildMiniSearch(records: SearchRecord[], locale: Locale): MiniSearch<Se
       boost: {
         name: 4,
         category: 2,
+        subcategory: 1.5,
         overline: 2,
         description: 1,
         specs: 1,

@@ -34,50 +34,52 @@ for (const loc of ["tr", "en", "de", "ru"]) {
   await page.goto(`${BASE}/${loc}/categories/`, { waitUntil: "networkidle0", timeout: 15000 });
   const rowCount = await page.$$eval(".ae-cat-row", (rows) => rows.length);
   await page.screenshot({ path: `${outDir}/01-${loc}-cat-index.png` });
-  ok(`${loc} categories index — 6 rows`, rowCount === 6, `count=${rowCount}`);
+  ok(`${loc} categories index — 8 rows post-Task-13`, rowCount === 8, `count=${rowCount}`);
   findings.push({ name: `01-${loc}-index`, rowCount });
   await page.close();
 }
 
 console.log("\n2. Per-category populated (with description)");
 {
-  // wellness has products + description
+  // kadin-cinsel-saglik-urunu has products + description
   const page = await newPage();
-  await page.goto(`${BASE}/en/categories/wellness/`, { waitUntil: "networkidle0", timeout: 15000 });
+  await page.goto(`${BASE}/en/categories/kadin-cinsel-saglik-urunu/`, { waitUntil: "networkidle0", timeout: 15000 });
   const breadcrumbText = await page.$eval(".ae-breadcrumb, nav[aria-label]", (el) => el.textContent?.trim() ?? "").catch(() => "");
   const productCount = await page.$$eval(".ae-cat-product", (lis) => lis.length);
-  await page.screenshot({ path: `${outDir}/02-en-wellness-populated.png`, fullPage: true });
-  ok(`breadcrumb shows Categories > category name`, breadcrumbText.includes("Categories") && breadcrumbText.toLowerCase().includes("wellness"), breadcrumbText);
-  ok(`grid populated with wellness products`, productCount === 3, `count=${productCount}`);
-  findings.push({ name: "02-wellness", breadcrumbText, productCount });
+  await page.screenshot({ path: `${outDir}/02-en-kadin-cinsel-saglik-urunu-populated.png`, fullPage: true });
+  ok(`breadcrumb shows Categories > Kadın Cinsel Sağlık Ürünü`, breadcrumbText.includes("Categories") && breadcrumbText.includes("Kadın"), breadcrumbText);
+  ok(`grid populated with kadin-cinsel-saglik-urunu products (2 post-Task-13)`, productCount === 2, `count=${productCount}`);
+  findings.push({ name: "02-kadin-cinsel-saglik-urunu", breadcrumbText, productCount });
   await page.close();
 }
 
 console.log("\n3. Per-category without description — spacing assertion");
 {
   // Find a category without description in the source data; sample data has none with description set,
-  // so any category page exercises the no-description path. Pick lingerie.
+  // so any category page exercises the no-description path. Pick fantezi-fetis-urunu.
   const page = await newPage();
-  await page.goto(`${BASE}/en/categories/lingerie/`, { waitUntil: "networkidle0", timeout: 15000 });
+  await page.goto(`${BASE}/en/categories/fantezi-fetis-urunu/`, { waitUntil: "networkidle0", timeout: 15000 });
   // The header section should still render with at least 32px padding-top (pt-ae-7 = 32px from spec).
   const headerExists = await page.$("section.pt-ae-7");
   const productCount = await page.$$eval(".ae-cat-product", (lis) => lis.length);
-  await page.screenshot({ path: `${outDir}/03-en-lingerie-no-description.png`, fullPage: true });
+  await page.screenshot({ path: `${outDir}/03-en-fantezi-fetis-urunu-no-description.png`, fullPage: true });
   ok(`header section renders without description`, headerExists !== null);
-  ok(`grid populated`, productCount === 1, `count=${productCount}`);
-  findings.push({ name: "03-lingerie", productCount });
+  ok(`grid populated (3 post-Task-13)`, productCount === 3, `count=${productCount}`);
+  findings.push({ name: "03-fantezi-fetis-urunu", productCount });
   await page.close();
 }
 
 console.log("\n4. Per-category filter — Type fieldset is hidden");
 {
   const page = await newPage();
-  await page.goto(`${BASE}/en/categories/wellness/`, { waitUntil: "networkidle0", timeout: 15000 });
+  await page.goto(`${BASE}/en/categories/kadin-cinsel-saglik-urunu/`, { waitUntil: "networkidle0", timeout: 15000 });
   await page.click("#ae-cat-filter-btn");
   await new Promise((r) => setTimeout(r, 400));
   const sheetState = await page.$eval("#ae-filter-sheet", (el) => el.getAttribute("data-sheet-state"));
   // Type fieldset chip count: should be zero on per-category page.
-  const typeChips = await page.$$eval(".ae-filter-chip", (els) => els.length);
+  // Narrow to FilterSheet's Type chips (data-type-id); SubcategoryChips also
+  // uses .ae-filter-chip class but with data-subcat-id, so must disambiguate.
+  const typeChips = await page.$$eval("#ae-filter-sheet .ae-filter-chip[data-type-id]", (els) => els.length);
   await page.screenshot({ path: `${outDir}/04-cat-filter-no-type.png` });
   ok(`filter sheet open`, sheetState === "open");
   ok(`Type chips are absent (showTypeFilter=false)`, typeChips === 0, `chips=${typeChips}`);
@@ -88,7 +90,7 @@ console.log("\n4. Per-category filter — Type fieldset is hidden");
 console.log("\n5. Per-category in-stock filter applies to grid");
 {
   const page = await newPage();
-  await page.goto(`${BASE}/en/categories/wellness/`, { waitUntil: "networkidle0", timeout: 15000 });
+  await page.goto(`${BASE}/en/categories/kadin-cinsel-saglik-urunu/`, { waitUntil: "networkidle0", timeout: 15000 });
   const before = await page.$$eval(".ae-cat-product", (lis) =>
     lis.filter((l) => window.getComputedStyle(l).display !== "none").length,
   );
@@ -101,7 +103,8 @@ console.log("\n5. Per-category in-stock filter applies to grid");
   const after = await page.$$eval(".ae-cat-product", (lis) =>
     lis.filter((l) => window.getComputedStyle(l).display !== "none").length,
   );
-  ok(`wellness 3 → in-stock-only excludes ginger-warming-balm → 2`, before === 3 && after === 2, `${before} → ${after}`);
+  // Post-Task-13: kadin has 2 products, both in_stock (ginger moved categories).
+  ok(`kadin 2 → in-stock-only no-op (no sold_out) → 2`, before === 2 && after === 2, `${before} → ${after}`);
   findings.push({ name: "05-instock", before, after });
   await page.close();
 }
@@ -126,14 +129,14 @@ console.log("\n6. Routing refactor — bottom-nav, favorites empty CTA, Category
 
   // (c) CategoryRow chevron on the index
   await page.goto(`${BASE}/en/categories/`, { waitUntil: "networkidle0", timeout: 15000 });
-  const wellnessRowHref = await page.$$eval(".ae-cat-row", (rows) => {
+  const categoryRowHref = await page.$$eval(".ae-cat-row", (rows) => {
     for (const a of rows) {
       const h = a.getAttribute("href") ?? "";
-      if (h.endsWith("/wellness/")) return h;
+      if (h.endsWith("/kadin-cinsel-saglik-urunu/")) return h;
     }
     return "";
   });
-  ok(`CategoryRow chevron routes to /en/categories/wellness/`, wellnessRowHref === "/en/categories/wellness/");
+  ok(`CategoryRow chevron routes to /en/categories/kadin-cinsel-saglik-urunu/`, categoryRowHref === "/en/categories/kadin-cinsel-saglik-urunu/");
 
   // (d) Favorites empty CTA
   await page.goto(`${BASE}/en/favorites/`, { waitUntil: "networkidle0", timeout: 15000 });
@@ -141,18 +144,18 @@ console.log("\n6. Routing refactor — bottom-nav, favorites empty CTA, Category
   const favEmptyCtaHref = await page.$eval(".ae-empty-cta", (a) => a.getAttribute("href"));
   ok(`favorites empty CTA routes to /en/categories/`, favEmptyCtaHref === "/en/categories/");
 
-  findings.push({ name: "06-routing", bottomNavCatHref, homeCtaHref, wellnessRowHref, favEmptyCtaHref });
+  findings.push({ name: "06-routing", bottomNavCatHref, homeCtaHref, categoryRowHref, favEmptyCtaHref });
   await page.close();
 }
 
 console.log("\n7. Locale isolation on per-category page");
 {
   const page = await newPage();
-  await page.goto(`${BASE}/ru/categories/wellness/`, { waitUntil: "networkidle0", timeout: 15000 });
+  await page.goto(`${BASE}/ru/categories/kadin-cinsel-saglik-urunu/`, { waitUntil: "networkidle0", timeout: 15000 });
   const breadcrumbText = await page.evaluate(() => document.body.textContent ?? "");
   ok(`RU breadcrumb shows Russian "Категории"`, breadcrumbText.includes("Категории"));
-  ok(`RU header shows Russian category name "Велнес"`, breadcrumbText.includes("Велнес"));
-  await page.screenshot({ path: `${outDir}/07-ru-wellness.png`, fullPage: true });
+  ok(`RU header shows category name (Kadın Cinsel Sağlık Ürünü TR placeholder)`, breadcrumbText.includes("Kadın"));
+  await page.screenshot({ path: `${outDir}/07-ru-kadin-cinsel-saglik-urunu.png`, fullPage: true });
   findings.push({ name: "07-locale-ru" });
   await page.close();
 }

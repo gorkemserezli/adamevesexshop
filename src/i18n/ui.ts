@@ -84,6 +84,7 @@ export interface UIStrings {
     viewAllCta: string;
     emptyHeadline: string;
     emptyBody: string;
+    allFilterLabel: string;
   };
   homepage: {
     boutiqueOverline: string;
@@ -191,6 +192,7 @@ const tr: UIStrings = {
     viewAllCta: "Tüm kategorileri gör",
     emptyHeadline: "Bu kategori şu an boş",
     emptyBody: "Yakında yeni ürünler eklenecek.",
+    allFilterLabel: "Tümü",
   },
   homepage: {
     boutiqueOverline: "Otel Butiği",
@@ -298,6 +300,7 @@ const en: UIStrings = {
     viewAllCta: "View all categories",
     emptyHeadline: "This category is empty",
     emptyBody: "New pieces are coming soon.",
+    allFilterLabel: "All",
   },
   homepage: {
     boutiqueOverline: "Hotel Boutique",
@@ -405,6 +408,7 @@ const de: UIStrings = {
     viewAllCta: "Alle Kategorien ansehen",
     emptyHeadline: "Diese Kategorie ist leer",
     emptyBody: "Neue Produkte folgen in Kürze.",
+    allFilterLabel: "Alle",
   },
   homepage: {
     boutiqueOverline: "Hotel-Boutique",
@@ -512,6 +516,7 @@ const ru: UIStrings = {
     viewAllCta: "Все категории",
     emptyHeadline: "В этой категории пока нет товаров",
     emptyBody: "Новые поступления скоро появятся.",
+    allFilterLabel: "Все",
   },
   homepage: {
     boutiqueOverline: "Бутик отеля",

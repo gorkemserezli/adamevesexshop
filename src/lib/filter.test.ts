@@ -74,6 +74,7 @@ describe("parseFilterFromQuery / filterToQuery", () => {
   it("round-trips type / price / instock through serialization", () => {
     const state: FilterState = {
       types: ["wellness", "lingerie"],
+      subcategoryId: null,
       priceMin: 20,
       priceMax: 100,
       inStockOnly: true,
@@ -169,5 +170,55 @@ describe("isFilterActive", () => {
     expect(isFilterActive({ ...EMPTY_FILTER, types: ["wellness"] })).toBe(true);
     expect(isFilterActive({ ...EMPTY_FILTER, priceMin: 0, priceMax: 100 })).toBe(true);
     expect(isFilterActive({ ...EMPTY_FILTER, inStockOnly: true })).toBe(true);
+    expect(isFilterActive({ ...EMPTY_FILTER, subcategoryId: "masaj-yaglari" })).toBe(true);
+  });
+});
+
+describe("subcategoryId — Task 13", () => {
+  it("?sub= round-trips through serialize+parse", () => {
+    const state: FilterState = { ...EMPTY_FILTER, subcategoryId: "masaj-yaglari" };
+    const q = filterToQuery(state, new URLSearchParams("q=oil"));
+    expect(q.get("sub")).toBe("masaj-yaglari");
+    expect(q.get("q")).toBe("oil");
+    expect(parseFilterFromQuery(q).subcategoryId).toBe("masaj-yaglari");
+  });
+
+  it("null subcategoryId produces no &sub= param (clean URL)", () => {
+    const q = filterToQuery(EMPTY_FILTER, new URLSearchParams("q=oil"));
+    expect(q.get("sub")).toBeNull();
+    expect(q.toString()).toBe("q=oil");
+  });
+
+  it("applyFilter — subcategory predicate filters correctly", () => {
+    const records: FilterableRecord[] = [
+      { category_id: "kadin-cinsel-saglik-urunu", subcategory_id: "masaj-yaglari", price_value: 24 },
+      { category_id: "kadin-cinsel-saglik-urunu", subcategory_id: "vajina-bakim-urunleri", price_value: 18 },
+      { category_id: "fantezi-fetis-urunu", subcategory_id: "giyilebilir-urun", price_value: 49 },
+    ];
+    const out = applyFilter(records, { ...EMPTY_FILTER, subcategoryId: "masaj-yaglari" });
+    expect(out.length).toBe(1);
+    expect(out[0]?.subcategory_id).toBe("masaj-yaglari");
+  });
+
+  it("applyFilter — subcategory + price intersect (AND)", () => {
+    const records: FilterableRecord[] = [
+      { category_id: "fantezi-fetis-urunu", subcategory_id: "giyilebilir-urun", price_value: 49 },
+      { category_id: "fantezi-fetis-urunu", subcategory_id: "giyilebilir-urun", price_value: 200 },
+      { category_id: "fantezi-fetis-urunu", subcategory_id: "fantezi-giyim", price_value: 49 },
+    ];
+    const out = applyFilter(records, {
+      ...EMPTY_FILTER,
+      subcategoryId: "giyilebilir-urun",
+      priceMin: 0,
+      priceMax: 100,
+    });
+    expect(out.length).toBe(1);
+    expect(out[0]?.price_value).toBe(49);
+  });
+
+  it("malformed ?sub= rejected by parse", () => {
+    expect(parseFilterFromQuery(new URLSearchParams("sub=Bad Value")).subcategoryId).toBeNull();
+    expect(parseFilterFromQuery(new URLSearchParams("sub=ALLCAPS")).subcategoryId).toBeNull();
+    expect(parseFilterFromQuery(new URLSearchParams("sub=valid-slug")).subcategoryId).toBe("valid-slug");
   });
 });
