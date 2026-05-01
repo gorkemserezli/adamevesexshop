@@ -31,7 +31,8 @@ const stripSoft = (s) => (typeof s === "string" ? s.replaceAll("­", "") : s);
 async function loadCategories() {
   const raw = await readFile(CATEGORIES_FILE, "utf8");
   /** @type {Array<{id: string, name: Record<string,string>, subcategories?: Array<{id: string, name: Record<string,string>}>}>} */
-  const cats = JSON.parse(raw);
+  const data = JSON.parse(raw);
+  const cats = Array.isArray(data) ? data : (data.categories ?? []);
   /** @type {Record<string, Record<string,string>>} */
   const byId = {};
   /** Subcategory id → localized names. */
