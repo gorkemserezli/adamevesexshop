@@ -12,6 +12,7 @@ import type { Locale } from "~/i18n/ui";
 import { LOCALES } from "~/i18n/ui";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { categoryHref } from "~/lib/routes";
+import { formatPriceDisplay } from "~/i18n/format";
 
 export async function getStaticPaths() {
   const products = await getCollection("products");
@@ -59,15 +60,19 @@ const title = `Adam & Eve · ${product.name[lang]}`;
     >
       {product.name[lang]}
     </h1>
-    <div class="font-serif text-price text-ink mt-3 tnum">{product.price[lang].display}</div>
+    <div class="font-serif text-price text-ink mt-3 tnum">
+      {formatPriceDisplay(product.price[lang].value, product.price[lang].currency, lang)}
+    </div>
 
     <div class="mt-4">
       <StockBadge lang={lang} variant={stockVariant} />
     </div>
 
-    <div class="mt-4">
-      <CuratorNote text={product.curator_note[lang]} clamp={2} />
-    </div>
+    {product.curator_note && (
+      <div class="mt-4">
+        <CuratorNote text={product.curator_note[lang]} clamp={2} />
+      </div>
+    )}
   </section>
 
   {

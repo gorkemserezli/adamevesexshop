@@ -26,7 +26,22 @@ const CATEGORIES_FILE = join(ROOT, "src", "content", "categories", "categories.j
 const OUT_DIR = join(ROOT, "public", "api");
 const LOCALES = /** @type {const} */ (["tr", "en", "de", "ru"]);
 
+const INTL_LOCALE = { tr: "tr-TR", en: "en-US", de: "de-DE", ru: "ru-RU" };
+
 const stripSoft = (s) => (typeof s === "string" ? s.replaceAll("­", "") : s);
+
+function formatPriceDisplay(value, currency, lang) {
+  if (typeof value !== "number" || !currency) return "";
+  try {
+    return new Intl.NumberFormat(INTL_LOCALE[lang], {
+      style: "currency",
+      currency,
+      maximumFractionDigits: 2,
+    }).format(value);
+  } catch {
+    return `${new Intl.NumberFormat(INTL_LOCALE[lang]).format(value)} ${currency}`;
+  }
+}
 
 async function loadCategories() {
   const raw = await readFile(CATEGORIES_FILE, "utf8");
@@ -89,7 +104,11 @@ async function main() {
         curator_note: p.curator_note?.[lang] ?? "",
         specs: specsJoined(p.specs, lang),
         image: Array.isArray(p.images) && p.images.length > 0 ? p.images[0] : "",
-        price_display: p.price?.[lang]?.display ?? "",
+        price_display: formatPriceDisplay(
+          p.price?.[lang]?.value,
+          p.price?.[lang]?.currency,
+          lang,
+        ),
         price_value: typeof p.price?.[lang]?.value === "number" ? p.price[lang].value : 0,
         sold_out: Boolean(p.sold_out),
       };

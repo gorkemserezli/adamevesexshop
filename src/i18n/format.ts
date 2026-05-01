@@ -29,6 +29,24 @@ export function formatCurrencyNote(symbol: string, locale: Locale): string {
 }
 
 /**
+ * Visible price string. Production data carries (value, currency) per locale —
+ * `display` was retired with the v1.0 sample shape. Currency is whatever the
+ * fetch pipeline emits (e.g. EUR for all locales today); locale controls only
+ * the number/grouping format.
+ */
+export function formatPriceDisplay(value: number, currency: string, locale: Locale): string {
+  try {
+    return new Intl.NumberFormat(intlLocale[locale], {
+      style: "currency",
+      currency,
+      maximumFractionDigits: 2,
+    }).format(value);
+  } catch {
+    return `${new Intl.NumberFormat(intlLocale[locale]).format(value)} ${currency}`;
+  }
+}
+
+/**
  * Russian plural form for "ruble". Three forms:
  *   - "рубль"   — for last digit 1, except teens (11–14)
  *   - "рубля"   — for last digits 2–4, except teens

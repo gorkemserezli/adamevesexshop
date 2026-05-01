@@ -6,6 +6,7 @@ import { LOCALES, ui } from "~/i18n/ui";
 import { getCollection, type CollectionEntry } from "astro:content";
 import type { Product } from "~/content/config";
 import { favoritesEmptyCtaHref } from "~/lib/routes";
+import { formatPriceDisplay } from "~/i18n/format";
 
 // FUTURE: beyond ~50 products, refactor to a per-locale favorites-manifest.json
 // fetched on mount, with incremental render of only matching SKU cards. The
@@ -22,7 +23,7 @@ const t = ui[lang];
 const productEntries = await getCollection("products");
 const products: Product[] = productEntries
   .map((e: CollectionEntry<"products">) => e.data)
-  .sort((a: Product, b: Product) => a.sort_order - b.sort_order);
+  .sort((a: Product, b: Product) => a.name[lang].localeCompare(b.name[lang], lang));
 
 const title = `Adam & Eve · ${t.nav.favorites}`;
 const emptyHref = favoritesEmptyCtaHref(lang);
@@ -39,7 +40,7 @@ const emptyHref = favoritesEmptyCtaHref(lang);
         lang={lang}
         slug={p.id}
         name={p.name[lang]}
-        priceDisplay={p.price[lang].display}
+        priceDisplay={formatPriceDisplay(p.price[lang].value, p.price[lang].currency, lang)}
         image={p.images[0] ?? ""}
         extraClass="ae-fav-card"
         outerAttrs={{ "data-fav-sku": p.sku, style: "display: none;" }}

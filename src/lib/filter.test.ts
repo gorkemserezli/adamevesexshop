@@ -152,6 +152,7 @@ describe("applyFilter", () => {
   it("filters compose as AND", () => {
     const out = applyFilter(records, {
       types: ["wellness"],
+      subcategoryId: null,
       priceMin: 25,
       priceMax: 100,
       inStockOnly: true,

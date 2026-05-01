@@ -9,6 +9,7 @@ import type { Locale } from "~/i18n/ui";
 import { LOCALES, ui } from "~/i18n/ui";
 import type { Category, Product } from "~/content/config";
 import { getCollection, type CollectionEntry } from "astro:content";
+import { formatPriceDisplay } from "~/i18n/format";
 
 export async function getStaticPaths() {
   const categories = await getCollection("categories");
@@ -31,7 +32,7 @@ const productEntries = await getCollection("products");
 const products: Product[] = productEntries
   .map((e: CollectionEntry<"products">) => e.data)
   .filter((p: Product) => p.category_id === slug)
-  .sort((a: Product, b: Product) => a.sort_order - b.sort_order);
+  .sort((a: Product, b: Product) => a.name[lang].localeCompare(b.name[lang], lang));
 
 const description = category.description?.[lang];
 const categoryName = category.name[lang];
@@ -122,7 +123,7 @@ const title = `Adam & Eve · ${categoryName}`;
           lang={lang}
           slug={p.id}
           name={p.name[lang]}
-          priceDisplay={p.price[lang].display}
+          priceDisplay={formatPriceDisplay(p.price[lang].value, p.price[lang].currency, lang)}
           image={p.images[0] ?? ""}
           extraClass="ae-cat-product"
           outerAttrs={{

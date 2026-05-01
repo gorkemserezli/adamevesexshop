@@ -42,7 +42,8 @@ interface Cat {
 }
 
 function loadCats(): Cat[] {
-  return JSON.parse(readFileSync(FILE, "utf8"));
+  const parsed = JSON.parse(readFileSync(FILE, "utf8"));
+  return Array.isArray(parsed) ? parsed : (parsed.categories ?? []);
 }
 
 function placeholderHits(): { category: string; field: string; locale: "en" | "de" | "ru" }[] {

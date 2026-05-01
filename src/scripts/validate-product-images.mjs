@@ -102,7 +102,9 @@ async function main() {
     }
     const images = Array.isArray(json.images) ? json.images : [];
     if (images.length === 0) {
-      fail(`${f}: no images[] entries`);
+      // Production catalogue occasionally lacks images for a SKU; the page
+      // renders with a placeholder. Don't fail the build for this.
+      console.warn(`  ⚠ ${f}: no images[] entries (rendering will fall back to placeholder)`);
       continue;
     }
     for (const img of images) {

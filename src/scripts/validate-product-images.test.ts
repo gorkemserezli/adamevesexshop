@@ -1,5 +1,4 @@
 import { describe, it, expect } from "vitest";
-// @ts-expect-error — .mjs import without types
 import { classifyImagePath } from "./validate-product-images.mjs";
 
 describe("classifyImagePath", () => {
@@ -32,9 +31,7 @@ describe("classifyImagePath", () => {
 
   it("rejects empty / non-string", () => {
     expect(classifyImagePath("")).toBe("reject");
-    // @ts-expect-error — guard branch for non-string
     expect(classifyImagePath(null)).toBe("reject");
-    // @ts-expect-error — guard branch for non-string
     expect(classifyImagePath(undefined)).toBe("reject");
   });
 });
