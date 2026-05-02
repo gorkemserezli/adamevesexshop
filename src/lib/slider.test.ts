@@ -63,6 +63,33 @@ describe("writeThumbValue — Bug 1 acceptance cases", () => {
     expect(next.min).toBeLessThan(next.max);
   });
 
+  it("REGRESSION (mirror): tap on min thumb that lands at max DOES NOT collapse both thumbs", () => {
+    // Symmetric mirror of the previous case. User repro:
+    //   - Initial state {min: 10, max: 500}
+    //   - Tap min thumb; native scrubbing fires `input` with value≈max
+    //   - Pre-fix display read "€500 to €500" (collapse to right edge)
+    //   - Post-fix: min snaps to max-step=490, max unchanged.
+    const next = writeThumbValue("min", 500, ctx({ min: 10, max: 500 }));
+    expect(next).toEqual({ min: 490, max: 500 });
+    expect(next.min).toBeLessThan(next.max);
+  });
+
+  it("REGRESSION (mirror): tap-min sequence with native input mutating to max preserves invariants", () => {
+    // Walk the exact event sequence the Slider.astro pointer drag now guards
+    // against. After tap, native scrubbing wrote 500 into input — but the
+    // restore-on-pointerup path resets to startValue=10 before any delayed
+    // `input` event fires, so the funnel sees a no-op write at startValue.
+    const startValue = 10;
+    let state = { min: 10, max: 500 };
+    state = writeThumbValue("min", startValue, ctx(state));
+    expect(state).toEqual({ min: 10, max: 500 });
+    // And even if a delayed event somehow slipped through, writeThumbValue's
+    // pure collision rule still prevents the {500,500} collapse:
+    state = writeThumbValue("min", 500, ctx(state));
+    expect(state.min).toBeLessThan(state.max);
+    expect(state.max).toBe(500);
+  });
+
   it("drag max thumb leftward stops at minValue + step", () => {
     const next = writeThumbValue("max", 50, ctx({ min: 100, max: 400 }));
     // 50 < current.min=100 → max snaps to min+step=110.

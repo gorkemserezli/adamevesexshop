@@ -221,6 +221,11 @@ const t = ui[lang];
       let startX = 0;
       let startValue = 0;
       let trackWidth = 0;
+      let moved = false;
+      // After a tap-without-drag, browsers may dispatch a delayed `input` event
+      // carrying the native scrubbing value. We mute the input listener for a
+      // short grace window past pointerup so the gate can't be bypassed.
+      let suppressInputUntil = 0;
 
       input.addEventListener("pointerdown", (e: PointerEvent) => {
         e.preventDefault();
@@ -228,6 +233,7 @@ const t = ui[lang];
         try { input.setPointerCapture(e.pointerId); } catch { /* old browser */ }
         pointerId = e.pointerId;
         dragging = true;
+        moved = false;
         startX = e.clientX;
         startValue = Number(input.value);
         trackWidth = trackArea!.getBoundingClientRect().width;
@@ -236,6 +242,7 @@ const t = ui[lang];
 
       input.addEventListener("pointermove", (e: PointerEvent) => {
         if (!dragging || e.pointerId !== pointerId) return;
+        if (Math.abs(e.clientX - startX) > 1) moved = true;
         const delta = dragDeltaToValue(startX, e.clientX, trackWidth, bounds);
         applyWrite(which, startValue + delta);
       });
@@ -245,6 +252,14 @@ const t = ui[lang];
         dragging = false;
         pointerId = -1;
         try { input.releasePointerCapture(e.pointerId); } catch { /* noop */ }
+        if (!moved) {
+          // Tap without drag — restore the value the input had at pointerdown
+          // so any native scrubbing that mutated input.value gets undone, and
+          // open a 150ms suppression window for any delayed `input` event.
+          input.value = String(startValue);
+          suppressInputUntil = Date.now() + 150;
+          paint();
+        }
       };
       input.addEventListener("pointerup", end);
       input.addEventListener("pointercancel", end);
@@ -254,6 +269,11 @@ const t = ui[lang];
       // it ALSO fires from native scrubbing on touch, which we mute here.
       input.addEventListener("input", () => {
         if (dragging) return;
+        if (Date.now() < suppressInputUntil) {
+          input.value = String(startValue);
+          paint();
+          return;
+        }
         applyWrite(which, Number(input.value));
       });
     }
