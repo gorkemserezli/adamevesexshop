@@ -102,8 +102,14 @@ const total = images.length;
   }
   .ae-zoom-track::-webkit-scrollbar { display: none; }
   .ae-zoom-image {
-    /* Pinch-zoom is the user's affordance; horizontal pan is the carousel's. */
-    touch-action: pinch-zoom;
+    /* Allow horizontal pan (so single-finger swipes feed the scroll-snap
+       track for slide nav) AND pinch-zoom (native iOS gesture). pan-y is
+       intentionally omitted: vertical pan is consumed by the swipe-down-
+       dismiss handler bound to the track, which reads pointermove deltas
+       — pointer events still fire for blocked native gestures, so the
+       dismiss continues to work. If a real-device test ever shows vertical
+       dismiss broken, switch to `pan-x pan-y pinch-zoom`. */
+    touch-action: pan-x pinch-zoom;
     user-select: none;
     -webkit-user-drag: none;
   }
