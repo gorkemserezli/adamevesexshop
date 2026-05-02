@@ -7,9 +7,10 @@ import StockHydrator from "~/components/product/StockHydrator.astro";
 import CuratorNote from "~/components/product/CuratorNote.astro";
 import VariantSelector from "~/components/product/VariantSelector.astro";
 import SpecList from "~/components/product/SpecList.astro";
+import Accordion from "~/components/product/Accordion.astro";
 import ActionBar from "~/components/product/ActionBar.astro";
 import type { Locale } from "~/i18n/ui";
-import { LOCALES } from "~/i18n/ui";
+import { LOCALES, ui } from "~/i18n/ui";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { categoryHref } from "~/lib/routes";
 import { formatPriceDisplay } from "~/i18n/format";
@@ -29,6 +30,7 @@ type Props = { product: import("~/content/config").Product };
 
 const { lang } = Astro.params as { lang: Locale };
 const { product } = Astro.props as Props;
+const t = ui[lang];
 
 const categoryEntries = await getCollection("categories");
 const category = categoryEntries.find(
@@ -88,12 +90,12 @@ const title = `Adam & Eve · ${product.name[lang]}`;
     )
   }
 
-  <div class="px-ae-6 mt-7"><div class="border-t border-hairline"></div></div>
-
   <section class="px-ae-6 pt-ae-7">
-    <p class="text-body-lg text-ink-2" style="hyphens: auto;">
-      {product.description[lang]}
-    </p>
+    <Accordion id="ae-pdp-description" title={t.pdp.descriptionLabel}>
+      <p class="text-body-lg text-ink-2 pt-ae-3 pb-ae-2" style="hyphens: auto;">
+        {product.description[lang]}
+      </p>
+    </Accordion>
   </section>
 
   {

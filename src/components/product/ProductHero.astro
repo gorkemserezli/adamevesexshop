@@ -1,6 +1,7 @@
 ---
 import type { Locale } from "~/i18n/ui";
 import { ui } from "~/i18n/ui";
+import ZoomModal from "~/components/product/ZoomModal.astro";
 
 interface Props {
   images: readonly string[];
@@ -30,15 +31,24 @@ const single = total <= 1;
         aria-roledescription={single ? undefined : "slide"}
         aria-label={single ? undefined : t.pdp.imageOf(i + 1, total)}
       >
-        <img
-          src={src}
-          alt={i === 0 ? productName : ""}
-          class="ae-product-image w-full h-full object-cover"
-          loading={i === 0 ? "eager" : "lazy"}
-          decoding="async"
-          width="1024"
-          height="1024"
-        />
+        <button
+          type="button"
+          class="ae-pdp-zoom-trigger w-full h-full block p-0 m-0 bg-transparent border-0"
+          data-zoom-trigger
+          data-zoom-index={String(i)}
+          aria-label={t.pdp.openZoomAria}
+        >
+          <img
+            src={src}
+            alt={i === 0 ? productName : ""}
+            class="ae-product-image w-full h-full object-cover"
+            loading={i === 0 ? "eager" : "lazy"}
+            decoding="async"
+            width="1024"
+            height="1024"
+            draggable="false"
+          />
+        </button>
       </div>
     ))}
   </div>
@@ -65,6 +75,8 @@ const single = total <= 1;
   )}
 </div>
 
+<ZoomModal images={images} productName={productName} lang={lang} />
+
 <style is:global>
   .ae-pdp-track {
     -webkit-overflow-scrolling: touch;
@@ -82,11 +94,68 @@ const single = total <= 1;
     outline: 2px solid var(--ae-wine-500);
     outline-offset: 4px;
   }
+  .ae-pdp-zoom-trigger {
+    cursor: zoom-in;
+    line-height: 0;
+  }
+  .ae-pdp-zoom-trigger:focus-visible {
+    outline: 2px solid var(--ae-wine-500);
+    outline-offset: -2px;
+  }
 </style>
 
 <script>
   document.querySelectorAll<HTMLElement>("[data-pdp-gallery]").forEach((gallery) => {
     const total = Number(gallery.dataset.total ?? "0");
+
+    // Zoom-trigger wiring runs even for single-image galleries (per spec
+    // decision #3: tap-to-zoom on single-image PDPs too). The movement
+    // threshold heuristic from spec decision #4 distinguishes a tap (open
+    // zoom) from the start of a horizontal swipe (let the carousel handle).
+    const triggers = Array.from(
+      gallery.querySelectorAll<HTMLButtonElement>("[data-zoom-trigger]"),
+    );
+    triggers.forEach((trigger) => {
+      let downX = 0;
+      let downY = 0;
+      let downT = 0;
+      let downId = -1;
+      let qualifies = false;
+
+      trigger.addEventListener("pointerdown", (e: PointerEvent) => {
+        downX = e.clientX;
+        downY = e.clientY;
+        downT = Date.now();
+        downId = e.pointerId;
+        qualifies = true;
+      });
+      trigger.addEventListener("pointermove", (e: PointerEvent) => {
+        if (e.pointerId !== downId || !qualifies) return;
+        if (Math.abs(e.clientX - downX) > 8 || Math.abs(e.clientY - downY) > 8) {
+          qualifies = false;
+        }
+      });
+      trigger.addEventListener("pointerup", (e: PointerEvent) => {
+        if (e.pointerId !== downId) return;
+        const elapsed = Date.now() - downT;
+        if (qualifies && elapsed < 250) {
+          e.preventDefault();
+          const idx = Number(trigger.dataset.zoomIndex ?? "0");
+          (window as unknown as { aeZoom?: { open: (i: number) => void } }).aeZoom?.open(idx);
+        }
+        qualifies = false;
+        downId = -1;
+      });
+      // Keyboard activation (Space/Enter) — bypass the threshold; always opens.
+      trigger.addEventListener("keydown", (e: KeyboardEvent) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          const idx = Number(trigger.dataset.zoomIndex ?? "0");
+          (window as unknown as { aeZoom?: { open: (i: number) => void } }).aeZoom?.open(idx);
+        }
+      });
+    });
+
     if (total <= 1) return;
 
     const track = gallery.querySelector<HTMLElement>(".ae-pdp-track");

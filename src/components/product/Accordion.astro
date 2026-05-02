@@ -1,0 +1,105 @@
+---
+/**
+ * Minimal accordion. Default closed.
+ *
+ * - Uses the `grid-template-rows: 0fr → 1fr` transition pattern so the panel
+ *   animates between collapsed and content-height without measuring scrollHeight
+ *   in JS. The panel inner has `min-height: 0; overflow: hidden;` to clip during
+ *   the transition.
+ * - SSR renders with `aria-expanded="false"` and `data-open="false"` so the
+ *   default-closed state is the static state — no flash-of-open during hydration.
+ * - Uses the native <button> element so Enter/Space activate for free.
+ *
+ * Exposes a global `ae:accordion-toggle` CustomEvent (detail = { id, open }) for
+ * pages that want to react to expansion.
+ */
+interface Props {
+  id: string;
+  title: string;
+  /** Optional aria-label for the button if title isn't enough context. */
+  ariaLabel?: string;
+}
+
+const { id, title, ariaLabel } = Astro.props;
+const panelId = `${id}-panel`;
+const buttonId = `${id}-trigger`;
+---
+
+<div class="ae-accordion" data-accordion-root data-open="false">
+  <h3 class="m-0">
+    <button
+      id={buttonId}
+      type="button"
+      class="ae-accordion-trigger w-full flex items-center justify-between py-ae-4 border-t border-b text-left bg-transparent border-x-0"
+      style="border-color: var(--ae-hairline-soft); color: var(--ae-ink);"
+      aria-expanded="false"
+      aria-controls={panelId}
+      aria-label={ariaLabel ?? title}
+      data-accordion-trigger
+    >
+      <span class="text-body font-medium">{title}</span>
+      <svg
+        class="ae-accordion-chevron"
+        width="16" height="16" viewBox="0 0 16 16"
+        fill="none" stroke="currentColor" stroke-width="1.5"
+        aria-hidden="true"
+        style="color: var(--ae-bronze-400);"
+      >
+        <polyline points="4 6 8 11 12 6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+      </svg>
+    </button>
+  </h3>
+  <div
+    id={panelId}
+    class="ae-accordion-panel"
+    role="region"
+    aria-labelledby={buttonId}
+  >
+    <div class="ae-accordion-panel-inner">
+      <slot />
+    </div>
+  </div>
+</div>
+
+<style is:global>
+  .ae-accordion-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--ae-dur-base, 250ms) var(--ae-ease-standard, ease);
+  }
+  .ae-accordion[data-open="true"] .ae-accordion-panel {
+    grid-template-rows: 1fr;
+  }
+  .ae-accordion-panel-inner {
+    min-height: 0;
+    overflow: hidden;
+  }
+  .ae-accordion-chevron {
+    transition: transform var(--ae-dur-fast, 150ms) var(--ae-ease-standard, ease);
+  }
+  .ae-accordion[data-open="true"] .ae-accordion-chevron {
+    transform: rotate(180deg);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ae-accordion-panel,
+    .ae-accordion-chevron {
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-accordion-root]").forEach((root) => {
+    const trigger = root.querySelector<HTMLButtonElement>("[data-accordion-trigger]");
+    if (!trigger) return;
+    trigger.addEventListener("click", () => {
+      const open = root.dataset.open === "true";
+      const next = !open;
+      root.dataset.open = String(next);
+      trigger.setAttribute("aria-expanded", String(next));
+      window.dispatchEvent(
+        new CustomEvent("ae:accordion-toggle", { detail: { id: trigger.id, open: next } }),
+      );
+    });
+  });
+</script>

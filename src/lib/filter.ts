@@ -1,11 +1,25 @@
 import type { Locale } from "~/i18n/ui";
 
+export type SortKey = "default" | "price-asc" | "price-desc";
+
+export const SORT_KEYS = ["default", "price-asc", "price-desc"] as const;
+
+export function isSortKey(s: unknown): s is SortKey {
+  return s === "default" || s === "price-asc" || s === "price-desc";
+}
+
 export interface FilterState {
   types: string[]; // category ids selected, OR'd
   subcategoryId: string | null; // single subcategory filter (per-category page)
   priceMin: number | null;
   priceMax: number | null;
   inStockOnly: boolean;
+  /**
+   * Sort is independent of filter for the v1.2 dropdown — Reset on FilterSheet
+   * MUST NOT clear it. URL param `?sort=…` is omitted when "default" so the
+   * URL stays clean in the no-op case.
+   */
+  sort: SortKey;
 }
 
 export const EMPTY_FILTER: FilterState = {
@@ -14,6 +28,7 @@ export const EMPTY_FILTER: FilterState = {
   priceMin: null,
   priceMax: null,
   inStockOnly: false,
+  sort: "default",
 };
 
 export function priceStepForLocale(locale: Locale): number {
@@ -109,6 +124,11 @@ export function parseFilterFromQuery(params: URLSearchParams): FilterState {
     state.subcategoryId = subRaw;
   }
 
+  const sortRaw = params.get("sort");
+  if (sortRaw && isSortKey(sortRaw)) {
+    state.sort = sortRaw;
+  }
+
   return state;
 }
 
@@ -122,6 +142,7 @@ export function filterToQuery(state: FilterState, base: URLSearchParams): URLSea
   out.delete("price");
   out.delete("instock");
   out.delete("sub");
+  out.delete("sort");
 
   if (state.types.length > 0) {
     out.set("type", state.types.join(","));
@@ -134,6 +155,9 @@ export function filterToQuery(state: FilterState, base: URLSearchParams): URLSea
   }
   if (state.subcategoryId !== null) {
     out.set("sub", state.subcategoryId);
+  }
+  if (state.sort !== "default") {
+    out.set("sort", state.sort);
   }
   return out;
 }
@@ -167,4 +191,21 @@ export function isFilterActive(state: FilterState): boolean {
     state.priceMax !== null ||
     state.inStockOnly
   );
+}
+
+/**
+ * Stable sort by key. Returns a new array; callers should treat it as
+ * the filtered+sorted output. "default" is a no-op (preserves input order;
+ * upstream is expected to have applied alphabetical via name.localeCompare).
+ */
+export function applySort<T extends FilterableRecord>(records: T[], sort: SortKey): T[] {
+  if (sort === "default") return records.slice();
+  const dir = sort === "price-asc" ? 1 : -1;
+  return records
+    .map((r, idx) => ({ r, idx }))
+    .sort((a, b) => {
+      const diff = (a.r.price_value - b.r.price_value) * dir;
+      return diff !== 0 ? diff : a.idx - b.idx; // stable tiebreak
+    })
+    .map(({ r }) => r);
 }

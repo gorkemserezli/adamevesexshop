@@ -1,0 +1,236 @@
+---
+import type { Locale } from "~/i18n/ui";
+import { ui } from "~/i18n/ui";
+
+interface Props {
+  images: readonly string[];
+  productName: string;
+  lang: Locale;
+}
+
+const { images, productName, lang } = Astro.props;
+const t = ui[lang];
+const total = images.length;
+---
+
+<div
+  id="ae-zoom-modal"
+  class="ae-zoom-modal fixed inset-0 z-[100]"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="ae-zoom-modal-title"
+  data-modal-state="closed"
+  aria-hidden="true"
+>
+  <div
+    class="ae-zoom-backdrop absolute inset-0"
+    style="background-color: rgba(0, 0, 0, 0.85);"
+    data-zoom-dismiss
+    aria-hidden="true"
+  ></div>
+
+  <button
+    type="button"
+    class="ae-zoom-close absolute top-4 right-4 z-10 inline-flex items-center justify-center rounded-pill"
+    style="width: 44px; height: 44px; background-color: rgba(255,255,255,0.15); color: var(--ae-canvas);"
+    data-zoom-dismiss
+    aria-label={t.pdp.closeZoomAria}
+  >
+    <svg width="24" height="24" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <line x1="5" y1="5" x2="15" y2="15" stroke-linecap="round"></line>
+      <line x1="15" y1="5" x2="5" y2="15" stroke-linecap="round"></line>
+    </svg>
+  </button>
+
+  <h2 id="ae-zoom-modal-title" class="sr-only">{productName}</h2>
+
+  <div
+    class="ae-zoom-track absolute inset-0 flex overflow-x-auto snap-x snap-mandatory"
+    data-zoom-track
+    role="region"
+    aria-roledescription="carousel"
+  >
+    {images.map((src, i) => (
+      <div
+        class="ae-zoom-slide shrink-0 w-full h-full snap-start flex items-center justify-center"
+        data-zoom-slide-index={String(i)}
+        role="group"
+        aria-roledescription="slide"
+        aria-label={t.pdp.imageOf(i + 1, total)}
+      >
+        <img
+          src={src}
+          alt={i === 0 ? productName : ""}
+          class="ae-zoom-image max-w-full max-h-full object-contain"
+          loading="lazy"
+          decoding="async"
+          data-src={src}
+          data-eager={i === 0 ? "true" : "false"}
+        />
+      </div>
+    ))}
+  </div>
+
+  {total > 1 && (
+    <div
+      class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2"
+      role="tablist"
+      aria-label={t.pdp.imageOf(1, total)}
+      data-zoom-dots
+    >
+      {images.map((_, i) => (
+        <button
+          type="button"
+          class="ae-zoom-dot block w-2 h-2 rounded-pill"
+          data-zoom-dot-index={String(i)}
+          role="tab"
+          aria-selected={i === 0 ? "true" : "false"}
+          aria-label={t.pdp.imageOf(i + 1, total)}
+          style={`background-color: ${i === 0 ? "var(--ae-canvas)" : "rgba(255,255,255,0.4)"};`}
+        />
+      ))}
+    </div>
+  )}
+</div>
+
+<style is:global>
+  .ae-zoom-modal[data-modal-state="closed"] { display: none; }
+  .ae-zoom-modal[data-modal-state="open"] { display: block; }
+  .ae-zoom-track {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .ae-zoom-track::-webkit-scrollbar { display: none; }
+  .ae-zoom-image {
+    /* Pinch-zoom is the user's affordance; horizontal pan is the carousel's. */
+    touch-action: pinch-zoom;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  .ae-zoom-dot { border: 0; padding: 0; cursor: pointer; }
+  .ae-zoom-dot:focus-visible { outline: 2px solid var(--ae-canvas); outline-offset: 4px; }
+  .ae-zoom-close:focus-visible { outline: 2px solid var(--ae-canvas); outline-offset: 2px; }
+  body.ae-modal-open { overflow: hidden; }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+</style>
+
+<script>
+  const modalEl = document.getElementById("ae-zoom-modal");
+  if (modalEl) {
+    const modal: HTMLElement = modalEl;
+    const track = modal.querySelector<HTMLElement>("[data-zoom-track]");
+    const slides = Array.from(modal.querySelectorAll<HTMLElement>(".ae-zoom-slide"));
+    const dots = Array.from(modal.querySelectorAll<HTMLButtonElement>(".ae-zoom-dot"));
+    const closeBtns = Array.from(modal.querySelectorAll<HTMLElement>("[data-zoom-dismiss]"));
+    let lastFocused: HTMLElement | null = null;
+
+    function paintActive(active: number): void {
+      dots.forEach((d, i) => {
+        const isActive = i === active;
+        d.setAttribute("aria-selected", isActive ? "true" : "false");
+        d.style.backgroundColor = isActive ? "var(--ae-canvas)" : "rgba(255,255,255,0.4)";
+      });
+    }
+
+    function open(index: number): void {
+      lastFocused = document.activeElement as HTMLElement | null;
+      modal.dataset.modalState = "open";
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("ae-modal-open");
+      // Position track at requested slide.
+      const target = slides[index];
+      if (target && track) track.scrollLeft = target.offsetLeft;
+      paintActive(index);
+      // Focus the close button so keyboard users land somewhere predictable.
+      const closeBtn = modal.querySelector<HTMLButtonElement>(".ae-zoom-close");
+      closeBtn?.focus({ preventScroll: true });
+    }
+
+    function close(): void {
+      modal.dataset.modalState = "closed";
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("ae-modal-open");
+      lastFocused?.focus({ preventScroll: true });
+    }
+
+    closeBtns.forEach((b) => b.addEventListener("click", close));
+
+    if (track) {
+      // IntersectionObserver to sync active dot during scroll-snap nav.
+      const observer = new IntersectionObserver(
+        (entries) => {
+          let bestIndex = -1;
+          let bestRatio = 0;
+          for (const entry of entries) {
+            if (entry.isIntersecting && entry.intersectionRatio >= bestRatio) {
+              const idx = Number((entry.target as HTMLElement).dataset.zoomSlideIndex ?? "-1");
+              if (idx >= 0) { bestRatio = entry.intersectionRatio; bestIndex = idx; }
+            }
+          }
+          if (bestIndex >= 0) paintActive(bestIndex);
+        },
+        { root: track, threshold: [0.5, 0.75, 1] },
+      );
+      slides.forEach((s) => observer.observe(s));
+
+      // Swipe-down-to-dismiss on the track itself. Threshold: 80px down + dy>dx.
+      let downY = 0;
+      let downX = 0;
+      let downId = -1;
+      track.addEventListener("pointerdown", (e: PointerEvent) => {
+        downY = e.clientY;
+        downX = e.clientX;
+        downId = e.pointerId;
+      });
+      track.addEventListener("pointerup", (e: PointerEvent) => {
+        if (e.pointerId !== downId) return;
+        const dy = e.clientY - downY;
+        const dx = e.clientX - downX;
+        if (dy > 80 && Math.abs(dy) > Math.abs(dx)) close();
+      });
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        const target = slides[i];
+        if (!target || !track) return;
+        track.scrollTo({ left: target.offsetLeft, behavior: "smooth" });
+        paintActive(i);
+      });
+    });
+
+    // Keyboard: Esc closes, Tab is trapped inside modal.
+    modal.addEventListener("keydown", (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        close();
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const focusables = Array.from(
+        modal.querySelectorAll<HTMLElement>(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+        ),
+      ).filter((el) => !el.hasAttribute("disabled") && el.offsetParent !== null);
+      if (focusables.length === 0) return;
+      const first = focusables[0]!;
+      const last = focusables[focusables.length - 1]!;
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
+
+    // Public API: callable from ProductHero.
+    (window as unknown as { aeZoom?: { open: (i: number) => void; close: () => void } }).aeZoom = {
+      open,
+      close,
+    };
+  }
+</script>

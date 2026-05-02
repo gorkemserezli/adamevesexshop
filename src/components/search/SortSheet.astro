@@ -1,0 +1,139 @@
+---
+import type { Locale } from "~/i18n/ui";
+import { ui } from "~/i18n/ui";
+import BottomSheet from "~/components/ui/BottomSheet.astro";
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+
+const options = [
+  { key: "default", label: t.sort.default },
+  { key: "price-asc", label: t.sort.priceAsc },
+  { key: "price-desc", label: t.sort.priceDesc },
+] as const;
+---
+
+<BottomSheet id="ae-sort-sheet" ariaLabelledBy="ae-sort-title">
+  <div class="px-ae-6 py-ae-4" data-sort-root>
+    <div class="flex items-center justify-between pb-ae-3">
+      <h2 id="ae-sort-title" class="font-serif text-h3" style="color: var(--ae-ink);">
+        {t.sort.title}
+      </h2>
+      <button
+        type="button"
+        class="ae-sheet-close p-2"
+        data-sheet-dismiss
+        aria-label={t.cta.close}
+        style="color: var(--ae-ink-2);"
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <line x1="5" y1="5" x2="15" y2="15" stroke-linecap="round"></line>
+          <line x1="15" y1="5" x2="5" y2="15" stroke-linecap="round"></line>
+        </svg>
+      </button>
+    </div>
+
+    <fieldset class="border-0 p-0 m-0" role="radiogroup" aria-labelledby="ae-sort-title">
+      {options.map((opt) => (
+        <label
+          class="ae-sort-option flex items-center justify-between py-ae-3 border-t cursor-pointer"
+          style="border-color: var(--ae-hairline-soft);"
+        >
+          <span class="text-body" style="color: var(--ae-ink);">{opt.label}</span>
+          <input
+            type="radio"
+            name="ae-sort"
+            value={opt.key}
+            class="ae-sort-radio"
+            data-sort-key={opt.key}
+            aria-label={opt.label}
+          />
+          <span class="ae-sort-tick" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="5 10 9 14 15 6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            </svg>
+          </span>
+        </label>
+      ))}
+    </fieldset>
+  </div>
+</BottomSheet>
+
+<style is:global>
+  .ae-sort-radio {
+    position: absolute;
+    width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+  .ae-sort-tick {
+    display: inline-flex;
+    width: 24px; height: 24px;
+    align-items: center; justify-content: center;
+    color: var(--ae-wine-500);
+    opacity: 0;
+    transition: opacity var(--ae-dur-fast) var(--ae-ease-standard);
+  }
+  .ae-sort-radio:checked ~ .ae-sort-tick { opacity: 1; }
+  .ae-sort-option:has(.ae-sort-radio:checked) {
+    color: var(--ae-wine-500);
+  }
+  .ae-sort-radio:focus-visible ~ .ae-sort-tick {
+    outline: 2px solid var(--ae-wine-500);
+    outline-offset: 4px;
+    border-radius: 4px;
+    opacity: 1;
+  }
+</style>
+
+<script>
+  import {
+    parseFilterFromQuery,
+    filterToQuery,
+    isSortKey,
+    type SortKey,
+    type FilterState,
+  } from "~/lib/filter";
+
+  const root = document.querySelector<HTMLElement>("[data-sort-root]");
+  if (root) {
+    const radios = Array.from(root.querySelectorAll<HTMLInputElement>(".ae-sort-radio"));
+
+    function paint(active: SortKey): void {
+      for (const r of radios) {
+        r.checked = r.dataset.sortKey === active;
+      }
+    }
+
+    function commit(next: SortKey): void {
+      const params = new URLSearchParams(window.location.search);
+      const state = parseFilterFromQuery(params);
+      state.sort = next;
+      const q = filterToQuery(state, params);
+      const url = new URL(window.location.href);
+      url.search = q.toString();
+      window.history.replaceState({}, "", url.toString());
+      window.dispatchEvent(new CustomEvent<FilterState>("ae:sort-apply", { detail: state }));
+      (window as unknown as { aeSheet?: { close: (id: string) => void } }).aeSheet?.close(
+        "ae-sort-sheet",
+      );
+    }
+
+    radios.forEach((r) => {
+      r.addEventListener("change", () => {
+        const key = r.dataset.sortKey;
+        if (isSortKey(key)) commit(key);
+      });
+    });
+
+    document.addEventListener("ae:sort-sheet-opened", () => {
+      const state = parseFilterFromQuery(new URLSearchParams(window.location.search));
+      paint(state.sort);
+    });
+
+    paint(parseFilterFromQuery(new URLSearchParams(window.location.search)).sort);
+  }
+</script>

@@ -63,18 +63,6 @@ const hours = t.homepage.hoursLine(HOTEL_HOURS_OPEN, HOTEL_HOURS_CLOSE);
       </div>
     </details>
 
-    {/* Row 3 — Language mirror */}
-    <button
-      id="ae-settings-language-mirror"
-      type="button"
-      class="ae-language-mirror w-full flex items-center justify-between py-ae-3 border-t"
-      style="border-color: var(--ae-hairline-soft); color: var(--ae-ink);"
-    >
-      <span class="text-body font-medium">{t.settings.language}</span>
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="color: var(--ae-bronze-400);">
-        <polyline points="6 4 11 8 6 12" stroke-linecap="round" stroke-linejoin="round"></polyline>
-      </svg>
-    </button>
   </div>
 </BottomSheet>
 
@@ -112,13 +100,4 @@ const hours = t.homepage.hoursLine(HOTEL_HOURS_OPEN, HOTEL_HOURS_CLOSE);
     });
   }
 
-  // Language mirror — close settings, open language switcher panel
-  const langMirror = document.getElementById("ae-settings-language-mirror");
-  if (langMirror) {
-    langMirror.addEventListener("click", () => {
-      (window as unknown as { aeSheet: { close: (id: string) => void } }).aeSheet.close("ae-settings-sheet");
-      const langTrigger = document.querySelector<HTMLButtonElement>(".ae-lang-trigger");
-      langTrigger?.click();
-    });
-  }
 </script>

@@ -62,6 +62,14 @@ export interface UIStrings {
     priceRangeWithBounds: (min: string, max: string) => string;
     resultsCount: (n: number) => string;
   };
+  sort: {
+    title: string;
+    default: string;
+    priceAsc: string;
+    priceDesc: string;
+    openAria: string;
+    triggerLabel: (option: string) => string;
+  };
   emptyStates: {
     favorites: { headline: string; body: string; cta: string };
     results: { headline: string; body: string; cta: string };
@@ -98,6 +106,9 @@ export interface UIStrings {
     detailsOverline: string;
     favorited: string;
     imageOf: (i: number, total: number) => string;
+    descriptionLabel: string;
+    openZoomAria: string;
+    closeZoomAria: string;
   };
   search: {
     placeholder: string;
@@ -159,6 +170,14 @@ const tr: UIStrings = {
     priceRangeWithBounds: (min, max) => `Fiyat aralığı, ${min} ile ${max} arası`,
     resultsCount: (n) => `${n} sonuç`,
   },
+  sort: {
+    title: "Sırala",
+    default: "Varsayılan",
+    priceAsc: "Ucuzdan Pahalıya",
+    priceDesc: "Pahalıdan Ucuza",
+    openAria: "Sıralamayı aç",
+    triggerLabel: (option) => `Sırala: ${option}`,
+  },
   emptyStates: {
     favorites: {
       headline: "Henüz favori yok",
@@ -206,6 +225,9 @@ const tr: UIStrings = {
     detailsOverline: "Özellikler",
     favorited: "Favorilerde",
     imageOf: (i, total) => `Görsel ${i} / ${total}`,
+    descriptionLabel: "Açıklama",
+    openZoomAria: "Görseli büyüt",
+    closeZoomAria: "Yakınlaştırmayı kapat",
   },
   search: {
     placeholder: "Ürün ara",
@@ -267,6 +289,14 @@ const en: UIStrings = {
     priceRangeWithBounds: (min, max) => `Price range, ${min} to ${max}`,
     resultsCount: (n) => `${n} results`,
   },
+  sort: {
+    title: "Sort",
+    default: "Default",
+    priceAsc: "Price: Low to High",
+    priceDesc: "Price: High to Low",
+    openAria: "Open sort",
+    triggerLabel: (option) => `Sort: ${option}`,
+  },
   emptyStates: {
     favorites: {
       headline: "No favorites yet",
@@ -314,6 +344,9 @@ const en: UIStrings = {
     detailsOverline: "Details",
     favorited: "Favorited",
     imageOf: (i, total) => `Image ${i} of ${total}`,
+    descriptionLabel: "Description",
+    openZoomAria: "Open image gallery",
+    closeZoomAria: "Close zoom view",
   },
   search: {
     placeholder: "Search products",
@@ -375,6 +408,14 @@ const de: UIStrings = {
     priceRangeWithBounds: (min, max) => `Preisspanne, ${min} bis ${max}`,
     resultsCount: (n) => `${n} Ergebnisse`,
   },
+  sort: {
+    title: "Sortieren",
+    default: "Standard",
+    priceAsc: "Preis: Aufsteigend",
+    priceDesc: "Preis: Absteigend",
+    openAria: "Sortierung öffnen",
+    triggerLabel: (option) => `Sortieren: ${option}`,
+  },
   emptyStates: {
     favorites: {
       headline: "Noch keine Favoriten",
@@ -422,6 +463,9 @@ const de: UIStrings = {
     detailsOverline: "Details",
     favorited: "In Favoriten",
     imageOf: (i, total) => `Bild ${i} von ${total}`,
+    descriptionLabel: "Beschreibung",
+    openZoomAria: "Bildergalerie öffnen",
+    closeZoomAria: "Zoomansicht schließen",
   },
   search: {
     placeholder: "Produkte suchen",
@@ -483,6 +527,14 @@ const ru: UIStrings = {
     priceRangeWithBounds: (min, max) => `Ценовой диапазон, от ${min} до ${max}`,
     resultsCount: (n) => `${n} результатов`,
   },
+  sort: {
+    title: "Сортировка",
+    default: "По умолчанию",
+    priceAsc: "Цена: По возрастанию",
+    priceDesc: "Цена: По убыванию",
+    openAria: "Открыть сортировку",
+    triggerLabel: (option) => `Сортировка: ${option}`,
+  },
   emptyStates: {
     favorites: {
       headline: "Пока нет избранного",
@@ -530,6 +582,9 @@ const ru: UIStrings = {
     detailsOverline: "Подробности",
     favorited: "В избранном",
     imageOf: (i, total) => `Изображение ${i} из ${total}`,
+    descriptionLabel: "Описание",
+    openZoomAria: "Открыть галерею изображений",
+    closeZoomAria: "Закрыть просмотр",
   },
   search: {
     placeholder: "Поиск товаров",

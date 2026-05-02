@@ -5,7 +5,9 @@ import {
   parseFilterFromQuery,
   filterToQuery,
   applyFilter,
+  applySort,
   isFilterActive,
+  isSortKey,
   EMPTY_FILTER,
   type FilterState,
   type FilterableRecord,
@@ -102,6 +104,7 @@ describe("parseFilterFromQuery / filterToQuery", () => {
       priceMin: 20,
       priceMax: 100,
       inStockOnly: true,
+      sort: "default",
     };
     const base = new URLSearchParams("q=oil");
     const q = filterToQuery(state, base);
@@ -180,6 +183,7 @@ describe("applyFilter", () => {
       priceMin: 25,
       priceMax: 100,
       inStockOnly: true,
+      sort: "default",
     });
     expect(out.length).toBe(1);
     expect(out[0]?.price_value).toBe(95);
@@ -245,5 +249,81 @@ describe("subcategoryId — Task 13", () => {
     expect(parseFilterFromQuery(new URLSearchParams("sub=Bad Value")).subcategoryId).toBeNull();
     expect(parseFilterFromQuery(new URLSearchParams("sub=ALLCAPS")).subcategoryId).toBeNull();
     expect(parseFilterFromQuery(new URLSearchParams("sub=valid-slug")).subcategoryId).toBe("valid-slug");
+  });
+});
+
+describe("sort — v1.2 dropdown", () => {
+  it("isSortKey accepts the three keys, rejects everything else", () => {
+    expect(isSortKey("default")).toBe(true);
+    expect(isSortKey("price-asc")).toBe(true);
+    expect(isSortKey("price-desc")).toBe(true);
+    expect(isSortKey("name-asc")).toBe(false);
+    expect(isSortKey(undefined)).toBe(false);
+    expect(isSortKey(123)).toBe(false);
+  });
+
+  it("EMPTY_FILTER carries sort: 'default' and serialises to a clean URL", () => {
+    expect(EMPTY_FILTER.sort).toBe("default");
+    const q = filterToQuery(EMPTY_FILTER, new URLSearchParams());
+    expect(q.get("sort")).toBeNull();
+    expect(q.toString()).toBe("");
+  });
+
+  it("?sort=price-asc round-trips through parse + serialize", () => {
+    const parsed = parseFilterFromQuery(new URLSearchParams("sort=price-asc"));
+    expect(parsed.sort).toBe("price-asc");
+    const q = filterToQuery(parsed, new URLSearchParams());
+    expect(q.get("sort")).toBe("price-asc");
+  });
+
+  it("?sort=price-desc round-trips and survives locale-style query base", () => {
+    const parsed = parseFilterFromQuery(new URLSearchParams("q=oil&sort=price-desc"));
+    expect(parsed.sort).toBe("price-desc");
+    const q = filterToQuery(parsed, new URLSearchParams("q=oil"));
+    expect(q.get("q")).toBe("oil");
+    expect(q.get("sort")).toBe("price-desc");
+  });
+
+  it("malformed ?sort= falls back to default", () => {
+    expect(parseFilterFromQuery(new URLSearchParams("sort=garbage")).sort).toBe("default");
+    expect(parseFilterFromQuery(new URLSearchParams("sort=")).sort).toBe("default");
+  });
+
+  it("isFilterActive ignores sort — Reset on FilterSheet must not clear it", () => {
+    expect(isFilterActive({ ...EMPTY_FILTER, sort: "price-asc" })).toBe(false);
+    expect(isFilterActive({ ...EMPTY_FILTER, sort: "price-desc" })).toBe(false);
+  });
+
+  it("applySort price-asc orders ascending; price-desc descending; default no-op", () => {
+    const records: FilterableRecord[] = [
+      { category_id: "x", price_value: 100 },
+      { category_id: "x", price_value: 25 },
+      { category_id: "x", price_value: 60 },
+    ];
+    expect(applySort(records, "price-asc").map((r) => r.price_value)).toEqual([25, 60, 100]);
+    expect(applySort(records, "price-desc").map((r) => r.price_value)).toEqual([100, 60, 25]);
+    expect(applySort(records, "default").map((r) => r.price_value)).toEqual([100, 25, 60]);
+  });
+
+  it("applySort is stable — equal price_value preserves input order", () => {
+    const records: FilterableRecord[] = [
+      { category_id: "a", price_value: 50 },
+      { category_id: "b", price_value: 50 },
+      { category_id: "c", price_value: 50 },
+    ];
+    expect(applySort(records, "price-asc").map((r) => r.category_id)).toEqual(["a", "b", "c"]);
+    expect(applySort(records, "price-desc").map((r) => r.category_id)).toEqual(["a", "b", "c"]);
+  });
+
+  it("filter + sort compose: filtered records are then sorted by price", () => {
+    const records: FilterableRecord[] = [
+      { category_id: "x", price_value: 100, sold_out: false },
+      { category_id: "y", price_value: 30, sold_out: false },
+      { category_id: "x", price_value: 70, sold_out: true },
+      { category_id: "x", price_value: 25, sold_out: false },
+    ];
+    const filtered = applyFilter(records, { ...EMPTY_FILTER, types: ["x"], inStockOnly: true });
+    const sorted = applySort(filtered, "price-asc");
+    expect(sorted.map((r) => r.price_value)).toEqual([25, 100]);
   });
 });

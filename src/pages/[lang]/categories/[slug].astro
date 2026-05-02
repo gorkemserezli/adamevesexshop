@@ -5,6 +5,7 @@ import EditorialHero from "~/components/EditorialHero.astro";
 import SubcategoryChips from "~/components/category/SubcategoryChips.astro";
 import ProductCard from "~/components/product/ProductCard.astro";
 import FilterSheet from "~/components/search/FilterSheet.astro";
+import SortSheet from "~/components/search/SortSheet.astro";
 import type { Locale } from "~/i18n/ui";
 import { LOCALES, ui } from "~/i18n/ui";
 import type { Category, Product } from "~/content/config";
@@ -89,32 +90,48 @@ const title = `Adam & Eve · ${categoryName}`;
   )}
 
   {!isEmpty && (
-    <section class="px-ae-6 pt-ae-3 pb-ae-2 flex items-center justify-between">
+    <section class="px-ae-6 pt-ae-3 pb-ae-2">
       <p class="text-body-sm" style="color: var(--ae-ink-3);" id="ae-cat-results-count" aria-live="polite">
         {t.filter.resultsCount(products.length)}
       </p>
-      <button
-        id="ae-cat-filter-btn"
-        type="button"
-        class="ae-cat-filter-btn relative w-11 h-11 inline-flex items-center justify-center rounded-md border"
-        aria-label={t.filter.openAria}
-        aria-haspopup="dialog"
-        aria-controls="ae-filter-sheet"
-        style="border-color: var(--ae-hairline); color: var(--ae-ink); background-color: var(--ae-canvas);"
-      >
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <line x1="3" y1="6" x2="14" y2="6" stroke-linecap="round"></line>
-          <line x1="3" y1="14" x2="11" y2="14" stroke-linecap="round"></line>
-          <circle cx="14" cy="6" r="2.5" fill="currentColor"></circle>
-          <circle cx="11" cy="14" r="2.5" fill="currentColor"></circle>
-        </svg>
-        <span
-          id="ae-cat-filter-active-dot"
-          class="absolute -top-1 -right-1 block w-2 h-2 rounded-pill"
-          style="background-color: var(--ae-wine-500); display: none;"
-          aria-hidden="true"
-        ></span>
-      </button>
+      <div class="flex items-center gap-ae-3 mt-ae-3">
+        <button
+          id="ae-cat-filter-btn"
+          type="button"
+          class="ae-cat-filter-btn relative w-11 h-11 inline-flex items-center justify-center rounded-md border shrink-0"
+          aria-label={t.filter.openAria}
+          aria-haspopup="dialog"
+          aria-controls="ae-filter-sheet"
+          style="border-color: var(--ae-hairline); color: var(--ae-ink); background-color: var(--ae-canvas);"
+        >
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <line x1="3" y1="6" x2="14" y2="6" stroke-linecap="round"></line>
+            <line x1="3" y1="14" x2="11" y2="14" stroke-linecap="round"></line>
+            <circle cx="14" cy="6" r="2.5" fill="currentColor"></circle>
+            <circle cx="11" cy="14" r="2.5" fill="currentColor"></circle>
+          </svg>
+          <span
+            id="ae-cat-filter-active-dot"
+            class="absolute -top-1 -right-1 block w-2 h-2 rounded-pill"
+            style="background-color: var(--ae-wine-500); display: none;"
+            aria-hidden="true"
+          ></span>
+        </button>
+        <button
+          id="ae-cat-sort-btn"
+          type="button"
+          class="ae-cat-sort-btn relative h-11 px-4 inline-flex items-center justify-between gap-2 rounded-md border flex-1 min-w-0 text-ui-label font-medium"
+          aria-label={t.sort.openAria}
+          aria-haspopup="dialog"
+          aria-controls="ae-sort-sheet"
+          style="border-color: var(--ae-hairline); color: var(--ae-ink); background-color: var(--ae-canvas);"
+        >
+          <span class="truncate" data-sort-trigger-label>{t.sort.triggerLabel(t.sort.default)}</span>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="shrink-0">
+            <polyline points="4 6 8 11 12 6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+          </svg>
+        </button>
+      </div>
     </section>
   )}
 
@@ -143,6 +160,7 @@ const title = `Adam & Eve · ${categoryName}`;
   )}
 
   {!isEmpty && <FilterSheet lang={lang} showTypeFilter={false} categoryId={slug} />}
+  {!isEmpty && <SortSheet lang={lang} />}
 </BaseLayout>
 
 <script>
@@ -151,9 +169,11 @@ const title = `Adam & Eve · ${categoryName}`;
     parseFilterFromQuery,
     filterToQuery,
     applyFilter,
+    applySort,
     isFilterActive,
     type FilterState,
     type FilterableRecord,
+    type SortKey,
   } from "~/lib/filter";
   import { ui, type Locale } from "~/i18n/ui";
 
@@ -164,19 +184,33 @@ const title = `Adam & Eve · ${categoryName}`;
   const countEl = document.getElementById("ae-cat-results-count");
   const filterBtn = document.getElementById("ae-cat-filter-btn") as HTMLButtonElement | null;
   const filterDot = document.getElementById("ae-cat-filter-active-dot");
+  const sortBtn = document.getElementById("ae-cat-sort-btn") as HTMLButtonElement | null;
+  const sortLabel = document.querySelector<HTMLElement>("[data-sort-trigger-label]");
 
   if (list && countEl && filterBtn && filterDot) {
     const allCards = Array.from(list.querySelectorAll<HTMLLIElement>(".ae-cat-product"));
-    const records: (FilterableRecord & { el: HTMLLIElement })[] = allCards.map((el) => ({
-      el,
-      category_id: el.dataset.categoryId ?? "",
-      subcategory_id: (el.dataset.subcategoryId || "") || null,
-      price_value: Number(el.dataset.priceValue ?? "0"),
-      sold_out: el.dataset.soldOut === "true",
-    }));
+    const records: (FilterableRecord & { el: HTMLLIElement; defaultOrder: number })[] = allCards.map(
+      (el, idx) => ({
+        el,
+        defaultOrder: idx,
+        category_id: el.dataset.categoryId ?? "",
+        subcategory_id: (el.dataset.subcategoryId || "") || null,
+        price_value: Number(el.dataset.priceValue ?? "0"),
+        sold_out: el.dataset.soldOut === "true",
+      }),
+    );
 
     function paintFilterIndicator(state: FilterState): void {
       filterDot!.style.display = isFilterActive(state) ? "" : "none";
+    }
+
+    function paintSortLabel(sort: SortKey): void {
+      if (!sortLabel) return;
+      const optionLabel =
+        sort === "price-asc" ? t.sort.priceAsc :
+        sort === "price-desc" ? t.sort.priceDesc :
+        t.sort.default;
+      sortLabel.textContent = t.sort.triggerLabel(optionLabel);
     }
 
     function applyToGrid(state: FilterState): void {
@@ -185,6 +219,15 @@ const title = `Adam & Eve · ${categoryName}`;
       records.forEach(({ el }) => {
         el.style.display = matchedSet.has(el) ? "" : "none";
       });
+      // Apply sort by writing CSS `order` so the grid re-flows without DOM moves.
+      const sorted = applySort(matched, state.sort);
+      sorted.forEach((r, idx) => {
+        r.el.style.order = String(idx);
+      });
+      // Hidden cards get a high order so they sit at the end if briefly shown.
+      records
+        .filter((r) => !matchedSet.has(r.el))
+        .forEach((r) => { r.el.style.order = String(records.length + r.defaultOrder); });
       countEl!.textContent = t.filter.resultsCount(matched.length);
     }
 
@@ -193,9 +236,23 @@ const title = `Adam & Eve · ${categoryName}`;
       document.dispatchEvent(new CustomEvent("ae:filter-sheet-opened"));
     });
 
+    if (sortBtn) {
+      sortBtn.addEventListener("click", () => {
+        (window as unknown as { aeSheet?: { open: (id: string) => void } }).aeSheet?.open("ae-sort-sheet");
+        document.dispatchEvent(new CustomEvent("ae:sort-sheet-opened"));
+      });
+    }
+
     window.addEventListener("ae:filter-apply", () => {
       const next = parseFilterFromQuery(new URLSearchParams(window.location.search));
       paintFilterIndicator(next);
+      paintSortLabel(next.sort);
+      applyToGrid(next);
+    });
+
+    window.addEventListener("ae:sort-apply", () => {
+      const next = parseFilterFromQuery(new URLSearchParams(window.location.search));
+      paintSortLabel(next.sort);
       applyToGrid(next);
     });
 
@@ -214,11 +271,9 @@ const title = `Adam & Eve · ${categoryName}`;
     // On load, hydrate from URL (deep-link case).
     const initial = parseFilterFromQuery(new URLSearchParams(window.location.search));
     paintFilterIndicator(initial);
-    if (isFilterActive(initial)) applyToGrid(initial);
+    paintSortLabel(initial.sort);
+    if (isFilterActive(initial) || initial.sort !== "default") applyToGrid(initial);
 
-    // Suppress unused — reserved for "Reset filters" CTA path (not rendered on
-    // category page since the no-results branch is for the empty-category case,
-    // not filter-misses; if a future task adds a "filtered to zero" CTA, wire here).
     void filterToQuery;
     void EMPTY_FILTER;
   }
