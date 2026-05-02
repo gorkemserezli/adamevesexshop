@@ -144,7 +144,7 @@ const t = ui[lang];
   import { formatPriceForScreenReader } from "~/i18n/format";
   import type { Locale } from "~/i18n/ui";
   import { ui } from "~/i18n/ui";
-  import { writeThumbValue, dragDeltaToValue } from "~/lib/slider";
+  import { writeThumbValue, dragDeltaToValue, InteractionGate } from "~/lib/slider";
 
   function init(slider: HTMLElement): void {
     const min = Number(slider.dataset.min);
@@ -209,12 +209,15 @@ const t = ui[lang];
     }
 
     /**
-     * Bug 1 (v1.1): we suppress the native range input's click-to-position
-     * scrubbing entirely — a touch tap on the max thumb used to fire `input`
-     * with value≈min and collapse the slider. Custom pointer drag below means
-     * a tap without movement leaves the value untouched, and a real drag is
-     * computed from delta-X on the track instead of native scrubbing.
+     * Bug 1 (v1.1, follow-up #2): the gate is SHARED across both thumbs.
+     * iOS Safari can fire an `input` event on the inactive thumb's range
+     * input while the user is touching the active thumb (carrying the
+     * native scrubbing value, typically bounds.min). Per-thumb closure
+     * state can't see the sibling's drag, so we route both inputs' listeners
+     * through one InteractionGate — touching either thumb suppresses both.
      */
+    const gate = new InteractionGate();
+
     function bindPointerDrag(input: HTMLInputElement, which: "min" | "max"): void {
       let dragging = false;
       let pointerId = -1;
@@ -222,10 +225,6 @@ const t = ui[lang];
       let startValue = 0;
       let trackWidth = 0;
       let moved = false;
-      // After a tap-without-drag, browsers may dispatch a delayed `input` event
-      // carrying the native scrubbing value. We mute the input listener for a
-      // short grace window past pointerup so the gate can't be bypassed.
-      let suppressInputUntil = 0;
 
       input.addEventListener("pointerdown", (e: PointerEvent) => {
         e.preventDefault();
@@ -237,6 +236,7 @@ const t = ui[lang];
         startX = e.clientX;
         startValue = Number(input.value);
         trackWidth = trackArea!.getBoundingClientRect().width;
+        gate.activate();
         input.focus({ preventScroll: true });
       });
 
@@ -254,24 +254,34 @@ const t = ui[lang];
         try { input.releasePointerCapture(e.pointerId); } catch { /* noop */ }
         if (!moved) {
           // Tap without drag — restore the value the input had at pointerdown
-          // so any native scrubbing that mutated input.value gets undone, and
-          // open a 150ms suppression window for any delayed `input` event.
+          // so any native scrubbing that mutated input.value gets undone.
           input.value = String(startValue);
-          suppressInputUntil = Date.now() + 150;
           paint();
         }
+        // Open the cross-thumb suppression window. Any `input` event firing
+        // on EITHER input within 150ms gets clamped back to the last known
+        // legitimate state, defeating iOS's adjacent-thumb scrubbing leak.
+        gate.release(150);
       };
       input.addEventListener("pointerup", end);
       input.addEventListener("pointercancel", end);
 
       // Keyboard / screen-reader path. The native input fires `input` for
       // ArrowLeft/Right, Home, End, PageUp/Down, and VO/TalkBack swipes — but
-      // it ALSO fires from native scrubbing on touch, which we mute here.
+      // it ALSO fires from native scrubbing on touch (own thumb OR sibling),
+      // which the shared gate mutes here.
       input.addEventListener("input", () => {
-        if (dragging) return;
-        if (Date.now() < suppressInputUntil) {
-          input.value = String(startValue);
-          paint();
+        if (gate.isSuppressed()) {
+          // Restore from the last value paint() persisted to the dataset, the
+          // single source of truth for "legitimate current state". startValue
+          // is per-closure and unsafe to use when the sibling fired the event.
+          const good = which === "min"
+            ? Number(slider.dataset.currentMin)
+            : Number(slider.dataset.currentMax);
+          if (Number.isFinite(good)) {
+            input.value = String(good);
+            paint();
+          }
           return;
         }
         applyWrite(which, Number(input.value));

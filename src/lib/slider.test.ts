@@ -13,6 +13,7 @@ import {
   snapToStep,
   writeThumbValue,
   dragDeltaToValue,
+  InteractionGate,
   type ThumbWriteContext,
 } from "./slider";
 
@@ -138,6 +139,115 @@ describe("writeThumbValue — Bug 1 acceptance cases", () => {
     state = writeThumbValue("min", 10, ctx(state));
     state = writeThumbValue("max", 500, ctx(state));
     expect(state).toEqual({ min: 10, max: 500 });
+  });
+});
+
+describe("InteractionGate — cross-thumb suppression (Bug 1 follow-up #2)", () => {
+  /**
+   * iOS Safari fires `input` on the inactive thumb's range input during a
+   * touch on the active thumb, with the native scrubbing value (≈bounds.min).
+   * Per-thumb closure state can't see the sibling's drag — these tests anchor
+   * the shared gate that both thumbs' input listeners now consult.
+   */
+  function fakeClock() {
+    let t = 1_000_000;
+    return { now: () => t, advance: (ms: number) => { t += ms; } };
+  }
+
+  it("fresh gate is not suppressed", () => {
+    const c = fakeClock();
+    const g = new InteractionGate(c.now);
+    expect(g.isSuppressed()).toBe(false);
+  });
+
+  it("activate() suppresses; release() keeps suppressing through grace window", () => {
+    const c = fakeClock();
+    const g = new InteractionGate(c.now);
+    g.activate();
+    expect(g.isSuppressed()).toBe(true);
+    g.release(150);
+    expect(g.isSuppressed()).toBe(true);  // still inside grace
+    c.advance(149);
+    expect(g.isSuppressed()).toBe(true);  // still inside grace
+    c.advance(2);
+    expect(g.isSuppressed()).toBe(false); // grace closed
+  });
+
+  it("REGRESSION: max-thumb touch suppresses sibling min-thumb input event", () => {
+    // Simulates the exact iOS event sequence the user reported:
+    //   1. Both thumbs sit at {min: 50, max: 500} (user previously dragged
+    //      min from 10 to 50).
+    //   2. User touches max thumb → max's pointerdown calls gate.activate().
+    //   3. iOS fires `input` on inputMin (sibling) with value=10 (bounds.min).
+    //   4. Min's input listener queries gate.isSuppressed() → true → bail.
+    //   5. min's value remains 50; the bogus 10 is discarded.
+    const c = fakeClock();
+    const gate = new InteractionGate(c.now);
+
+    // Track what each input listener would do.
+    const minState = { value: 50 };
+    const onMinInput = (incomingValue: number) => {
+      if (gate.isSuppressed()) return; // gate suppresses cross-thumb leak
+      minState.value = incomingValue;
+    };
+
+    // Step 2: max pointerdown
+    gate.activate();
+    // Step 3: iOS leaks input event to inputMin with bounds.min
+    onMinInput(10);
+    // Step 4 outcome: min's value preserved
+    expect(minState.value).toBe(50);
+    // Step 5: max pointerup, grace window opens
+    gate.release(150);
+    // Even a delayed leak inside the grace window stays suppressed
+    c.advance(50);
+    onMinInput(10);
+    expect(minState.value).toBe(50);
+    // Once grace closes, legitimate input events flow again
+    c.advance(200);
+    onMinInput(80);
+    expect(minState.value).toBe(80);
+  });
+
+  it("REGRESSION (mirror): min-thumb touch suppresses sibling max-thumb input event", () => {
+    const c = fakeClock();
+    const gate = new InteractionGate(c.now);
+    const maxState = { value: 200 };
+    const onMaxInput = (incoming: number) => {
+      if (gate.isSuppressed()) return;
+      maxState.value = incoming;
+    };
+    gate.activate();        // user touches min
+    onMaxInput(10);         // iOS leaks bogus value to inputMax
+    expect(maxState.value).toBe(200);
+    gate.release(150);
+    c.advance(200);
+    onMaxInput(450);        // legitimate write after grace
+    expect(maxState.value).toBe(450);
+  });
+
+  it("custom grace window is honoured", () => {
+    const c = fakeClock();
+    const g = new InteractionGate(c.now);
+    g.activate();
+    g.release(50);
+    c.advance(49);
+    expect(g.isSuppressed()).toBe(true);
+    c.advance(2);
+    expect(g.isSuppressed()).toBe(false);
+  });
+
+  it("re-activate during grace window resets to fully active", () => {
+    const c = fakeClock();
+    const g = new InteractionGate(c.now);
+    g.activate();
+    g.release(150);
+    c.advance(50);
+    g.activate();           // user starts a new touch immediately
+    c.advance(10_000);      // long time passes
+    expect(g.isSuppressed()).toBe(true); // still active until released
+    g.release();
+    expect(g.isSuppressed()).toBe(true); // grace just opened
   });
 });
 

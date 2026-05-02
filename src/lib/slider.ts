@@ -76,3 +76,40 @@ export function dragDeltaToValue(
   const dPct = (currentX - startX) / trackWidth;
   return dPct * (bounds.max - bounds.min);
 }
+
+/**
+ * Cross-thumb interaction gate.
+ *
+ * Bug 1 follow-up #2 (iOS Safari only): touching one thumb fires `input` on
+ * the OTHER thumb's `<input type=range>` (carrying the native scrubbing value,
+ * usually bounds.min). Per-thumb closure state in Slider.astro can't see the
+ * sibling thumb's drag state, so the inactive thumb's listener happily wrote
+ * the bogus value via applyWrite. This gate is shared between both thumbs:
+ *   - activate() on either thumb's pointerdown
+ *   - release(grace) on either thumb's pointerup/cancel — opens a window
+ *   - isSuppressed() returns true while either thumb is dragging OR within
+ *     the post-release grace window. Both thumbs' `input` listeners consult
+ *     it before calling applyWrite.
+ */
+export class InteractionGate {
+  private active = false;
+  private suppressUntil = 0;
+  private readonly now: () => number;
+
+  constructor(now: () => number = () => Date.now()) {
+    this.now = now;
+  }
+
+  activate(): void {
+    this.active = true;
+  }
+
+  release(graceMs = 150): void {
+    this.active = false;
+    this.suppressUntil = this.now() + graceMs;
+  }
+
+  isSuppressed(): boolean {
+    return this.active || this.now() < this.suppressUntil;
+  }
+}
