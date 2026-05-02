@@ -2,9 +2,9 @@
     {
         "id": "vajina-masturbator",
         "name": {
-            "tr": "Vaji̇na & Mastürbatör",
-            "en": "Vagina & Masturbator",
-            "de": "Vagina & Masturbator",
+            "tr": "Vajina & Mastürbatör",
+            "en": "Vagına & Masturbator",
+            "de": "Vagına & Masturbator",
             "ru": "Вагина И Мастурбатор"
         },
         "sort_order": 1,
@@ -21,9 +21,9 @@
             {
                 "id": "realistik-vajinalar",
                 "name": {
-                    "tr": "Reali̇sti̇k Vaji̇nalar",
-                    "en": "Realistic Vaginas",
-                    "de": "Realistische Vaginas",
+                    "tr": "Realistik Vajinalar",
+                    "en": "Realıstıc Vagınas",
+                    "de": "Realıstısche Vagınas",
                     "ru": "Реалистичные Вагины"
                 }
             }
@@ -32,38 +32,38 @@
     {
         "id": "dildo",
         "name": {
-            "tr": "Di̇ldo",
-            "en": "Dildo",
-            "de": "Dildo",
-            "ru": "Dildo"
+            "tr": "Dildo",
+            "en": "Dıldo",
+            "de": "Dıldo",
+            "ru": "Dıldo"
         },
         "sort_order": 2,
         "subcategories": [
             {
                 "id": "belden-baglamali-strapon",
                 "name": {
-                    "tr": "Belden Bağlamali – Strapon",
-                    "en": "Strap-On - Strap-On",
-                    "de": "Umschnalldildo - Umschnalldildo",
+                    "tr": "Belden Bağlamalı – Strapon",
+                    "en": "Strap-on - Strap-on",
+                    "de": "Umschnalldıldo - Umschnalldıldo",
                     "ru": "Страпон - Страпон"
                 }
             },
             {
                 "id": "realistik-dildo",
                 "name": {
-                    "tr": "Reali̇sti̇k Di̇ldo",
-                    "en": "Realistic Dldo",
-                    "de": "Realistisches Dldo",
+                    "tr": "Realistik Dildo",
+                    "en": "Realıstıc Dldo",
+                    "de": "Realıstısches Dldo",
                     "ru": "Реалистичное Длдо"
                 }
             },
             {
                 "id": "seks-makinasi",
                 "name": {
-                    "tr": "Seks Maki̇nasi",
-                    "en": "Sex Machine",
-                    "de": "Sex-Maschine",
-                    "ru": "Секс-Машина"
+                    "tr": "Seks Makinası",
+                    "en": "Sex Machıne",
+                    "de": "Sex-maschıne",
+                    "ru": "Секс-машина"
                 }
             }
         ]
@@ -71,9 +71,9 @@
     {
         "id": "fantezi-fetis-urunu",
         "name": {
-            "tr": "Fantezi̇ & Feti̇ş Ürünü",
-            "en": "Fantasy & Fetish Product",
-            "de": "Fantasie- Und Fetischprodukte",
+            "tr": "Fantezi & Fetiş Ürünü",
+            "en": "Fantasy & Fetısh Product",
+            "de": "Fantasıe- Und Fetıschprodukte",
             "ru": "Фэнтези И Фетиш"
         },
         "sort_order": 3,
@@ -81,34 +81,34 @@
             {
                 "id": "erotik-oyunlar",
                 "name": {
-                    "tr": "Eroti̇k Oyunlar",
-                    "en": "Erotic Games",
-                    "de": "Erotische Spiele",
+                    "tr": "Erotik Oyunlar",
+                    "en": "Erotıc Games",
+                    "de": "Erotısche Spıele",
                     "ru": "Эротические Игры"
                 }
             },
             {
                 "id": "fantezi-fetis",
                 "name": {
-                    "tr": "Fantezi̇ & Feti̇ş",
-                    "en": "Fantasy & Fetish",
-                    "de": "Fantasie Und Fetisch",
+                    "tr": "Fantezi & Fetiş",
+                    "en": "Fantasy & Fetısh",
+                    "de": "Fantasıe Und Fetısch",
                     "ru": "Фэнтези И Фетиш"
                 }
             },
             {
                 "id": "fantezi-giyim",
                 "name": {
-                    "tr": "Fantezi̇ Gi̇yi̇m",
-                    "en": "Fantasy Clothing",
-                    "de": "Fantasy-Kleidung",
+                    "tr": "Fantezi Giyim",
+                    "en": "Fantasy Clothıng",
+                    "de": "Fantasy-kleıdung",
                     "ru": "Фантазийная Одежда"
                 }
             },
             {
                 "id": "giyilebilir-urun",
                 "name": {
-                    "tr": "Gi̇yi̇lebi̇li̇r Ürün",
+                    "tr": "Giyilebilir Ürün",
                     "en": "Wearable Product",
                     "de": "Tragbares Produkt",
                     "ru": "Носимый Продукт"
@@ -117,9 +117,9 @@
             {
                 "id": "gogus-ucu-bantlari",
                 "name": {
-                    "tr": "Göğüs Ucu Bantlari",
-                    "en": "Nipple Bands",
-                    "de": "Nippel-Bänder",
+                    "tr": "Göğüs Ucu Bantları",
+                    "en": "Nıpple Bands",
+                    "de": "Nıppel-bänder",
                     "ru": "Бандажи Для Сосков"
                 }
             }
@@ -128,8 +128,8 @@
     {
         "id": "sisme-manken",
         "name": {
-            "tr": "Şi̇şme Manken",
-            "en": "Inflatable Mannequin",
+            "tr": "Şişme Manken",
+            "en": "Inflatable Mannequın",
             "de": "Aufblasbare Schaufensterpuppe",
             "ru": "Надувной Манекен"
         },
@@ -138,16 +138,16 @@
             {
                 "id": "realistik-mankenler",
                 "name": {
-                    "tr": "Reali̇sti̇k Mankenler",
-                    "en": "Realistic Models",
-                    "de": "Realistische Modelle",
+                    "tr": "Realistik Mankenler",
+                    "en": "Realıstıc Models",
+                    "de": "Realıstısche Modelle",
                     "ru": "Реалистичные Модели"
                 }
             },
             {
                 "id": "sisme-kadinlar",
                 "name": {
-                    "tr": "Şi̇şme Kadinlar",
+                    "tr": "Şişme Kadınlar",
                     "en": "Inflatable Women",
                     "de": "Aufblasbare Frauen",
                     "ru": "Надувные Женщины"
@@ -158,9 +158,9 @@
     {
         "id": "kadin-cinsel-saglik-urunu",
         "name": {
-            "tr": "Kadin Ci̇nsel Sağlik Ürünü",
+            "tr": "Kadın Cinsel Sağlık Ürünü",
             "en": "Female Sexual Health Product",
-            "de": "Produkt Für Die Sexuelle Gesundheit Der Frau",
+            "de": "Produkt Für Dıe Sexuelle Gesundheıt Der Frau",
             "ru": "Средство Для Женского Сексуального Здоровья"
         },
         "sort_order": 5,
@@ -168,8 +168,8 @@
             {
                 "id": "beyazlatici-krem",
                 "name": {
-                    "tr": "Beyazlatici Krem",
-                    "en": "Whitening Cream",
+                    "tr": "Beyazlatıcı Krem",
+                    "en": "Whıtenıng Cream",
                     "de": "Aufhellungscreme",
                     "ru": "Отбеливающий Крем"
                 }
@@ -177,17 +177,17 @@
             {
                 "id": "kayganlastirici",
                 "name": {
-                    "tr": "Kayganlaştirici",
-                    "en": "Lubricant",
-                    "de": "Schmiermittel",
+                    "tr": "Kayganlaştırıcı",
+                    "en": "Lubrıcant",
+                    "de": "Schmıermıttel",
                     "ru": "Лубрикант"
                 }
             },
             {
                 "id": "masaj-yaglari",
                 "name": {
-                    "tr": "Masaj Yağlari",
-                    "en": "Massage Oils",
+                    "tr": "Masaj Yağları",
+                    "en": "Massage Oıls",
                     "de": "Massageöle",
                     "ru": "Масла Для Массажа"
                 }
@@ -204,9 +204,9 @@
             {
                 "id": "vajina-bakim-urunleri",
                 "name": {
-                    "tr": "Vaji̇na Bakim Ürünleri̇",
-                    "en": "Vagina Care Products",
-                    "de": "Vaginalpflegeprodukte",
+                    "tr": "Vajina Bakım Ürünleri",
+                    "en": "Vagına Care Products",
+                    "de": "Vagınalpflegeprodukte",
                     "ru": "Средства По Уходу За Влагалищем"
                 }
             }
@@ -227,16 +227,16 @@
                 "name": {
                     "tr": "Anal Plug",
                     "en": "Anal Plug",
-                    "de": "Anal-Stecker",
+                    "de": "Anal-stecker",
                     "ru": "Анальный Штекер"
                 }
             },
             {
                 "id": "anal-temizleyici",
                 "name": {
-                    "tr": "Anal Temi̇zleyi̇ci̇",
+                    "tr": "Anal Temizleyici",
                     "en": "Anal Cleaner",
-                    "de": "Anal-Reiniger",
+                    "de": "Anal-reınıger",
                     "ru": "Анальный Чиститель"
                 }
             },
@@ -252,9 +252,9 @@
             {
                 "id": "anal-vibrator",
                 "name": {
-                    "tr": "Anal Vi̇bratör",
-                    "en": "Anal Vibrator",
-                    "de": "Anal Vibrator",
+                    "tr": "Anal Vibratör",
+                    "en": "Anal Vıbrator",
+                    "de": "Anal Vıbrator",
                     "ru": "Анальный Вибратор"
                 }
             }
@@ -263,9 +263,9 @@
     {
         "id": "erkek-cinsel-saglik-urunu",
         "name": {
-            "tr": "Erkek Ci̇nsel Sağlik Ürünü",
+            "tr": "Erkek Cinsel Sağlık Ürünü",
             "en": "Male Sexual Health Product",
-            "de": "Produkt Für Die Sexuelle Gesundheit Des Mannes",
+            "de": "Produkt Für Dıe Sexuelle Gesundheıt Des Mannes",
             "ru": "Средство Для Сексуального Здоровья Мужчин"
         },
         "sort_order": 7,
@@ -273,54 +273,54 @@
             {
                 "id": "krem-ve-takviye-edici-gida",
                 "name": {
-                    "tr": "Krem Ve Takvi̇ye Edi̇ci̇ Gida",
+                    "tr": "Krem Ve Takviye Edici Gıda",
                     "en": "Cream And Food Supplements",
-                    "de": "Creme Und Nahrungsergänzungsmittel",
+                    "de": "Creme Und Nahrungsergänzungsmıttel",
                     "ru": "Крем И Пищевые Добавки"
                 }
             },
             {
                 "id": "penis-halkasi",
                 "name": {
-                    "tr": "Peni̇s Halkasi",
-                    "en": "Penis Ring",
-                    "de": "Penis-Ring",
+                    "tr": "Penis Halkası",
+                    "en": "Penıs Rıng",
+                    "de": "Penıs-rıng",
                     "ru": "Кольцо Для Пениса"
                 }
             },
             {
                 "id": "penis-kiliflari",
                 "name": {
-                    "tr": "Peni̇s Kiliflari",
-                    "en": "Penis Covers",
-                    "de": "Penis Links",
+                    "tr": "Penis Kılıfları",
+                    "en": "Penıs Covers",
+                    "de": "Penıs Lınks",
                     "ru": "Пенис Линкс"
                 }
             },
             {
                 "id": "penis-pompasi",
                 "name": {
-                    "tr": "Peni̇s Pompasi",
-                    "en": "Penis Pump",
-                    "de": "Penis-Pumpe",
-                    "ru": "Penis Pump"
+                    "tr": "Penis Pompası",
+                    "en": "Penıs Pump",
+                    "de": "Penıs-pumpe",
+                    "ru": "Penıs Pump"
                 }
             },
             {
                 "id": "penis-spreyi",
                 "name": {
-                    "tr": "Peni̇s Spreyi̇",
-                    "en": "Penis Spray",
-                    "de": "Penis-Spray",
+                    "tr": "Penis Spreyi",
+                    "en": "Penıs Spray",
+                    "de": "Penıs-spray",
                     "ru": "Спрей Для Пениса"
                 }
             },
             {
                 "id": "prezervatif",
                 "name": {
-                    "tr": "Prezervati̇f",
-                    "en": "Prezervative",
-                    "de": "Prezervativ",
+                    "tr": "Prezervatif",
+                    "en": "Prezervatıve",
+                    "de": "Prezervatıv",
                     "ru": "Презерватив"
                 }
             }
@@ -329,9 +329,9 @@
     {
         "id": "vibrator",
         "name": {
-            "tr": "Vi̇bratör",
-            "en": "Vibrator",
-            "de": "Vibrator",
+            "tr": "Vibratör",
+            "en": "Vıbrator",
+            "de": "Vıbrator",
             "ru": "Вибратор"
         },
         "sort_order": 8,
@@ -339,45 +339,45 @@
             {
                 "id": "g-noktasi-vibrator",
                 "name": {
-                    "tr": "G Noktasi Vi̇bratör",
-                    "en": "G Point Vibrator",
-                    "de": "G-Punkt-Vibrator",
-                    "ru": "Вибратор G Point"
+                    "tr": "G Noktası Vibratör",
+                    "en": "G Poınt Vıbrator",
+                    "de": "G-punkt-vıbrator",
+                    "ru": "Вибратор G Poınt"
                 }
             },
             {
                 "id": "mini-vibrator",
                 "name": {
-                    "tr": "Mi̇ni̇ Vi̇bratör",
-                    "en": "Mini Vibrator",
-                    "de": "Mini-Vibrator",
+                    "tr": "Mini Vibratör",
+                    "en": "Mını Vıbrator",
+                    "de": "Mını-vıbrator",
                     "ru": "Мини Вибратор"
                 }
             },
             {
                 "id": "modern-vibrator",
                 "name": {
-                    "tr": "Modern Vi̇bratör",
-                    "en": "Modern Vibrator",
-                    "de": "Moderner Vibrator",
+                    "tr": "Modern Vibratör",
+                    "en": "Modern Vıbrator",
+                    "de": "Moderner Vıbrator",
                     "ru": "Современный Вибратор"
                 }
             },
             {
                 "id": "rabbit-vibrator",
                 "name": {
-                    "tr": "Rabbi̇t Vi̇bratör",
-                    "en": "Rabbit Vibrator",
-                    "de": "Rabbi̇t Vibrator",
+                    "tr": "Rabbit Vibratör",
+                    "en": "Rabbıt Vıbrator",
+                    "de": "Rabbı̇t Vıbrator",
                     "ru": "Вибратор Равви̇т"
                 }
             },
             {
                 "id": "telefon-kontrollu-vibrator",
                 "name": {
-                    "tr": "Telefon Kontrollü Vi̇bratör",
-                    "en": "Telephone Controlled Vibrator",
-                    "de": "Telefongesteuerter Vibrator",
+                    "tr": "Telefon Kontrollü Vibratör",
+                    "en": "Telephone Controlled Vıbrator",
+                    "de": "Telefongesteuerter Vıbrator",
                     "ru": "Вибратор С Телефонным Управлением"
                 }
             }
