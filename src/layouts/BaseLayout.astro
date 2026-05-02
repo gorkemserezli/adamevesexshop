@@ -110,6 +110,26 @@ const buildVersion = (pkg as { version: string }).version;
     filter: none;
     transition: filter var(--ae-dur-base) var(--ae-ease-standard);
   }
+  /**
+   * Product card name — clamp at 2 lines with ellipsis; reserve full 2-line
+   * height so 1-line names don't compress card vertical rhythm. Lives here
+   * (not on ProductCard.astro) because search.astro renders cards via the
+   * productCardHTML helper without mounting the component, so the rule has
+   * to be globally available across all card render paths.
+   *
+   * Card font is text-[18px] leading-tight (~1.25). Two-line min-height is
+   * 2 * 1.25 * 18px = 45px.
+   */
+  .ae-product-card-name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: anywhere;
+    min-height: calc(2 * 1.25 * 18px);
+  }
   /* Generic shimmer for skeleton placeholders (search results, etc.). Same
      keyframes as the stock badge skeleton; named separately so the two stay
      decoupled. */

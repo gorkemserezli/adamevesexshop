@@ -50,6 +50,18 @@ describe("productCardHTML", () => {
     expect(productCardHTML(sample, "en")).toContain('class="ae-product-image w-full h-full object-cover"');
   });
 
+  it("name <p> carries ae-product-card-name class so the 2-line clamp applies", () => {
+    // BaseLayout's global stylesheet keys off this class to clamp + reserve
+    // the 2-line min-height. Regression guard for v1.2 follow-up: long names
+    // (e.g., "A8 Telescopic Sex Machine with Remote Control") used to break
+    // grid alignment by spilling to 3 lines.
+    const html = productCardHTML(
+      { ...sample, name: "A8 Telescopic Sex Machine with Remote Control" },
+      "en",
+    );
+    expect(html).toMatch(/<p class="ae-product-card-name [^"]*">/);
+  });
+
   it("server-call and client-call paths produce identical strings for the same input", () => {
     // The whole point of the utility: ProductCard.astro's frontmatter call and
     // search.astro's inline JS call both hit productCardHTML with the same data
