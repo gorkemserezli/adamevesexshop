@@ -107,6 +107,9 @@ const t = ui[lang];
     opacity: 0;
     /* Native track styling reset so the box never blocks touches outside the 44x44. */
     pointer-events: auto;
+    /* Bug 1 (v1.1): suppress native click-to-position scrubbing — we drive the
+       value from custom pointer events so a tap doesn't collapse to min/max. */
+    touch-action: none;
     /* The input itself is positioned to overlap a single thumb. JS keeps left in sync. */
   }
   .ae-slider-input::-webkit-slider-thumb {
@@ -141,6 +144,7 @@ const t = ui[lang];
   import { formatPriceForScreenReader } from "~/i18n/format";
   import type { Locale } from "~/i18n/ui";
   import { ui } from "~/i18n/ui";
+  import { writeThumbValue, dragDeltaToValue } from "~/lib/slider";
 
   function init(slider: HTMLElement): void {
     const min = Number(slider.dataset.min);
@@ -158,52 +162,25 @@ const t = ui[lang];
 
     if (!trackArea || !range || !thumbMin || !thumbMax || !inputMin || !inputMax) return;
 
-    function clamp(v: number): number {
-      return Math.max(min, Math.min(max, v));
-    }
-
-    function snap(v: number): number {
-      return Math.round(v / step) * step;
-    }
+    const bounds = { min, max };
 
     function pctOf(v: number): number {
       if (max === min) return 0;
       return ((v - min) / (max - min)) * 100;
     }
 
-    /**
-     * Unified collision setter. Handles all entry points (Arrow, Page, Home,
-     * End, drag, tap-snap) by routing through the same logic. If the new value
-     * would invert the pair, push the other thumb by step in the appropriate
-     * direction.
-     */
-    function setValue(which: "min" | "max", raw: number): void {
-      const v = clamp(snap(raw));
-      const minV = Number(inputMin!.value);
-      const maxV = Number(inputMax!.value);
-      if (which === "min") {
-        if (v >= maxV) {
-          inputMin!.value = String(v);
-          inputMax!.value = String(clamp(v + step));
-        } else {
-          inputMin!.value = String(v);
-        }
-      } else {
-        if (v <= minV) {
-          inputMax!.value = String(v);
-          inputMin!.value = String(clamp(v - step));
-        } else {
-          inputMax!.value = String(v);
-        }
-      }
+    function applyWrite(which: "min" | "max", raw: number): void {
+      const next = writeThumbValue(which, raw, {
+        current: { min: Number(inputMin!.value), max: Number(inputMax!.value) },
+        bounds,
+        step,
+      });
+      inputMin!.value = String(next.min);
+      inputMax!.value = String(next.max);
       paint();
-      // Notify listeners — single bubble event from the slider container.
       slider.dispatchEvent(new CustomEvent("ae:slider-change", {
         bubbles: true,
-        detail: {
-          min: Number(inputMin!.value),
-          max: Number(inputMax!.value),
-        },
+        detail: { min: next.min, max: next.max },
       }));
     }
 
@@ -216,10 +193,8 @@ const t = ui[lang];
       thumbMax!.style.left = `${maxPct}%`;
       range!.style.left = `${minPct}%`;
       range!.style.width = `${maxPct - minPct}%`;
-      // Position native inputs over their respective visual thumbs.
       inputMin!.style.left = `${minPct}%`;
       inputMax!.style.left = `${maxPct}%`;
-      // Update accessibility text on each input + dynamic group label.
       inputMin!.setAttribute("aria-valuetext", formatPriceForScreenReader(minV, lang));
       inputMax!.setAttribute("aria-valuetext", formatPriceForScreenReader(maxV, lang));
       slider.setAttribute(
@@ -233,24 +208,73 @@ const t = ui[lang];
       slider.dataset.currentMax = String(maxV);
     }
 
-    // Direction B: native input change (keyboard, VO swipe, TalkBack swipe) → visual.
-    inputMin!.addEventListener("input", () => setValue("min", Number(inputMin!.value)));
-    inputMax!.addEventListener("input", () => setValue("max", Number(inputMax!.value)));
+    /**
+     * Bug 1 (v1.1): we suppress the native range input's click-to-position
+     * scrubbing entirely — a touch tap on the max thumb used to fire `input`
+     * with value≈min and collapse the slider. Custom pointer drag below means
+     * a tap without movement leaves the value untouched, and a real drag is
+     * computed from delta-X on the track instead of native scrubbing.
+     */
+    function bindPointerDrag(input: HTMLInputElement, which: "min" | "max"): void {
+      let dragging = false;
+      let pointerId = -1;
+      let startX = 0;
+      let startValue = 0;
+      let trackWidth = 0;
 
-    // Direction A: pointer on track → choose closer thumb → write its native input value.
+      input.addEventListener("pointerdown", (e: PointerEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        try { input.setPointerCapture(e.pointerId); } catch { /* old browser */ }
+        pointerId = e.pointerId;
+        dragging = true;
+        startX = e.clientX;
+        startValue = Number(input.value);
+        trackWidth = trackArea!.getBoundingClientRect().width;
+        input.focus({ preventScroll: true });
+      });
+
+      input.addEventListener("pointermove", (e: PointerEvent) => {
+        if (!dragging || e.pointerId !== pointerId) return;
+        const delta = dragDeltaToValue(startX, e.clientX, trackWidth, bounds);
+        applyWrite(which, startValue + delta);
+      });
+
+      const end = (e: PointerEvent): void => {
+        if (!dragging || e.pointerId !== pointerId) return;
+        dragging = false;
+        pointerId = -1;
+        try { input.releasePointerCapture(e.pointerId); } catch { /* noop */ }
+      };
+      input.addEventListener("pointerup", end);
+      input.addEventListener("pointercancel", end);
+
+      // Keyboard / screen-reader path. The native input fires `input` for
+      // ArrowLeft/Right, Home, End, PageUp/Down, and VO/TalkBack swipes — but
+      // it ALSO fires from native scrubbing on touch, which we mute here.
+      input.addEventListener("input", () => {
+        if (dragging) return;
+        applyWrite(which, Number(input.value));
+      });
+    }
+
+    bindPointerDrag(inputMin!, "min");
+    bindPointerDrag(inputMax!, "max");
+
+    // Pointer on track itself (outside the 44x44 thumb hit zones) — choose the
+    // closer thumb and jump to that position. Unchanged from v1.0; kept since
+    // the bug was specific to thumb taps, not track taps.
     trackArea!.addEventListener("pointerdown", (e) => {
-      // Skip if the pointer landed on a native input directly (browser handles drag).
       if ((e.target as HTMLElement).classList.contains("ae-slider-input")) return;
       const rect = trackArea!.getBoundingClientRect();
       const px = e.clientX - rect.left;
       const pct = Math.max(0, Math.min(1, px / rect.width));
-      const v = clamp(snap(min + pct * (max - min)));
+      const v = min + pct * (max - min);
       const minV = Number(inputMin!.value);
       const maxV = Number(inputMax!.value);
       const which = Math.abs(v - minV) <= Math.abs(v - maxV) ? "min" : "max";
-      setValue(which, v);
-      // Focus the corresponding input so subsequent keyboard interactions go there.
-      (which === "min" ? inputMin! : inputMax!).focus();
+      applyWrite(which, v);
+      (which === "min" ? inputMin! : inputMax!).focus({ preventScroll: true });
     });
 
     paint();

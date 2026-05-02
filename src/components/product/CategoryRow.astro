@@ -22,8 +22,13 @@ const meta = formatProductCount(total, inStock, locale);
     !isLast && "border-b border-hairline",
   ]}
 >
-  <div class="flex flex-col gap-1">
-    <span class="font-serif text-[24px] leading-[1.1] text-ink whitespace-nowrap">{name}</span>
+  <div class="flex flex-col gap-1 min-w-0 flex-1 pr-3">
+    <span
+      class="font-serif text-[24px] leading-[1.1] text-ink text-balance"
+      style="overflow-wrap: anywhere;"
+    >
+      {name}
+    </span>
     <span
       class="text-caption text-ink-3 lowercase"
       style="font-variant: small-caps; letter-spacing: 0.04em;"
