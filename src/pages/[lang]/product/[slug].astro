@@ -62,6 +62,12 @@ const title = `Adam & Eve · ${product.name[lang]}`;
     >
       {product.name[lang]}
     </h1>
+    <p
+      class="ae-pdp-sku text-caption mt-2 tnum"
+      style="color: var(--ae-ink-3); letter-spacing: 0.06em; font-variant: small-caps;"
+    >
+      SKU: <span style="font-variant: normal; letter-spacing: 0.04em;">{product.sku}</span>
+    </p>
     <div class="font-serif text-price text-ink mt-3 tnum">
       {formatPriceDisplay(product.price[lang].value, product.price[lang].currency, lang)}
     </div>
