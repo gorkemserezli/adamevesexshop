@@ -6,6 +6,8 @@ import Toggle from "~/components/ui/Toggle.astro";
 import Slider from "~/components/ui/Slider.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import type { Category } from "~/content/config";
+import { computePriceBounds, priceStepForLocale } from "~/lib/filter";
+import { formatPriceDisplay } from "~/i18n/format";
 
 interface Props {
   lang: Locale;
@@ -16,47 +18,43 @@ interface Props {
    * prop and gets the full filter.
    */
   showTypeFilter?: boolean;
+  /**
+   * When provided, price bounds are computed from products in that category
+   * only — keeps the slider scale meaningful per category. Search page omits
+   * this and gets bounds across the full catalog.
+   */
+  categoryId?: string;
 }
 
-const { lang, showTypeFilter = true } = Astro.props;
+const { lang, showTypeFilter = true, categoryId } = Astro.props;
 const t = ui[lang];
 
-// SSR-resolve category list and price bounds so the sheet renders with the
-// correct chip labels and slider scale on first paint. Bounds get refreshed
-// at runtime once the search index loads, but using the build-time bounds
-// avoids a layout shift.
 const categories: Category[] = (await getCollection("categories"))
   .map((c: CollectionEntry<"categories">) => c.data)
   .sort((a: Category, b: Category) => a.sort_order - b.sort_order);
 
-const products = await getCollection("products");
-const priceValues = products.map((p: CollectionEntry<"products">) => p.data.price[lang].value);
-const rawMin = priceValues.length > 0 ? Math.min(...priceValues) : 0;
-const rawMax = priceValues.length > 0 ? Math.max(...priceValues) : 0;
-const step = lang === "tr" || lang === "ru" ? 10 : 1;
-
-function niceUp(v: number): number {
-  if (v === 0) return 0;
-  const M = Math.pow(10, Math.floor(Math.log10(Math.abs(v))));
-  const cands = [1 * M, 2 * M, 5 * M, 10 * M];
-  const c = cands.find((x) => x >= v) ?? cands[cands.length - 1];
-  return Math.ceil(c / step) * step;
-}
-function niceDown(v: number): number {
-  if (v === 0) return 0;
-  const M = Math.pow(10, Math.floor(Math.log10(Math.abs(v))));
-  const cands = [1 * M, 2 * M, 5 * M, 10 * M];
-  let pick = cands[0];
-  for (const c of cands) if (c <= v) pick = c;
-  return Math.floor(pick / step) * step;
-}
-
-const priceMin = niceDown(rawMin);
-const priceMax = niceUp(rawMax);
+const allProducts = await getCollection("products");
+const scopedProducts = categoryId
+  ? allProducts.filter((p: CollectionEntry<"products">) => p.data.category_id === categoryId)
+  : allProducts;
+const priceValues = scopedProducts.map((p: CollectionEntry<"products">) => p.data.price[lang].value);
+const currency =
+  scopedProducts[0]?.data.price[lang].currency ?? allProducts[0]?.data.price[lang].currency ?? "EUR";
+const step = priceStepForLocale(lang);
+const { min: priceMin, max: priceMax } = computePriceBounds(priceValues, lang);
+const priceMinDisplay = formatPriceDisplay(priceMin, currency, lang);
+const priceMaxDisplay = formatPriceDisplay(priceMax, currency, lang);
 ---
 
 <BottomSheet id="ae-filter-sheet" ariaLabelledBy="ae-filter-title">
-  <div class="px-ae-6 py-ae-4" data-filter-root data-bound-min={String(priceMin)} data-bound-max={String(priceMax)} data-step={String(step)}>
+  <div
+    class="px-ae-6 py-ae-4"
+    data-filter-root
+    data-bound-min={String(priceMin)}
+    data-bound-max={String(priceMax)}
+    data-step={String(step)}
+    data-currency={currency}
+  >
     <div class="flex items-center justify-between pb-ae-3">
       <h2 id="ae-filter-title" class="font-serif text-h3" style="color: var(--ae-ink);">
         {t.filter.title}
@@ -103,6 +101,14 @@ const priceMax = niceUp(rawMax);
       <legend class="text-ui-label font-medium pt-ae-3 pb-ae-2" style="color: var(--ae-ink-2);">
         {t.filter.priceRange}
       </legend>
+      <p
+        class="text-body-sm tnum"
+        style="color: var(--ae-ink-2);"
+        id="ae-filter-price-display"
+        aria-live="polite"
+      >
+        {t.filter.priceRangeWithBounds(priceMinDisplay, priceMaxDisplay)}
+      </p>
       <Slider
         id="ae-filter-price-slider"
         lang={lang}
@@ -151,6 +157,7 @@ const priceMax = niceUp(rawMax);
     filterToQuery,
   } from "~/lib/filter";
   import { ui, type Locale } from "~/i18n/ui";
+  import { formatPriceDisplay } from "~/i18n/format";
 
   const lang = (document.documentElement.lang || "en") as Locale;
   const t = ui[lang];
@@ -163,8 +170,18 @@ const priceMax = niceUp(rawMax);
     const resetBtn = root.querySelector<HTMLButtonElement>("#ae-filter-reset");
     const applyBtn = root.querySelector<HTMLButtonElement>("#ae-filter-apply");
     const applyLabel = root.querySelector<HTMLElement>("[data-filter-apply-label]");
+    const priceDisplayEl = root.querySelector<HTMLElement>("#ae-filter-price-display");
     const boundMin = Number(root.dataset.boundMin);
     const boundMax = Number(root.dataset.boundMax);
+    const currency = root.dataset.currency ?? "EUR";
+
+    function paintPriceDisplay(minV: number, maxV: number): void {
+      if (!priceDisplayEl) return;
+      priceDisplayEl.textContent = t.filter.priceRangeWithBounds(
+        formatPriceDisplay(minV, currency, lang),
+        formatPriceDisplay(maxV, currency, lang),
+      );
+    }
 
     // Preview state — applied to URL/grid only on Apply tap.
     let preview: FilterState = { ...EMPTY_FILTER, types: [] };
@@ -205,6 +222,7 @@ const priceMax = niceUp(rawMax);
           inMin.dispatchEvent(new Event("input", { bubbles: true }));
           inMax.dispatchEvent(new Event("input", { bubbles: true }));
         }
+        paintPriceDisplay(sMin, sMax);
       }
       updateApplyLabel();
     }
@@ -249,6 +267,7 @@ const priceMax = niceUp(rawMax);
           priceMin: isFullRange ? null : detail.min,
           priceMax: isFullRange ? null : detail.max,
         };
+        paintPriceDisplay(detail.min, detail.max);
         updateApplyLabel();
       });
     }

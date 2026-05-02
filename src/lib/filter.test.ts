@@ -64,6 +64,30 @@ describe("niceBounds — locked table", () => {
     expect(computePriceBounds([24, 95], "tr")).toEqual({ min: 20, max: 100 });
     expect(computePriceBounds([2200], "tr")).toEqual({ min: 2000, max: 5000 });
   });
+
+  it("computePriceBounds — production catalog (10–300 EUR spread)", () => {
+    // Sampled real prices from src/content/products/*.json (EUR locale 'en'/'de').
+    // Slider has to span 10 → 287 → bounds round to 10/500.
+    const real = [13.13, 7.8, 24, 95.5, 201.78, 287.1, 12.5];
+    expect(computePriceBounds(real, "en")).toEqual({ min: 5, max: 500 });
+    expect(computePriceBounds(real, "de")).toEqual({ min: 5, max: 500 });
+  });
+
+  it("computePriceBounds — per-category subset is tighter than full catalog", () => {
+    const fullCatalog = [7, 13, 50, 95, 201, 287];
+    const oneCategory = [13, 50, 95];
+    const full = computePriceBounds(fullCatalog, "en");
+    const cat = computePriceBounds(oneCategory, "en");
+    // Subset's max bound must not exceed the full catalog's max bound, and
+    // typically lands tighter — that's the user-visible behaviour fix for Bug 1.
+    expect(cat.max).toBeLessThanOrEqual(full.max);
+    expect(cat).toEqual({ min: 10, max: 100 });
+    expect(full).toEqual({ min: 5, max: 500 });
+  });
+
+  it("computePriceBounds — single-product category collapses to a tight band", () => {
+    expect(computePriceBounds([42], "en")).toEqual({ min: 20, max: 50 });
+  });
 });
 
 describe("parseFilterFromQuery / filterToQuery", () => {

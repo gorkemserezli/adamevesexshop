@@ -57,7 +57,12 @@ const title = `Adam & Eve · ${categoryName}`;
   {!description && (
     <section class="px-ae-6 pt-ae-7 pb-ae-2">
       <p class="text-overline text-ink-3 uppercase">{t.categories.indexOverline}</p>
-      <h1 class="font-serif text-h1 text-ink mt-ae-2 tracking-tight">{categoryName}</h1>
+      <h1
+        class="font-serif text-h1 text-ink mt-ae-2 tracking-tight text-balance"
+        style="overflow-wrap: anywhere; line-height: 1.1;"
+      >
+        {categoryName}
+      </h1>
     </section>
   )}
 
@@ -137,7 +142,7 @@ const title = `Adam & Eve · ${categoryName}`;
     </ul>
   )}
 
-  {!isEmpty && <FilterSheet lang={lang} showTypeFilter={false} />}
+  {!isEmpty && <FilterSheet lang={lang} showTypeFilter={false} categoryId={slug} />}
 </BaseLayout>
 
 <script>

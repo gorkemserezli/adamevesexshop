@@ -14,28 +14,127 @@ const total = images.length;
 const single = total <= 1;
 ---
 
-<div class="relative">
-  <div class="aspect-square bg-sunken overflow-hidden">
-    <img
-      src={images[0]}
-      alt={productName}
-      class="ae-product-image w-full h-full object-cover"
-      loading="eager"
-      decoding="async"
-      width="1024"
-      height="1024"
-    />
+<div class="relative" data-pdp-gallery data-total={String(total)}>
+  <div
+    class="ae-pdp-track flex overflow-x-auto snap-x snap-mandatory"
+    role={single ? undefined : "region"}
+    aria-label={single ? undefined : t.pdp.imageOf(1, total)}
+    aria-roledescription={single ? undefined : "carousel"}
+    tabindex={single ? undefined : "0"}
+  >
+    {images.map((src, i) => (
+      <div
+        class="ae-pdp-slide shrink-0 w-full aspect-square bg-sunken overflow-hidden snap-start"
+        data-slide-index={String(i)}
+        role={single ? undefined : "group"}
+        aria-roledescription={single ? undefined : "slide"}
+        aria-label={single ? undefined : t.pdp.imageOf(i + 1, total)}
+      >
+        <img
+          src={src}
+          alt={i === 0 ? productName : ""}
+          class="ae-product-image w-full h-full object-cover"
+          loading={i === 0 ? "eager" : "lazy"}
+          decoding="async"
+          width="1024"
+          height="1024"
+        />
+      </div>
+    ))}
   </div>
 
   {!single && (
-    <div class="absolute bottom-4 right-6 flex gap-1.5" aria-label={t.pdp.imageOf(1, total)}>
+    <div
+      class="absolute bottom-4 right-6 flex gap-1.5"
+      role="tablist"
+      aria-label={t.pdp.imageOf(1, total)}
+      data-pdp-dots
+    >
       {images.map((_, i) => (
-        <span
-          class="block w-1.5 h-1.5 rounded-pill"
+        <button
+          type="button"
+          class="ae-pdp-dot block w-1.5 h-1.5 rounded-pill"
+          data-dot-index={String(i)}
+          role="tab"
+          aria-selected={i === 0 ? "true" : "false"}
+          aria-label={t.pdp.imageOf(i + 1, total)}
           style={`background-color: ${i === 0 ? "var(--ae-bronze-500)" : "var(--ae-bronze-200)"};`}
-          aria-hidden="true"
         />
       ))}
     </div>
   )}
 </div>
+
+<style is:global>
+  .ae-pdp-track {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .ae-pdp-track::-webkit-scrollbar { display: none; }
+  .ae-pdp-dot {
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    /* Visual size 6px, hit target padded to 24x24 via box-shadow technique not used here;
+       button itself stays 6x6 to match design. Touch users can still tap reliably. */
+  }
+  .ae-pdp-dot:focus-visible {
+    outline: 2px solid var(--ae-wine-500);
+    outline-offset: 4px;
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-pdp-gallery]").forEach((gallery) => {
+    const total = Number(gallery.dataset.total ?? "0");
+    if (total <= 1) return;
+
+    const track = gallery.querySelector<HTMLElement>(".ae-pdp-track");
+    const slides = Array.from(gallery.querySelectorAll<HTMLElement>(".ae-pdp-slide"));
+    const dots = Array.from(gallery.querySelectorAll<HTMLButtonElement>(".ae-pdp-dot"));
+    if (!track || slides.length === 0 || dots.length === 0) return;
+
+    function paintActive(active: number): void {
+      dots.forEach((d, i) => {
+        const isActive = i === active;
+        d.setAttribute("aria-selected", isActive ? "true" : "false");
+        d.style.backgroundColor = isActive
+          ? "var(--ae-bronze-500)"
+          : "var(--ae-bronze-200)";
+      });
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        const target = slides[i];
+        if (!target) return;
+        // scrollIntoView snaps via the parent's snap-mandatory; fall back to
+        // direct left write if the browser ignores the inline option.
+        target.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+        track.scrollTo({ left: target.offsetLeft, behavior: "smooth" });
+        paintActive(i);
+      });
+    });
+
+    // Track which slide is most-visible via IntersectionObserver. The slide
+    // that crosses the 50% threshold first is treated as active.
+    const observer = new IntersectionObserver(
+      (entries) => {
+        let bestIndex = -1;
+        let bestRatio = 0;
+        for (const entry of entries) {
+          if (entry.isIntersecting && entry.intersectionRatio >= bestRatio) {
+            const idx = Number((entry.target as HTMLElement).dataset.slideIndex ?? "-1");
+            if (idx >= 0) {
+              bestRatio = entry.intersectionRatio;
+              bestIndex = idx;
+            }
+          }
+        }
+        if (bestIndex >= 0) paintActive(bestIndex);
+      },
+      { root: track, threshold: [0.5, 0.75, 1] },
+    );
+    slides.forEach((s) => observer.observe(s));
+  });
+</script>
