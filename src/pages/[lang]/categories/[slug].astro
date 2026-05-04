@@ -30,10 +30,17 @@ const { category } = Astro.props as Props;
 const t = ui[lang];
 
 const productEntries = await getCollection("products");
-const products: Product[] = productEntries
+// Alphabetical within each stock partition, sold-out last (v1.2 follow-up).
+// The hydration script applies the same partition rule to user-selected sorts
+// via applySort, so SSR and client paint stay consistent.
+const inCategorySorted = productEntries
   .map((e: CollectionEntry<"products">) => e.data)
   .filter((p: Product) => p.category_id === slug)
   .sort((a: Product, b: Product) => a.name[lang].localeCompare(b.name[lang], lang));
+const products: Product[] = [
+  ...inCategorySorted.filter((p: Product) => p.sold_out !== true),
+  ...inCategorySorted.filter((p: Product) => p.sold_out === true),
+];
 
 const description = category.description?.[lang];
 const categoryName = category.name[lang];
@@ -147,6 +154,7 @@ const title = `Adam & Eve · ${categoryName}`;
           name={p.name[lang]}
           priceDisplay={formatPriceDisplay(p.price[lang].value, p.price[lang].currency, lang)}
           image={p.images[0] ?? ""}
+          soldOut={Boolean(p.sold_out)}
           extraClass="ae-cat-product"
           outerAttrs={{
             "data-category-id": p.category_id,

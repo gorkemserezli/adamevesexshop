@@ -21,9 +21,14 @@ const { lang } = Astro.params as { lang: Locale };
 const t = ui[lang];
 
 const productEntries = await getCollection("products");
-const products: Product[] = productEntries
+// Alphabetical within each stock partition, sold-out last (v1.2 follow-up).
+const sortedByName = productEntries
   .map((e: CollectionEntry<"products">) => e.data)
   .sort((a: Product, b: Product) => a.name[lang].localeCompare(b.name[lang], lang));
+const products: Product[] = [
+  ...sortedByName.filter((p: Product) => p.sold_out !== true),
+  ...sortedByName.filter((p: Product) => p.sold_out === true),
+];
 
 const title = `Adam & Eve · ${t.nav.favorites}`;
 const emptyHref = favoritesEmptyCtaHref(lang);
@@ -42,6 +47,7 @@ const emptyHref = favoritesEmptyCtaHref(lang);
         name={p.name[lang]}
         priceDisplay={formatPriceDisplay(p.price[lang].value, p.price[lang].currency, lang)}
         image={p.images[0] ?? ""}
+        soldOut={Boolean(p.sold_out)}
         extraClass="ae-fav-card"
         outerAttrs={{ "data-fav-sku": p.sku, style: "display: none;" }}
       />

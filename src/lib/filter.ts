@@ -194,18 +194,33 @@ export function isFilterActive(state: FilterState): boolean {
 }
 
 /**
- * Stable sort by key. Returns a new array; callers should treat it as
- * the filtered+sorted output. "default" is a no-op (preserves input order;
- * upstream is expected to have applied alphabetical via name.localeCompare).
+ * Stable sort by key with sold-out partitioning. Returns a new array.
+ *
+ * Partition rule (v1.2 follow-up): sold-out products always sit AFTER
+ * in-stock products regardless of `sort`. The user-selected sort orders
+ * within each partition. "default" preserves input order within each
+ * partition (callers typically pre-sort alphabetically via name.localeCompare).
+ *
+ *   sort=default      → [in-stock in input order]  + [sold-out in input order]
+ *   sort=price-asc    → [in-stock cheapest→priciest] + [sold-out cheapest→priciest]
+ *   sort=price-desc   → [in-stock priciest→cheapest] + [sold-out priciest→cheapest]
+ *
+ * Records with `sold_out` undefined are treated as in-stock (back-compat
+ * with test fixtures that don't carry the field).
  */
 export function applySort<T extends FilterableRecord>(records: T[], sort: SortKey): T[] {
-  if (sort === "default") return records.slice();
-  const dir = sort === "price-asc" ? 1 : -1;
-  return records
-    .map((r, idx) => ({ r, idx }))
-    .sort((a, b) => {
+  const indexed = records.map((r, idx) => ({ r, idx }));
+  const inStock = indexed.filter(({ r }) => r.sold_out !== true);
+  const soldOut = indexed.filter(({ r }) => r.sold_out === true);
+
+  const sortPartition = (group: typeof indexed): typeof indexed => {
+    if (sort === "default") return group;
+    const dir = sort === "price-asc" ? 1 : -1;
+    return group.slice().sort((a, b) => {
       const diff = (a.r.price_value - b.r.price_value) * dir;
       return diff !== 0 ? diff : a.idx - b.idx; // stable tiebreak
-    })
-    .map(({ r }) => r);
+    });
+  };
+
+  return [...sortPartition(inStock), ...sortPartition(soldOut)].map(({ r }) => r);
 }

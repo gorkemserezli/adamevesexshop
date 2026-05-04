@@ -110,6 +110,9 @@ export interface UIStrings {
     openZoomAria: string;
     closeZoomAria: string;
   };
+  productCard: {
+    soldOut: string;
+  };
   search: {
     placeholder: string;
     clearAria: string;
@@ -236,6 +239,7 @@ const tr: UIStrings = {
     noResultsHeadline: "Eşleşen sonuç yok",
     noResultsBody: "Daha kısa bir arama terimi veya farklı bir kategori deneyin.",
   },
+  productCard: { soldOut: "Stokta Yok" },
 };
 
 const en: UIStrings = {
@@ -355,6 +359,7 @@ const en: UIStrings = {
     noResultsHeadline: "Nothing matches that",
     noResultsBody: "Try a shorter search term or different category.",
   },
+  productCard: { soldOut: "Out of Stock" },
 };
 
 const de: UIStrings = {
@@ -474,6 +479,7 @@ const de: UIStrings = {
     noResultsHeadline: "Nichts gefunden",
     noResultsBody: "Versuchen Sie einen kürzeren Suchbegriff oder eine andere Kategorie.",
   },
+  productCard: { soldOut: "Nicht auf Lager" },
 };
 
 const ru: UIStrings = {
@@ -593,6 +599,7 @@ const ru: UIStrings = {
     noResultsHeadline: "Ничего не найдено",
     noResultsBody: "Попробуйте более короткий запрос или другую категорию.",
   },
+  productCard: { soldOut: "Нет в наличии" },
 };
 
 export const ui: Record<Locale, UIStrings> = { tr, en, de, ru };

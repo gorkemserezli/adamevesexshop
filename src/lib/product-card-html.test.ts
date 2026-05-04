@@ -50,6 +50,33 @@ describe("productCardHTML", () => {
     expect(productCardHTML(sample, "en")).toContain('class="ae-product-image w-full h-full object-cover"');
   });
 
+  it("renders sold-out badge + dimmed image when soldOut: true", () => {
+    const html = productCardHTML({ ...sample, soldOut: true }, "en");
+    expect(html).toContain('class="ae-soldout-badge"');
+    expect(html).toContain("Out of Stock");
+    expect(html).toMatch(/class="ae-product-image[^"]*ae-product-image-soldout/);
+    // sr-only sibling for screen readers (badge itself is aria-hidden).
+    expect(html).toContain('<span class="sr-only">Out of Stock</span>');
+  });
+
+  it("emits localized soldOut label across all 4 locales", () => {
+    expect(productCardHTML({ ...sample, soldOut: true }, "tr")).toContain("Stokta Yok");
+    expect(productCardHTML({ ...sample, soldOut: true }, "de")).toContain("Nicht auf Lager");
+    expect(productCardHTML({ ...sample, soldOut: true }, "ru")).toContain("Нет в наличии");
+    expect(productCardHTML({ ...sample, soldOut: true }, "en")).toContain("Out of Stock");
+  });
+
+  it("does NOT render badge when soldOut is false or undefined (default behaviour)", () => {
+    expect(productCardHTML(sample, "en")).not.toContain("ae-soldout-badge");
+    expect(productCardHTML(sample, "en")).not.toContain("ae-product-image-soldout");
+    expect(productCardHTML({ ...sample, soldOut: false }, "en")).not.toContain("ae-soldout-badge");
+  });
+
+  it("link href stays present on sold-out cards (still clickable)", () => {
+    const html = productCardHTML({ ...sample, soldOut: true }, "en");
+    expect(html).toContain('href="/en/product/warming-massage-oil/"');
+  });
+
   it("name <p> carries ae-product-card-name class so the 2-line clamp applies", () => {
     // BaseLayout's global stylesheet keys off this class to clamp + reserve
     // the 2-line min-height. Regression guard for v1.2 follow-up: long names

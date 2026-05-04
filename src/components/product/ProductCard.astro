@@ -8,15 +8,17 @@ interface Props {
   name: string;
   priceDisplay: string;
   image: string;
+  /** When true, the card paints the sold-out badge + dimmed image. */
+  soldOut?: boolean;
   /** Optional extra classes appended to "ae-product-card". */
   extraClass?: string;
   /** Optional extra attributes (data-*, style, etc.) for the outer <li>. */
   outerAttrs?: Record<string, string>;
 }
 
-const { lang, slug, name, priceDisplay, image, extraClass, outerAttrs } = Astro.props;
+const { lang, slug, name, priceDisplay, image, soldOut, extraClass, outerAttrs } = Astro.props;
 const html = productCardHTML(
-  { slug, name, priceDisplay, image },
+  { slug, name, priceDisplay, image, soldOut },
   lang,
   { extraClass, outerAttrs },
 );

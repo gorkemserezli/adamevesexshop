@@ -327,3 +327,88 @@ describe("sort — v1.2 dropdown", () => {
     expect(sorted.map((r) => r.price_value)).toEqual([25, 100]);
   });
 });
+
+describe("applySort — sold-out partition (v1.2 follow-up)", () => {
+  /**
+   * Sold-out products always sit AFTER in-stock products regardless of the
+   * user-selected sort. Within each partition, the user sort applies; "default"
+   * preserves input order within each partition.
+   */
+  it("default: in-stock keeps input order, sold-out appended in input order", () => {
+    const records: FilterableRecord[] = [
+      { category_id: "x", price_value: 100, sold_out: true },
+      { category_id: "x", price_value: 50, sold_out: false },
+      { category_id: "x", price_value: 200, sold_out: true },
+      { category_id: "x", price_value: 30, sold_out: false },
+    ];
+    const out = applySort(records, "default");
+    expect(out.map((r) => r.price_value)).toEqual([50, 30, 100, 200]);
+    expect(out.map((r) => Boolean(r.sold_out))).toEqual([false, false, true, true]);
+  });
+
+  it("price-asc: each partition sorted ascending; sold-out band sits after in-stock band", () => {
+    const records: FilterableRecord[] = [
+      { category_id: "x", price_value: 100, sold_out: false },
+      { category_id: "x", price_value: 50, sold_out: true },
+      { category_id: "x", price_value: 30, sold_out: false },
+      { category_id: "x", price_value: 200, sold_out: true },
+    ];
+    expect(applySort(records, "price-asc").map((r) => r.price_value)).toEqual([30, 100, 50, 200]);
+  });
+
+  it("price-desc: each partition sorted descending; sold-out band still trails", () => {
+    const records: FilterableRecord[] = [
+      { category_id: "x", price_value: 100, sold_out: false },
+      { category_id: "x", price_value: 50, sold_out: true },
+      { category_id: "x", price_value: 30, sold_out: false },
+      { category_id: "x", price_value: 200, sold_out: true },
+    ];
+    expect(applySort(records, "price-desc").map((r) => r.price_value)).toEqual([100, 30, 200, 50]);
+  });
+
+  it("REGRESSION: a cheap sold-out product never beats an expensive in-stock product on price-asc", () => {
+    // The motivating scenario: the cheapest item in the catalog might be
+    // sold out. Without partition, price-asc puts it first — guests tap a
+    // €10 listing only to find it unavailable. With partition, even the
+    // €10 sold-out sits AFTER every in-stock listing.
+    const records: FilterableRecord[] = [
+      { category_id: "x", price_value: 10, sold_out: true },
+      { category_id: "x", price_value: 999, sold_out: false },
+    ];
+    const out = applySort(records, "price-asc");
+    expect(out[0]?.sold_out).toBe(false);
+    expect(out[0]?.price_value).toBe(999);
+  });
+
+  it("partition is stable: ties within a partition preserve input order", () => {
+    const records: FilterableRecord[] = [
+      { category_id: "a", price_value: 50, sold_out: false },
+      { category_id: "b", price_value: 50, sold_out: false },
+      { category_id: "c", price_value: 50, sold_out: true },
+      { category_id: "d", price_value: 50, sold_out: true },
+    ];
+    expect(applySort(records, "price-asc").map((r) => r.category_id)).toEqual(["a", "b", "c", "d"]);
+    expect(applySort(records, "price-desc").map((r) => r.category_id)).toEqual(["a", "b", "c", "d"]);
+  });
+
+  it("treats undefined sold_out as in-stock (back-compat with older fixtures)", () => {
+    const records: FilterableRecord[] = [
+      { category_id: "x", price_value: 100 },
+      { category_id: "x", price_value: 50, sold_out: true },
+      { category_id: "x", price_value: 30 },
+    ];
+    const out = applySort(records, "price-asc");
+    expect(out.map((r) => r.price_value)).toEqual([30, 100, 50]);
+  });
+
+  it("inStockOnly + sort still works as expected (sold-out filtered out before partition)", () => {
+    const records: FilterableRecord[] = [
+      { category_id: "x", price_value: 100, sold_out: false },
+      { category_id: "x", price_value: 25, sold_out: false },
+      { category_id: "x", price_value: 5, sold_out: true },
+    ];
+    const filtered = applyFilter(records, { ...EMPTY_FILTER, inStockOnly: true });
+    const sorted = applySort(filtered, "price-asc");
+    expect(sorted.map((r) => r.price_value)).toEqual([25, 100]);
+  });
+});

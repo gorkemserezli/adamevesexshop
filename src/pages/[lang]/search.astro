@@ -158,6 +158,7 @@ const title = `Adam & Eve · ${t.nav.search}`;
     parseFilterFromQuery,
     filterToQuery,
     applyFilter,
+    applySort,
     isFilterActive,
     type FilterState,
     type FilterableRecord,
@@ -195,10 +196,21 @@ const title = `Adam & Eve · ${t.nav.search}`;
     }
 
     function renderResults(rs: typeof lastResults): void {
-      const html = rs
+      // Partition sold-out to the end while preserving relevance order
+      // within each group (no user-selected sort on search; "default" keeps
+      // the relevance order applySort received). Same partition rule as
+      // the per-category page.
+      const partitioned = applySort(rs, "default") as typeof lastResults;
+      const html = partitioned
         .map((r) =>
           productCardHTML(
-            { slug: r.slug, name: r.name, priceDisplay: r.price_display, image: r.image },
+            {
+              slug: r.slug,
+              name: r.name,
+              priceDisplay: r.price_display,
+              image: r.image,
+              soldOut: r.sold_out === true,
+            },
             lang,
           ),
         )

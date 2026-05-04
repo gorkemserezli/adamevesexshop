@@ -1,4 +1,5 @@
 import type { Locale } from "~/i18n/ui";
+import { ui } from "~/i18n/ui";
 import { productHref } from "~/lib/routes";
 
 export interface ProductCardData {
@@ -6,6 +7,8 @@ export interface ProductCardData {
   name: string;
   priceDisplay: string;
   image: string;
+  /** When true, render the "Out of stock" overlay badge + dim the image. */
+  soldOut?: boolean;
 }
 
 interface ProductCardHTMLOptions {
@@ -46,7 +49,14 @@ export function productCardHTML(
   const attrsBlock = Object.keys(outerAttrs).length > 0 ? " " + attrsToString(outerAttrs) : "";
   const href = productHref(lang, data.slug);
 
-  return `<li class="${liClass}"${attrsBlock}><a href="${escapeHtml(href)}" class="block no-underline" style="color: var(--ae-ink);"><div class="aspect-square bg-sunken overflow-hidden rounded-md"><img src="${escapeHtml(data.image)}" alt="${escapeHtml(data.name)}" class="ae-product-image w-full h-full object-cover" loading="lazy" decoding="async" width="512" height="512" /></div><p class="ae-product-card-name font-serif text-[18px] mt-ae-2 leading-tight">${escapeHtml(data.name)}</p><p class="text-body-sm mt-1" style="color: var(--ae-ink-3);">${escapeHtml(data.priceDisplay)}</p></a></li>`;
+  const soldOut = data.soldOut === true;
+  const soldOutLabel = soldOut ? escapeHtml(ui[lang].productCard.soldOut) : "";
+  const imgClass = `ae-product-image w-full h-full object-cover${soldOut ? " ae-product-image-soldout" : ""}`;
+  const badge = soldOut
+    ? `<span class="ae-soldout-badge" aria-hidden="true">${soldOutLabel}</span><span class="sr-only">${soldOutLabel}</span>`
+    : "";
+
+  return `<li class="${liClass}"${attrsBlock}><a href="${escapeHtml(href)}" class="block no-underline" style="color: var(--ae-ink);"><div class="ae-product-card-thumb relative aspect-square bg-sunken overflow-hidden rounded-md"><img src="${escapeHtml(data.image)}" alt="${escapeHtml(data.name)}" class="${imgClass}" loading="lazy" decoding="async" width="512" height="512" />${badge}</div><p class="ae-product-card-name font-serif text-[18px] mt-ae-2 leading-tight">${escapeHtml(data.name)}</p><p class="text-body-sm mt-1" style="color: var(--ae-ink-3);">${escapeHtml(data.priceDisplay)}</p></a></li>`;
 }
 
 /**
