@@ -137,7 +137,7 @@ const tr: UIStrings = {
   cta: {
     addToFavorites: "Favorilere Ekle",
     removeFromFavorites: "Favorilerden Çıkar",
-    askAtBoutique: "Butikte Sor",
+    askAtBoutique: "Satın Al",
     apply: "Uygula",
     reset: "Sıfırla",
     close: "Kapat",
@@ -147,7 +147,7 @@ const tr: UIStrings = {
   stock: {
     inStock: "Stokta",
     soldOut: "Tükendi",
-    atBoutique: "Butikte mevcut",
+    atBoutique: "Stokta",
     lastN: (n) => `Son ${n} adet`,
     loading: "Stok yükleniyor",
   },
@@ -222,7 +222,7 @@ const tr: UIStrings = {
     scanHint: "İyi alışverişler dileriz.",
     exploreOverline: "Keşfet",
     boutiqueFooterOverline: "Mağaza",
-    hoursLine: (open, close) => `Her gün açık, ${open} — ${close}.`,
+    hoursLine: (open, close) => `${open} — ${close}.`,
   },
   pdp: {
     detailsOverline: "Özellikler",
@@ -257,7 +257,7 @@ const en: UIStrings = {
   cta: {
     addToFavorites: "Add to Favorites",
     removeFromFavorites: "Remove from Favorites",
-    askAtBoutique: "Ask at Boutique",
+    askAtBoutique: "Buy",
     apply: "Apply",
     reset: "Reset",
     close: "Close",
@@ -342,7 +342,7 @@ const en: UIStrings = {
     scanHint: "We wish you a pleasant shopping experience.",
     exploreOverline: "Explore",
     boutiqueFooterOverline: "Boutique",
-    hoursLine: (open, close) => `Open daily, ${open} — ${close}.`,
+    hoursLine: (open, close) => `${open} — ${close}.`,
   },
   pdp: {
     detailsOverline: "Details",
@@ -377,7 +377,7 @@ const de: UIStrings = {
   cta: {
     addToFavorites: "Zu Favoriten hinzufügen",
     removeFromFavorites: "Aus Favoriten entfernen",
-    askAtBoutique: "Im Shop fragen",
+    askAtBoutique: "Kaufen",
     apply: "Anwenden",
     reset: "Zurücksetzen",
     close: "Schließen",
@@ -462,7 +462,7 @@ const de: UIStrings = {
     scanHint: "Wir wünschen Ihnen einen angenehmen Einkauf.",
     exploreOverline: "Entdecken",
     boutiqueFooterOverline: "Boutique",
-    hoursLine: (open, close) => `Täglich geöffnet, ${open} — ${close}.`,
+    hoursLine: (open, close) => `${open} — ${close}.`,
   },
   pdp: {
     detailsOverline: "Details",
@@ -497,7 +497,7 @@ const ru: UIStrings = {
   cta: {
     addToFavorites: "Добавить в избранное",
     removeFromFavorites: "Удалить из избранного",
-    askAtBoutique: "Спросить в бутике",
+    askAtBoutique: "купить",
     apply: "Применить",
     reset: "Сбросить",
     close: "Закрыть",
@@ -582,7 +582,7 @@ const ru: UIStrings = {
     scanHint: "ОЖелаем вам приятных покупок.",
     exploreOverline: "Исследовать",
     boutiqueFooterOverline: "Бутик",
-    hoursLine: (open, close) => `Ежедневно, ${open} — ${close}.`,
+    hoursLine: (open, close) => `${open} — ${close}.`,
   },
   pdp: {
     detailsOverline: "Подробности",
