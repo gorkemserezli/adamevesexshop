@@ -29,7 +29,6 @@ export const HOTEL_MARKETING_URL = (() => {
   return value;
 })();
 export const SITE_URL = read("SITE_URL", "https://catalog.placeholder.invalid");
-export const STOCK_API_URL = read("PUBLIC_STOCK_API_URL");
 
 export const HOTEL_BOUTIQUE_LOCATION: Record<Locale, string> = {
   tr: read("HOTEL_BOUTIQUE_LOCATION_TR", "Lobi katı, Adam & Eve Hotel Belek"),

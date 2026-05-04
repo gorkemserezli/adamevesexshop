@@ -3,7 +3,6 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 import Breadcrumb from "~/components/ui/Breadcrumb.astro";
 import ProductHero from "~/components/product/ProductHero.astro";
 import StockBadge from "~/components/product/StockBadge.astro";
-import StockHydrator from "~/components/product/StockHydrator.astro";
 import CuratorNote from "~/components/product/CuratorNote.astro";
 import VariantSelector from "~/components/product/VariantSelector.astro";
 import SpecList from "~/components/product/SpecList.astro";
@@ -42,7 +41,10 @@ const breadcrumbCrumbs = [
   { label: product.name[lang] },
 ];
 
-const stockVariant: "sold_out" | "loading" = product.sold_out ? "sold_out" : "loading";
+// Stock state is now build-time-only via product.sold_out (populated by
+// fetch.php from Entegra). No runtime fetch — the badge renders its final
+// state at SSR and never changes during the page lifetime.
+const stockVariant: "sold_out" | "in_stock" = product.sold_out ? "sold_out" : "in_stock";
 
 const title = `Adam & Eve · ${product.name[lang]}`;
 ---
@@ -116,5 +118,4 @@ const title = `Adam & Eve · ${product.name[lang]}`;
 
   <ActionBar product={product} lang={lang} />
 
-  {!product.sold_out && <StockHydrator product={product} />}
 </BaseLayout>

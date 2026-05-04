@@ -1,8 +1,19 @@
 ---
+/**
+ * Stock state on the PDP. Now build-time-only — `sold_out` lives on the
+ * product JSON (populated by fetch.php from Entegra). No runtime fetch,
+ * no hydrator, no skeleton state. The badge renders its final variant at
+ * SSR and stays put for the lifetime of the page.
+ *
+ * `last_n` and `available_at_boutique` variants are retained for future
+ * surfaces that may want richer stock signalling (e.g., a build-time
+ * "low stock" derive from inventory counts), but the PDP only emits
+ * `in_stock` or `sold_out` today.
+ */
 import type { Locale } from "~/i18n/ui";
 import { ui } from "~/i18n/ui";
 
-type Variant = "in_stock" | "last_n" | "sold_out" | "available_at_boutique" | "loading";
+type Variant = "in_stock" | "last_n" | "sold_out" | "available_at_boutique";
 
 interface Props {
   lang: Locale;
@@ -18,7 +29,6 @@ const labelMap: Record<Variant, string> = {
   last_n: t.stock.lastN(count ?? 0),
   sold_out: t.stock.soldOut,
   available_at_boutique: t.stock.atBoutique,
-  loading: t.stock.loading,
 };
 
 const variantStyles: Record<Variant, string> = {
@@ -30,7 +40,6 @@ const variantStyles: Record<Variant, string> = {
     "background-color: var(--ae-danger-bg); color: var(--ae-danger-ink);",
   available_at_boutique:
     "background-color: var(--ae-info-bg); color: var(--ae-info-ink);",
-  loading: "background-color: var(--ae-bg-2); color: var(--ae-ink-3);",
 };
 
 const markStyles: Record<Variant, string> = {
@@ -38,54 +47,18 @@ const markStyles: Record<Variant, string> = {
   last_n: "background-color: var(--ae-warning-mark);",
   sold_out: "background-color: transparent;",
   available_at_boutique: "background-color: var(--ae-info-mark);",
-  loading: "background-color: var(--ae-ink-3);",
-};
-
-const labels = {
-  in_stock: t.stock.inStock,
-  sold_out: t.stock.soldOut,
-  at_boutique: t.stock.atBoutique,
-  loading: t.stock.loading,
-  last_n_template: t.stock.lastN(0).replace("0", "{n}"),
 };
 
 const showMark = variant !== "sold_out";
 ---
 
 <span
-  class:list={["ae-stock-badge inline-flex items-center gap-2 h-6 px-[10px] rounded-pill text-caption font-medium", variant === "loading" && "ae-stock-skeleton"]}
+  class="ae-stock-badge inline-flex items-center gap-2 h-6 px-[10px] rounded-pill text-caption font-medium"
   style={variantStyles[variant]}
   data-variant={variant}
-  data-stock-target
-  data-label-in-stock={labels.in_stock}
-  data-label-sold-out={labels.sold_out}
-  data-label-at-boutique={labels.at_boutique}
-  data-label-loading={labels.loading}
-  data-label-last-n-template={labels.last_n_template}
-  aria-live="polite"
 >
   {showMark && (
     <span class="ae-stock-mark block w-1.5 h-1.5 rounded-pill" style={markStyles[variant]} aria-hidden="true" />
   )}
   <span class="ae-stock-label">{labelMap[variant]}</span>
 </span>
-
-<style is:global>
-  .ae-stock-skeleton {
-    background-image: linear-gradient(
-      90deg,
-      var(--ae-bg-2) 0%,
-      var(--ae-bg-1) 50%,
-      var(--ae-bg-2) 100%
-    );
-    background-size: 200% 100%;
-    animation: ae-stock-shimmer 1.2s linear infinite;
-  }
-  @keyframes ae-stock-shimmer {
-    from { background-position: 200% 0; }
-    to { background-position: -200% 0; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .ae-stock-skeleton { animation: none; }
-  }
-</style>
