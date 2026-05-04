@@ -214,11 +214,11 @@ const tr: UIStrings = {
     allFilterLabel: "Tümü",
   },
   homepage: {
-    boutiqueOverline: "Otel Butiği",
-    intro: "Lobi katındaki, yetişkin konuklarımız için titizlikle seçilmiş küçük bir butik. Mevsime göre yenilenir.",
-    scanHint: "Bir ürünün tüm detaylarını görmek için butikte bir QR kodu tarayın. Eve götürmek için tezgâha sorun.",
+    boutiqueOverline: "Otel Mağazası",
+    intro: "Mağazamız siz değerli misafirlerimize haftada 6 gün 12:00-00:00 arasında atrium katında hizmet vermektedir. Web katalogda bulunup mağazada stoğu bulunmayan ürünleri kasiyerimiz ile irtibata geçerek 1 gün içerisinde teslime hazır duruma getirebilirsiniz.",
+    scanHint: "İyi alışverişler dileriz.",
     exploreOverline: "Keşfet",
-    boutiqueFooterOverline: "Butik",
+    boutiqueFooterOverline: "Mağaza",
     hoursLine: (open, close) => `Her gün açık, ${open} — ${close}.`,
   },
   pdp: {
@@ -334,8 +334,8 @@ const en: UIStrings = {
   },
   homepage: {
     boutiqueOverline: "Hotel Boutique",
-    intro: "A small, deliberate selection on the lobby floor — for our adult guests during their stay. Refreshed by season.",
-    scanHint: "Scan any QR code in the boutique to view a product's full details. To take a piece home, ask at the counter.",
+    intro: "Our boutique welcomes you on the atrium floor, six days a week from 12:00 to midnight. If a product listed in the web catalog is not in stock at the boutique, please speak with our cashier — we'll have it ready for you within one day.",
+    scanHint: "We wish you a pleasant shopping experience.",
     exploreOverline: "Explore",
     boutiqueFooterOverline: "Boutique",
     hoursLine: (open, close) => `Open daily, ${open} — ${close}.`,
@@ -453,8 +453,8 @@ const de: UIStrings = {
   },
   homepage: {
     boutiqueOverline: "Hotel-Boutique",
-    intro: "Eine kleine, sorgfältig zusammengestellte Auswahl auf der Lobby-Ebene — für unsere erwachsenen Gäste während ihres Aufenthalts. Saisonal erneuert.",
-    scanHint: "Scannen Sie einen QR-Code in der Boutique, um die vollen Produktdetails zu sehen. Um etwas mitzunehmen, fragen Sie am Tresen.",
+    intro: "Unsere Boutique heißt Sie im Atriumgeschoss willkommen — sechs Tage die Woche, von 12:00 bis Mitternacht. Sollte ein im Online-Katalog gelistetes Produkt im Geschäft nicht vorrätig sein, sprechen Sie bitte mit unserer Kassiererin — wir stellen es innerhalb eines Tages für Sie bereit.",
+    scanHint: "Wir wünschen Ihnen einen angenehmen Einkauf.",
     exploreOverline: "Entdecken",
     boutiqueFooterOverline: "Boutique",
     hoursLine: (open, close) => `Täglich geöffnet, ${open} — ${close}.`,
@@ -572,8 +572,8 @@ const ru: UIStrings = {
   },
   homepage: {
     boutiqueOverline: "Бутик отеля",
-    intro: "Небольшая, продуманная подборка на этаже лобби — для наших взрослых гостей во время их пребывания. Обновляется по сезону.",
-    scanHint: "Отсканируйте QR-код в бутике, чтобы увидеть подробности о товаре. Чтобы взять что-то с собой, обратитесь на стойку.",
+    intro: "Наш бутик ждёт вас на атриумном этаже шесть дней в неделю, с 12:00 до полуночи. Если товар, указанный в онлайн-каталоге, отсутствует в наличии в магазине, обратитесь к нашему кассиру — мы подготовим его к выдаче в течение одного дня.",
+    scanHint: "ОЖелаем вам приятных покупок.",
     exploreOverline: "Исследовать",
     boutiqueFooterOverline: "Бутик",
     hoursLine: (open, close) => `Ежедневно, ${open} — ${close}.`,
