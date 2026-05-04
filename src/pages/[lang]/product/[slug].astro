@@ -46,6 +46,15 @@ const breadcrumbCrumbs = [
 // state at SSR and never changes during the page lifetime.
 const stockVariant: "sold_out" | "in_stock" = product.sold_out ? "sold_out" : "in_stock";
 
+// v1.2 simplification: render-time filter on the specs array. Hotel team
+// wants only Brand visible; Size + Weight + any future rows are dropped
+// from the rendered output. Match against the canonical Turkish label
+// "Marka" — fetch.php always writes that string for the Brand row, so it
+// works as a stable identifier independent of which locale is rendering.
+// JSON keeps the full specs array for forward-compat / debugging; this is
+// purely a UI patch that can be reverted by deleting the filter line.
+const visibleSpecs = product.specs.filter((s) => s.label.tr === "Marka");
+
 const title = `Adam & Eve · ${product.name[lang]}`;
 ---
 
@@ -107,9 +116,9 @@ const title = `Adam & Eve · ${product.name[lang]}`;
   </section>
 
   {
-    product.specs.length > 0 && (
+    visibleSpecs.length > 0 && (
       <section class="px-ae-6 pt-ae-6">
-        <SpecList specs={product.specs} lang={lang} />
+        <SpecList specs={visibleSpecs} lang={lang} />
       </section>
     )
   }
