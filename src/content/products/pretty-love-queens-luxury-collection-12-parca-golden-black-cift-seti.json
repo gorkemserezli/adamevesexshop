@@ -25,19 +25,19 @@
     "curator_note": null,
     "price": {
         "tr": {
-            "value": 150,
+            "value": 1000,
             "currency": "EUR"
         },
         "en": {
-            "value": 150,
+            "value": 1000,
             "currency": "EUR"
         },
         "de": {
-            "value": 150,
+            "value": 1000,
             "currency": "EUR"
         },
         "ru": {
-            "value": 150,
+            "value": 1000,
             "currency": "EUR"
         }
     },
